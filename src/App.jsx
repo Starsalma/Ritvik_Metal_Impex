@@ -9,6 +9,8 @@ import ProductsGrid from './components/ProductsGrid';
 import IndustriesAndWhyChooseUs from './components/industry';
 import TPISection from './components/ThirdParty';
 import Footer from './components/Footer';
+import ContactForm from './components/ContactForm';
+import FloatingButtons from './components/FloatingButtons';
 
 import AboutPage from './components/AboutPage';
 import ProductsPage from './pages/ProductsPage';
@@ -22,6 +24,7 @@ function HomePage() {
       <ProductsGrid />
       <IndustriesAndWhyChooseUs />
       <TPISection />
+      <ContactForm />
     </>
   );
 }
@@ -40,6 +43,7 @@ export default function App() {
       </div>
 
       <Footer />
+      <FloatingButtons />
     </div>
   );
 }
