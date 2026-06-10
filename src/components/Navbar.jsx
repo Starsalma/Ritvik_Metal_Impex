@@ -38,7 +38,7 @@ export default function Navbar() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex">
-            <button className="bg-[#051124] text-white text-[10px] font-bold tracking-[0.15em] px-6 py-3.5 uppercase flex items-center gap-3 transition-colors">
+            <button onClick={() => document.getElementById('contact-us').scrollIntoView({behavior:'smooth'})} className="bg-[#051124] text-white text-[10px] font-bold tracking-[0.15em] px-6 py-3.5 uppercase flex items-center gap-3 transition-colors">
               GET A QUOTE
             </button>
           </div>

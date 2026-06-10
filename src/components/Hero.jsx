@@ -233,7 +233,7 @@ export default function Hero() {
 
           <div className="hero-actions mt-9 flex flex-col sm:flex-row items-start sm:items-center gap-4">
             <button
-              className="group bg-[#051124] text-white text-[11px] font-black tracking-[0.2em] px-8 py-[14px] uppercase flex items-center gap-4 cursor-pointer transition-all duration-200 hover:bg-[#0d2040]"
+              onClick={() => document.getElementById("contact-us").scrollIntoView({behavior:"smooth"})} className="group bg-[#051124] text-white text-[11px] font-black tracking-[0.2em] px-8 py-[14px] uppercase flex items-center gap-4 cursor-pointer transition-all duration-200 hover:bg-[#0d2040]"
             >
               <span>EXPLORE PRODUCTS</span>
               <span className="text-[#E5A93C] transition-transform duration-200 group-hover:translate-x-1">→</span>
