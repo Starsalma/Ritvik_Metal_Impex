@@ -1,14 +1,45 @@
 import React, { useState } from 'react';
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError('');
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: "ca4e124f-93f4-42fc-9910-0ff419185838",
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject || "New Contact Form Submission - Ritvik Metal Impex",
+          message: formData.message,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+      } else {
+        setError("Something went wrong. Please try again or contact us directly.");
+      }
+    } catch (err) {
+      setError("Something went wrong. Please try again or contact us directly.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -54,7 +85,7 @@ export default function ContactForm() {
 
             <div className="flex flex-col gap-2">
               <label className="text-gray-400 text-[12px] font-bold tracking-widest uppercase">Subject</label>
-              <input name="subject" onChange={handleChange}
+              <input name="subject" value={formData.subject} onChange={handleChange}
                 placeholder="Product Enquiry"
                 className="bg-white/5 border border-gray-700 text-white px-4 py-3 text-[14px] focus:outline-none focus:border-[#E5A93C] transition-colors placeholder-gray-600" />
             </div>
@@ -67,10 +98,14 @@ export default function ContactForm() {
                 className="bg-white/5 border border-gray-700 text-white px-4 py-3 text-[14px] focus:outline-none focus:border-[#E5A93C] transition-colors placeholder-gray-600 resize-none" />
             </div>
 
+            {error && (
+              <div className="md:col-span-2 text-red-400 text-sm">{error}</div>
+            )}
+
             <div className="md:col-span-2">
-              <button type="submit"
-                className="bg-[#E5A93C] text-[#030914] text-[12px] font-black tracking-[0.2em] px-10 py-4 uppercase hover:bg-[#d4982b] transition-colors">
-                SEND MESSAGE →
+              <button type="submit" disabled={loading}
+                className="bg-[#E5A93C] text-[#030914] text-[12px] font-black tracking-[0.2em] px-10 py-4 uppercase hover:bg-[#d4982b] transition-colors disabled:opacity-60">
+                {loading ? "SENDING..." : "SEND MESSAGE →"}
               </button>
             </div>
           </form>
