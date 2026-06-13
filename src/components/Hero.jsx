@@ -1,257 +1,152 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const heroStyles = `
-  .hero-content { opacity: 0; }
-  .hero-content.loaded { opacity: 1; }
-
-  .hero-tag {
+  .hero-slide {
     opacity: 0;
-    transform: translateY(12px);
-    transition: opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s;
+    transition: opacity 1.5s ease-in-out;
+    position: absolute;
+    inset: 0;
   }
-  .hero-tag.in { opacity: 1; transform: translateY(0); }
+  .hero-slide.active { opacity: 1; }
 
-  .hero-title-line {
-    display: block;
-    overflow: hidden;
-  }
-  .hero-title-line span {
-    display: block;
+  .hero-fade-in {
     opacity: 0;
-    transform: translateY(100%);
-    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(20px);
+    animation: heroFadeIn 0.9s ease forwards;
   }
-  .hero-title-line.in span { opacity: 1; transform: translateY(0); }
-
-  .hero-divider {
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .hero-divider.in { transform: scaleX(1); }
-
-  .hero-para {
-    opacity: 0;
-    transform: translateY(16px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .hero-para.in { opacity: 1; transform: translateY(0); }
-
-  .hero-actions {
-    opacity: 0;
-    transform: translateY(16px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .hero-actions.in { opacity: 1; transform: translateY(0); }
-
-  .hero-image-wrap {
-    opacity: 0;
-    transition: opacity 1s ease 0.1s;
-  }
-  .hero-image-wrap.in { opacity: 1; }
-
-  /* Desktop shape entrance */
-  .shape-gold {
-    clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 52%);
-    transition: clip-path 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0s;
-  }
-  .shape-gold.in {
-    clip-path: polygon(55% 0%, 100% 0%, 100% 100%, 55% 100%, 38% 52%);
-  }
-  .shape-shadow {
-    clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 52%);
-    transition: clip-path 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.05s;
-  }
-  .shape-shadow.in {
-    clip-path: polygon(55% 0%, 100% 0%, 100% 100%, 55% 100%, 38% 52%);
-  }
-  .shape-main {
-    clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 52%);
-    transition: clip-path 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
-  }
-  .shape-main.in {
-    clip-path: polygon(55% 0%, 100% 0%, 100% 100%, 55% 100%, 38% 52%);
+  @keyframes heroFadeIn {
+    to { opacity: 1; transform: translateY(0); }
   }
 
-  .scroll-line {
-    height: 0;
-    transition: height 0.8s ease 1.8s;
+  .hero-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    transition: all 0.3s ease;
+    cursor: pointer;
   }
-  .scroll-line.in { height: 40px; }
-
-  .scroll-label {
-    opacity: 0;
-    transition: opacity 0.5s ease 2.4s;
+  .hero-dot.active {
+    background: #E5A93C;
+    width: 24px;
+    border-radius: 4px;
   }
-  .scroll-label.in { opacity: 1; }
-
-  /* Mobile image */
-  .mobile-img-wrap {
-    opacity: 0;
-    transition: opacity 0.9s ease 0s;
-  }
-  .mobile-img-wrap.in { opacity: 1; }
 `;
 
+const heroImages = [
+  '/images/hero1.jpeg',
+  '/images/hero2.jpeg',
+  '/images/hero3.jpeg',
+  '/images/hero4.jpeg',
+];
+
 export default function Hero() {
-  const mobileImgRef  = useRef(null);
-  const desktopImgRef = useRef(null);
-  const sectionRef    = useRef(null);
+  const [activeSlide, setActiveSlide] = useState(0);
 
-  // Trigger all entrance animations after mount
   useEffect(() => {
-    const delays = [
-      ['.hero-image-wrap',  0],
-      ['.mobile-img-wrap',  0],
-      ['.shape-gold',       50],
-      ['.shape-shadow',     50],
-      ['.shape-main',       50],
-      ['.hero-tag',         300],
-      ['.hero-divider',     400],
-      ['.hero-title-line:nth-child(1)', 450],
-      ['.hero-title-line:nth-child(2)', 580],
-      ['.hero-title-line:nth-child(3)', 710],
-      ['.hero-para',        900],
-      ['.hero-actions',     1050],
-      ['.scroll-line',      0],
-      ['.scroll-label',     0],
-    ];
-
-    delays.forEach(([sel, delay]) => {
-      setTimeout(() => {
-        document.querySelectorAll(sel).forEach(el => el.classList.add('in'));
-      }, delay);
-    });
-  }, []);
-
-  // Scroll parallax — mobile only
-  useEffect(() => {
-    const img = mobileImgRef.current;
-    if (!img) return;
-    let ticking = false;
-    const onScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          if (window.innerWidth >= 1024) { ticking = false; return; }
-          img.style.transform = `translateY(${window.scrollY * 0.3}px)`;
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-  // Scroll parallax — desktop image drift
-  useEffect(() => {
-    const img     = desktopImgRef.current;
-    const section = sectionRef.current;
-    if (!img || !section) return;
-    let ticking = false;
-    const onScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          if (window.innerWidth < 1024) { ticking = false; return; }
-          const top      = section.getBoundingClientRect().top;
-          const progress = Math.max(0, Math.min(1, -top / section.offsetHeight));
-          img.style.transform = `scale(1.07) translateY(${progress * 24}px)`;
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    const interval = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % heroImages.length);
+    }, 4500);
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative w-full min-h-[90vh] bg-white overflow-hidden flex flex-col lg:flex-row items-center"
-    >
+    <section className="relative w-full min-h-screen flex items-center overflow-hidden">
       <style>{heroStyles}</style>
 
-      {/* ── IMAGE PANEL ─────────────────────────────────── */}
-      <div className="hero-image-wrap w-full lg:absolute lg:inset-y-0 lg:right-0 lg:w-[87%] h-[280px] sm:h-[340px] lg:h-full z-10">
-
-        {/* Mobile */}
-        <div className="mobile-img-wrap block lg:hidden w-full h-full overflow-hidden">
+      {/* ── BACKGROUND IMAGE CAROUSEL ── */}
+      <div className="absolute inset-0 z-0">
+        {heroImages.map((src, i) => (
           <img
-            ref={mobileImgRef}
-            src="/images/hero.jpeg"
-            alt="Stainless Steel Industrial Rolls"
-            className="w-full h-[135%] object-cover object-center will-change-transform"
-            style={{ marginTop: '-15%' }}
+            key={src}
+            src={src}
+            alt="Ritvik Metal Impex Industrial Products"
+            className={`hero-slide ${i === activeSlide ? 'active' : ''} w-full h-full object-cover object-center`}
           />
-        </div>
-
-        {/* Desktop layers */}
-        <div className="hidden lg:block absolute inset-0">
-          <div className="shape-gold absolute inset-0 bg-[#E5A93C]" />
-          <div className="shape-shadow absolute inset-0 bg-[#B38F24]" style={{ left: '4px', top: '1px' }} />
-          <div className="shape-main absolute inset-0 bg-[#0A1828] overflow-hidden" style={{ left: '8px', top: '2px' }}>
-            <div className="absolute inset-0 bg-gradient-to-r from-[#051124]/30 via-transparent to-transparent z-10" />
-            <img
-              ref={desktopImgRef}
-              src="/images/hero.jpeg"
-              alt="Stainless Steel Industrial Rolls"
-              className="w-full h-full object-cover object-center contrast-[1.04] will-change-transform"
-              style={{ transform: 'scale(1.07)' }}
-            />
-          </div>
-        </div>
+        ))}
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#020710]/90 via-[#020710]/70 to-[#020710]/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#020710]/80 via-transparent to-transparent" />
       </div>
 
-      {/* ── TEXT CONTENT ────────────────────────────────── */}
-      <div className="max-w-[1440px] mx-auto w-full px-6 lg:px-16 pt-10 pb-24 relative z-20">
-        <div className="max-w-lg">
+      {/* ── CAROUSEL DOTS ── */}
+      <div className="absolute bottom-8 right-8 z-20 flex gap-2">
+        {heroImages.map((_, i) => (
+          <div
+            key={i}
+            onClick={() => setActiveSlide(i)}
+            className={`hero-dot ${i === activeSlide ? 'active' : ''}`}
+          />
+        ))}
+      </div>
+
+      {/* ── CONTENT OVERLAY ── */}
+      <div className="relative z-10 max-w-[1440px] mx-auto w-full px-6 lg:px-16 py-24">
+        <div className="max-w-2xl">
 
           {/* Eyebrow */}
-          <div className="flex items-center gap-3 mb-7">
-            <span className="hero-tag text-[10px] font-black tracking-[0.3em] text-[#E5A93C] uppercase">
+          <div className="hero-fade-in flex items-center gap-3 mb-6" style={{animationDelay: '0.1s'}}>
+            <span className="text-[10px] font-black tracking-[0.3em] text-[#E5A93C] uppercase">
               Premium Metal Supplier
             </span>
-            <div className="hero-divider h-px w-10 bg-[#E5A93C]" />
+            <div className="h-px w-10 bg-[#E5A93C]" />
           </div>
 
           {/* Headline */}
-          <h1 className="text-[36px] sm:text-[50px] lg:text-[62px] font-[900] tracking-tight text-[#0A1828] leading-[1.06] uppercase">
-            <span className="hero-title-line"><span>YOUR RELIABLE</span></span>
-            <span className="hero-title-line" style={{transitionDelay: '0s'}}><span>SOURCE FOR</span></span>
-            <span className="hero-title-line" style={{transitionDelay: '0s'}}>
-              <span className="text-[#E5A93C]">QUALITY</span>
-            </span>
+          <h1 className="hero-fade-in text-[36px] sm:text-[50px] lg:text-[64px] font-[900] tracking-tight text-white leading-[1.06] uppercase" style={{animationDelay: '0.2s'}}>
+            YOUR RELIABLE<br />
+            SOURCE FOR<br />
+            <span className="text-[#E5A93C]">QUALITY METALS</span>
           </h1>
 
           {/* Divider */}
-          <div className="hero-divider w-12 h-[2px] bg-[#E5A93C]/40 mt-7 mb-6" style={{transitionDelay: '0.5s'}} />
+          <div className="hero-fade-in w-12 h-[2px] bg-[#E5A93C]/60 mt-7 mb-6" style={{animationDelay: '0.3s'}} />
 
-          <p className="hero-para text-gray-500 text-[14px] sm:text-[15px] font-medium leading-[1.8] max-w-sm">
-            Leading supplier of premium Iron, Steel, Stainless Steel &amp; High Nickel Alloy products — delivering quality, trust and excellence.
+          {/* Description */}
+          <p className="hero-fade-in text-gray-200 text-[14px] sm:text-[16px] font-medium leading-[1.8] max-w-lg" style={{animationDelay: '0.4s'}}>
+            Leading supplier of premium Iron, Steel, Stainless Steel &amp; High Nickel Alloy products — delivering quality, trust and excellence across India and globally.
           </p>
 
-          <div className="hero-actions mt-9 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          {/* Buttons */}
+          <div className="hero-fade-in mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4" style={{animationDelay: '0.5s'}}>
             <button
-              onClick={() => document.getElementById("contact-us").scrollIntoView({behavior:"smooth"})} className="group bg-[#051124] text-white text-[11px] font-black tracking-[0.2em] px-8 py-[14px] uppercase flex items-center gap-4 cursor-pointer transition-all duration-200 hover:bg-[#0d2040]"
+              onClick={() => document.getElementById('contact-us').scrollIntoView({behavior:'smooth'})}
+              className="group bg-[#E5A93C] text-[#0A1828] text-[11px] font-black tracking-[0.2em] px-8 py-[14px] uppercase flex items-center gap-4 cursor-pointer transition-all duration-200 hover:bg-[#d4982b]"
             >
               <span>EXPLORE PRODUCTS</span>
-              <span className="text-[#E5A93C] transition-transform duration-200 group-hover:translate-x-1">→</span>
+              <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
             </button>
             <button
-              className="text-[#0A1828] text-[11px] font-black tracking-[0.2em] px-8 py-[14px] uppercase border border-gray-300 cursor-pointer transition-all duration-200 hover:border-[#0A1828] bg-white"
+              onClick={() => document.getElementById('contact-us').scrollIntoView({behavior:'smooth'})}
+              className="text-white text-[11px] font-black tracking-[0.2em] px-8 py-[14px] uppercase border border-white/40 cursor-pointer transition-all duration-200 hover:border-white hover:bg-white/10"
             >
               CONTACT US
             </button>
           </div>
 
-        </div>
-      </div>
+          {/* ── COMPANY INFO STRIP — OVERLAY ON IMAGE ── */}
+          <div className="hero-fade-in mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 border-t border-white/15 pt-8 max-w-2xl" style={{animationDelay: '0.6s'}}>
+            <div>
+              <h4 className="text-[11px] font-black tracking-[0.2em] text-[#E5A93C] uppercase mb-1">Company</h4>
+              <p className="text-white text-[14px] font-bold">Ritvik Metal Impex</p>
+              <p className="text-gray-300 text-[12px] leading-relaxed mt-1">
+                Building no 16, 2nd floor, Patel Mansion 4th, Kumbharwada, Mumbai - 400004
+              </p>
+            </div>
+            <div>
+              <h4 className="text-[11px] font-black tracking-[0.2em] text-[#E5A93C] uppercase mb-1">Get In Touch</h4>
+              <p className="text-white text-[14px] font-bold">022 66394895</p>
+              <p className="text-gray-300 text-[12px] mt-1">sales@ritvikmetal.com</p>
+            </div>
+            <div>
+              <h4 className="text-[11px] font-black tracking-[0.2em] text-[#E5A93C] uppercase mb-1">What We Supply</h4>
+              <p className="text-gray-300 text-[12px] leading-relaxed">
+                Stainless Steel, Carbon Steel, Alloy Steel, Copper, Brass &amp; High Nickel Alloy products in all forms.
+              </p>
+            </div>
+          </div>
 
-      {/* ── Scroll indicator ─────────────────────────────── */}
-      <div className="absolute bottom-8 left-6 lg:left-16 z-30 flex flex-col items-center gap-2">
-        <div className="scroll-line w-px bg-[#E5A93C]/50" />
-        <span className="scroll-label text-[8px] font-black tracking-[0.35em] text-gray-400 uppercase">Scroll</span>
+        </div>
       </div>
 
     </section>
