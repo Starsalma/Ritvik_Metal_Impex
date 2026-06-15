@@ -19,8 +19,8 @@ export default function Navbar() {
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
 
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <span className="text-[28px] lg:text-[32px] font-black tracking-tighter text-[#0A1828]">RMI</span>
+          <Link to="/" className="flex items-center gap-3">
+            <img src="/images/logo.jpg" alt="Ritvik Metal Impex Logo" className="h-12 w-12 lg:h-14 lg:w-14 object-contain rounded-full" />
             <div className="hidden sm:flex flex-col justify-center pl-1">
               <span className="text-[11px] lg:text-[13px] font-black tracking-[0.12em] text-[#0A1828] uppercase leading-none">RITVIK</span>
               <span className="text-[9px] lg:text-[10px] font-bold tracking-[0.08em] text-gray-400 uppercase mt-0.5 leading-none">METAL IMPEX</span>
@@ -73,7 +73,7 @@ export default function Navbar() {
             ))}
           </div>
           <div className="mt-auto">
-            <button className="w-full bg-[#051124] text-white py-4 font-bold tracking-[0.15em] uppercase">Get a Quote</button>
+            <button onClick={() => { setIsSidebarOpen(false); document.getElementById('contact-us').scrollIntoView({behavior:'smooth'}); }} className="w-full bg-[#051124] text-white py-4 font-bold tracking-[0.15em] uppercase">Get a Quote</button>
           </div>
         </div>
       </div>
