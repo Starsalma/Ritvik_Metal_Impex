@@ -20,7 +20,7 @@ export default function Navbar() {
 
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <img src="/images/logo.jpg" alt="Ritvik Metal Impex Logo" className="h-12 w-12 lg:h-14 lg:w-14 object-contain rounded-full" />
+            <img src="/images/logo.png" alt="Ritvik Metal Impex Logo" className="h-12 w-auto lg:h-14 object-contain" />
             <div className="hidden sm:flex flex-col justify-center pl-1">
               <span className="text-[11px] lg:text-[13px] font-black tracking-[0.12em] text-[#0A1828] uppercase leading-none">RITVIK</span>
               <span className="text-[9px] lg:text-[10px] font-bold tracking-[0.08em] text-gray-400 uppercase mt-0.5 leading-none">METAL IMPEX</span>
