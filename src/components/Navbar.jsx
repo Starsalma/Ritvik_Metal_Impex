@@ -16,11 +16,11 @@ export default function Navbar() {
   return (
     <>
       <nav className="w-full bg-white sticky top-0 z-50 border-b border-gray-100 shadow-sm">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-12 h-24 flex items-center justify-between">
 
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <img src="/images/logo.png" alt="Ritvik Metal Impex Logo" className="h-12 w-auto lg:h-14 object-contain" />
+            <img src="/images/logo.png" alt="Ritvik Metal Impex Logo" className="h-16 w-auto lg:h-20 object-contain" />
             <div className="hidden sm:flex flex-col justify-center pl-1">
               <span className="text-[11px] lg:text-[13px] font-black tracking-[0.12em] text-[#0A1828] uppercase leading-none">RITVIK</span>
               <span className="text-[9px] lg:text-[10px] font-bold tracking-[0.08em] text-gray-400 uppercase mt-0.5 leading-none">METAL IMPEX</span>
