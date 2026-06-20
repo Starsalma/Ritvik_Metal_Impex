@@ -14,6 +14,7 @@ import FloatingButtons from './components/FloatingButtons';
 
 import AboutPage from './components/AboutPage';
 import ProductsPage from './pages/ProductsPage';
+import ProductDetailPage from './pages/ProductDetailPage';
 
 function HomePage() {
   return (
@@ -39,6 +40,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/products" element={<ProductsPage />} />
+          <Route path="/products/:id" element={<ProductDetailPage />} />
         </Routes>
       </div>
 

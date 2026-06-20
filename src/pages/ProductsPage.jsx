@@ -1,11 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { products } from "../data/products";
 
 export default function ProductsPage() {
+  const navigate = useNavigate();
   const [materialFilter, setMaterialFilter] = useState("All");
   const [formFilter, setFormFilter] = useState("All");
   const [search, setSearch] = useState("");
-  const [selectedProduct, setSelectedProduct] = useState(null);
 
   const materials = ["All","Stainless Steel","Carbon Steel","Alloy Steel","Duplex Steel","Nickel Alloys","Copper","Brass"];
   const forms = ["All","Pipes","Tubes","Sheets","Plates","Bars","Flanges","Fittings","Fasteners","Valves","Wire","Profiles"];
@@ -64,7 +65,7 @@ export default function ProductsPage() {
         {/* Product Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
           {filteredProducts.map((product) => (
-            <div key={product.id} onClick={() => setSelectedProduct(product)}
+            <div key={product.id} onClick={() => navigate(`/products/${product.id}`)}
               className="group cursor-pointer bg-white rounded-tl-[50px] rounded-br-[50px] overflow-hidden shadow-md hover:shadow-2xl border border-gray-100 transition-all duration-500">
               <div className="h-[260px] overflow-hidden bg-gray-100">
                 <img
@@ -86,41 +87,6 @@ export default function ProductsPage() {
             </div>
           ))}
         </div>
-
-        {/* Modal */}
-        {selectedProduct && (
-          <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-6" onClick={() => setSelectedProduct(null)}>
-            <div onClick={(e) => e.stopPropagation()}
-              className="bg-white max-w-6xl w-full rounded-tl-[80px] rounded-br-[80px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.25)] relative">
-              <div className="grid lg:grid-cols-2">
-                <div className="h-[500px] overflow-hidden bg-gray-100">
-                  <img
-                    src={selectedProduct.image}
-                    alt={selectedProduct.name}
-                    className="w-full h-full object-cover"
-                    onError={(e) => { e.target.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center"><span class="text-gray-300 uppercase tracking-widest">Product Image</span></div>'; }}
-                  />
-                </div>
-                <div className="p-10">
-                  <span className="text-[#E5A93C] font-black tracking-[0.2em] uppercase text-xs">{selectedProduct.material}</span>
-                  <h2 className="text-4xl font-black text-[#0A1828] uppercase mt-3">{selectedProduct.name}</h2>
-                  <p className="mt-6 text-gray-500 leading-relaxed">{selectedProduct.description}</p>
-                  <div className="mt-10">
-                    <h4 className="font-black uppercase text-[#0A1828] mb-4">Available Forms</h4>
-                    <div className="flex flex-wrap gap-3">
-                      <span className="px-4 py-2 bg-gray-100 rounded-full">{selectedProduct.form}</span>
-                    </div>
-                  </div>
-                  <button
-                    onClick={() => { setSelectedProduct(null); document.getElementById('contact-us') && document.getElementById('contact-us').scrollIntoView({behavior:'smooth'}); }}
-                    className="mt-10 bg-[#0A1828] text-white px-8 py-4 uppercase font-bold tracking-widest hover:bg-[#1A3A5C] transition-colors">
-                    Request Quote
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
 
       </div>
     </section>
