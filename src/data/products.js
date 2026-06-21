@@ -6,10 +6,8 @@ export const products = [
     form: "Pipes",
     material: "Stainless Steel",
     image: "/images/products/pipes-tubes.jpg",
-    description:
-      "Industrial seamless and welded pipes & tubes available in stainless steel, carbon steel, alloy steel, duplex and nickel alloys.",
+    description: "Seamless and welded pipes & tubes in Stainless Steel (ASTM A312 TP 304/304L/316/316L/321/310/347), Carbon Steel (ASTM A53/A106 Gr. B), Alloy Steel (ASTM A335), Nickel Alloys (Monel, Inconel, Hastelloy, Titanium) and Duplex/Super Duplex Steel (UNS S31803/S32750). Sizes 1/2\" to 24\" NB, Schedule 5S to XXS.",
   },
-
   {
     id: 2,
     name: "Buttweld Fittings",
@@ -17,10 +15,8 @@ export const products = [
     form: "Fittings",
     material: "Stainless Steel",
     image: "/images/products/buttweld-fittings.jpg",
-    description:
-      "Elbows, tees, reducers, return bends, caps, collars and crosses for industrial piping systems.",
+    description: "Elbows, tees, reducers, return bends, stub-ends, caps, collars and crosses in Stainless Steel (ASTM A403 WP304/316/321/347), Carbon Steel (ASTM A234 WPB) and Alloy Steel (ASTM A234 WP1/WP5/WP9/WP11). Sizes 1/4\" to 32\" NB, Schedule 5S to XXS, seamless & welded.",
   },
-
   {
     id: 3,
     name: "Forged Socketweld & Screwed Fittings",
@@ -28,10 +24,8 @@ export const products = [
     form: "Fittings",
     material: "Alloy Steel",
     image: "/images/products/forged-fittings.jpg",
-    description:
-      "Forged fittings including elbows, unions, couplings, plugs, bushings, nipples and adaptors.",
+    description: "Forged elbows, tees, unions, crosses, couplings, caps, bushings, plugs, swage nipples, welding bosses, hexagon nipples and adaptors in Stainless Steel (ASTM A182 F304/316/321), Carbon Steel (ASTM A105) and Alloy Steel (ASTM A182 F1/F5/F9/F11/F22/F91). Sizes 1/4\" to 4\" NB, Class 3000#/6000#/9000#.",
   },
-
   {
     id: 4,
     name: "Flanges",
@@ -39,10 +33,8 @@ export const products = [
     form: "Flanges",
     material: "Stainless Steel",
     image: "/images/products/flanges.jpg",
-    description:
-      "Weld neck, slip-on, blind, lap joint, ring joint and spectacle flanges.",
+    description: "Weld neck, slip-on, blind, socket weld, lap joint, spectacle, ring joint and orifice flanges in Stainless Steel (ASTM A182 F304/316/321), Carbon Steel (ASTM A105) and Duplex Steel (UNS S31803/S32750). Sizes 1/2\" to 24\" NB, Class 150# to 2500#.",
   },
-
   {
     id: 5,
     name: "Ferrule Fittings",
@@ -50,10 +42,8 @@ export const products = [
     form: "Fittings",
     material: "Stainless Steel",
     image: "/images/products/ferrule-fittings.jpg",
-    description:
-      "Precision ferrule fittings, connectors, reducers and instrumentation fittings.",
+    description: "Precision instrumentation ferrule fittings including nipples, adaptors, crosses, union ball joints, reducing bushings, pipe caps, couplings and pipe plugs in Stainless Steel, Nickel Alloys and Carbon Steel grades for high-precision tube connections.",
   },
-
   {
     id: 6,
     name: "Sheets, Plates & Coils",
@@ -61,10 +51,8 @@ export const products = [
     form: "Sheets",
     material: "Stainless Steel",
     image: "/images/products/sheets-plates-coils.jpg",
-    description:
-      "Sheets, plates, strips and coils in stainless steel, carbon steel, alloy steel and duplex grades.",
+    description: "Stainless Steel coils, sheets & plates as per ASTM A240 (Gr. TP 202/304/304L/309/310/316/316L/321/347/410/420/430), Alloy Steel plates per ASTM A387, and Boiler Quality Carbon Steel plates as per IS 2062/ASTM A516 Gr. 60-70, with IBR Test Certificate available.",
   },
-
   {
     id: 7,
     name: "Fasteners & Nut Bolts",
@@ -72,10 +60,8 @@ export const products = [
     form: "Fasteners",
     material: "Stainless Steel",
     image: "/images/products/fasteners.jpg",
-    description:
-      "Industrial bolts, nuts, washers, anchors, studs and threaded rods.",
+    description: "Bolts, nuts, washers, anchors, fasteners, stud bolts, eye bolts, threaded rods and cotter pins in Stainless Steel (AISI 302/304/316/321/347), Alloy Steel (4.6 to 12.9 grades) and Carbon Steel (galvanized, phosphated, cadmium plated finishes).",
   },
-
   {
     id: 8,
     name: "Valves",
@@ -83,10 +69,8 @@ export const products = [
     form: "Valves",
     material: "Stainless Steel",
     image: "/images/products/valves.jpg",
-    description:
-      "Ball valves, gate valves, check valves, globe valves and needle valves.",
+    description: "Ball valves, gate valves, check valves, globe valves, needle valves, mini valves and gauge root valves in Stainless Steel (AISI 304/316/321/347), Carbon Steel (A105, A216 Gr. WCB) and Non-Ferrous metals, available in 2-way, 3-way and 5-way manifold configurations.",
   },
-
   {
     id: 9,
     name: "Round, Square & Hex Bars",
@@ -94,10 +78,8 @@ export const products = [
     form: "Bars",
     material: "Stainless Steel",
     image: "/images/products/bars.jpg",
-    description:
-      "Round bars, square bars and hexagonal bars for engineering applications.",
+    description: "Round, square and hexagonal bars as per ASTM A276/A479 (Grade 202/304/304L/316/316L/321/347/410/420/904L), Nickel Alloys and Duplex Steel. Size range 3mm to 75mm dia, ready stock with Mill Test Certificate, cold drawn & annealed, tolerance H9/H11.",
   },
-
   {
     id: 10,
     name: "Dairy Fittings",
@@ -105,10 +87,8 @@ export const products = [
     form: "Fittings",
     material: "Stainless Steel",
     image: "/images/products/dairy-fittings.jpg",
-    description:
-      "Sanitary fittings and valves for food, beverage and dairy industries.",
+    description: "Sanitary fittings for food, beverage and dairy industries — nipples, unions, S.M.S., I.D.F., dairy valves, butterfly valves, ball valves, needle valves and safety valves in Stainless Steel (AISI 304/304L/316/316L) and Carbon Steel grades.",
   },
-
   {
     id: 11,
     name: "Copper Tubes",
@@ -116,10 +96,8 @@ export const products = [
     form: "Tubes",
     material: "Copper",
     image: "/images/products/copper-tubes.jpg",
-    description:
-      "Copper tubes available in multiple diameters and wall thicknesses.",
+    description: "DHP Copper, ETP Copper, DPA Copper and OFHC Copper tubes available 2mm to 200mm OD with wall thickness 0.10mm to 15mm, in lengths up to 10 meters straight or coils up to 25 meters, conforming to ISS, BSS and ASTM standards.",
   },
-
   {
     id: 12,
     name: "Brass Tubes",
@@ -127,10 +105,8 @@ export const products = [
     form: "Tubes",
     material: "Brass",
     image: "/images/products/brass-tubes.jpg",
-    description:
-      "Precision brass tubes for industrial and engineering applications.",
+    description: "Precision brass tubes in 63/37 Brass, 70/30 Brass, Admirality Brass and Aluminium Brass compositions, for industrial and engineering applications including heat exchangers and condenser tubing.",
   },
-
   {
     id: 13,
     name: "Brass Rods",
@@ -138,10 +114,8 @@ export const products = [
     form: "Bars",
     material: "Brass",
     image: "/images/products/brass-rods.jpg",
-    description:
-      "High-quality brass rods available in multiple grades and dimensions.",
+    description: "High-quality brass rods available up to 160mm diameter in multiple grades and compositions including 63/37 Brass and Admirality Brass, supplied as per Indian Standard (ISS), British Standard (BSS) and ASTM specifications.",
   },
-
   {
     id: 14,
     name: "Copper Tube & Sections",
@@ -149,10 +123,8 @@ export const products = [
     form: "Profiles",
     material: "Copper",
     image: "/images/products/copper-sections.jpg",
-    description:
-      "Copper sections, hollow profiles and engineered copper components.",
+    description: "Copper sections, hollow profiles and engineered copper components manufactured to customer-specific requirements, available in Copper, Brass and Bronze with Cupronickel options (95/5, 90/10, 70/30 alloy).",
   },
-
   {
     id: 15,
     name: "Copper Strips & Profiles",
@@ -160,10 +132,8 @@ export const products = [
     form: "Profiles",
     material: "Copper",
     image: "/images/products/copper-strips.jpg",
-    description:
-      "Copper strips and custom profiles manufactured to customer specifications.",
+    description: "Copper strips and custom profiles manufactured to customer specifications, including Phosphorous Bronze, Aluminium Bronze and Gun Metal sections, tested for chemical composition, hardness and dimensional accuracy.",
   },
-
   {
     id: 16,
     name: "Copper Wires",
@@ -171,10 +141,8 @@ export const products = [
     form: "Wire",
     material: "Copper",
     image: "/images/products/copper-wire.jpg",
-    description:
-      "Industrial copper wire products for electrical and engineering use.",
+    description: "Industrial copper wires up to 42 SWG in bright annealed condition, for electrical and engineering applications, manufactured from DHP/ETP/OFHC Copper with consistent conductivity and tensile properties.",
   },
-
   {
     id: 17,
     name: "Super Enameled Copper Wires",
@@ -182,7 +150,6 @@ export const products = [
     form: "Wire",
     material: "Copper",
     image: "/images/products/enameled-wire.jpg",
-    description:
-      "Super enameled copper winding wires available up to 42 SWG.",
+    description: "Super enameled copper winding wires available up to 42 SWG, used in motor windings, transformers and electrical coil applications, manufactured with high-grade insulation enamel for thermal and electrical performance.",
   },
 ];
