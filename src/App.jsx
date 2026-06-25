@@ -15,6 +15,7 @@ import FloatingButtons from './components/FloatingButtons';
 import AboutPage from './components/AboutPage';
 import ProductsPage from './pages/ProductsPage';
 import ProductDetailPage from './pages/ProductDetailPage';
+import BlogPage from './pages/BlogPage';
 
 function HomePage() {
   return (
@@ -34,16 +35,15 @@ export default function App() {
   return (
     <div className="bg-white min-h-screen flex flex-col">
       <Navbar />
-
       <div className="overflow-x-hidden flex-grow">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/products/:id" element={<ProductDetailPage />} />
+          <Route path="/blog" element={<BlogPage />} />
         </Routes>
       </div>
-
       <Footer />
       <FloatingButtons />
     </div>
