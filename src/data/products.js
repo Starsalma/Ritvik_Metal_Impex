@@ -322,4 +322,99 @@ export const products = [
       ]
     }
   },
+  {
+    id: 18,
+    name: "Stainless Steel Bends",
+    category: "Ferrous",
+    form: "Fittings",
+    material: "Stainless Steel",
+    image: "/images/products/ss-bends.jpg",
+    description: "Stainless Steel bends in 45°, 90° and 180° configurations in SS 304/304L, 316/316L, 321, 347 and Duplex grades. Available in long radius (1.5D) and short radius (1D) as per ASME B16.9. Sizes 1/2\" to 24\" NB, Schedule 5S to XXS, seamless and welded construction.",
+    blog: {
+      title: "Stainless Steel Bends: Types, Standards & Industrial Applications",
+      intro: "Stainless Steel bends are pipe fittings used to change the direction of flow in piping systems. Unlike elbows, bends can be manufactured to custom angles and radii, offering greater flexibility in piping layout design.",
+      sections: [
+        { heading: "Types of Bends", content: "Long Radius Bends (1.5D) — smooth flow transition, minimal pressure drop, most common. Short Radius Bends (1D) — compact piping layouts where space is limited. 3D/5D Bends — for pigging operations in oil & gas pipelines. Custom angle bends for specific layout requirements." },
+        { heading: "Manufacturing Standards", content: "Manufactured to ASME B16.9, MSS SP-43, and ASME B16.49. Wall thickness maintained per pipe schedule throughout the bend arc." },
+        { heading: "Material Grades", content: "SS 304/304L, 316/316L, 321 for general and chemical service. Duplex 2205 and Super Duplex 2507 for offshore environments. Nickel Alloys (Inconel, Monel) for extreme service." },
+        { heading: "Applications", content: "Process piping in refineries, offshore pipeline systems, power generation steam lines, pharmaceutical and food processing piping." },
+      ]
+    }
+  },
+  {
+    id: 19,
+    name: "Electro Polish Fittings",
+    category: "Ferrous",
+    form: "Fittings",
+    material: "Stainless Steel",
+    image: "/images/products/electro-polish.jpg",
+    description: "Electropolished stainless steel fittings with mirror-bright surface finish (Ra ≤ 0.5μm) for pharmaceutical, biotech, and semiconductor applications. Available in SS 316L with full compliance to ASME BPE, FDA 21 CFR, and cGMP requirements.",
+    blog: {
+      title: "Electropolished Fittings: Surface Finishing for Critical Applications",
+      intro: "Electropolishing removes the outer layer of metal from stainless steel surfaces, resulting in an ultra-smooth, highly corrosion-resistant finish — the gold standard for pharmaceutical and biotech applications.",
+      sections: [
+        { heading: "What is Electropolishing?", content: "Electropolishing removes 20-40 microns of surface material using electrical current in an electrolytic bath, eliminating peaks, burrs, and contaminants, resulting in surface Ra ≤ 0.5μm." },
+        { heading: "Benefits", content: "Enhanced corrosion resistance, ultra-smooth surface reduces bacterial adhesion, improved cleanability, bright reflective surface confirms cleanliness, removes heat tint from welding." },
+        { heading: "Standards & Compliance", content: "ASME BPE for pharmaceutical use. FDA 21 CFR 177.2600 for food contact. cGMP compliance. Surface finish verified by Ra measurement with documented test certificates." },
+        { heading: "Applications", content: "Pharmaceutical API equipment, biotechnology fermentation vessels, semiconductor chemical distribution, food & beverage hygienic equipment." },
+      ]
+    }
+  },
+  {
+    id: 20,
+    name: "Alloy Bars",
+    category: "Ferrous",
+    form: "Bars",
+    material: "Alloy Steel",
+    image: "/images/products/alloy-bars.jpg",
+    description: "Alloy Steel and High Performance Alloy bars in round, square and hexagonal profiles. Grades include ASTM A182 F5/F9/F11/F22/F91, Monel 400/K500, Inconel 600/625/718, Hastelloy C276/C22, Titanium Grade 2/5, and Nimonic alloys with Mill Test Certificates.",
+    blog: {
+      title: "Alloy Bars: High Performance Grades for Demanding Applications",
+      intro: "Alloy bars are engineered to perform where standard stainless steel falls short — in extreme temperatures, highly corrosive environments, or applications requiring superior strength and fatigue resistance.",
+      sections: [
+        { heading: "Alloy Steel Grades", content: "F5, F9 — high temperature creep resistance for power generation. F11/F22 — Cr-Mo alloys for pressure vessels and boilers. F91 — advanced Cr-Mo-V for supercritical power plants up to 650°C." },
+        { heading: "Nickel Alloy Grades", content: "Monel 400 — seawater and acid resistance. Inconel 600/625 — high-temperature oxidation resistance. Inconel 718 — aerospace superalloy. Hastelloy C276/C22 — severe chemical environments." },
+        { heading: "Titanium Bars", content: "Grade 2 — commercially pure, chemical processing. Grade 5 (Ti-6Al-4V) — high strength aerospace and medical grade with exceptional strength-to-weight ratio." },
+        { heading: "Testing & Certification", content: "Full chemical analysis, mechanical testing, hardness, impact testing. PMI by XRF on request. Full material traceability for aerospace, defense, and nuclear sectors." },
+      ]
+    }
+  },
+  {
+    id: 21,
+    name: "Stainless Steel Flats",
+    category: "Ferrous",
+    form: "Bars",
+    material: "Stainless Steel",
+    image: "/images/products/ss-flats.jpg",
+    description: "Stainless Steel flat bars in SS 304/304L, 316/316L, 321, 410, 430 and Duplex grades. Width 10mm to 200mm, thickness 3mm to 50mm, in hot rolled, cold drawn and polished conditions per ASTM A276/A479 and EN 10058 standards.",
+    blog: {
+      title: "Stainless Steel Flat Bars: Grades, Sizes & Engineering Applications",
+      intro: "Stainless Steel flat bars are rectangular cross-section long products used in fabrication, architectural, and structural engineering for welded frames, supports, brackets, and decorative elements.",
+      sections: [
+        { heading: "Grades & Properties", content: "SS 304/304L — general fabrication. SS 316/316L — marine and chemical resistance. SS 321 — elevated temperature service. SS 410 — wear-resistant applications. Duplex 2205 — high strength structural use." },
+        { heading: "Size Range", content: "Width 10mm to 200mm, thickness 3mm to 50mm. Standard lengths 3-6 meters, custom cut available. Tolerances to EN 10058 Class A or B." },
+        { heading: "Surface Conditions", content: "Hot rolled (HL), cold drawn (bright), or polished (No.4/No.8). Polished flats for architectural and decorative applications where aesthetics matter." },
+        { heading: "Applications", content: "Fabricated frames, conveyor components, food processing guards, architectural cladding, marine hardware, chemical plant supports, handrail systems." },
+      ]
+    }
+  },
+  {
+    id: 22,
+    name: "High Performance Alloys",
+    category: "Ferrous",
+    form: "Bars",
+    material: "Nickel Alloys",
+    image: "/images/products/high-performance-alloys.jpg",
+    description: "High Performance Nickel Alloys including Monel (400/K500), Inconel (600/625/718/825), Hastelloy (C276/C22/B2), Titanium (Gr 2/5), Nimonic (75/90), and Incoloy (800/825) in all product forms with full material certification.",
+    blog: {
+      title: "High Performance Nickel Alloys: Selection Guide for Severe Service",
+      intro: "High performance alloys are engineered for environments that destroy standard stainless steels — extreme temperatures, highly corrosive acids, high pressure, or combinations of all three.",
+      sections: [
+        { heading: "Monel Alloys (400/K500)", content: "Monel 400 — 67% nickel, 30% copper, excellent seawater and HF acid resistance. Monel K500 — precipitation hardened, 3x strength of Monel 400 for pump shafts and valve stems." },
+        { heading: "Inconel Alloys (600/625/718)", content: "Inconel 600 — oxidation resistance to 1175°C for furnace components. Inconel 625 — aerospace and offshore fatigue resistance. Inconel 718 — most used superalloy in jet engines and gas turbines." },
+        { heading: "Hastelloy Alloys", content: "C276 — resists wet chlorine, ferric chloride, oxidizing/reducing acids. C22 — superior oxidizing environment resistance. B2 — specifically for hydrochloric acid at all concentrations and temperatures." },
+        { heading: "Applications", content: "Offshore oil & gas, chemical processing reactors, aerospace turbine blades, nuclear reactor internals, pharmaceutical high-purity equipment, marine seawater systems." },
+      ]
+    }
+  },
 ];

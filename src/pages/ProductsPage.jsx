@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { products } from "../data/products";
+import AnimatedSection from "../components/AnimatedSection";
 
 export default function ProductsPage() {
   const navigate = useNavigate();
@@ -22,28 +23,25 @@ export default function ProductsPage() {
     <section className="bg-white min-h-screen py-20 px-6 lg:px-16">
       <div className="max-w-[1440px] mx-auto">
 
-        {/* Header */}
-        <div className="text-center mb-16">
+        <AnimatedSection animation="fadeUp" className="text-center mb-16">
           <span className="text-[#E5A93C] font-bold tracking-[0.25em] uppercase text-sm">Industrial Catalogue</span>
           <h1 className="text-5xl lg:text-6xl font-black text-[#0A1828] mt-4 uppercase">Our Products</h1>
           <div className="w-20 h-[2px] bg-[#E5A93C] mx-auto mt-6" />
           <p className="max-w-3xl mx-auto text-gray-500 mt-8">Explore our complete range of ferrous and non-ferrous industrial metal products.</p>
-        </div>
+        </AnimatedSection>
 
-        {/* Search */}
-        <div className="mb-10">
+        <AnimatedSection animation="fadeUp" delay={100} className="mb-10">
           <input type="text" placeholder="Search products..." value={search} onChange={(e) => setSearch(e.target.value)}
-            className="w-full border border-gray-200 rounded-full px-6 py-4 outline-none focus:border-[#E5A93C]" />
-        </div>
+            className="w-full border border-gray-200 rounded-full px-6 py-4 outline-none focus:border-[#E5A93C] transition-colors" />
+        </AnimatedSection>
 
-        {/* Filters */}
-        <div className="space-y-6 mb-16">
+        <AnimatedSection animation="fadeUp" delay={150} className="space-y-6 mb-16">
           <div>
             <p className="font-bold text-[#0A1828] mb-3 uppercase text-sm tracking-widest">Material</p>
             <div className="flex flex-wrap gap-3">
               {materials.map((material) => (
                 <button key={material} onClick={() => setMaterialFilter(material)}
-                  className={`px-5 py-3 rounded-full text-sm font-bold transition-all ${materialFilter === material ? "bg-[#0A1828] text-white" : "bg-gray-100 hover:bg-gray-200"}`}>
+                  className={`px-5 py-3 rounded-full text-sm font-bold transition-all duration-200 ${materialFilter === material ? "bg-[#0A1828] text-white" : "bg-gray-100 hover:bg-gray-200"}`}>
                   {material}
                 </button>
               ))}
@@ -54,37 +52,36 @@ export default function ProductsPage() {
             <div className="flex flex-wrap gap-3">
               {forms.map((form) => (
                 <button key={form} onClick={() => setFormFilter(form)}
-                  className={`px-5 py-3 rounded-full text-sm font-bold transition-all ${formFilter === form ? "bg-[#E5A93C] text-white" : "bg-gray-100 hover:bg-gray-200"}`}>
+                  className={`px-5 py-3 rounded-full text-sm font-bold transition-all duration-200 ${formFilter === form ? "bg-[#E5A93C] text-white" : "bg-gray-100 hover:bg-gray-200"}`}>
                   {form}
                 </button>
               ))}
             </div>
           </div>
-        </div>
+        </AnimatedSection>
 
-        {/* Product Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
-          {filteredProducts.map((product) => (
-            <div key={product.id} onClick={() => navigate(`/products/${product.id}`)}
-              className="group cursor-pointer bg-white rounded-tl-[50px] rounded-br-[50px] overflow-hidden shadow-md hover:shadow-2xl border border-gray-100 transition-all duration-500">
-              <div className="h-[260px] overflow-hidden bg-gray-100">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  onError={(e) => { e.target.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center"><span class="text-gray-300 uppercase tracking-widest text-sm">Product Image</span></div>'; }}
-                />
-              </div>
-              <div className="p-6">
-                <span className="text-[#E5A93C] text-xs font-black tracking-[0.2em] uppercase">{product.material}</span>
-                <h3 className="text-xl font-black text-[#0A1828] uppercase mt-3">{product.name}</h3>
-                <p className="text-gray-500 mt-3 text-sm">{product.description}</p>
-                <div className="flex items-center gap-3 mt-6">
-                  <span className="font-black uppercase text-xs tracking-widest">View Details</span>
-                  <span className="text-[#E5A93C] group-hover:translate-x-1 transition-transform">→</span>
+          {filteredProducts.map((product, index) => (
+            <AnimatedSection key={product.id} animation="scaleUp" delay={index * 60}>
+              <div
+                onClick={() => navigate(`/products/${product.id}`)}
+                className="group cursor-pointer bg-white rounded-tl-[50px] rounded-br-[50px] overflow-hidden shadow-md hover:shadow-2xl border border-gray-100 transition-shadow duration-500 h-full">
+                <div className="h-[260px] overflow-hidden bg-gray-100">
+                  <img src={product.image} alt={product.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    onError={(e) => { e.target.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center"><span class="text-gray-300 uppercase tracking-widest text-sm">Product Image</span></div>'; }} />
+                </div>
+                <div className="p-6">
+                  <span className="text-[#E5A93C] text-xs font-black tracking-[0.2em] uppercase">{product.material}</span>
+                  <h3 className="text-xl font-black text-[#0A1828] uppercase mt-3">{product.name}</h3>
+                  <p className="text-gray-500 mt-3 text-sm line-clamp-2">{product.description}</p>
+                  <div className="flex items-center gap-3 mt-6">
+                    <span className="font-black uppercase text-xs tracking-widest">View Details</span>
+                    <span className="text-[#E5A93C] group-hover:translate-x-1 transition-transform duration-200">→</span>
+                  </div>
                 </div>
               </div>
-            </div>
+            </AnimatedSection>
           ))}
         </div>
 
