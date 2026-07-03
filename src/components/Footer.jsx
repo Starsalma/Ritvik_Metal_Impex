@@ -37,7 +37,7 @@ export default function Footer() {
               <svg className="w-5 h-5 text-[#E5A93C] shrink-0" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M6.62 10.79a15.15 15.15 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-11.05 0-20-8.95-20-20 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.24.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
               </svg>
-              <span className="text-gray-200 font-bold text-[14px] tracking-wide">022 66394895</span>
+              <span className="text-gray-200 font-bold text-[14px] tracking-wide">+91 7073895597</span>
             </div>
 
             {/* Email */}
@@ -100,7 +100,7 @@ export default function Footer() {
               <div className="flex">
                 <span className="w-24 text-gray-400 shrink-0">Tel</span>
                 <span className="px-2 text-gray-400">:</span>
-                <span className="text-gray-700 font-medium">022 66394895</span>
+                <span className="text-gray-700 font-medium">+91 7073895597</span>
               </div>
               <div className="flex flex-wrap">
                 <span className="w-24 text-gray-400 shrink-0">Email ID</span>
