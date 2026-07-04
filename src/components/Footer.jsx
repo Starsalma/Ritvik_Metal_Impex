@@ -48,6 +48,7 @@ export default function Footer() {
               <a href="mailto:sales@ritvikmetal.com" className="text-gray-200 font-bold text-[14px] tracking-wide hover:text-[#E5A93C] transition-colors break-all">
                 sales@ritvikmetal.com
               </a>
+              <a href="mailto:salesritvikmetal@gmail.com" className="text-gray-200 font-bold text-[14px] tracking-wide hover:text-[#E5A93C] transition-colors break-all">salesritvikmetal@gmail.com</a>
             </div>
 
             {/* Website */}
@@ -105,7 +106,7 @@ export default function Footer() {
               <div className="flex flex-wrap">
                 <span className="w-24 text-gray-400 shrink-0">Email ID</span>
                 <span className="px-2 text-gray-400 shrink-0">:</span>
-                <span className="text-gray-700 font-medium break-all">sales@ritvikmetal.com</span>
+                <span className="text-gray-700 font-medium break-all">sales@ritvikmetal.com | salesritvikmetal@gmail.com</span>
               </div>
               <div className="flex">
                 <span className="w-24 text-gray-400 shrink-0">Visit Us</span>

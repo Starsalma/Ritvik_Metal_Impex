@@ -129,7 +129,7 @@ export default function Hero() {
             <div>
               <h4 className="text-[11px] font-black tracking-[0.2em] text-[#E5A93C] uppercase mb-1">Get In Touch</h4>
               <p className="text-white text-[14px] font-bold">+91 7073895597</p>
-              <p className="text-gray-300 text-[12px] mt-1">sales@ritvikmetal.com</p>
+              <p className="text-gray-300 text-[12px] mt-1">sales@ritvikmetal.com | salesritvikmetal@gmail.com</p>
             </div>
             <div>
               <h4 className="text-[11px] font-black tracking-[0.2em] text-[#E5A93C] uppercase mb-1">What We Supply</h4>
