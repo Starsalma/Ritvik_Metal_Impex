@@ -49,6 +49,7 @@ export default function Footer() {
                 sales@ritvikmetal.com
               </a>
               <a href="mailto:salesritvikmetal@gmail.com" className="text-gray-200 font-bold text-[14px] tracking-wide hover:text-[#E5A93C] transition-colors break-all">salesritvikmetal@gmail.com</a>
+              <a href="mailto:suresh.prajapat@ritvikmetalimpex.com" className="text-gray-200 font-bold text-[14px] tracking-wide hover:text-[#E5A93C] transition-colors break-all">suresh.prajapat@ritvikmetalimpex.com</a>
             </div>
 
             {/* Website */}
