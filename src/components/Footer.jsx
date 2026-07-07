@@ -45,8 +45,8 @@ export default function Footer() {
               <svg className="w-5 h-5 text-[#E5A93C] shrink-0" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
               </svg>
-              <a href="mailto:sales@ritvikmetal.com" className="text-gray-200 font-bold text-[14px] tracking-wide hover:text-[#E5A93C] transition-colors break-all">
-                sales@ritvikmetal.com
+              <a href="mailto:suresh.prajapat@ritvikmetalimpex.com" className="text-gray-200 font-bold text-[14px] tracking-wide hover:text-[#E5A93C] transition-colors break-all">
+                suresh.prajapat@ritvikmetalimpex.com
               </a>
               <a href="mailto:salesritvikmetal@gmail.com" className="text-gray-200 font-bold text-[14px] tracking-wide hover:text-[#E5A93C] transition-colors break-all">salesritvikmetal@gmail.com</a>
               <a href="mailto:suresh.prajapat@ritvikmetalimpex.com" className="text-gray-200 font-bold text-[14px] tracking-wide hover:text-[#E5A93C] transition-colors break-all">suresh.prajapat@ritvikmetalimpex.com</a>
@@ -58,8 +58,8 @@ export default function Footer() {
                 <circle cx="12" cy="12" r="10" />
                 <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10zM2 12h20" />
               </svg>
-              <a href="https://www.ritvikmetal.in" target="_blank" rel="noreferrer" className="text-gray-200 font-bold text-[14px] tracking-wide hover:text-[#E5A93C] transition-colors">
-                www.ritvikmetal.in
+              <a href="https://www.ritvikmetalimpex.com" target="_blank" rel="noreferrer" className="text-gray-200 font-bold text-[14px] tracking-wide hover:text-[#E5A93C] transition-colors">
+                www.ritvikmetalimpex.com
               </a>
             </div>
           </div>
@@ -107,12 +107,12 @@ export default function Footer() {
               <div className="flex flex-wrap">
                 <span className="w-24 text-gray-400 shrink-0">Email ID</span>
                 <span className="px-2 text-gray-400 shrink-0">:</span>
-                <span className="text-gray-700 font-medium break-all">sales@ritvikmetal.com | salesritvikmetal@gmail.com</span>
+                <span className="text-gray-700 font-medium break-all">suresh.prajapat@ritvikmetalimpex.com | salesritvikmetal@gmail.com</span>
               </div>
               <div className="flex">
                 <span className="w-24 text-gray-400 shrink-0">Visit Us</span>
                 <span className="px-2 text-gray-400">:</span>
-                <span className="text-[#041125] font-semibold underline decoration-gray-300">www.ritvikmetal.in</span>
+                <span className="text-[#041125] font-semibold underline decoration-gray-300">www.ritvikmetalimpex.com</span>
               </div>
             </div>
 

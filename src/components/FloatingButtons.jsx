@@ -18,7 +18,7 @@ export default function FloatingButtons() {
 
       {/* Email */}
       <a
-        href="mailto:sales@ritvikmetal.com"
+        href="mailto:suresh.prajapat@ritvikmetalimpex.com"
         className="w-14 h-14 bg-[#E5A93C] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-200"
         aria-label="Send Email"
       >

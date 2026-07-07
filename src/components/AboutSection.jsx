@@ -162,7 +162,7 @@ export default function About() {
           <div className="w-[85%] h-[92%] rounded-tl-[60px] rounded-br-[60px] overflow-hidden shadow-lg bg-gray-100 relative z-10 ml-0 mr-auto mb-4">
             <img
               ref={imgElRef}
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200"
+              src="/images/about.jpg"
               alt="Industrial Corporate Architecture"
               className="parallax-img w-full h-full object-cover object-center scale-[1.08]"
             />
