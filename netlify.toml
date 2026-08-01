@@ -8,7 +8,23 @@
   [headers.values]
     Content-Type = "application/javascript"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml"
+    Cache-Control = "public, max-age=3600"
+
+# Redirects intentionally live in the generated public/_redirects file
+# (see scripts/generate-sitemap.mjs). Netlify processes netlify.toml rules
+# before _redirects, so a catch-all here would shadow the legacy
+# /products/<id> → /products/<slug> 301s and the prerendered per-route HTML.

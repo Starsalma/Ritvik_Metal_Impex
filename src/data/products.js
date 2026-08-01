@@ -1,6 +1,7 @@
 export const products = [
   {
     id: 1,
+    slug: "stainless-steel-pipes-and-tubes",
     name: "Pipes & Tubes",
     category: "Ferrous",
     form: "Pipes",
@@ -20,6 +21,7 @@ export const products = [
   },
   {
     id: 2,
+    slug: "buttweld-pipe-fittings",
     name: "Buttweld Fittings",
     category: "Ferrous",
     form: "Fittings",
@@ -39,6 +41,7 @@ export const products = [
   },
   {
     id: 3,
+    slug: "forged-socketweld-screwed-fittings",
     name: "Forged Socketweld & Screwed Fittings",
     category: "Ferrous",
     form: "Fittings",
@@ -58,6 +61,7 @@ export const products = [
   },
   {
     id: 4,
+    slug: "industrial-flanges",
     name: "Flanges",
     category: "Ferrous",
     form: "Flanges",
@@ -77,6 +81,7 @@ export const products = [
   },
   {
     id: 5,
+    slug: "ferrule-fittings",
     name: "Ferrule Fittings",
     category: "Ferrous",
     form: "Fittings",
@@ -96,6 +101,7 @@ export const products = [
   },
   {
     id: 6,
+    slug: "stainless-steel-sheets-plates-coils",
     name: "Sheets, Plates & Coils",
     category: "Ferrous",
     form: "Sheets",
@@ -115,6 +121,7 @@ export const products = [
   },
   {
     id: 7,
+    slug: "industrial-fasteners-nut-bolts",
     name: "Fasteners & Nut Bolts",
     category: "Ferrous",
     form: "Fasteners",
@@ -134,6 +141,7 @@ export const products = [
   },
   {
     id: 8,
+    slug: "industrial-valves",
     name: "Valves",
     category: "Ferrous",
     form: "Valves",
@@ -153,6 +161,7 @@ export const products = [
   },
   {
     id: 9,
+    slug: "stainless-steel-round-square-hex-bars",
     name: "Round, Square & Hex Bars",
     category: "Ferrous",
     form: "Bars",
@@ -172,6 +181,7 @@ export const products = [
   },
   {
     id: 10,
+    slug: "dairy-sanitary-fittings",
     name: "Dairy Fittings",
     category: "Ferrous",
     form: "Fittings",
@@ -191,6 +201,7 @@ export const products = [
   },
   {
     id: 11,
+    slug: "copper-tubes",
     name: "Copper Tubes",
     category: "Non-Ferrous",
     form: "Tubes",
@@ -210,6 +221,7 @@ export const products = [
   },
   {
     id: 12,
+    slug: "brass-tubes",
     name: "Brass Tubes",
     category: "Non-Ferrous",
     form: "Tubes",
@@ -229,6 +241,7 @@ export const products = [
   },
   {
     id: 13,
+    slug: "brass-rods",
     name: "Brass Rods",
     category: "Non-Ferrous",
     form: "Bars",
@@ -248,6 +261,7 @@ export const products = [
   },
   {
     id: 14,
+    slug: "copper-sections-and-profiles",
     name: "Copper Tube & Sections",
     category: "Non-Ferrous",
     form: "Profiles",
@@ -267,6 +281,7 @@ export const products = [
   },
   {
     id: 15,
+    slug: "copper-strips-and-bronze-profiles",
     name: "Copper Strips & Profiles",
     category: "Non-Ferrous",
     form: "Profiles",
@@ -286,6 +301,7 @@ export const products = [
   },
   {
     id: 16,
+    slug: "copper-wires",
     name: "Copper Wires",
     category: "Non-Ferrous",
     form: "Wire",
@@ -305,6 +321,7 @@ export const products = [
   },
   {
     id: 17,
+    slug: "super-enameled-copper-winding-wire",
     name: "Super Enameled Copper Wires",
     category: "Non-Ferrous",
     form: "Wire",
@@ -324,6 +341,7 @@ export const products = [
   },
   {
     id: 18,
+    slug: "stainless-steel-bends",
     name: "Stainless Steel Bends",
     category: "Ferrous",
     form: "Fittings",
@@ -343,6 +361,7 @@ export const products = [
   },
   {
     id: 19,
+    slug: "electropolished-fittings",
     name: "Electro Polish Fittings",
     category: "Ferrous",
     form: "Fittings",
@@ -362,6 +381,7 @@ export const products = [
   },
   {
     id: 20,
+    slug: "alloy-steel-bars",
     name: "Alloy Bars",
     category: "Ferrous",
     form: "Bars",
@@ -381,6 +401,7 @@ export const products = [
   },
   {
     id: 21,
+    slug: "stainless-steel-flat-bars",
     name: "Stainless Steel Flats",
     category: "Ferrous",
     form: "Bars",
@@ -400,6 +421,7 @@ export const products = [
   },
   {
     id: 22,
+    slug: "high-performance-nickel-alloys",
     name: "High Performance Alloys",
     category: "Ferrous",
     form: "Bars",

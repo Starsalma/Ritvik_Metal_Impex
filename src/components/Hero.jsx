@@ -57,7 +57,12 @@ export default function Hero() {
       {/* Background Carousel */}
       <div className="absolute inset-0 z-0">
         {heroImages.map((src, i) => (
-          <img key={src} src={src} alt="Ritvik Metal Impex"
+          <img key={src} src={src}
+            alt={i === 0 ? 'Stainless steel pipes, fittings and flanges stocked by Ritvik Metal Impex in Mumbai' : ''}
+            aria-hidden={i === 0 ? undefined : 'true'}
+            loading={i === 0 ? 'eager' : 'lazy'}
+            fetchPriority={i === 0 ? 'high' : undefined}
+            decoding={i === 0 ? undefined : 'async'}
             className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1500"
             style={{ opacity: i === activeSlide ? 1 : 0 }} />
         ))}
@@ -89,15 +94,20 @@ export default function Hero() {
             <div className="h-px w-10 bg-[#E5A93C]" />
           </div>
 
-          {/* Headline with typing */}
+          {/* Headline — the H1 text stays static and keyword-bearing so search
+              engines and screen readers always get the full phrase; the typing
+              animation runs below it as decoration. */}
           <h1 className="text-[36px] sm:text-[50px] lg:text-[64px] font-[900] tracking-tight text-white leading-[1.06] uppercase">
-            YOUR RELIABLE<br />
-            SOURCE FOR<br />
-            <span className="text-[#E5A93C] inline-flex items-center gap-1">
-              {displayText}
-              <span className="inline-block w-[3px] h-[0.85em] bg-[#E5A93C] ml-1 animate-pulse" />
-            </span>
+            STAINLESS STEEL &amp;<br />
+            NON-FERROUS METAL<br />
+            SUPPLIER IN MUMBAI
           </h1>
+
+          <p aria-hidden="true"
+            className="text-[24px] sm:text-[32px] lg:text-[40px] font-[900] tracking-tight leading-[1.06] uppercase text-[#E5A93C] mt-3 inline-flex items-center gap-1">
+            {displayText}
+            <span className="inline-block w-[3px] h-[0.85em] bg-[#E5A93C] ml-1 animate-pulse" />
+          </p>
 
           <div className="w-12 h-[2px] bg-[#E5A93C]/60 mt-7 mb-6" />
 

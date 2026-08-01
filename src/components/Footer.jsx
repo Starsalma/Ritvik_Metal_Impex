@@ -1,4 +1,30 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { products } from '../data/products';
+import { articles } from '../data/articles';
+import { site } from '../data/siteConfig';
+
+const PRIMARY_LINKS = [
+  { label: 'HOME', to: '/' },
+  { label: 'ABOUT US', to: '/about' },
+  { label: 'PRODUCTS', to: '/products' },
+  { label: 'KNOWLEDGE HUB', to: '/blog' },
+];
+
+// A curated set of high-intent product pages surfaced site-wide, so every page
+// links into the catalogue rather than leaving those URLs orphaned.
+const FOOTER_PRODUCT_SLUGS = [
+  'stainless-steel-pipes-and-tubes',
+  'buttweld-pipe-fittings',
+  'industrial-flanges',
+  'forged-socketweld-screwed-fittings',
+  'stainless-steel-round-square-hex-bars',
+  'stainless-steel-sheets-plates-coils',
+  'copper-tubes',
+  'brass-rods',
+  'super-enameled-copper-winding-wire',
+  'high-performance-nickel-alloys',
+];
 
 const footerStyles = `
   @media (min-width: 1024px) {
@@ -49,7 +75,6 @@ export default function Footer() {
                 suresh.prajapat@ritvikmetalimpex.com
               </a>
               <a href="mailto:salesritvikmetal@gmail.com" className="text-gray-200 font-bold text-[14px] tracking-wide hover:text-[#E5A93C] transition-colors break-all">salesritvikmetal@gmail.com</a>
-              <a href="mailto:suresh.prajapat@ritvikmetalimpex.com" className="text-gray-200 font-bold text-[14px] tracking-wide hover:text-[#E5A93C] transition-colors break-all">suresh.prajapat@ritvikmetalimpex.com</a>
             </div>
 
             {/* Website */}
@@ -158,6 +183,79 @@ export default function Footer() {
       </div>
 
       {/* ========================================================================
+          TIER 1B: SITE-WIDE INTERNAL LINKS (products, guides, service areas)
+         ========================================================================
+      */}
+      <div className="w-full bg-[#030914] px-4 sm:px-8 lg:px-16 py-12 border-t border-gray-800/60">
+        <div className="max-w-[1240px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+          <div>
+            <h3 className="text-[12px] font-black tracking-[0.2em] uppercase text-white mb-5">
+              Popular <span className="text-[#E5A93C]">Products</span>
+            </h3>
+            <ul className="space-y-2.5">
+              {FOOTER_PRODUCT_SLUGS.slice(0, 5).map((slug) => {
+                const p = products.find((item) => item.slug === slug);
+                return p ? (
+                  <li key={slug}>
+                    <Link to={`/products/${p.slug}`} className="text-[12px] text-gray-400 hover:text-[#E5A93C] transition-colors">
+                      {p.material} {p.name}
+                    </Link>
+                  </li>
+                ) : null;
+              })}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-[12px] font-black tracking-[0.2em] uppercase text-white mb-5">
+              Non-Ferrous <span className="text-[#E5A93C]">Range</span>
+            </h3>
+            <ul className="space-y-2.5">
+              {FOOTER_PRODUCT_SLUGS.slice(5).map((slug) => {
+                const p = products.find((item) => item.slug === slug);
+                return p ? (
+                  <li key={slug}>
+                    <Link to={`/products/${p.slug}`} className="text-[12px] text-gray-400 hover:text-[#E5A93C] transition-colors">
+                      {p.material} {p.name}
+                    </Link>
+                  </li>
+                ) : null;
+              })}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-[12px] font-black tracking-[0.2em] uppercase text-white mb-5">
+              Buying <span className="text-[#E5A93C]">Guides</span>
+            </h3>
+            <ul className="space-y-2.5">
+              {articles.slice(0, 5).map((a) => (
+                <li key={a.slug}>
+                  <Link to={`/blog/${a.slug}`} className="text-[12px] text-gray-400 hover:text-[#E5A93C] transition-colors leading-snug block">
+                    {a.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-[12px] font-black tracking-[0.2em] uppercase text-white mb-5">
+              Areas <span className="text-[#E5A93C]">We Serve</span>
+            </h3>
+            <p className="text-[12px] text-gray-400 leading-relaxed">
+              Supplying across {site.areasServed.join(', ')} and other industrial centres in India.
+            </p>
+            <p className="text-[12px] text-gray-400 leading-relaxed mt-3">
+              Export enquiries welcome from {site.exportMarkets.slice(0, 6).join(', ')} and beyond.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      {/* ========================================================================
           TIER 2: MIDDLE NAVIGATION BAR
          ========================================================================
       */}
@@ -175,36 +273,38 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Navigation Hyperlinks */}
-          <nav className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-[11px] sm:text-[12px] font-bold tracking-widest text-gray-300">
-            {['HOME', 'ABOUT US', 'PRODUCTS', 'INDUSTRIES', 'SERVICES', 'CONTACT US'].map((link) => (
-              <a
-                key={link}
-                href={`#${link.toLowerCase().replace(' ', '-')}`}
-                className="hover:text-[#E5A93C] transition-colors duration-150 cursor-pointer"
+          {/* Navigation Hyperlinks — real routes, so crawlers can follow them */}
+          <nav aria-label="Footer" className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-[11px] sm:text-[12px] font-bold tracking-widest text-gray-300">
+            {PRIMARY_LINKS.map(({ label, to }) => (
+              <Link
+                key={label}
+                to={to}
+                className="hover:text-[#E5A93C] transition-colors duration-150"
               >
-                {link}
-              </a>
+                {label}
+              </Link>
             ))}
+            <a href="#contact-us" className="hover:text-[#E5A93C] transition-colors duration-150">
+              CONTACT US
+            </a>
           </nav>
 
-          {/* Social Communities */}
+          {/* Social Communities — rendered without links until profiles exist */}
           <div className="flex items-center gap-2.5">
             {[
               { icon: "M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z", label: "Facebook" },
               { icon: "M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z", label: "LinkedIn" },
               { icon: "M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z", label: "Twitter" }
-            ].map((soc, idx) => (
-              <a
-                key={idx}
-                href="#"
+            ].map((soc) => (
+              <span
+                key={soc.label}
                 aria-label={soc.label}
-                className="w-8 h-8 rounded-full border border-gray-700 hover:border-[#E5A93C] flex items-center justify-center text-gray-400 hover:text-[#E5A93C] bg-black/20 hover:bg-[#E5A93C]/5 transition-all duration-200"
+                className="w-8 h-8 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 bg-black/20"
               >
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
                   <path d={soc.icon} />
                 </svg>
-              </a>
+              </span>
             ))}
           </div>
 
@@ -217,7 +317,7 @@ export default function Footer() {
       */}
       <div className="w-full bg-[#020710] px-4 sm:px-8 lg:px-16 py-3.5 text-[11px] font-medium text-gray-500 tracking-wide">
         <div className="max-w-[1240px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
-          <p>© 2025 Ritvik Metal Impex. All Rights Reserved.</p>
+          <p>© {new Date().getFullYear()} {site.name}. All Rights Reserved. GSTIN {site.gstin}.</p>
           <p className="flex items-center gap-1">
             Designed with <span className="text-red-600">❤️</span> for quality and trust.
           </p>
