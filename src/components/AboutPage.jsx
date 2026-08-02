@@ -1,4 +1,6 @@
 import React, { useEffect, useRef } from 'react';
+import Seo from './Seo';
+import { site, absoluteUrl, breadcrumbSchema, organizationSchema } from '../data/site';
 
 function useReveal(threshold = 0.12) {
   const ref = useRef(null);
@@ -120,11 +122,32 @@ export default function AboutPage() {
   const valHR    = useReveal(); const valR   = useReveal(.08);
   const ctaR     = useReveal(.15);
 
+  const aboutSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: `About ${site.name}`,
+    url: absoluteUrl('/about'),
+    inLanguage: site.language,
+    isPartOf: { '@id': `${site.url}/#website` },
+    about: { '@id': `${site.url}/#organization` },
+  };
+
   return (
     <div className="w-full bg-white overflow-x-hidden font-sans">
+      <Seo
+        title="About Us — Stainless Steel & Industrial Metal Supplier in Mumbai"
+        description="Ritvik Metal Impex is a Mumbai-based supplier, stockist and exporter of stainless steel, carbon steel, alloy steel, duplex, nickel alloy, copper and brass products. Learn about our quality systems, third-party inspection support and the industries we serve."
+        keywords="about Ritvik Metal Impex, stainless steel supplier Mumbai, metal stockist India, industrial metal exporter India, steel supplier company Maharashtra"
+        path="/about"
+        image="/images/about.jpg"
+        schema={[aboutSchema, breadcrumbSchema([
+          { name: 'Home', path: '/' },
+          { name: 'About Us', path: '/about' },
+        ]), organizationSchema()]}
+      />
       <style>{css}</style>
 
-      
+
 
       {/* ══════════ WHO WE ARE ══════════ */}
       <section className="w-full bg-white px-6 lg:px-16 py-24">
@@ -134,8 +157,11 @@ export default function AboutPage() {
           <div ref={whoImgR} className="ab-left relative h-[420px] sm:h-[500px] img-zoom">
             <div className="w-[82%] h-[88%] overflow-hidden shadow-2xl relative z-10"
               style={{clipPath:'polygon(0 0,100% 0,100% 88%,88% 100%,0 100%)'}}>
-              <img src="https://images.unsplash.com/photo-1565793979231-5a39d2ff4ce1?auto=format&fit=crop&q=80&w=900"
-                alt="" className="w-full h-full object-cover" />
+              <img src="/images/about.jpg"
+                alt="Ritvik Metal Impex — stainless steel and industrial metal stockyard, Mumbai"
+                loading="lazy"
+                className="w-full h-full object-cover"
+                onError={(e) => { e.target.style.display = 'none'; }} />
             </div>
             {/* accent box */}
             <div className="absolute right-0 bottom-4 w-[46%] bg-[#0A1828] p-6 z-20 shadow-xl"
@@ -154,9 +180,10 @@ export default function AboutPage() {
               <span className="text-[10px] font-black tracking-[0.3em] text-[#E5A93C] uppercase">Who We Are</span>
             </div>
             <div ref={whoHR} className="ab-h mt-3">
-              <h2 className="text-[30px] sm:text-[40px] lg:text-[50px] font-black text-[#0A1828] uppercase tracking-tight leading-[1.08]">
+              <h1 className="text-[30px] sm:text-[40px] lg:text-[50px] font-black text-[#0A1828] uppercase tracking-tight leading-[1.08]">
                 ABOUT<br />RITVIK METAL IMPEX
-              </h2>
+                <span className="sr-only"> — industrial metal supplier and stockist in Mumbai, India</span>
+              </h1>
             </div>
             <div ref={whoTxtR} className="ab-up mt-1">
               <div className="ab-line w-12 h-[2px] bg-[#E5A93C]/50 mt-5 mb-6" />

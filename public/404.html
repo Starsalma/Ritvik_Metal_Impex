@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en-IN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ritvik Metal Impex</title>
+    <!--
+      GitHub Pages has no server-side rewrite, so a direct hit on a deep link
+      (e.g. /products/4 or /blog/stainless-steel-304-vs-316) is served this file.
+      We stash the requested path in sessionStorage and hand control to the SPA,
+      which restores the URL before React Router reads it. Netlify uses
+      public/_redirects instead and never reaches this page.
+    -->
+    <script>
+      sessionStorage.setItem('rmi:redirect', location.pathname + location.search + location.hash);
+      location.replace(location.origin + '/');
+    </script>
+    <meta name="robots" content="noindex" />
+  </head>
+  <body>
+    <p>Redirecting…</p>
+  </body>
+</html>

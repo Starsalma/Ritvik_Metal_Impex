@@ -7,6 +7,14 @@ const heroImages = [
   '/images/hero4.jpeg',
 ];
 
+/* Descriptive alt text — one per hero slide, in the same order as heroImages. */
+const heroAlts = [
+  'Stainless steel pipes and tubes stocked by Ritvik Metal Impex, Mumbai',
+  'Industrial pipe fittings and flanges supplied across India',
+  'Stainless steel sheets, plates and coils in the Ritvik Metal Impex warehouse',
+  'Copper and brass tubes, rods and profiles for industrial applications',
+];
+
 const typingTexts = [
   'QUALITY METALS',
   'PREMIUM STEEL',
@@ -57,7 +65,11 @@ export default function Hero() {
       {/* Background Carousel */}
       <div className="absolute inset-0 z-0">
         {heroImages.map((src, i) => (
-          <img key={src} src={src} alt="Ritvik Metal Impex"
+          <img key={src} src={src}
+            alt={heroAlts[i] || 'Ritvik Metal Impex industrial metal products'}
+            fetchPriority={i === 0 ? 'high' : 'low'}
+            loading={i === 0 ? 'eager' : 'lazy'}
+            decoding="async"
             className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1500"
             style={{ opacity: i === activeSlide ? 1 : 0 }} />
         ))}
@@ -96,6 +108,10 @@ export default function Hero() {
             <span className="text-[#E5A93C] inline-flex items-center gap-1">
               {displayText}
               <span className="inline-block w-[3px] h-[0.85em] bg-[#E5A93C] ml-1 animate-pulse" />
+            </span>
+            <span className="sr-only">
+              — Stainless Steel, Carbon Steel, Duplex, Nickel Alloy, Copper and Brass supplier and
+              stockist in Mumbai, India
             </span>
           </h1>
 

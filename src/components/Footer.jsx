@@ -1,4 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { articles } from '../data/articles';
+
+/* Crawlable internal links — replaces the previous dead "#home" style anchors. */
+const footerLinks = [
+  { label: 'HOME', to: '/' },
+  { label: 'ABOUT US', to: '/about' },
+  { label: 'PRODUCTS', to: '/products' },
+  { label: 'KNOWLEDGE HUB', to: '/blog' },
+];
 
 const footerStyles = `
   @media (min-width: 1024px) {
@@ -176,16 +186,22 @@ export default function Footer() {
           </div>
 
           {/* Navigation Hyperlinks */}
-          <nav className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-[11px] sm:text-[12px] font-bold tracking-widest text-gray-300">
-            {['HOME', 'ABOUT US', 'PRODUCTS', 'INDUSTRIES', 'SERVICES', 'CONTACT US'].map((link) => (
-              <a
-                key={link}
-                href={`#${link.toLowerCase().replace(' ', '-')}`}
+          <nav aria-label="Footer" className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-[11px] sm:text-[12px] font-bold tracking-widest text-gray-300">
+            {footerLinks.map(({ label, to }) => (
+              <Link
+                key={label}
+                to={to}
                 className="hover:text-[#E5A93C] transition-colors duration-150 cursor-pointer"
               >
-                {link}
-              </a>
+                {label}
+              </Link>
             ))}
+            <a
+              href="#contact-us"
+              className="hover:text-[#E5A93C] transition-colors duration-150 cursor-pointer"
+            >
+              CONTACT US
+            </a>
           </nav>
 
           {/* Social Communities */}
@@ -208,6 +224,29 @@ export default function Footer() {
             ))}
           </div>
 
+        </div>
+      </div>
+
+      {/* ========================================================================
+          TIER 2B: TECHNICAL GUIDES — internal links for crawl depth
+         ========================================================================
+      */}
+      <div className="w-full bg-[#030E1E] px-4 sm:px-8 lg:px-16 py-6 border-b border-gray-800/60">
+        <div className="max-w-[1240px] mx-auto flex flex-col sm:flex-row sm:items-center gap-x-6 gap-y-3">
+          <span className="text-[10px] font-black tracking-[0.25em] text-[#E5A93C] uppercase shrink-0">
+            Technical Guides
+          </span>
+          <div className="flex flex-wrap gap-x-5 gap-y-2">
+            {articles.map((article) => (
+              <Link
+                key={article.slug}
+                to={`/blog/${article.slug}`}
+                className="text-[11px] font-semibold text-gray-400 hover:text-[#E5A93C] transition-colors"
+              >
+                {article.title}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
 

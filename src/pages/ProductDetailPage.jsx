@@ -1,7 +1,9 @@
 import React from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import Seo from '../components/Seo';
 import { products } from '../data/products';
+import { articles } from '../data/articles';
+import { site, absoluteUrl, breadcrumbSchema } from '../data/site';
 
 export default function ProductDetailPage() {
   const { id } = useParams();
@@ -10,35 +12,105 @@ export default function ProductDetailPage() {
 
   if (!product) {
     return (
-      <section className="bg-white min-h-screen flex items-center justify-center px-6">
-        <div className="text-center">
-          <h1 className="text-3xl font-black text-[#0A1828] uppercase">Product Not Found</h1>
-          <p className="text-gray-500 mt-4">The product you're looking for doesn't exist.</p>
-          <Link to="/products" className="inline-block mt-8 bg-[#0A1828] text-white px-8 py-4 uppercase font-bold tracking-widest">Back to Products</Link>
-        </div>
-      </section>
+      <>
+        <Seo
+          title="Product Not Found"
+          description="The product you are looking for is not available in our catalogue."
+          path={`/products/${id}`}
+          noindex
+        />
+        <section className="bg-white min-h-screen flex items-center justify-center px-6">
+          <div className="text-center">
+            <h1 className="text-3xl font-black text-[#0A1828] uppercase">Product Not Found</h1>
+            <p className="text-gray-500 mt-4">The product you're looking for doesn't exist.</p>
+            <Link to="/products" className="inline-block mt-8 bg-[#0A1828] text-white px-8 py-4 uppercase font-bold tracking-widest">Back to Products</Link>
+          </div>
+        </section>
+      </>
     );
   }
 
   const related = products.filter((p) => p.category === product.category && p.id !== product.id).slice(0, 3);
 
-  const seoTitle = `${product.name} | ${product.material} Supplier in Mumbai - Ritvik Metal Impex`;
-  const seoDescription = `Ritvik Metal Impex supplies premium ${product.name} in ${product.material} grade. ${product.description.slice(0, 120)}. Contact us for best price and availability.`;
-  const seoKeywords = `${product.name}, ${product.material} ${product.name}, ${product.name} supplier Mumbai, ${product.name} India, ${product.material} supplier, Ritvik Metal Impex, industrial metals Mumbai`;
+  /* Technical guides that reference this product — internal linking for topical authority */
+  const relatedGuides = articles.filter((a) => a.relatedProductIds?.includes(product.id)).slice(0, 3);
+
+  const path = `/products/${product.id}`;
+  const seoTitle = `${product.material} ${product.name} Supplier & Stockist in Mumbai, India`;
+  const seoDescription = `${product.name} in ${product.material} from Ritvik Metal Impex, Mumbai. ${product.description.slice(0, 118)}… Mill test certificates, ready stock and pan-India delivery. Request a price.`;
+  const seoKeywords = `${product.name}, ${product.material} ${product.name}, ${product.name} supplier Mumbai, ${product.name} stockist India, ${product.name} price India, ${product.material} supplier, ${product.form} supplier India, Ritvik Metal Impex`;
+
+  const productSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    '@id': `${absoluteUrl(path)}#product`,
+    name: `${product.material} ${product.name}`,
+    alternateName: product.name,
+    description: product.description,
+    image: [absoluteUrl(product.image)],
+    category: `${product.category} Metals > ${product.form}`,
+    material: product.material,
+    sku: `RMI-${String(product.id).padStart(3, '0')}`,
+    url: absoluteUrl(path),
+    brand: { '@type': 'Brand', name: site.name },
+    manufacturer: { '@id': `${site.url}/#organization` },
+    additionalProperty: [
+      { '@type': 'PropertyValue', name: 'Material', value: product.material },
+      { '@type': 'PropertyValue', name: 'Product Form', value: product.form },
+      { '@type': 'PropertyValue', name: 'Category', value: product.category },
+      { '@type': 'PropertyValue', name: 'Certification', value: 'Mill Test Certificate (EN 10204 3.1); 3.2 / IBR on request' },
+    ],
+    offers: {
+      '@type': 'Offer',
+      url: absoluteUrl(path),
+      availability: 'https://schema.org/InStock',
+      priceCurrency: 'INR',
+      priceSpecification: {
+        '@type': 'PriceSpecification',
+        priceCurrency: 'INR',
+        valueAddedTaxIncluded: false,
+        description: 'Price on request — quoted against size, grade, schedule and quantity.',
+      },
+      seller: { '@id': `${site.url}/#organization` },
+      areaServed: 'IN',
+    },
+  };
+
+  const crumbs = breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Products', path: '/products' },
+    { name: product.name, path },
+  ]);
+
+  const guideSchema = product.blog
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: product.blog.title,
+        description: product.blog.intro,
+        image: [absoluteUrl(product.image)],
+        inLanguage: site.language,
+        author: { '@type': 'Organization', name: site.name },
+        publisher: {
+          '@type': 'Organization',
+          name: site.name,
+          logo: { '@type': 'ImageObject', url: site.logo },
+        },
+        mainEntityOfPage: { '@type': 'WebPage', '@id': absoluteUrl(path) },
+      }
+    : null;
 
   return (
     <>
-      <Helmet>
-        <title>{seoTitle}</title>
-        <meta name="description" content={seoDescription} />
-        <meta name="keywords" content={seoKeywords} />
-        <meta property="og:title" content={seoTitle} />
-        <meta property="og:description" content={seoDescription} />
-        <meta property="og:image" content={`https://www.ritvikmetalimpex.com${product.image}`} />
-        <meta property="og:type" content="product" />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={`https://www.ritvikmetalimpex.com/products/${product.id}`} />
-      </Helmet>
+      <Seo
+        title={seoTitle}
+        description={seoDescription}
+        keywords={seoKeywords}
+        path={path}
+        image={product.image}
+        type="product"
+        schema={[productSchema, crumbs, guideSchema]}
+      />
 
       <section className="bg-white min-h-screen py-16 px-6 lg:px-16">
         <div className="max-w-[1200px] mx-auto">
@@ -55,7 +127,8 @@ export default function ProductDetailPage() {
           {/* Product Header */}
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div className="rounded-tl-[60px] rounded-br-[60px] overflow-hidden shadow-xl bg-gray-100 h-[420px] lg:h-[520px]">
-              <img src={product.image} alt={`${product.name} - ${product.material} Supplier Mumbai`}
+              <img src={product.image} alt={`${product.material} ${product.name} supplied by Ritvik Metal Impex, Mumbai`}
+                loading="eager"
                 className="w-full h-full object-cover"
                 onError={(e) => { e.target.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center"><span class="text-gray-300 uppercase tracking-widest">Product Image</span></div>'; }} />
             </div>
@@ -65,6 +138,7 @@ export default function ProductDetailPage() {
 
               <h1 className="text-4xl lg:text-5xl font-black text-[#0A1828] uppercase mt-3 leading-tight">
                 {product.name}
+                <span className="sr-only"> — {product.material} supplier and stockist in Mumbai, India</span>
               </h1>
 
               <div className="w-16 h-[2px] bg-[#E5A93C] mt-6 mb-6" />
@@ -169,6 +243,40 @@ export default function ProductDetailPage() {
             </article>
           )}
 
+          {/* Technical guides referencing this product — internal links */}
+          {relatedGuides.length > 0 && (
+            <div className="mt-24">
+              <h2 className="text-2xl font-black text-[#0A1828] uppercase mb-2">
+                Technical Guides
+              </h2>
+              <p className="text-gray-500 text-sm mb-8">
+                In-depth reading on grades, standards and specification for this product.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                {relatedGuides.map((guide) => (
+                  <Link
+                    key={guide.slug}
+                    to={`/blog/${guide.slug}`}
+                    className="group border border-gray-200 rounded-tl-[24px] rounded-br-[24px] p-6 hover:border-[#E5A93C] hover:shadow-lg transition-all"
+                  >
+                    <span className="text-[#E5A93C] text-[10px] font-black tracking-[0.18em] uppercase">
+                      {guide.category}
+                    </span>
+                    <h3 className="text-[15px] font-black text-[#0A1828] uppercase mt-2 leading-snug">
+                      {guide.title}
+                    </h3>
+                    <p className="text-gray-500 text-[12px] mt-3 leading-relaxed line-clamp-3">
+                      {guide.description}
+                    </p>
+                    <span className="inline-block mt-4 text-[11px] font-black tracking-[0.15em] text-[#0A1828] uppercase group-hover:text-[#E5A93C] transition-colors">
+                      Read Guide →
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Related Products */}
           {related.length > 0 && (
             <div className="mt-24">
@@ -178,7 +286,7 @@ export default function ProductDetailPage() {
                   <div key={r.id} onClick={() => navigate(`/products/${r.id}`)}
                     className="cursor-pointer bg-white rounded-tl-[30px] rounded-br-[30px] overflow-hidden shadow-md hover:shadow-xl border border-gray-100 transition-all">
                     <div className="h-[180px] bg-gray-100 overflow-hidden">
-                      <img src={r.image} alt={`${r.name} ${r.material} supplier Mumbai`} className="w-full h-full object-cover" onError={(e)=>{e.target.style.display='none';}} />
+                      <img src={r.image} alt={`${r.material} ${r.name} supplier in Mumbai, India`} loading="lazy" className="w-full h-full object-cover" onError={(e)=>{e.target.style.display='none';}} />
                     </div>
                     <div className="p-4">
                       <span className="text-[#E5A93C] text-[10px] font-black tracking-widest uppercase">{r.material}</span>
