@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function AnimatedSection({ children, className = '', delay = 0, animation = 'fadeUp' }) {
   const ref = useRef(null);

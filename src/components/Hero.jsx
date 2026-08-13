@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 
 const heroImages = [
   '/images/hero1.jpeg',
@@ -24,10 +24,15 @@ const typingTexts = [
 
 export default function Hero() {
   const [activeSlide, setActiveSlide] = useState(0);
-  const [displayText, setDisplayText] = useState('');
   const [textIndex, setTextIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [charIndex, setCharIndex] = useState(0);
+
+  // Derived during render rather than held in state — the previous version
+  // called setDisplayText synchronously inside the effect, which triggered a
+  // second render on every single keystroke of the animation.
+  const currentText = typingTexts[textIndex];
+  const displayText = currentText.slice(0, charIndex);
 
   // Carousel
   useEffect(() => {
@@ -37,27 +42,28 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, []);
 
-  // Typing animation
+  // Typing animation — every state update happens inside a timer, never
+  // synchronously during the effect.
   useEffect(() => {
-    const currentText = typingTexts[textIndex];
     let timeout;
 
-    if (!isDeleting && charIndex <= currentText.length) {
-      setDisplayText(currentText.slice(0, charIndex));
-      timeout = setTimeout(() => setCharIndex((c) => c + 1), 80);
-    } else if (!isDeleting && charIndex > currentText.length) {
-      timeout = setTimeout(() => setIsDeleting(true), 1800);
-    } else if (isDeleting && charIndex >= 0) {
-      setDisplayText(currentText.slice(0, charIndex));
-      timeout = setTimeout(() => setCharIndex((c) => c - 1), 40);
-    } else if (isDeleting && charIndex < 0) {
-      setIsDeleting(false);
-      setTextIndex((t) => (t + 1) % typingTexts.length);
-      setCharIndex(0);
+    if (!isDeleting) {
+      timeout =
+        charIndex < currentText.length
+          ? setTimeout(() => setCharIndex((c) => c + 1), 80)
+          : setTimeout(() => setIsDeleting(true), 1800);
+    } else {
+      timeout =
+        charIndex > 0
+          ? setTimeout(() => setCharIndex((c) => c - 1), 40)
+          : setTimeout(() => {
+              setIsDeleting(false);
+              setTextIndex((t) => (t + 1) % typingTexts.length);
+            }, 400);
     }
 
     return () => clearTimeout(timeout);
-  }, [charIndex, isDeleting, textIndex]);
+  }, [charIndex, isDeleting, currentText]);
 
   return (
     <section className="relative w-full min-h-screen flex items-center overflow-hidden">

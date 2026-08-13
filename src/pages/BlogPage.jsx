@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Seo from '../components/Seo';
 import { products } from '../data/products';

@@ -941,6 +941,180 @@ export const articles = [
       },
     ],
   },
+  /* ================================================================== */
+  {
+    slug: 'flange-types-pressure-classes-asme-b16-5',
+    title: 'Flanges Explained: Types, Faces and Pressure Classes under ASME B16.5',
+    seoTitle:
+      'ASME B16.5 Flange Guide: Weld Neck vs Slip-On, Class 150 to 2500, RF vs FF vs RTJ',
+    description:
+      'A complete flange selection guide — the seven ASME B16.5 flange types, what Class 150 to Class 2500 actually means, raised face vs flat face vs ring type joint, gasket pairing, material grades and how to write a flange enquiry that can be priced.',
+    keywords:
+      'ASME B16.5 flange, weld neck vs slip on flange, flange pressure class 150 300 600, RTJ vs raised face flange, blind flange, lap joint flange, ASME B16.47 large diameter flange, flange supplier Mumbai, flanges stockist India',
+    category: 'Piping Design',
+    readTime: '9 min read',
+    datePublished: '2026-06-17',
+    dateModified: '2026-08-13',
+    image: '/images/products/flanges.jpg',
+    relatedProductIds: [4, 2, 3, 7, 1],
+    intro:
+      'A flange is the joint you design in so the system can be taken apart again — for maintenance, for inspection, for replacing a valve. Choosing one means answering three separate questions: which type, which pressure class, and which face. Get any of the three wrong and the joint either leaks, does not bolt up, or costs far more than it needed to.',
+    takeaways: [
+      'ASME B16.5 covers NPS 1/2 to 24 in Classes 150, 300, 400, 600, 900, 1500 and 2500; above 24" the standard is ASME B16.47.',
+      'Weld neck is the default for critical, high-pressure and cyclic service; slip-on is the economical choice for moderate duty.',
+      'Class is a rating, not a pressure. Class 300 carbon steel holds roughly 740 psi at ambient against 285 psi for Class 150 — and both derate as temperature rises.',
+      'Raised face (RF) is the general-service standard; flat face (FF) is for cast-iron and GRP equipment; RTJ is for high-pressure gas and sour service.',
+      'Both halves of a joint must match on class, face and bolt pattern — flanges of the same nominal size in different classes will not mate.',
+    ],
+    sections: [
+      {
+        id: 'types',
+        heading: 'The seven flange types and where each belongs',
+        blocks: [
+          {
+            type: 'table',
+            columns: ['Type', 'How it attaches', 'Best for', 'Watch out for'],
+            rows: [
+              ['Weld Neck', 'Butt weld to pipe via a long tapered hub', 'Critical, high-pressure, high-temperature and cyclic service', 'Highest cost; needs accurate bevelling and a bore matched to the pipe schedule'],
+              ['Slip-On', 'Slides over the pipe, fillet welded inside and out', 'General service, moderate pressure, cost-sensitive work', 'Generally limited to Class 600; lower fatigue strength than weld neck'],
+              ['Blind', 'Bolts on with no bore', 'Sealing a pipe end, vessel opening or future tie-in point', 'Thick sections in high classes get heavy — plan the lift'],
+              ['Socket Weld', 'Pipe inserted into a socket, fillet welded outside', 'Small-bore high-pressure lines', 'Internal crevice; avoid in hygienic or severely corrosive service'],
+              ['Threaded', 'Screwed onto a threaded pipe end', 'Low-pressure utility lines and areas where hot work is prohibited', 'Leak path at the threads; poor under vibration'],
+              ['Lap Joint', 'Rotates freely over a stub end', 'Lines needing frequent dismantling, or dissimilar-metal savings', 'Needs a matching stub end; lower fatigue rating'],
+              ['Reducing', 'Bolt pattern of the larger size, bore of the smaller', 'Changing size at an existing flanged connection', 'Not a substitute for a proper reducer where flow matters'],
+            ],
+          },
+          {
+            type: 'p',
+            text: 'The lap joint deserves a mention buyers often miss. Because only the stub end touches the process fluid, the loose backing flange can be plain carbon steel while the stub end is stainless or a nickel alloy. On an exotic-alloy line, that split can take a meaningful amount out of the material cost.',
+          },
+        ],
+      },
+      {
+        id: 'classes',
+        heading: 'What "Class 150" actually means',
+        blocks: [
+          {
+            type: 'p',
+            text: 'A pressure class is a rating designation, not a pressure in psi. The allowable working pressure for a given class depends on the material group and, critically, on temperature — every class derates as the metal gets hotter. Two flanges of the same nominal size in different classes have different thicknesses, bolt circles, bolt counts and bolt sizes, so they physically cannot be bolted together.',
+          },
+          {
+            type: 'table',
+            columns: ['Class', 'Approx. carbon steel rating at ambient', 'Typical service'],
+            rows: [
+              ['150', '~285 psi (~20 bar)', 'Utility lines, low-pressure water, general plant service'],
+              ['300', '~740 psi (~51 bar)', 'The workhorse class for process piping'],
+              ['600', '~1,480 psi (~102 bar)', 'Higher-pressure hydrocarbon and steam service'],
+              ['900 / 1500', '~2,220 / ~3,705 psi', 'High-pressure gas, wellhead and compressor lines'],
+              ['2500', '~6,170 psi', 'Extreme pressure — typically small bore, often RTJ'],
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Always check the temperature column',
+            text: 'The figures above are ambient. A Class 150 carbon steel flange rated around 285 psi at 38 °C falls to roughly 170 psi by 200 °C and keeps dropping. Read the pressure–temperature rating table in ASME B16.5 for your specific material group rather than working from the class number alone.',
+          },
+          {
+            type: 'p',
+            text: 'Above NPS 24 you leave ASME B16.5 entirely. Large-diameter flanges from NPS 26 to 60 are covered by ASME B16.47, which has two incompatible series — Series A (formerly MSS SP-44) and Series B (formerly API 605). They differ in bolt circle and thickness, so the series must be stated on the enquiry.',
+          },
+        ],
+      },
+      {
+        id: 'faces',
+        heading: 'Face types and the gaskets that go with them',
+        blocks: [
+          {
+            type: 'ul',
+            items: [
+              'Raised Face (RF) — the industry default. A small raised area concentrates bolt load onto a narrower gasket area, improving sealing. Paired with spiral wound or flat ring gaskets.',
+              'Flat Face (FF) — the full face contacts the gasket. Specified when mating to cast iron, GRP or other brittle equipment flanges, where a raised face would bend the flange and crack the casting.',
+              'Ring Type Joint (RTJ) — a machined groove takes a solid metal ring gasket, usually oval or octagonal soft iron, low-carbon steel or stainless. The metal-to-metal seal is what high-pressure gas, sour service and wellhead applications require.',
+              'Tongue and groove, male and female — specialised faces used where the gasket must be positively retained or prevented from contacting the process fluid.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'The most expensive site mistake',
+            text: 'Never bolt a raised face flange to a flat face cast-iron flange. The raised face acts as a fulcrum and the bolt load bends the cast flange until it cracks — usually during hydrotest, occasionally later. If the equipment side is FF, the pipe side must be FF with a full-face gasket.',
+          },
+        ],
+      },
+      {
+        id: 'materials',
+        heading: 'Material grades and how to match them',
+        blocks: [
+          {
+            type: 'ul',
+            items: [
+              'Carbon steel — ASTM A105 for ambient and moderate temperature; ASTM A350 LF2 where low-temperature impact testing is required.',
+              'Stainless steel — ASTM A182 F304/F304L/F316/F316L for corrosion resistance, F321/F347 for stabilised high-temperature service.',
+              'Alloy steel — ASTM A182 F5, F9, F11, F22 and F91 for elevated temperature and creep service.',
+              'Duplex and super duplex — ASTM A182 F51 (2205), F53 (2507) and F55 (S32760) for chloride-rich duty.',
+              'Nickel alloys — ASTM B564 in Monel, Inconel and Hastelloy for aggressive chemical and high-temperature environments.',
+            ],
+          },
+          {
+            type: 'p',
+            text: 'Match the flange material group to the pipe it is welded to, and match the bolting separately: ASTM A193 B7 studs with A194 2H nuts is the standard carbon and alloy steel combination, with B8/B8M for stainless service and L7/4L for low temperature. Bolting is where a well-specified flange order most often falls down.',
+          },
+        ],
+      },
+      {
+        id: 'enquiry',
+        heading: 'Writing a flange enquiry that can actually be priced',
+        blocks: [
+          {
+            type: 'p',
+            text: 'A flange line item is not complete until all seven of these are stated. Sending an enquiry without them guarantees a round of clarification emails before anyone can quote:',
+          },
+          {
+            type: 'ol',
+            items: [
+              'Type — weld neck, slip-on, blind, socket weld, threaded, lap joint or reducing.',
+              'Nominal size (NPS) — and for weld neck, the bore, which is set by the mating pipe schedule.',
+              'Pressure class — 150, 300, 600, 900, 1500 or 2500.',
+              'Facing — RF, FF or RTJ, plus the finish where it matters (serrated spiral, smooth) and the ring number for RTJ.',
+              'Material specification and grade — for example ASTM A182 F316L, not just "stainless".',
+              'Dimensional standard — ASME B16.5, or B16.47 Series A or B above NPS 24.',
+              'Certification and testing — EN 10204 3.1 or 3.2, plus any PMI, impact, IGC or hardness requirement.',
+            ],
+          },
+          {
+            type: 'p',
+            text: 'Ritvik Metal Impex supplies weld neck, slip-on, blind, socket weld, lap joint, spectacle, ring joint and orifice flanges from 1/2" to 24" NB in Class 150# to 2500#, in carbon steel, stainless steel, alloy steel, duplex and nickel alloy grades, with mill test certificates and third-party inspection support.',
+          },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'What is the difference between a weld neck and a slip-on flange?',
+        answer:
+          'A weld neck flange has a long tapered hub that is butt welded to the pipe, transferring stress smoothly into the pipe wall — which is why it is specified for high-pressure, high-temperature and cyclic service. A slip-on flange slides over the pipe and is fillet welded inside and out. It is cheaper and easier to align but has lower fatigue strength and is generally limited to Class 600 and below.',
+      },
+      {
+        question: 'Does Class 150 mean the flange holds 150 psi?',
+        answer:
+          'No. Class is a rating designation, not a pressure. A Class 150 carbon steel flange is rated around 285 psi at ambient temperature, and that figure derates as temperature rises. Always read the pressure–temperature table in ASME B16.5 for the specific material group rather than reading the class number as a pressure.',
+      },
+      {
+        question: 'Can I bolt a Class 150 flange to a Class 300 flange?',
+        answer:
+          'No. Different classes have different bolt circle diameters, bolt counts and bolt sizes, so the holes will not line up. Both halves of a flanged joint must share the same nominal size, pressure class and facing type.',
+      },
+      {
+        question: 'When should I use an RTJ flange instead of a raised face flange?',
+        answer:
+          'RTJ is specified where a metal-to-metal seal is required — high-pressure gas service, sour service to NACE MR0175, and wellhead or high-temperature applications, typically from Class 600 upwards. Raised face with a spiral wound gasket remains the standard for general process service.',
+      },
+      {
+        question: 'What standard covers flanges larger than 24 inches?',
+        answer:
+          'ASME B16.47, which covers NPS 26 to 60 in two incompatible series: Series A (formerly MSS SP-44) and Series B (formerly API 605). They differ in bolt circle and thickness, so the series must be specified on the enquiry — a Series A flange will not mate with a Series B flange.',
+      },
+    ],
+  },
 ];
 
 export const getArticle = (slug) => articles.find((a) => a.slug === slug);

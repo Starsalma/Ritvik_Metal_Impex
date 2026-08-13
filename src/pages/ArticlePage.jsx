@@ -1,5 +1,6 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import Seo from '../components/Seo';
+import { scrollToContact } from '../utils/navigation';
 import { articles, getArticle } from '../data/articles';
 import { products } from '../data/products';
 import { site, absoluteUrl, breadcrumbSchema, faqSchema } from '../data/site';
@@ -394,13 +395,7 @@ export default function ArticlePage() {
             </div>
             <div className="flex flex-wrap gap-3 shrink-0">
               <button
-                onClick={() => {
-                  navigate('/');
-                  setTimeout(
-                    () => document.getElementById('contact-us')?.scrollIntoView({ behavior: 'smooth' }),
-                    300,
-                  );
-                }}
+                onClick={() => scrollToContact(navigate)}
                 className="bg-[#E5A93C] text-[#0A1828] px-7 py-3 uppercase font-black text-[11px] tracking-[0.15em] hover:bg-[#d4982b] transition-colors"
               >
                 Request a Quote

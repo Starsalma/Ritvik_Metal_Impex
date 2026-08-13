@@ -1,6 +1,6 @@
-import React from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import Seo from '../components/Seo';
+import { scrollToContact } from '../utils/navigation';
 import { products } from '../data/products';
 import { articles } from '../data/articles';
 import { site, absoluteUrl, breadcrumbSchema } from '../data/site';
@@ -166,7 +166,7 @@ export default function ProductDetailPage() {
               {/* Actions */}
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
                 <button
-                  onClick={() => { navigate('/'); setTimeout(() => document.getElementById('contact-us')?.scrollIntoView({behavior:'smooth'}), 300); }}
+                  onClick={() => scrollToContact(navigate)}
                   className="bg-[#0A1828] text-white px-8 py-4 uppercase font-bold tracking-widest hover:bg-[#1A3A5C] transition-colors">
                   Request Quote
                 </button>
@@ -228,7 +228,7 @@ export default function ProductDetailPage() {
                 </div>
                 <div className="flex gap-4 flex-wrap">
                   <button
-                    onClick={() => { navigate('/'); setTimeout(() => document.getElementById('contact-us')?.scrollIntoView({behavior:'smooth'}), 300); }}
+                    onClick={() => scrollToContact(navigate)}
                     className="bg-[#E5A93C] text-[#0A1828] px-8 py-3 uppercase font-black text-[11px] tracking-widest hover:bg-[#d4982b] transition-colors">
                     Request Quote
                   </button>
