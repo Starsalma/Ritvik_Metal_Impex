@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import { site, absoluteUrl } from '../data/site';
+import { site, absoluteUrl, clamp, TITLE_MAX, DESCRIPTION_MAX } from '../data/site';
 
 /**
  * Reusable per-page SEO head.
@@ -28,12 +28,18 @@ export default function Seo({
   author,
   children,
 }) {
-  // Avoid "… | Ritvik Metal Impex | Ritvik Metal Impex" when a page passes a full title.
+  /*
+   * Append the brand suffix only when the result still fits inside the ~60
+   * characters a SERP will actually render. Previously every page appended it
+   * unconditionally, pushing titles to 90–106 characters — the brand was the
+   * first thing Google cut off, and on long titles it cost real keywords too.
+   */
+  const withBrand = title && !title.includes(site.name) ? `${title} | ${site.name}` : title;
   const fullTitle = !title
-    ? site.defaultTitle
-    : title.includes(site.name)
-      ? title
-      : `${title} | ${site.name}`;
+    ? clamp(site.defaultTitle, TITLE_MAX)
+    : clamp(withBrand.length <= TITLE_MAX ? withBrand : title, TITLE_MAX);
+
+  const metaDescription = clamp(description, DESCRIPTION_MAX);
 
   const canonical = absoluteUrl(path);
   const ogImage = absoluteUrl(image);
@@ -43,7 +49,7 @@ export default function Seo({
     <Helmet prioritizeSeoTags>
       <html lang={site.language} />
       <title>{fullTitle}</title>
-      <meta name="description" content={description} />
+      <meta name="description" content={metaDescription} />
       <meta name="keywords" content={keywords} />
       <link rel="canonical" href={canonical} />
       <meta
@@ -56,7 +62,7 @@ export default function Seo({
       <meta property="og:locale" content={site.locale} />
       <meta property="og:type" content={type} />
       <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={description} />
+      <meta property="og:description" content={metaDescription} />
       <meta property="og:url" content={canonical} />
       <meta property="og:image" content={ogImage} />
       <meta property="og:image:alt" content={title || site.name} />
@@ -64,7 +70,7 @@ export default function Seo({
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
-      <meta name="twitter:description" content={description} />
+      <meta name="twitter:description" content={metaDescription} />
       <meta name="twitter:image" content={ogImage} />
 
       {/* Article metadata */}

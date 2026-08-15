@@ -117,7 +117,7 @@ export default function AboutPage() {
   return (
     <div className="w-full bg-white overflow-x-hidden font-sans">
       <Seo
-        title="About Us — Stainless Steel & Industrial Metal Supplier in Mumbai"
+        title="About Ritvik Metal Impex — Metal Supplier, Mumbai"
         description="Ritvik Metal Impex is a Mumbai-based supplier, stockist and exporter of stainless steel, carbon steel, alloy steel, duplex, nickel alloy, copper and brass products. Learn about our quality systems, third-party inspection support and the industries we serve."
         keywords="about Ritvik Metal Impex, stainless steel supplier Mumbai, metal stockist India, industrial metal exporter India, steel supplier company Maharashtra"
         path="/about"

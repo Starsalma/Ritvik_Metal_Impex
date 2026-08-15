@@ -5,14 +5,24 @@
 
 export const SITE_URL = 'https://www.ritvikmetalimpex.com';
 
+/**
+ * Stable dates for the product catalogue and its per-product guides.
+ *
+ * These are deliberately hard-coded rather than `new Date()`. Stamping "today"
+ * on every page at build time tells crawlers the whole site changed on every
+ * deploy, which devalues the lastmod signal. Bump CATALOGUE_MODIFIED by hand
+ * when the catalogue content actually changes.
+ */
+export const CATALOGUE_PUBLISHED = '2026-01-10';
+export const CATALOGUE_MODIFIED = '2026-08-15';
+
 export const site = {
   url: SITE_URL,
   name: 'Ritvik Metal Impex',
   legalName: 'Ritvik Metal Impex',
   shortName: 'RMI',
   tagline: 'Your Reliable Source for Quality Metals',
-  defaultTitle:
-    'Ritvik Metal Impex | Stainless Steel, Carbon Steel & Copper Supplier in Mumbai, India',
+  defaultTitle: 'Stainless Steel & Metal Supplier Mumbai | Ritvik Metal Impex',
   defaultDescription:
     'Ritvik Metal Impex is a Mumbai-based supplier, stockist and exporter of stainless steel pipes, buttweld & forged fittings, flanges, sheets, plates, bars, fasteners, valves and copper & brass products. Mill test certificates, IBR and third-party inspection supported.',
   defaultKeywords: [
@@ -103,6 +113,22 @@ export const site = {
   ],
 
   sameAs: [],
+};
+
+/**
+ * Search engines truncate titles around 60 characters and descriptions around
+ * 155–160. Anything past that is invisible in the SERP, so trim on a word
+ * boundary rather than shipping a sentence that gets cut mid-word.
+ */
+export const TITLE_MAX = 60;
+export const DESCRIPTION_MAX = 158;
+
+export const clamp = (text = '', max = DESCRIPTION_MAX) => {
+  const clean = text.replace(/\s+/g, ' ').trim();
+  if (clean.length <= max) return clean;
+  const cut = clean.slice(0, max - 1);
+  const lastSpace = cut.lastIndexOf(' ');
+  return `${(lastSpace > max * 0.6 ? cut.slice(0, lastSpace) : cut).replace(/[\s,;:.\-—–]+$/, '')}…`;
 };
 
 /** Absolute URL helper — accepts "/products/1" or a full URL. */

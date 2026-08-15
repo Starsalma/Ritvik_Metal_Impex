@@ -19,9 +19,9 @@ export const articles = [
     slug: 'stainless-steel-304-vs-316',
     title: 'SS 304 vs SS 316: How to Choose the Right Stainless Steel Grade',
     seoTitle:
-      'SS 304 vs 316 Stainless Steel: Difference, PREN, Cost & Where to Use Each',
+      'SS 304 vs 316 Stainless Steel: Differences & Uses',
     description:
-      'A practical engineering comparison of stainless steel 304 and 316 — chemistry, molybdenum, PREN pitting resistance, temperature limits, cost premium and grade selection for pipes, sheets, flanges, fittings and fasteners.',
+      'Stainless steel 304 vs 316 compared: molybdenum, PREN pitting resistance, L-grades, temperature limits, and when the 316 price premium is worth paying.',
     keywords:
       'ss 304 vs 316, difference between 304 and 316 stainless steel, 316 vs 304 pipe, PREN stainless steel, ASTM A312 TP316L, stainless steel grade selection, 304 vs 316 price India, stainless steel supplier Mumbai',
     category: 'Grade Selection',
@@ -214,9 +214,9 @@ export const articles = [
     slug: 'duplex-2205-vs-super-duplex-2507',
     title: 'Duplex 2205 vs Super Duplex 2507: A Material Selection Guide',
     seoTitle:
-      'Duplex 2205 vs Super Duplex 2507: PREN, Strength, Cost & When to Specify Each',
+      'Duplex 2205 vs Super Duplex 2507: Which to Specify',
     description:
-      'Compare duplex stainless steel UNS S31803/S32205 with super duplex UNS S32750 — chemistry, PREN, yield strength, chloride and SCC limits, welding precautions, cost premium and the applications each grade is specified for.',
+      'Duplex 2205 vs super duplex 2507: PREN, yield strength, chloride and temperature limits, welding precautions, and when the 30–50% premium pays off.',
     keywords:
       'duplex 2205 vs super duplex 2507, UNS S31803, UNS S32750, duplex stainless steel pipe, super duplex flanges, duplex steel supplier India, PREN duplex, duplex steel stockist Mumbai',
     category: 'Grade Selection',
@@ -390,9 +390,9 @@ export const articles = [
     slug: 'buttweld-vs-socketweld-vs-threaded-fittings',
     title: 'Buttweld vs Socketweld vs Threaded Fittings: Choosing the Right Joint',
     seoTitle:
-      'Buttweld vs Socketweld vs Threaded Pipe Fittings: Sizes, Pressure Class & Selection',
+      'Buttweld vs Socketweld vs Threaded Pipe Fittings',
     description:
-      'Understand the three main industrial pipe joint types — buttweld (ASME B16.9), socketweld and threaded forged fittings (ASME B16.11) — including size ranges, pressure classes 3000/6000/9000, inspection, cost and where each should be used.',
+      'Buttweld, socketweld and threaded fittings compared: size ranges, ASME B16.9 and B16.11, Class 3000/6000/9000 and how to pick the right joint.',
     keywords:
       'buttweld vs socketweld fittings, socket weld vs threaded fittings, ASME B16.9, ASME B16.11, class 3000 6000 9000 fittings, forged fittings supplier, buttweld elbow supplier Mumbai, pipe fittings India',
     category: 'Piping Design',
@@ -566,9 +566,9 @@ export const articles = [
     slug: 'copper-tube-grades-and-standards',
     title: 'Copper Tubes, Strips and Wires: Grades, Standards and Applications',
     seoTitle:
-      'Copper Tube Grades & Standards: ASTM B88, B280, B111 | ETP vs DHP Copper Guide',
+      'Copper Tube Grades & Standards: B88, B280, B111',
     description:
-      'A buyer\'s guide to copper products — C11000 ETP vs C12200 DHP copper, ASTM B88 Types K/L/M for plumbing, B280 ACR tube for HVAC, B111 condenser tube, plus copper strips, busbar profiles and super enameled winding wire.',
+      'Copper grades explained: ETP vs DHP, ASTM B88 Types K/L/M, B280 ACR tube, B111 condenser tube, temper, busbar strip and enamelled winding wire.',
     keywords:
       'copper tube grades, ASTM B88 type K L M, ASTM B280 ACR copper tube, ASTM B111 condenser tube, ETP copper C11000, DHP copper C12200, super enameled copper wire, copper strips busbar, copper tube supplier India',
     category: 'Non-Ferrous',
@@ -775,9 +775,9 @@ export const articles = [
     slug: 'mill-test-certificate-en-10204-ibr-guide',
     title: 'Mill Test Certificates, IBR and Third-Party Inspection: A Buyer\'s Guide',
     seoTitle:
-      'EN 10204 3.1 vs 3.2 Mill Test Certificate, IBR Forms & TPI Explained for Buyers',
+      'EN 10204 3.1 vs 3.2 Mill Test Certificates & IBR',
     description:
-      'What a mill test certificate actually proves, the difference between EN 10204 types 2.1, 2.2, 3.1 and 3.2, when IBR Form III-A and III-C are required in India, and how third-party inspection by BV, TÜV, DNV or SGS fits into procurement.',
+      'What EN 10204 2.1, 2.2, 3.1 and 3.2 certificates prove, how to read an MTC, when IBR Forms III-A and III-C apply, and how third-party inspection works.',
     keywords:
       'EN 10204 3.1 vs 3.2, mill test certificate, MTC steel, IBR certificate Form IIIA IIIC, third party inspection agencies, heat number traceability, PMI testing, IBR approved pipe supplier India',
     category: 'Quality & Compliance',
@@ -946,9 +946,9 @@ export const articles = [
     slug: 'flange-types-pressure-classes-asme-b16-5',
     title: 'Flanges Explained: Types, Faces and Pressure Classes under ASME B16.5',
     seoTitle:
-      'ASME B16.5 Flange Guide: Weld Neck vs Slip-On, Class 150 to 2500, RF vs FF vs RTJ',
+      'ASME B16.5 Flange Types, Classes & Faces Explained',
     description:
-      'A complete flange selection guide — the seven ASME B16.5 flange types, what Class 150 to Class 2500 actually means, raised face vs flat face vs ring type joint, gasket pairing, material grades and how to write a flange enquiry that can be priced.',
+      'ASME B16.5 flanges: weld neck vs slip-on, Class 150 to 2500 ratings, RF vs FF vs RTJ faces, gasket pairing, materials and an enquiry checklist.',
     keywords:
       'ASME B16.5 flange, weld neck vs slip on flange, flange pressure class 150 300 600, RTJ vs raised face flange, blind flange, lap joint flange, ASME B16.47 large diameter flange, flange supplier Mumbai, flanges stockist India',
     category: 'Piping Design',
@@ -1112,6 +1112,244 @@ export const articles = [
         question: 'What standard covers flanges larger than 24 inches?',
         answer:
           'ASME B16.47, which covers NPS 26 to 60 in two incompatible series: Series A (formerly MSS SP-44) and Series B (formerly API 605). They differ in bolt circle and thickness, so the series must be specified on the enquiry — a Series A flange will not mate with a Series B flange.',
+      },
+    ],
+  },
+  /* ================================================================== */
+  {
+    slug: 'nickel-alloys-monel-inconel-hastelloy-guide',
+    title: 'Nickel Alloys Compared: Monel 400, Inconel 625 and Hastelloy C-276',
+    seoTitle: 'Monel 400 vs Inconel 625 vs Hastelloy C-276 Guide',
+    description:
+      'Monel 400, Inconel 625 and Hastelloy C-276 compared: chemistry, acid and seawater resistance, temperature limits, cost order and how to pick the right nickel alloy.',
+    keywords:
+      'Monel 400 vs Inconel 625, Hastelloy C276, nickel alloy selection guide, UNS N04400, UNS N06625, UNS N10276, Inconel 600 625 718, nickel alloy pipe fittings supplier, high performance alloys India, nickel alloy stockist Mumbai',
+    category: 'Grade Selection',
+    readTime: '10 min read',
+    datePublished: '2026-07-22',
+    dateModified: '2026-08-15',
+    image: '/images/products/high-performance-alloys.jpg',
+    relatedProductIds: [22, 1, 2, 4, 5, 8],
+    intro:
+      'When stainless steel and even super duplex stop coping, the next step is a nickel-base alloy. These are not interchangeable premium metals — each one was developed for a specific chemical enemy, and the cheapest correct choice is rarely the most expensive alloy on the shelf. Picking by reputation instead of by service environment is how projects end up paying four times the price for worse performance.',
+    takeaways: [
+      'There is no universally best nickel alloy. Match the alloy to the specific corrosive species, not to a general idea of "aggressive service".',
+      'Monel 400 (Ni-Cu) owns seawater and hydrofluoric acid, but has no chromium and performs poorly in oxidising acids.',
+      'Inconel 625 (Ni-Cr-Mo-Nb) is the all-rounder: high-temperature strength plus broad corrosion resistance.',
+      'Hastelloy C-276 (Ni-Mo-Cr) is the reducing-acid specialist — hot hydrochloric, sulphuric and wet chlorine.',
+      'Cost rises roughly Monel 400 < Inconel 625 < Hastelloy C-276, so over-specifying is expensive in a way stainless never is.',
+    ],
+    sections: [
+      {
+        id: 'why-nickel',
+        heading: 'Why nickel alloys exist at all',
+        blocks: [
+          {
+            type: 'p',
+            text: 'Austenitic stainless steels protect themselves with a chromium oxide film. That film is excellent in oxidising conditions and in mildly aggressive service, but it breaks down in two situations: strong reducing acids, which dissolve it, and high chloride concentrations, which pit through it. Raise the temperature and both problems accelerate.',
+          },
+          {
+            type: 'p',
+            text: 'Nickel-base alloys solve this by making nickel the matrix rather than iron. Nickel is inherently resistant to reducing conditions and to chloride stress corrosion cracking, and it dissolves large amounts of chromium, molybdenum and other elements without going brittle. That lets metallurgists tune an alloy for a specific chemical environment — which is exactly why buying "a nickel alloy" without naming the grade means nothing.',
+          },
+        ],
+      },
+      {
+        id: 'comparison',
+        heading: 'The three workhorse grades side by side',
+        blocks: [
+          {
+            type: 'table',
+            columns: ['', 'Monel 400 (N04400)', 'Inconel 625 (N06625)', 'Hastelloy C-276 (N10276)'],
+            rows: [
+              ['Alloy system', 'Nickel–copper', 'Nickel–chromium–molybdenum–niobium', 'Nickel–molybdenum–chromium'],
+              ['Nickel', '~63% min', '~58% min', '~57%'],
+              ['Chromium', 'None', '20–23%', '14.5–16.5%'],
+              ['Molybdenum', 'None', '8–10%', '15–17%'],
+              ['Other', 'Cu 28–34%', 'Nb+Ta 3.15–4.15%', 'W 3–4.5%'],
+              ['Signature strength', 'Seawater and hydrofluoric acid', 'High-temperature strength with broad corrosion resistance', 'Reducing acids and wet chlorine'],
+              ['Practical temperature ceiling', '~480 °C', '~980 °C', '~1,040 °C (corrosion-limited well below this)'],
+              ['Relative cost', 'Lowest of the three', 'Higher', 'Highest'],
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Trade names vs UNS numbers',
+            text: 'Monel, Inconel, Incoloy and Hastelloy are trademarks, not specifications. Always order against the UNS number and the product standard — N04400, N06625, N10276 — so equivalent material from any approved mill can be supplied and there is no ambiguity on the certificate.',
+          },
+        ],
+      },
+      {
+        id: 'monel',
+        heading: 'Monel 400 — the seawater and HF specialist',
+        blocks: [
+          {
+            type: 'p',
+            text: 'Monel 400 is roughly two-thirds nickel and one-third copper. That combination gives outstanding resistance to flowing seawater, brine and alkaline media, and it is one of very few materials that handles hydrofluoric acid well across a wide concentration range. It also has excellent resistance to chloride stress corrosion cracking, the failure mode that limits 316 in hot chloride service.',
+          },
+          {
+            type: 'ul',
+            items: [
+              'Seawater piping, heat exchangers, pump and valve components in marine and offshore service.',
+              'Hydrofluoric acid alkylation units — a classic Monel 400 application in refineries.',
+              'Caustic and alkaline process equipment.',
+              'Crude distillation overhead systems where hydrochloric acid condenses.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Where Monel fails',
+            text: 'Monel 400 contains no chromium, so it is poor in oxidising environments. Nitric acid, ferric and cupric salts, and oxidising acid mixtures will attack it rapidly. Stagnant seawater is also a problem — Monel relies on flow to maintain its film and can suffer pitting under deposits or in dead legs.',
+          },
+        ],
+      },
+      {
+        id: 'inconel',
+        heading: 'Inconel 625 — the versatile all-rounder',
+        blocks: [
+          {
+            type: 'p',
+            text: 'Inconel 625 combines chromium for oxidation resistance, molybdenum for pitting and crevice resistance, and niobium, which stiffens the matrix through solid-solution strengthening. The result is unusual: an alloy that keeps meaningful strength at temperatures where stainless steel has gone soft, while also resisting a wide range of chemical attack and seawater.',
+          },
+          {
+            type: 'ul',
+            items: [
+              'Flare stacks, bellows, expansion joints and exhaust components in high-temperature service.',
+              'Offshore headers, seawater manifolds and subsea hardware.',
+              'Weld overlay and cladding on carbon steel vessels — a common way to get 625 performance at a fraction of the solid-alloy cost.',
+              'Chemical process equipment handling mixed acids and oxidising conditions.',
+              'Flue gas desulphurisation, where acidic chloride condensate attacks stainless.',
+            ],
+          },
+          {
+            type: 'p',
+            text: 'Because 625 is strong as well as corrosion resistant, it is often the right answer when the design problem is mechanical and chemical at the same time. If the only problem is corrosion at moderate temperature, a cheaper alloy may do the same job.',
+          },
+        ],
+      },
+      {
+        id: 'hastelloy',
+        heading: 'Hastelloy C-276 — for reducing acids and wet chlorine',
+        blocks: [
+          {
+            type: 'p',
+            text: 'C-276 carries the highest molybdenum content of the three at 15–17%, with tungsten added and carbon kept very low. Molybdenum is what confers resistance to reducing acids, so C-276 handles hot hydrochloric and sulphuric acid, wet chlorine gas and hypochlorite — environments that destroy both stainless steel and Monel. Its low carbon and low silicon mean it can usually be welded and used in the as-welded condition without a post-weld solution anneal.',
+          },
+          {
+            type: 'ul',
+            items: [
+              'Chlorination systems, hypochlorite bleaching and chlorine dioxide plant.',
+              'Sulphuric and hydrochloric acid process equipment, including pickling lines.',
+              'Flue gas desulphurisation scrubbers and ducting.',
+              'Pharmaceutical and fine chemical reactors handling mixed and variable acid streams.',
+              'Sour gas service with combined H₂S, CO₂ and chlorides.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'The versatility premium',
+            text: 'C-276 is often specified precisely because a plant does not know exactly what it will be handling — it tolerates both oxidising and reducing conditions, which is rare. That flexibility is real, but it is also the most expensive of the three. If your process chemistry is well defined and stable, a cheaper alloy frequently matches it in service life.',
+          },
+        ],
+      },
+      {
+        id: 'others',
+        heading: 'The other grades you will be quoted',
+        blocks: [
+          {
+            type: 'table',
+            columns: ['Grade', 'UNS', 'Why it gets specified'],
+            rows: [
+              ['Inconel 600', 'N06600', 'Ni-Cr for high-temperature oxidation and carburisation resistance; furnace and heat-treatment hardware'],
+              ['Inconel 601', 'N06601', 'Added aluminium for superior oxidation resistance at very high temperature'],
+              ['Inconel 718', 'N07718', 'Age-hardenable — very high strength; fasteners, springs, turbine and downhole components'],
+              ['Incoloy 800/800H/800HT', 'N08800/N08810/N08811', 'Iron-nickel-chromium; heat exchanger and furnace tubing where creep matters'],
+              ['Incoloy 825', 'N08825', 'Titanium-stabilised with Cu and Mo; sulphuric and phosphoric acid service at lower cost than 625'],
+              ['Alloy 20 (Carpenter 20)', 'N08020', 'Purpose-built for sulphuric acid; often the economical answer before reaching for C-276'],
+              ['Hastelloy C-22', 'N06022', 'Higher chromium than C-276; better in oxidising and mixed-acid service'],
+              ['Titanium Gr. 2 / Gr. 7', 'R50400 / R52400', 'Not a nickel alloy, but the usual alternative in oxidising chlorides and seawater'],
+            ],
+          },
+          {
+            type: 'p',
+            text: 'Incoloy 825 and Alloy 20 deserve particular attention from buyers. Both sit between stainless steel and the premium nickel alloys in both performance and price, and both are routinely skipped by specifiers who jump straight from 316L to C-276. On sulphuric and phosphoric acid duty they are frequently the correct and far cheaper answer.',
+          },
+        ],
+      },
+      {
+        id: 'selection',
+        heading: 'A selection method that avoids over-specifying',
+        blocks: [
+          {
+            type: 'ol',
+            items: [
+              'Name the corrosive species precisely. "Acid" is not a specification — hydrochloric, sulphuric, nitric and hydrofluoric each point to a different alloy.',
+              'Establish concentration and temperature together. Many alloys are fine in cold acid and fail in the same acid hot; corrosion rate roughly doubles for every 10 °C in many systems.',
+              'Decide whether the environment is oxidising or reducing. Oxidising favours chromium (625, C-22, titanium); reducing favours molybdenum (C-276, Alloy 20).',
+              'Check for chlorides and for hydrogen sulphide. Sour service brings NACE MR0175 / ISO 15156 requirements on hardness and heat treatment that constrain both grade and supply route.',
+              'Establish the mechanical duty. If temperature and stress are both high, 625 or 718 may be required for strength even when a cheaper alloy would resist the chemistry.',
+              'Consider clad or lined construction. Weld overlay of 625 or C-276 onto a carbon steel substrate delivers the same wetted surface for a fraction of the solid-alloy cost on large vessels.',
+              'Confirm availability before committing. Exotic grades in unusual sizes carry long mill lead times; the second-best alloy in stock often beats the best one twenty weeks out.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Ask for corrosion data, not opinions',
+            text: 'Alloy producers publish isocorrosion charts showing corrosion rate against acid concentration and temperature. For anything critical, select against those charts — or run coupon tests in the actual process stream — rather than against a general reputation for toughness.',
+          },
+        ],
+      },
+      {
+        id: 'buying',
+        heading: 'Buying nickel alloys with confidence',
+        blocks: [
+          {
+            type: 'p',
+            text: 'Nickel alloys cost many times what stainless does, which makes them the most attractive target for substitution and mis-declaration anywhere in the metals supply chain. Tighten your documentation accordingly:',
+          },
+          {
+            type: 'ul',
+            items: [
+              'Order against UNS numbers and the correct product standard — ASTM B444 and B705 for 625 pipe and tube, B564 for forgings and flanges, B366 for fittings, B443 and B575 for plate and sheet, B164 for Monel rod.',
+              'Insist on EN 10204 3.1 as a minimum, with heat number traceability; specify 3.2 with third-party witness on critical orders.',
+              'Make positive material identification (PMI) a receiving-inspection requirement. Handheld XRF distinguishes these grades in seconds and is cheap relative to the material value.',
+              'Specify corrosion testing where the standard offers it — ASTM G28 Method A for intergranular attack on nickel-chromium-molybdenum alloys is commonly required.',
+              'For sour service, state NACE MR0175 / ISO 15156 compliance explicitly, including the hardness limit and delivery condition.',
+              'Ask for the material condition: solution annealed, and for 718, the specific age-hardening treatment, since properties differ dramatically between conditions.',
+            ],
+          },
+          {
+            type: 'p',
+            text: 'Ritvik Metal Impex supplies high-performance nickel alloys — Monel, Inconel, Incoloy, Hastelloy and titanium — as pipes and tubes, buttweld and forged fittings, flanges, ferrule fittings, valves, sheets, plates and bars, with mill test certificates, PMI on request and third-party inspection support from agencies including Bureau Veritas, TÜV, DNV, SGS and Lloyd\'s Register.',
+          },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'What is the difference between Monel, Inconel and Hastelloy?',
+        answer:
+          'They are different alloy systems for different enemies. Monel 400 is nickel-copper with no chromium — best for seawater, alkalis and hydrofluoric acid. Inconel 625 is nickel-chromium-molybdenum-niobium — an all-rounder combining high-temperature strength with broad corrosion resistance. Hastelloy C-276 is nickel-molybdenum-chromium with the highest molybdenum of the three — the specialist for reducing acids such as hot hydrochloric and sulphuric, and for wet chlorine.',
+      },
+      {
+        question: 'Which nickel alloy is best for seawater?',
+        answer:
+          'Monel 400 is the traditional choice for flowing seawater and is usually the most economical of the nickel alloys for that duty, though it needs flow and suffers under stagnant conditions or deposits. Inconel 625 performs better in stagnant seawater and in crevices, and is preferred for subsea and offshore hardware where the extra cost is justified.',
+      },
+      {
+        question: 'Is Hastelloy C-276 always better than Inconel 625?',
+        answer:
+          'No. C-276 has more molybdenum and is better in reducing acids and wet chlorine, but 625 has more chromium and performs better in oxidising conditions and at high temperature, where it also retains greater strength. C-276 is also the more expensive of the two, so specifying it for oxidising or high-temperature duty can mean paying more for worse performance.',
+      },
+      {
+        question: 'Can nickel alloys replace stainless steel everywhere?',
+        answer:
+          'Technically in most cases, but it is rarely economic. Nickel alloys cost several times more than 316L per kilogram. They are justified where stainless is genuinely failing — reducing acids, high chlorides at temperature, hydrofluoric acid, wet chlorine or sustained high-temperature service. In ordinary process duty, specifying nickel alloy over stainless buys no additional service life.',
+      },
+      {
+        question: 'How do I verify that nickel alloy material is genuine?',
+        answer:
+          'Combine documentation with testing. Require an EN 10204 3.1 or 3.2 certificate whose heat number matches the marking on the material, order against the UNS number and product standard rather than a trade name, and make positive material identification with a handheld XRF analyser a receiving-inspection requirement. Given the value of these alloys, PMI on receipt is inexpensive insurance.',
       },
     ],
   },

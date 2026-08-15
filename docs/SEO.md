@@ -17,6 +17,17 @@ removing what's already there, so `src/main.jsx` deletes the fallbacks at boot �
 otherwise every page would serve two conflicting canonicals. If you add a tag to
 `index.html` that `<Seo />` also emits, mark it `data-seo-fallback`.
 
+## SERP length limits
+
+Google renders roughly 60 characters of a title and 155–160 of a description.
+`clamp()` in `src/data/site.js` enforces `TITLE_MAX` and `DESCRIPTION_MAX`, and
+`<Seo />` appends the `| Ritvik Metal Impex` suffix **only when the result still
+fits** — otherwise the brand is the first thing cut off, taking keywords with it.
+
+Clamping is a backstop, not the plan. Write `seoTitle` under 60 and
+`description` under 158 at the source; if a page shows a trailing `…` in its
+title, the source string is too long and should be rewritten.
+
 ## Structured data
 
 | Page | Schema types |
@@ -31,6 +42,12 @@ otherwise every page would serve two conflicting canonicals. If you add a tag to
 Validate changes with the [Rich Results Test](https://search.google.com/test/rich-results)
 and [Schema Markup Validator](https://validator.schema.org/).
 
+**Product pages deliberately carry no `offers` node.** Pricing is quote-based —
+it depends on size, grade, schedule and quantity — and a schema.org `Offer`
+requires a price or a priced `priceSpecification`. An Offer with no price is
+invalid and fails the Rich Results Test, so the pages publish a valid `Product`
+without offers instead. If real list prices ever exist, add the node back.
+
 ## Sitemap & robots
 
 `public/sitemap.xml` is **generated**, not hand-edited. `scripts/generate-sitemap.mjs`
@@ -39,6 +56,13 @@ article automatically adds its URL. It runs on `npm run build` via `prebuild`,
 or on demand with `npm run sitemap`.
 
 `public/robots.txt` allows everything and points at the sitemap.
+
+`lastmod` uses real content dates and never `new Date()`. Articles supply their
+own `dateModified`; the catalogue and static pages use `CATALOGUE_MODIFIED` from
+`src/data/site.js`. Stamping today's date on every URL at build time claims the
+whole site changed on every deploy, and crawlers that notice start discounting
+`lastmod` entirely — so bump `CATALOGUE_MODIFIED` by hand when the catalogue
+actually changes.
 
 ## Routing on static hosts
 

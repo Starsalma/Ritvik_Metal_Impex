@@ -3,7 +3,16 @@ import Seo from '../components/Seo';
 import { scrollToContact } from '../utils/navigation';
 import { products } from '../data/products';
 import { articles } from '../data/articles';
-import { site, absoluteUrl, breadcrumbSchema } from '../data/site';
+import {
+  site,
+  absoluteUrl,
+  breadcrumbSchema,
+  clamp,
+  TITLE_MAX,
+  DESCRIPTION_MAX,
+  CATALOGUE_PUBLISHED,
+  CATALOGUE_MODIFIED,
+} from '../data/site';
 
 export default function ProductDetailPage() {
   const { id } = useParams();
@@ -36,8 +45,16 @@ export default function ProductDetailPage() {
   const relatedGuides = articles.filter((a) => a.relatedProductIds?.includes(product.id)).slice(0, 3);
 
   const path = `/products/${product.id}`;
-  const seoTitle = `${product.material} ${product.name} Supplier & Stockist in Mumbai, India`;
-  const seoDescription = `${product.name} in ${product.material} from Ritvik Metal Impex, Mumbai. ${product.description.slice(0, 118)}… Mill test certificates, ready stock and pan-India delivery. Request a price.`;
+  /*
+   * Both of these used to run 87–106 and 262–281 characters, so Google cut the
+   * brand off every title and half of every description. clamp() in <Seo />
+   * is the backstop; keeping the source strings short is the actual fix.
+   */
+  const seoTitle = clamp(`${product.name} Supplier in Mumbai`, TITLE_MAX);
+  const seoDescription = clamp(
+    `${product.material} ${product.name.toLowerCase()} from Ritvik Metal Impex, Mumbai. ${product.description}`,
+    DESCRIPTION_MAX,
+  );
   const seoKeywords = `${product.name}, ${product.material} ${product.name}, ${product.name} supplier Mumbai, ${product.name} stockist India, ${product.name} price India, ${product.material} supplier, ${product.form} supplier India, Ritvik Metal Impex`;
 
   const productSchema = {
@@ -60,20 +77,13 @@ export default function ProductDetailPage() {
       { '@type': 'PropertyValue', name: 'Category', value: product.category },
       { '@type': 'PropertyValue', name: 'Certification', value: 'Mill Test Certificate (EN 10204 3.1); 3.2 / IBR on request' },
     ],
-    offers: {
-      '@type': 'Offer',
-      url: absoluteUrl(path),
-      availability: 'https://schema.org/InStock',
-      priceCurrency: 'INR',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        priceCurrency: 'INR',
-        valueAddedTaxIncluded: false,
-        description: 'Price on request — quoted against size, grade, schedule and quantity.',
-      },
-      seller: { '@id': `${site.url}/#organization` },
-      areaServed: 'IN',
-    },
+    /*
+     * No `offers` node. Pricing here is genuinely quote-based (it depends on
+     * size, grade, schedule and quantity), and schema.org Offer requires a
+     * price or a priced priceSpecification. Emitting an Offer with no price
+     * is invalid structured data and fails the Rich Results Test — a Product
+     * without offers is valid, so that is what we publish.
+     */
   };
 
   const crumbs = breadcrumbSchema([
@@ -86,10 +96,12 @@ export default function ProductDetailPage() {
     ? {
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
-        headline: product.blog.title,
-        description: product.blog.intro,
+        headline: clamp(product.blog.title, 110),
+        description: clamp(product.blog.intro, 250),
         image: [absoluteUrl(product.image)],
         inLanguage: site.language,
+        datePublished: CATALOGUE_PUBLISHED,
+        dateModified: CATALOGUE_MODIFIED,
         author: { '@type': 'Organization', name: site.name },
         publisher: {
           '@type': 'Organization',

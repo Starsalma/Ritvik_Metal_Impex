@@ -50,7 +50,7 @@ export default function ProductsPage() {
   return (
     <>
       <Seo
-        title="Industrial Metal Products — Pipes, Fittings, Flanges, Sheets, Bars & Copper"
+        title="Industrial Metal Products — Pipes, Fittings & Flanges"
         description="Browse the full Ritvik Metal Impex catalogue: stainless steel, carbon steel, alloy, duplex and nickel alloy pipes, buttweld and forged fittings, flanges, sheets, plates, coils, bars, flats, fasteners and valves, plus copper tubes, strips, wires and brass rods."
         keywords="stainless steel products supplier, pipe fittings flanges supplier Mumbai, stainless steel sheet plate coil supplier, copper tube brass rod supplier India, duplex nickel alloy stockist, industrial metal catalogue India"
         path="/products"
