@@ -1,15 +1,31 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { products } from "../data/products";
 import AnimatedSection from "../components/AnimatedSection";
 import Seo from "../components/Seo";
+import CTABand from "../components/CTABand";
+import RelatedLinks from "../components/RelatedLinks";
+import { browseClusters } from "../data/internalLinks";
 import { site, absoluteUrl, breadcrumbSchema } from "../data/site";
 
 export default function ProductsPage() {
-  const navigate = useNavigate();
-  const [materialFilter, setMaterialFilter] = useState("All");
-  const [formFilter, setFormFilter] = useState("All");
+  /*
+   * Filters live in the URL so "/products?material=Copper" is a real,
+   * linkable, crawlable page. The internal-link clusters in the footer and on
+   * product pages point here; without this they would all land on an unfiltered
+   * catalogue and the links would be meaningless.
+   */
+  const [searchParams, setSearchParams] = useSearchParams();
+  const materialFilter = searchParams.get("material") || "All";
+  const formFilter = searchParams.get("form") || "All";
   const [search, setSearch] = useState("");
+
+  const setFilter = (key, value) => {
+    const next = new URLSearchParams(searchParams);
+    if (value === "All") next.delete(key);
+    else next.set(key, value);
+    setSearchParams(next, { replace: true });
+  };
 
   const materials = ["All","Stainless Steel","Carbon Steel","Alloy Steel","Duplex Steel","Nickel Alloys","Copper","Brass"];
   const forms = ["All","Pipes","Tubes","Sheets","Plates","Bars","Flanges","Fittings","Fasteners","Valves","Wire","Profiles"];
@@ -17,7 +33,13 @@ export default function ProductsPage() {
   const filteredProducts = products.filter((product) => {
     const matchesMaterial = materialFilter === "All" || product.material === materialFilter;
     const matchesForm = formFilter === "All" || product.form === formFilter;
-    const matchesSearch = product.name.toLowerCase().includes(search.toLowerCase());
+    const term = search.trim().toLowerCase();
+    const matchesSearch =
+      !term ||
+      product.name.toLowerCase().includes(term) ||
+      product.material.toLowerCase().includes(term) ||
+      product.form.toLowerCase().includes(term) ||
+      product.description.toLowerCase().includes(term);
     return matchesMaterial && matchesForm && matchesSearch;
   });
 
@@ -47,13 +69,39 @@ export default function ProductsPage() {
     { name: "Products", path: "/products" },
   ]);
 
+  /*
+   * Faceted navigation handling. A single facet ("all our copper products") is
+   * a genuine landing page and gets its own title, description and self
+   * canonical. Combining facets produces thin, near-duplicate permutations, so
+   * those canonicalise back to /products and are left out of the index.
+   */
+  const activeFacets = [materialFilter, formFilter].filter((f) => f !== "All");
+  const singleFacet = activeFacets.length === 1;
+  const multiFacet = activeFacets.length > 1;
+
+  const facetPath = singleFacet
+    ? `/products?${materialFilter !== "All" ? `material=${encodeURIComponent(materialFilter)}` : `form=${encodeURIComponent(formFilter)}`}`
+    : "/products";
+
+  const facetTitle = singleFacet
+    ? `${activeFacets[0]} Products — Supplier in Mumbai`
+    : "Industrial Metal Products — Pipes, Fittings & Flanges";
+
+  const facetDescription = singleFacet
+    ? `${activeFacets[0]} products supplied and stocked by Ritvik Metal Impex, Mumbai — ${filteredProducts
+        .map((p) => p.name)
+        .slice(0, 6)
+        .join(", ")}. Mill test certificates and pan-India delivery.`
+    : "Browse the full Ritvik Metal Impex catalogue: stainless steel, carbon steel, alloy, duplex and nickel alloy pipes, buttweld and forged fittings, flanges, sheets, plates, coils, bars, flats, fasteners and valves, plus copper tubes, strips, wires and brass rods.";
+
   return (
     <>
       <Seo
-        title="Industrial Metal Products — Pipes, Fittings & Flanges"
-        description="Browse the full Ritvik Metal Impex catalogue: stainless steel, carbon steel, alloy, duplex and nickel alloy pipes, buttweld and forged fittings, flanges, sheets, plates, coils, bars, flats, fasteners and valves, plus copper tubes, strips, wires and brass rods."
+        title={facetTitle}
+        description={facetDescription}
         keywords="stainless steel products supplier, pipe fittings flanges supplier Mumbai, stainless steel sheet plate coil supplier, copper tube brass rod supplier India, duplex nickel alloy stockist, industrial metal catalogue India"
-        path="/products"
+        path={facetPath}
+        noindex={multiFacet}
         image="/images/products/pipes-tubes.jpg"
         schema={[catalogueSchema, crumbs]}
       />
@@ -84,7 +132,7 @@ export default function ProductsPage() {
             <p className="font-bold text-[#0A1828] mb-3 uppercase text-sm tracking-widest">Material</p>
             <div className="flex flex-wrap gap-3">
               {materials.map((material) => (
-                <button key={material} onClick={() => setMaterialFilter(material)}
+                <button key={material} onClick={() => setFilter("material", material)}
                   className={`px-5 py-3 rounded-full text-sm font-bold transition-all duration-200 ${materialFilter === material ? "bg-[#0A1828] text-white" : "bg-gray-100 hover:bg-gray-200"}`}>
                   {material}
                 </button>
@@ -95,7 +143,7 @@ export default function ProductsPage() {
             <p className="font-bold text-[#0A1828] mb-3 uppercase text-sm tracking-widest">Product Form</p>
             <div className="flex flex-wrap gap-3">
               {forms.map((form) => (
-                <button key={form} onClick={() => setFormFilter(form)}
+                <button key={form} onClick={() => setFilter("form", form)}
                   className={`px-5 py-3 rounded-full text-sm font-bold transition-all duration-200 ${formFilter === form ? "bg-[#E5A93C] text-white" : "bg-gray-100 hover:bg-gray-200"}`}>
                   {form}
                 </button>
@@ -107,12 +155,9 @@ export default function ProductsPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
           {filteredProducts.map((product, index) => (
             <AnimatedSection key={product.id} animation="scaleUp" delay={index * 60}>
-              <div
-                onClick={() => navigate(`/products/${product.id}`)}
-                role="link"
-                tabIndex={0}
-                onKeyDown={(e) => { if (e.key === 'Enter') navigate(`/products/${product.id}`); }}
-                className="group cursor-pointer bg-white rounded-tl-[50px] rounded-br-[50px] overflow-hidden shadow-md hover:shadow-2xl border border-gray-100 transition-shadow duration-500 h-full">
+              <Link
+                to={`/products/${product.id}`}
+                className="group block bg-white rounded-tl-[50px] rounded-br-[50px] overflow-hidden shadow-md hover:shadow-2xl border border-gray-100 transition-shadow duration-500 h-full">
                 <div className="h-[260px] overflow-hidden bg-gray-100">
                   <img src={product.image} alt={`${product.material} ${product.name} supplier and stockist in Mumbai, India`}
                     loading={index < 4 ? "eager" : "lazy"}
@@ -128,7 +173,7 @@ export default function ProductsPage() {
                     <span className="text-[#E5A93C] group-hover:translate-x-1 transition-transform duration-200">→</span>
                   </div>
                 </div>
-              </div>
+              </Link>
             </AnimatedSection>
           ))}
         </div>
@@ -163,8 +208,21 @@ export default function ProductsPage() {
           </p>
         </div>
 
+        <RelatedLinks
+          clusters={browseClusters()}
+          title="Browse the Catalogue"
+          className="mt-24"
+        />
+
       </div>
     </section>
+
+    <CTABand
+      eyebrow="Request a Quote"
+      title="Tell us the grade, size and quantity — we will price it today"
+      body="Send your enquiry, drawing or line list. We confirm stock position, grade options and a firm price, with mill test certificates as standard and third-party inspection where your project requires it."
+      whatsappMessage="Hi, I would like a quote for products from your catalogue."
+    />
     </>
   );
 }

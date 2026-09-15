@@ -1,8 +1,13 @@
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import { scrollToContact } from '../utils/navigation';
+import SpecTables from '../components/SpecTables';
+import RelatedLinks from '../components/RelatedLinks';
+import CTABand from '../components/CTABand';
 import { products } from '../data/products';
 import { articles } from '../data/articles';
+import { getSpecTables, getQuickFacts } from '../data/specifications';
+import { productLinkClusters } from '../data/internalLinks';
 import {
   site,
   absoluteUrl,
@@ -43,6 +48,10 @@ export default function ProductDetailPage() {
 
   /* Technical guides that reference this product — internal linking for topical authority */
   const relatedGuides = articles.filter((a) => a.relatedProductIds?.includes(product.id)).slice(0, 3);
+
+  const specTables = getSpecTables(product);
+  const quickFacts = getQuickFacts(product);
+  const linkClusters = productLinkClusters(product);
 
   const path = `/products/${product.id}`;
   /*
@@ -191,6 +200,30 @@ export default function ProductDetailPage() {
             </div>
           </div>
 
+          {/* At-a-glance strip */}
+          <dl className="mt-20 grid grid-cols-2 lg:grid-cols-6 border border-gray-200 rounded-tl-[26px] rounded-br-[26px] overflow-hidden">
+            {quickFacts.map((fact, i) => (
+              <div
+                key={fact.label}
+                className={`p-5 ${i % 2 === 0 ? 'border-r' : ''} lg:border-r lg:last:border-r-0 border-b lg:border-b-0 border-gray-200 last:border-r-0`}
+              >
+                <dt className="text-[10px] font-black tracking-[0.16em] text-gray-400 uppercase">
+                  {fact.label}
+                </dt>
+                <dd className="text-[#0A1828] font-bold text-[14px] mt-1.5 leading-snug">
+                  {fact.value}
+                </dd>
+              </div>
+            ))}
+          </dl>
+
+          {/* Technical specifications — chemistry, mechanicals, sizes, equivalents */}
+          {specTables.length > 0 && (
+            <div className="mt-24">
+              <SpecTables tables={specTables} productName={product.name} />
+            </div>
+          )}
+
           {/* SEO ARTICLE SECTION */}
           {product.blog && (
             <article className="mt-24 border-t border-gray-100 pt-16">
@@ -295,8 +328,8 @@ export default function ProductDetailPage() {
               <h2 className="text-2xl font-black text-[#0A1828] uppercase mb-8">Related Products</h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {related.map((r) => (
-                  <div key={r.id} onClick={() => navigate(`/products/${r.id}`)}
-                    className="cursor-pointer bg-white rounded-tl-[30px] rounded-br-[30px] overflow-hidden shadow-md hover:shadow-xl border border-gray-100 transition-all">
+                  <Link key={r.id} to={`/products/${r.id}`}
+                    className="block bg-white rounded-tl-[30px] rounded-br-[30px] overflow-hidden shadow-md hover:shadow-xl border border-gray-100 transition-all">
                     <div className="h-[180px] bg-gray-100 overflow-hidden">
                       <img src={r.image} alt={`${r.material} ${r.name} supplier in Mumbai, India`} loading="lazy" className="w-full h-full object-cover" onError={(e)=>{e.target.style.display='none';}} />
                     </div>
@@ -304,14 +337,24 @@ export default function ProductDetailPage() {
                       <span className="text-[#E5A93C] text-[10px] font-black tracking-widest uppercase">{r.material}</span>
                       <h4 className="text-[15px] font-black text-[#0A1828] uppercase mt-1">{r.name}</h4>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>
           )}
 
+          <RelatedLinks clusters={linkClusters} title="Explore More" className="mt-24" />
+
         </div>
       </section>
+
+      <CTABand
+        eyebrow="Enquire Now"
+        title={`Need a price for ${product.name}?`}
+        body={`Tell us the grade, size, schedule and quantity and we will confirm stock position and a firm price. Every consignment ships with a mill test certificate traceable to the heat number.`}
+        primaryLabel="Get a Quote"
+        whatsappMessage={`Hi, I need a quote for ${product.name}.`}
+      />
     </>
   );
 }

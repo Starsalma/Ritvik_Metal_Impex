@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import Seo from './Seo';
+import CTABand from './CTABand';
 import { scrollToContact } from '../utils/navigation';
 import { site, absoluteUrl, breadcrumbSchema, organizationSchema } from '../data/site';
 
@@ -265,6 +266,13 @@ export default function AboutPage() {
         </div>
       </section>
 
+    <CTABand
+        eyebrow="Work With Us"
+        title="Put us on your approved vendor list"
+        body="We supply EPC contractors, fabricators, OEMs and end users across India and export markets. Send an enquiry or ask for our documentation pack — GST, test certificates and inspection approvals."
+        primaryLabel="Contact Our Team"
+        whatsappMessage="Hi, I would like to know more about Ritvik Metal Impex."
+      />
     </div>
   );
 }

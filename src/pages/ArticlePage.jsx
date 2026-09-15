@@ -1,7 +1,10 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import Seo from '../components/Seo';
 import { scrollToContact } from '../utils/navigation';
+import RelatedLinks from '../components/RelatedLinks';
+import CTABand from '../components/CTABand';
 import { articles, getArticle } from '../data/articles';
+import { articleLinkClusters } from '../data/internalLinks';
 import { products } from '../data/products';
 import { site, absoluteUrl, breadcrumbSchema, faqSchema } from '../data/site';
 
@@ -137,6 +140,7 @@ export default function ArticlePage() {
   const path = `/blog/${article.slug}`;
   const relatedProducts = products.filter((p) => article.relatedProductIds?.includes(p.id));
   const otherArticles = articles.filter((a) => a.slug !== article.slug).slice(0, 3);
+  const linkClusters = articleLinkClusters(article);
 
   const articleSchema = {
     '@context': 'https://schema.org',
@@ -443,8 +447,17 @@ export default function ArticlePage() {
               </div>
             </section>
           )}
+          <RelatedLinks clusters={linkClusters} title="Related Reading" className="mt-20" />
         </div>
       </div>
+
+      <CTABand
+        eyebrow="Talk to a Specialist"
+        title="Specifying this for a live project?"
+        body="Send us the line list, drawing or grade you are working to. We will confirm availability, suggest equivalents where it saves cost, and quote with full certification."
+        primaryLabel="Request a Quote"
+        whatsappMessage={`Hi, I read your guide "${article.title}" and would like technical assistance.`}
+      />
     </>
   );
 }

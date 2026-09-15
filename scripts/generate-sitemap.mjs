@@ -35,6 +35,26 @@ const urls = [
   { path: '/blog', changefreq: 'weekly', priority: '0.8', lastmod: latestArticleDate },
   { path: '/about', changefreq: 'monthly', priority: '0.7', lastmod: CATALOGUE_MODIFIED },
 
+  /*
+   * Single-facet catalogue views. ProductsPage gives each of these its own
+   * title, description and self canonical, so they are real landing pages
+   * ("copper products", "flanges") rather than duplicate filters. Multi-facet
+   * combinations are noindex and deliberately excluded here.
+   */
+  ...[...new Set(products.map((p) => p.material))].map((material) => ({
+    path: `/products?material=${encodeURIComponent(material)}`,
+    changefreq: 'monthly',
+    priority: '0.7',
+    lastmod: CATALOGUE_MODIFIED,
+  })),
+
+  ...[...new Set(products.map((p) => p.form))].map((form) => ({
+    path: `/products?form=${encodeURIComponent(form)}`,
+    changefreq: 'monthly',
+    priority: '0.6',
+    lastmod: CATALOGUE_MODIFIED,
+  })),
+
   ...products.map((product) => ({
     path: `/products/${product.id}`,
     changefreq: 'monthly',
@@ -55,7 +75,7 @@ const xml = `<?xml version="1.0" encoding="UTF-8"?>
 ${urls
   .map(
     ({ path, changefreq, priority, lastmod }) => `  <url>
-    <loc>${SITE_URL}${path === '/' ? '/' : path}</loc>
+    <loc>${SITE_URL}${path === '/' ? '/' : path.replace(/&/g, '&amp;')}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>

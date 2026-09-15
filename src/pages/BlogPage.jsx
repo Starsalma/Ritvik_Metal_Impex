@@ -1,8 +1,9 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import { products } from '../data/products';
 import { articles } from '../data/articles';
 import AnimatedSection from '../components/AnimatedSection';
+import CTABand from '../components/CTABand';
 import { site, absoluteUrl, breadcrumbSchema } from '../data/site';
 
 const formatDate = (iso) =>
@@ -14,7 +15,6 @@ const formatDate = (iso) =>
   });
 
 export default function BlogPage() {
-  const navigate = useNavigate();
 
   const blogSchema = {
     '@context': 'https://schema.org',
@@ -139,14 +139,9 @@ export default function BlogPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product, index) => (
               <AnimatedSection key={product.id} animation="fadeUp" delay={index * 40}>
-                <div
-                  onClick={() => navigate(`/products/${product.id}`)}
-                  role="link"
-                  tabIndex={0}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter') navigate(`/products/${product.id}`);
-                  }}
-                  className="group cursor-pointer bg-white rounded-tl-[40px] rounded-br-[40px] overflow-hidden shadow-md hover:shadow-2xl border border-gray-100 transition-shadow duration-500 h-full"
+                <Link
+                  to={`/products/${product.id}`}
+                  className="group block bg-white rounded-tl-[40px] rounded-br-[40px] overflow-hidden shadow-md hover:shadow-2xl border border-gray-100 transition-shadow duration-500 h-full"
                 >
                   <div className="h-[200px] overflow-hidden bg-gray-100">
                     <img
@@ -178,12 +173,20 @@ export default function BlogPage() {
                       </span>
                     </div>
                   </div>
-                </div>
+                </Link>
               </AnimatedSection>
             ))}
           </div>
         </div>
       </section>
+
+      <CTABand
+        eyebrow="Need Advice?"
+        title="Not sure which grade your application needs?"
+        body="Our team specifies metals for oil and gas, power, chemical, pharmaceutical and marine projects every day. Describe the service conditions and we will recommend the grade — and quote it."
+        primaryLabel="Ask Our Team"
+        whatsappMessage="Hi, I have a technical question about metal grade selection."
+      />
     </>
   );
 }

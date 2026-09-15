@@ -1,7 +1,9 @@
+import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
+import Hero3D from './components/Hero3D';
+import Showcase3D from './components/Showcase3D';
 import StatsBar from './components/StatsBar';
 import AboutSection from './components/AboutSection';
 import ProductsGrid from './components/ProductsGrid';
@@ -12,13 +14,30 @@ import ContactForm from './components/ContactForm';
 import FloatingButtons from './components/FloatingButtons';
 import ScrollToTop from './components/ScrollToTop';
 import Seo from './components/Seo';
+import CTABand from './components/CTABand';
 
-import AboutPage from './components/AboutPage';
-import ProductsPage from './pages/ProductsPage';
-import ProductDetailPage from './pages/ProductDetailPage';
-import BlogPage from './pages/BlogPage';
-import ArticlePage from './pages/ArticlePage';
-import NotFoundPage from './pages/NotFoundPage';
+/*
+ * Route-level code splitting. The article and specification data is large and
+ * only the homepage matters for the first paint, so everything below the
+ * landing page loads on demand. This keeps the initial JS payload — and
+ * therefore LCP — small on mobile connections.
+ */
+const AboutPage = lazy(() => import('./components/AboutPage'));
+const ProductsPage = lazy(() => import('./pages/ProductsPage'));
+const ProductDetailPage = lazy(() => import('./pages/ProductDetailPage'));
+const BlogPage = lazy(() => import('./pages/BlogPage'));
+const ArticlePage = lazy(() => import('./pages/ArticlePage'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
+
+/** Minimal, layout-stable fallback — avoids a CLS penalty while a chunk loads. */
+function RouteFallback() {
+  return (
+    <div className="min-h-[70vh] flex items-center justify-center" role="status" aria-live="polite">
+      <span className="sr-only">Loading…</span>
+      <span className="w-8 h-8 rounded-full border-2 border-gray-200 border-t-[#E5A93C] animate-spin" />
+    </div>
+  );
+}
 
 import { products } from './data/products';
 import {
@@ -86,12 +105,19 @@ function HomePage() {
           faqSchema(homeFaqs),
         ]}
       />
-      <Hero />
+      <Hero3D />
       <StatsBar />
+      <Showcase3D />
       <AboutSection />
       <ProductsGrid />
       <IndustriesAndWhyChooseUs />
       <TPISection />
+      <CTABand
+        eyebrow="Start an Enquiry"
+        title="From a single flange to a full project line list"
+        body="Share your requirement and our technical team will come back with grade options, stock availability and a firm price — backed by mill test certificates, IBR certification where required, and third-party inspection support."
+        whatsappMessage="Hi, I would like to discuss a requirement with Ritvik Metal Impex."
+      />
       <ContactForm />
     </>
   );
@@ -103,6 +129,7 @@ export default function App() {
       <ScrollToTop />
       <Navbar />
       <main className="overflow-x-hidden flex-grow">
+        <Suspense fallback={<RouteFallback />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
@@ -112,6 +139,7 @@ export default function App() {
           <Route path="/blog/:slug" element={<ArticlePage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
+        </Suspense>
       </main>
       <Footer />
       <FloatingButtons />
