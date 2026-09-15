@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { scrollToContact } from '../utils/navigation';
 
 const navLinks = [
   { label: 'HOME',       to: '/' },
@@ -11,6 +12,8 @@ const navLinks = [
 
 export default function Navbar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   return (
     <>
@@ -30,14 +33,14 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map(({ label, to }) => (
               to.startsWith('#')
-                ? <a key={label} href={to} className="text-[11px] font-bold tracking-widest text-gray-500 hover:text-[#0A1828] transition-colors">{label}</a>
+                ? <button key={label} type="button" onClick={() => scrollToContact(navigate, pathname)} className="text-[11px] font-bold tracking-widest text-gray-500 hover:text-[#0A1828] transition-colors uppercase cursor-pointer">{label}</button>
                 : <Link key={label} to={to} className="text-[11px] font-bold tracking-widest text-gray-500 hover:text-[#0A1828] transition-colors">{label}</Link>
             ))}
           </div>
 
           {/* Desktop CTA */}
           <div className="hidden md:flex">
-            <button onClick={() => document.getElementById('contact-us').scrollIntoView({behavior:'smooth'})} className="bg-[#051124] text-white text-[10px] font-bold tracking-[0.15em] px-6 py-3.5 uppercase flex items-center gap-3 transition-colors">
+            <button onClick={() => scrollToContact(navigate, pathname)} className="bg-[#051124] text-white text-[10px] font-bold tracking-[0.15em] px-6 py-3.5 uppercase flex items-center gap-3 transition-colors">
               GET A QUOTE
             </button>
           </div>
@@ -67,12 +70,12 @@ export default function Navbar() {
           <div className="flex flex-col gap-8">
             {navLinks.map(({ label, to }) => (
               to.startsWith('#')
-                ? <a key={label} href={to} onClick={() => setIsSidebarOpen(false)} className="text-[14px] font-black tracking-widest text-[#0A1828] uppercase">{label}</a>
+                ? <button key={label} type="button" onClick={() => { setIsSidebarOpen(false); scrollToContact(navigate, pathname); }} className="text-left text-[14px] font-black tracking-widest text-[#0A1828] uppercase cursor-pointer">{label}</button>
                 : <Link key={label} to={to} onClick={() => setIsSidebarOpen(false)} className="text-[14px] font-black tracking-widest text-[#0A1828] uppercase">{label}</Link>
             ))}
           </div>
           <div className="mt-auto">
-            <button onClick={() => { setIsSidebarOpen(false); document.getElementById('contact-us').scrollIntoView({behavior:'smooth'}); }} className="w-full bg-[#051124] text-white py-4 font-bold tracking-[0.15em] uppercase">Get a Quote</button>
+            <button onClick={() => { setIsSidebarOpen(false); scrollToContact(navigate, pathname); }} className="w-full bg-[#051124] text-white py-4 font-bold tracking-[0.15em] uppercase">Get a Quote</button>
           </div>
         </div>
       </div>

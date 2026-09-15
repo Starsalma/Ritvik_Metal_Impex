@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
@@ -35,7 +35,7 @@ export default function ContactForm() {
       } else {
         setError("Something went wrong. Please try again or contact us directly.");
       }
-    } catch (err) {
+    } catch {
       setError("Something went wrong. Please try again or contact us directly.");
     } finally {
       setLoading(false);

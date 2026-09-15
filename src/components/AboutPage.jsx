@@ -1,4 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import Seo from './Seo';
+import CTABand from './CTABand';
+import { scrollToContact } from '../utils/navigation';
+import { site, absoluteUrl, breadcrumbSchema, organizationSchema } from '../data/site';
 
 function useReveal(threshold = 0.12) {
   const ref = useRef(null);
@@ -11,7 +16,7 @@ function useReveal(threshold = 0.12) {
     );
     obs.observe(el);
     return () => obs.disconnect();
-  }, []);
+  }, [threshold]);
   return ref;
 }
 
@@ -60,27 +65,8 @@ const css = `
   .ab-bounce { animation:ab-bounce 2.2s ease-in-out infinite; }
 `;
 
-const stats = [
-  { n: '20+',  l: 'Years Active'       },
-  { n: '500+', l: 'Products'           },
-  { n: '13+',  l: 'Industries'         },
-  { n: '9',    l: 'TPI Certifications' },
-];
 
-const team = [
-  { init:'RK', name:'Rajesh Kumar',     role:'Founder & MD',             note:'25+ yrs in steel trading. Built RMI from the ground up with a quality-first ethos.' },
-  { init:'AP', name:'Anand Parekh',     role:'Director – Operations',    note:'Materials engineering background. Oversees sourcing, logistics & quality control.' },
-  { init:'SM', name:'Sunita Mehta',     role:'Director – Business Dev.',  note:'Consultative seller. Matches client project specs to the right grade & form.' },
-  { init:'VD', name:'Vijay Desai',      role:'Head – Quality & TPI',     note:'Former DNV/TUV inspector. Manages all mill certifications & third-party approvals.' },
-];
 
-const milestones = [
-  { yr:'2001', head:'Founded',         body:'Established in Mumbai as a stainless steel specialist.' },
-  { yr:'2007', head:'Expansion',       body:'Added Carbon Steel & Alloy grades; 50+ clients across 5 states.' },
-  { yr:'2013', head:'TPI Approvals',   body:'Certified by DNV, TUV India, L&T, ONGC, NTPC, SAIL & more.' },
-  { yr:'2019', head:'Exotic Alloys',   body:'Launched Duplex, Super Duplex and High Nickel Alloy division.' },
-  { yr:'Now',  head:'National Reach',  body:'500+ variants. 13+ industries. Trusted across India & globally.' },
-];
 
 const values = [
   { icon:'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z', title:'QUALITY FIRST',     body:'Every item verified against international mill standards before dispatch.' },
@@ -90,6 +76,9 @@ const values = [
 ];
 
 export default function AboutPage() {
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+
   /* hero entrance */
   useEffect(() => {
     const t = setTimeout(() => {
@@ -113,18 +102,35 @@ export default function AboutPage() {
 
   /* section refs */
   const whoTagR  = useReveal(); const whoHR = useReveal(); const whoTxtR = useReveal(); const whoImgR = useReveal();
-  const tpiR     = useReveal(.08);
   const mvR      = useReveal(.1);
-  const teamHR   = useReveal(); const teamGR = useReveal(.08);
-  const tlHR     = useReveal(); const tlR    = useReveal(.08);
   const valHR    = useReveal(); const valR   = useReveal(.08);
-  const ctaR     = useReveal(.15);
+
+  const aboutSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: `About ${site.name}`,
+    url: absoluteUrl('/about'),
+    inLanguage: site.language,
+    isPartOf: { '@id': `${site.url}/#website` },
+    about: { '@id': `${site.url}/#organization` },
+  };
 
   return (
     <div className="w-full bg-white overflow-x-hidden font-sans">
+      <Seo
+        title="About Ritvik Metal Impex — Metal Supplier, Mumbai"
+        description="Ritvik Metal Impex is a Mumbai-based supplier, stockist and exporter of stainless steel, carbon steel, alloy steel, duplex, nickel alloy, copper and brass products. Learn about our quality systems, third-party inspection support and the industries we serve."
+        keywords="about Ritvik Metal Impex, stainless steel supplier Mumbai, metal stockist India, industrial metal exporter India, steel supplier company Maharashtra"
+        path="/about"
+        image="/images/about.jpg"
+        schema={[aboutSchema, breadcrumbSchema([
+          { name: 'Home', path: '/' },
+          { name: 'About Us', path: '/about' },
+        ]), organizationSchema()]}
+      />
       <style>{css}</style>
 
-      
+
 
       {/* ══════════ WHO WE ARE ══════════ */}
       <section className="w-full bg-white px-6 lg:px-16 py-24">
@@ -134,8 +140,11 @@ export default function AboutPage() {
           <div ref={whoImgR} className="ab-left relative h-[420px] sm:h-[500px] img-zoom">
             <div className="w-[82%] h-[88%] overflow-hidden shadow-2xl relative z-10"
               style={{clipPath:'polygon(0 0,100% 0,100% 88%,88% 100%,0 100%)'}}>
-              <img src="https://images.unsplash.com/photo-1565793979231-5a39d2ff4ce1?auto=format&fit=crop&q=80&w=900"
-                alt="" className="w-full h-full object-cover" />
+              <img src="/images/about.jpg"
+                alt="Ritvik Metal Impex — stainless steel and industrial metal stockyard, Mumbai"
+                loading="lazy"
+                className="w-full h-full object-cover"
+                onError={(e) => { e.target.style.display = 'none'; }} />
             </div>
             {/* accent box */}
             <div className="absolute right-0 bottom-4 w-[46%] bg-[#0A1828] p-6 z-20 shadow-xl"
@@ -154,9 +163,10 @@ export default function AboutPage() {
               <span className="text-[10px] font-black tracking-[0.3em] text-[#E5A93C] uppercase">Who We Are</span>
             </div>
             <div ref={whoHR} className="ab-h mt-3">
-              <h2 className="text-[30px] sm:text-[40px] lg:text-[50px] font-black text-[#0A1828] uppercase tracking-tight leading-[1.08]">
+              <h1 className="text-[30px] sm:text-[40px] lg:text-[50px] font-black text-[#0A1828] uppercase tracking-tight leading-[1.08]">
                 ABOUT<br />RITVIK METAL IMPEX
-              </h2>
+                <span className="sr-only"> — industrial metal supplier and stockist in Mumbai, India</span>
+              </h1>
             </div>
             <div ref={whoTxtR} className="ab-up mt-1">
               <div className="ab-line w-12 h-[2px] bg-[#E5A93C]/50 mt-5 mb-6" />
@@ -167,10 +177,14 @@ export default function AboutPage() {
                 Our commitment to excellence, quality and customer satisfaction makes us your go-to partner for all industrial metal needs.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <button className="group bg-[#051124] text-white text-[10px] font-black tracking-[0.22em] px-7 py-[13px] uppercase flex items-center gap-4 hover:bg-[#0d2040] transition-colors cursor-pointer">
+                <Link to="/products" className="group bg-[#051124] text-white text-[10px] font-black tracking-[0.22em] px-7 py-[13px] uppercase flex items-center gap-4 hover:bg-[#0d2040] transition-colors cursor-pointer">
                   <span>OUR PRODUCTS</span><span className="text-[#E5A93C] group-hover:translate-x-1 transition-transform">→</span>
-                </button>
-                <button className="text-[#0A1828] text-[10px] font-black tracking-[0.22em] px-7 py-[13px] uppercase border border-gray-300 hover:border-[#0A1828] transition-colors cursor-pointer bg-white">
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => scrollToContact(navigate, pathname)}
+                  className="text-[#0A1828] text-[10px] font-black tracking-[0.22em] px-7 py-[13px] uppercase border border-gray-300 hover:border-[#0A1828] transition-colors cursor-pointer bg-white"
+                >
                   CONTACT US
                 </button>
               </div>
@@ -252,6 +266,13 @@ export default function AboutPage() {
         </div>
       </section>
 
+    <CTABand
+        eyebrow="Work With Us"
+        title="Put us on your approved vendor list"
+        body="We supply EPC contractors, fabricators, OEMs and end users across India and export markets. Send an enquiry or ask for our documentation pack — GST, test certificates and inspection approvals."
+        primaryLabel="Contact Our Team"
+        whatsappMessage="Hi, I would like to know more about Ritvik Metal Impex."
+      />
     </div>
   );
 }

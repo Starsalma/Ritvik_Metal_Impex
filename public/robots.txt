@@ -1,0 +1,19 @@
+# robots.txt — https://www.ritvikmetalimpex.com
+
+User-agent: *
+Allow: /
+
+# No private areas; everything on this site is public marketing content.
+Disallow: /404
+
+# Common SEO-noise crawlers — block to save bandwidth, not for indexing reasons.
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
+
+Sitemap: https://www.ritvikmetalimpex.com/sitemap.xml
