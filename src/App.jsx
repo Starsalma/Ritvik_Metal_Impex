@@ -40,6 +40,7 @@ function RouteFallback() {
 }
 
 import { products } from './data/products';
+import { MOQ } from './data/specifications';
 import {
   site,
   absoluteUrl,
@@ -73,6 +74,24 @@ const homeFaqs = [
     question: 'Do you export outside India?',
     answer:
       'Yes. We export to the Middle East, Europe, the United States, Africa and South East Asia, with export packing, documentation and marking arranged as required.',
+  },
+  {
+    question: 'What is the minimum order quantity?',
+    answer: `The minimum order quantity is ${MOQ}. Mixed sizes within the same grade can be combined to reach the minimum, so a trial order or a small maintenance requirement is welcome.`,
+  },
+  {
+    question: 'How long does delivery take?',
+    answer:
+      'Items held in ready stock are dispatched within 1 to 3 working days. Material rolled or produced to order against a mill schedule typically takes 2 to 6 weeks depending on grade, size and quantity.',
+  },
+  {
+    question: 'Do you publish prices?',
+    answer: `No. Industrial metal pricing moves with alloy surcharges and depends on grade, size, schedule and quantity, so every enquiry is quoted individually. Send the specification and quantity and we reply with a firm price; the minimum order quantity is ${MOQ}.`,
+  },
+  {
+    question: 'What certification is supplied with an order?',
+    answer:
+      'A mill test certificate to EN 10204 3.1, traceable to the heat number, is supplied as standard with every consignment. EN 10204 3.2 with a third-party witness, IBR Form III-A and III-C for steam service in India, and NACE MR0175 compliance for sour service can be arranged when stated at enquiry stage.',
   },
 ];
 

@@ -12,6 +12,9 @@
  * substitute for the mill test certificate of a specific heat.
  */
 
+/** Minimum order quantity, quoted on every product page and in schema. */
+export const MOQ = '5 kg';
+
 /* ------------------------------------------------------------------ */
 /* Chemical composition — % by weight, max unless a range is given     */
 /* ------------------------------------------------------------------ */
@@ -485,6 +488,94 @@ const dimensional = {
   },
 };
 
+
+/* ------------------------------------------------------------------ */
+/* Pipe dimensions & weight — ASME B36.19M                             */
+/* ------------------------------------------------------------------ */
+
+/*
+ * Outside diameter and wall thickness per ASME B36.19M (stainless steel pipe).
+ * Weight is computed rather than transcribed, which removes a whole class of
+ * copy-paste error from a 14-row × 3-schedule table:
+ *   kg/m = pi * t * (OD - t) * density / 1e6
+ * with density 8000 kg/m3 for austenitic stainless.
+ */
+const SS_DENSITY = 8000;
+const kgPerMetre = (od, t) => (Math.PI * t * (od - t) * SS_DENSITY) / 1e6;
+
+const B36_19M = [
+  // [NPS, OD mm, Sch 10S, Sch 40S, Sch 80S]
+  ['1/2"', 21.3, 2.11, 2.77, 3.73],
+  ['3/4"', 26.7, 2.11, 2.87, 3.91],
+  ['1"', 33.4, 2.77, 3.38, 4.55],
+  ['1 1/4"', 42.2, 2.77, 3.56, 4.85],
+  ['1 1/2"', 48.3, 2.77, 3.68, 5.08],
+  ['2"', 60.3, 2.77, 3.91, 5.54],
+  ['2 1/2"', 73.0, 3.05, 5.16, 7.01],
+  ['3"', 88.9, 3.05, 5.49, 7.62],
+  ['4"', 114.3, 3.05, 6.02, 8.56],
+  ['5"', 141.3, 3.40, 6.55, 9.53],
+  ['6"', 168.3, 3.40, 7.11, 10.97],
+  ['8"', 219.1, 3.76, 8.18, 12.70],
+  ['10"', 273.0, 4.19, 9.27, 12.70],
+  ['12"', 323.8, 4.57, 9.53, 12.70],
+];
+
+const cell = (od, t) => `${t.toFixed(2)} mm / ${kgPerMetre(od, t).toFixed(2)} kg/m`;
+
+const pipeDimensions = {
+  id: 'dimensions-weight',
+  title: 'Pipe Dimensions & Weight Chart',
+  note:
+    'Outside diameter and wall thickness per ASME B36.19M. Weight is calculated for austenitic stainless at 8.0 g/cm3 and is indicative — actual weight varies with grade and mill tolerance. Each cell shows wall thickness / weight per metre.',
+  columns: ['NPS', 'OD (mm)', 'Sch 10S', 'Sch 40S', 'Sch 80S'],
+  rows: B36_19M.map(([nps, od, s10, s40, s80]) => [
+    nps,
+    od.toFixed(1),
+    cell(od, s10),
+    cell(od, s40),
+    cell(od, s80),
+  ]),
+};
+
+/* Welded pipe is also sold in square and rectangular section. */
+const hollowSections = {
+  id: 'hollow-sections',
+  title: 'Square & Rectangular Sections',
+  note:
+    'Welded stainless steel hollow sections, supplied in 304/304L, 316/316L and 202. Other sizes are rolled to order.',
+  columns: ['Section', 'Size range', 'Wall thickness', 'Length'],
+  rows: [
+    ['Square', '10 x 10 mm to 200 x 200 mm', '0.8 mm to 8 mm', '6 m / 12 m / cut to length'],
+    ['Rectangular', '10 x 20 mm to 200 x 400 mm', '0.8 mm to 8 mm', '6 m / 12 m / cut to length'],
+    ['Round (welded)', '6 mm to 610 mm OD', '0.6 mm to 12 mm', '6 m / 12 m / cut to length'],
+    ['Finish', 'Mill, matt, satin, No. 4 brushed, No. 8 mirror', '—', '—'],
+  ],
+};
+
+/* ------------------------------------------------------------------ */
+/* Commercial terms — the same for every line                          */
+/* ------------------------------------------------------------------ */
+
+const commercial = (product) => ({
+  id: 'ordering',
+  title: 'Ordering & Supply',
+  note: 'Cut lengths, non-standard sizes and special certification are available on request. Prices are quoted against grade, size, schedule and quantity.',
+  columns: ['Parameter', 'Detail'],
+  rows: [
+    ['Minimum order quantity', `${MOQ} (mixed sizes within a grade can be combined to reach the MOQ)`],
+    ['Price basis', 'Ex-works Mumbai, FOB or CIF — quoted per kg, per metre or per piece depending on the form'],
+    ['Lead time', 'Ready stock dispatched in 1–3 working days; mill orders typically 2–6 weeks'],
+    ['Certification', 'Mill test certificate to EN 10204 3.1 as standard; 3.2 with third-party witness, IBR and NACE MR0175 on request'],
+    ['Testing available', 'PMI, IGC (ASTM A262), hydrostatic, ultrasonic, radiographic, impact and hardness testing'],
+    ['Third-party inspection', 'Bureau Veritas, TÜV, DNV, SGS, Lloyd\'s Register, Intertek, RITES and client/EPC inspection'],
+    ['Packing', 'Wooden crates or pallets, plastic caps on pipe ends, VCI wrapping where required, seaworthy export packing'],
+    ['Payment terms', 'Advance, against proforma invoice, or LC at sight for export orders'],
+    ['Supply area', 'Across India and export to the Middle East, Europe, the USA, Africa and South East Asia'],
+    ['Product form', product?.form ?? '—'],
+  ],
+});
+
 /* ------------------------------------------------------------------ */
 
 /**
@@ -498,8 +589,11 @@ export function getSpecTables(product) {
     chemistry[product.material],
     mechanical[product.material],
     dimensional[product.form],
+    product.form === 'Pipes' ? pipeDimensions : null,
+    product.form === 'Pipes' ? hollowSections : null,
     physical[product.material],
     equivalents[product.material],
+    commercial(product),
   ].filter(Boolean);
 }
 
@@ -509,9 +603,9 @@ export function getQuickFacts(product) {
   return [
     { label: 'Material', value: product.material },
     { label: 'Product Form', value: product.form },
-    { label: 'Category', value: product.category },
+    { label: 'Min. Order Qty', value: MOQ },
     { label: 'Certification', value: 'EN 10204 3.1 MTC' },
-    { label: 'Third-Party Inspection', value: 'BV · TÜV · DNV · SGS' },
+    { label: 'Inspection', value: 'BV · TÜV · DNV · SGS' },
     { label: 'Supply', value: 'Ready stock & mill order' },
   ];
 }
