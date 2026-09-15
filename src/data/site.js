@@ -46,6 +46,12 @@ export const site = {
 
   gstin: '27EPNPK9821R1ZR',
 
+  /** Commercial terms shown on product pages, the contact form and in schema. */
+  moq: '5 kg',
+  leadTime: 'Ready stock dispatched in 1–3 working days; mill orders 2–6 weeks',
+  paymentTerms: 'Advance, against proforma invoice, or LC at sight for export',
+  packing: 'Wooden crates, plastic caps on pipe ends, seaworthy export packing',
+
   /**
    * Fill these in with the real values and they will flow into the
    * LocalBusiness / Organization schema. Left empty deliberately — publishing a

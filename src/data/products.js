@@ -347,7 +347,7 @@ export const products = [
     category: "Ferrous",
     form: "Fittings",
     material: "Stainless Steel",
-    image: "/images/products/electro-polish.jpg",
+    image: "/images/products/electro-polish.webp",
     description: "Electropolished stainless steel fittings with mirror-bright surface finish (Ra ≤ 0.5μm) for pharmaceutical, biotech, and semiconductor applications. Available in SS 316L with full compliance to ASME BPE, FDA 21 CFR, and cGMP requirements.",
     blog: {
       title: "Electropolished Fittings: Surface Finishing for Critical Applications",
@@ -385,7 +385,7 @@ export const products = [
     category: "Ferrous",
     form: "Bars",
     material: "Stainless Steel",
-    image: "/images/products/ss-flats.jpg",
+    image: "/images/products/ss-flats.webp",
     description: "Stainless Steel flat bars in SS 304/304L, 316/316L, 321, 410, 430 and Duplex grades. Width 10mm to 200mm, thickness 3mm to 50mm, in hot rolled, cold drawn and polished conditions per ASTM A276/A479 and EN 10058 standards.",
     blog: {
       title: "Stainless Steel Flat Bars: Grades, Sizes & Engineering Applications",

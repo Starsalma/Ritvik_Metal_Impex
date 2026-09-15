@@ -6,15 +6,17 @@
   "homepage": "https://www.ritvikmetalimpex.com",
   "scripts": {
     "dev": "vite",
-    "prebuild": "node scripts/generate-sitemap.mjs",
+    "prebuild": "node scripts/generate-image-manifest.mjs && node scripts/generate-sitemap.mjs",
     "build": "vite build",
     "sitemap": "node scripts/generate-sitemap.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist -r https://github.com/Starsalma/Ritvik_Metal_Impex.git"
+    "deploy": "gh-pages -d dist -r https://github.com/Starsalma/Ritvik_Metal_Impex.git",
+    "images": "node scripts/generate-image-manifest.mjs"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.116.0",
     "lucide-react": "^1.17.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",

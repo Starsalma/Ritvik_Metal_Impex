@@ -1,12 +1,14 @@
+import { useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import Seo from '../components/Seo';
-import { scrollToContact } from '../utils/navigation';
+import { scrollToContact, setEnquiryContext } from '../utils/navigation';
 import SpecTables from '../components/SpecTables';
 import RelatedLinks from '../components/RelatedLinks';
 import CTABand from '../components/CTABand';
 import { products } from '../data/products';
 import { articles } from '../data/articles';
-import { getSpecTables, getQuickFacts } from '../data/specifications';
+import { getSpecTables, getQuickFacts, MOQ } from '../data/specifications';
+import { imageSize } from '../data/imageSizes';
 import { productLinkClusters } from '../data/internalLinks';
 import {
   site,
@@ -23,6 +25,20 @@ export default function ProductDetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();
   const product = products.find((p) => p.id === Number(id));
+
+  /*
+   * Publish the product for every contact CTA on the page (navbar, floating
+   * buttons, CTA band, the in-page quote buttons) and clear it on unmount so it
+   * never leaks onto an unrelated page.
+   *
+   * This must sit ABOVE the 404 early return: hooks have to run in the same
+   * order on every render, and the id can change to a missing product while the
+   * component stays mounted.
+   */
+  useEffect(() => {
+    if (!product) return undefined;
+    return setEnquiryContext({ productId: product.id, productName: product.name });
+  }, [product]);
 
   if (!product) {
     return (
@@ -53,7 +69,12 @@ export default function ProductDetailPage() {
   const quickFacts = getQuickFacts(product);
   const linkClusters = productLinkClusters(product);
 
+  /* Attached to the enquiry so sales sees which product it came from. */
+  const enquiryContext = { productId: product.id, productName: product.name };
+  const productImageDims = imageSize(product.image);
+
   const path = `/products/${product.id}`;
+
   /*
    * Both of these used to run 87–106 and 262–281 characters, so Google cut the
    * brand off every title and half of every description. clamp() in <Seo />
@@ -73,7 +94,25 @@ export default function ProductDetailPage() {
     name: `${product.material} ${product.name}`,
     alternateName: product.name,
     description: product.description,
-    image: [absoluteUrl(product.image)],
+    /*
+     * A full ImageObject rather than a bare URL: width, height and a caption
+     * are what let Google treat this as the page's representative image and
+     * surface it as the search thumbnail.
+     */
+    image: [
+      {
+        '@type': 'ImageObject',
+        url: absoluteUrl(product.image),
+        contentUrl: absoluteUrl(product.image),
+        ...(productImageDims
+          ? { width: productImageDims[0], height: productImageDims[1] }
+          : {}),
+        caption: `${product.material} ${product.name} supplied by ${site.name}, Mumbai`,
+        representativeOfPage: true,
+        creditText: site.name,
+        copyrightNotice: `© ${site.name}`,
+      },
+    ],
     category: `${product.category} Metals > ${product.form}`,
     material: product.material,
     sku: `RMI-${String(product.id).padStart(3, '0')}`,
@@ -85,6 +124,9 @@ export default function ProductDetailPage() {
       { '@type': 'PropertyValue', name: 'Product Form', value: product.form },
       { '@type': 'PropertyValue', name: 'Category', value: product.category },
       { '@type': 'PropertyValue', name: 'Certification', value: 'Mill Test Certificate (EN 10204 3.1); 3.2 / IBR on request' },
+      { '@type': 'PropertyValue', name: 'Minimum Order Quantity', value: MOQ },
+      { '@type': 'PropertyValue', name: 'Lead Time', value: site.leadTime },
+      { '@type': 'PropertyValue', name: 'Packing', value: site.packing },
     ],
     /*
      * No `offers` node. Pricing here is genuinely quote-based (it depends on
@@ -129,6 +171,7 @@ export default function ProductDetailPage() {
         keywords={seoKeywords}
         path={path}
         image={product.image}
+        imageAltText={`${product.material} ${product.name} — supplier and stockist in Mumbai, India`}
         type="product"
         schema={[productSchema, crumbs, guideSchema]}
       />
@@ -187,7 +230,7 @@ export default function ProductDetailPage() {
               {/* Actions */}
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
                 <button
-                  onClick={() => scrollToContact(navigate)}
+                  onClick={() => scrollToContact(navigate, path, enquiryContext)}
                   className="bg-[#0A1828] text-white px-8 py-4 uppercase font-bold tracking-widest hover:bg-[#1A3A5C] transition-colors">
                   Request Quote
                 </button>
@@ -273,7 +316,7 @@ export default function ProductDetailPage() {
                 </div>
                 <div className="flex gap-4 flex-wrap">
                   <button
-                    onClick={() => scrollToContact(navigate)}
+                    onClick={() => scrollToContact(navigate, path, enquiryContext)}
                     className="bg-[#E5A93C] text-[#0A1828] px-8 py-3 uppercase font-black text-[11px] tracking-widest hover:bg-[#d4982b] transition-colors">
                     Request Quote
                   </button>
@@ -353,7 +396,8 @@ export default function ProductDetailPage() {
         title={`Need a price for ${product.name}?`}
         body={`Tell us the grade, size, schedule and quantity and we will confirm stock position and a firm price. Every consignment ships with a mill test certificate traceable to the heat number.`}
         primaryLabel="Get a Quote"
-        whatsappMessage={`Hi, I need a quote for ${product.name}.`}
+        context={enquiryContext}
+        whatsappMessage={`Hi, I need a quote for ${product.name} (min order ${site.moq}).`}
       />
     </>
   );

@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { site, absoluteUrl, clamp, TITLE_MAX, DESCRIPTION_MAX } from '../data/site';
+import { imageSize } from '../data/imageSizes';
 
 /**
  * Reusable per-page SEO head.
@@ -22,6 +23,7 @@ export default function Seo({
   image = site.defaultImage,
   type = 'website',
   noindex = false,
+  imageAltText = '',
   schema = [],
   publishedTime,
   modifiedTime,
@@ -43,6 +45,14 @@ export default function Seo({
 
   const canonical = absoluteUrl(path);
   const ogImage = absoluteUrl(image);
+
+  /*
+   * Declaring the real pixel dimensions lets a scraper reserve the card layout
+   * before the image downloads, and is one of the signals Google uses to decide
+   * whether an image qualifies for a large preview rather than a thumbnail.
+   */
+  const dims = imageSize(image.startsWith(site.url) ? image.slice(site.url.length) : image);
+  const imageAlt = imageAltText || `${title || site.name} — ${site.name}`;
   const schemaList = Array.isArray(schema) ? schema.filter(Boolean) : [schema].filter(Boolean);
 
   return (
@@ -65,13 +75,17 @@ export default function Seo({
       <meta property="og:description" content={metaDescription} />
       <meta property="og:url" content={canonical} />
       <meta property="og:image" content={ogImage} />
-      <meta property="og:image:alt" content={title || site.name} />
+      <meta property="og:image:secure_url" content={ogImage} />
+      <meta property="og:image:alt" content={imageAlt} />
+      {dims && <meta property="og:image:width" content={String(dims[0])} />}
+      {dims && <meta property="og:image:height" content={String(dims[1])} />}
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={metaDescription} />
       <meta name="twitter:image" content={ogImage} />
+      <meta name="twitter:image:alt" content={imageAlt} />
 
       {/* Article metadata */}
       {publishedTime && <meta property="article:published_time" content={publishedTime} />}

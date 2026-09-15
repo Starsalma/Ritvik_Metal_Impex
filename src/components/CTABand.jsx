@@ -17,6 +17,7 @@ export default function CTABand({
   whatsappMessage = 'Hi, I would like a quote from Ritvik Metal Impex.',
   variant = 'dark',
   className = '',
+  context = null,
 }) {
   const navigate = useNavigate();
   const { pathname } = useLocation();
@@ -81,7 +82,7 @@ export default function CTABand({
           <div className="flex flex-wrap gap-3 shrink-0">
             <button
               type="button"
-              onClick={() => scrollToContact(navigate, pathname)}
+              onClick={() => scrollToContact(navigate, pathname, context)}
               className="bg-[#E5A93C] text-[#0A1828] px-8 py-4 uppercase font-black text-[11px] tracking-[0.15em] hover:bg-[#d4982b] hover:-translate-y-0.5 transition-all duration-200 shadow-lg shadow-[#E5A93C]/20"
             >
               {primaryLabel}
