@@ -6,7 +6,10 @@
   "homepage": "https://www.ritvikmetalimpex.com",
   "scripts": {
     "dev": "vite",
+    "generate:seo": "node scripts/generate-sitemap.mjs",
+    "prebuild": "npm run generate:seo",
     "build": "vite build",
+    "postbuild": "node scripts/prerender-seo.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",

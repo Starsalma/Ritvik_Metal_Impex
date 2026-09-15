@@ -1,0 +1,13 @@
+# robots.txt for https://www.ritvikmetalimpex.com
+User-agent: *
+Allow: /
+Disallow: /404
+
+# Common SEO crawlers are welcome; adjust if crawl budget becomes an issue.
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+Sitemap: https://www.ritvikmetalimpex.com/sitemap.xml

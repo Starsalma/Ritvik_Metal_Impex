@@ -1,12 +1,19 @@
 import React from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import { useParams, useNavigate, Link, Navigate } from 'react-router-dom';
 import { products } from '../data/products';
+import { articles } from '../data/articles';
+import Seo from '../components/Seo';
+import { site, absoluteUrl, breadcrumbSchema } from '../data/siteConfig';
 
 export default function ProductDetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const product = products.find((p) => p.id === Number(id));
+  const product = products.find((p) => p.slug === id);
+
+  // Legacy numeric URLs (/products/1) redirect to the keyword slug so link
+  // equity and bookmarks survive the URL change.
+  const legacy = !product && products.find((p) => p.id === Number(id));
+  if (legacy) return <Navigate to={`/products/${legacy.slug}`} replace />;
 
   if (!product) {
     return (
@@ -21,24 +28,84 @@ export default function ProductDetailPage() {
   }
 
   const related = products.filter((p) => p.category === product.category && p.id !== product.id).slice(0, 3);
+  const guides = articles.filter((a) => a.relatedProducts?.includes(product.slug)).slice(0, 2);
 
-  const seoTitle = `${product.name} | ${product.material} Supplier in Mumbai - Ritvik Metal Impex`;
-  const seoDescription = `Ritvik Metal Impex supplies premium ${product.name} in ${product.material} grade. ${product.description.slice(0, 120)}. Contact us for best price and availability.`;
-  const seoKeywords = `${product.name}, ${product.material} ${product.name}, ${product.name} supplier Mumbai, ${product.name} India, ${product.material} supplier, Ritvik Metal Impex, industrial metals Mumbai`;
+  const url = `/products/${product.slug}`;
+  const seoTitle = `${product.name} — ${product.material} Supplier & Stockist in Mumbai | Ritvik Metal Impex`;
+  const seoDescription = `${product.name} in ${product.material}: ${product.description.slice(0, 130)}… Supplied ex-Mumbai with Mill Test Certificates and third-party inspection. Request a same-day quotation.`;
+  const seoKeywords = [
+    product.name,
+    `${product.material} ${product.name}`,
+    `${product.name} supplier in Mumbai`,
+    `${product.name} stockist India`,
+    `${product.name} manufacturer India`,
+    `${product.material} ${product.form.toLowerCase()} supplier`,
+    `${product.name} exporter`,
+    `buy ${product.name.toLowerCase()} online India`,
+    'Ritvik Metal Impex',
+  ].join(', ');
+
+  const schema = [
+    {
+      '@type': 'Product',
+      '@id': `${absoluteUrl(url)}#product`,
+      name: `${product.material} ${product.name}`,
+      alternateName: product.name,
+      description: product.description,
+      image: absoluteUrl(product.image),
+      category: `${product.category} Metals / ${product.form}`,
+      material: product.material,
+      url: absoluteUrl(url),
+      brand: { '@id': `${site.url}/#organization` },
+      manufacturer: { '@id': `${site.url}/#organization` },
+      additionalProperty: [
+        { '@type': 'PropertyValue', name: 'Material', value: product.material },
+        { '@type': 'PropertyValue', name: 'Product Form', value: product.form },
+        { '@type': 'PropertyValue', name: 'Category', value: product.category },
+      ],
+      // Metal is quoted per enquiry against grade, size and quantity, so no
+      // fixed price is published — availability and seller only.
+      offers: {
+        '@type': 'Offer',
+        url: absoluteUrl(url),
+        availability: 'https://schema.org/InStock',
+        priceCurrency: 'INR',
+        seller: { '@id': `${site.url}/#organization` },
+        areaServed: site.areasServed.map((n) => ({ '@type': 'City', name: n })),
+      },
+    },
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Products', path: '/products' },
+      { name: product.name, path: url },
+    ]),
+  ];
+
+  if (product.blog) {
+    schema.push({
+      '@type': 'Article',
+      '@id': `${absoluteUrl(url)}#guide`,
+      headline: product.blog.title,
+      description: product.blog.intro,
+      image: absoluteUrl(product.image),
+      author: { '@id': `${site.url}/#organization` },
+      publisher: { '@id': `${site.url}/#organization` },
+      mainEntityOfPage: { '@type': 'WebPage', '@id': absoluteUrl(url) },
+      inLanguage: 'en-IN',
+    });
+  }
 
   return (
     <>
-      <Helmet>
-        <title>{seoTitle}</title>
-        <meta name="description" content={seoDescription} />
-        <meta name="keywords" content={seoKeywords} />
-        <meta property="og:title" content={seoTitle} />
-        <meta property="og:description" content={seoDescription} />
-        <meta property="og:image" content={`https://www.ritvikmetalimpex.com${product.image}`} />
-        <meta property="og:type" content="product" />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={`https://www.ritvikmetalimpex.com/products/${product.id}`} />
-      </Helmet>
+      <Seo
+        title={seoTitle}
+        description={seoDescription}
+        keywords={seoKeywords}
+        path={url}
+        image={product.image}
+        type="product"
+        schema={schema}
+      />
 
       <section className="bg-white min-h-screen py-16 px-6 lg:px-16">
         <div className="max-w-[1200px] mx-auto">
@@ -55,8 +122,10 @@ export default function ProductDetailPage() {
           {/* Product Header */}
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div className="rounded-tl-[60px] rounded-br-[60px] overflow-hidden shadow-xl bg-gray-100 h-[420px] lg:h-[520px]">
-              <img src={product.image} alt={`${product.name} - ${product.material} Supplier Mumbai`}
+              <img src={product.image}
+                alt={`${product.material} ${product.name} in stock at ${site.name}, Mumbai`}
                 className="w-full h-full object-cover"
+                loading="eager" fetchPriority="high"
                 onError={(e) => { e.target.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center"><span class="text-gray-300 uppercase tracking-widest">Product Image</span></div>'; }} />
             </div>
 
@@ -64,7 +133,7 @@ export default function ProductDetailPage() {
               <span className="text-[#E5A93C] font-black tracking-[0.2em] uppercase text-xs">{product.material} · {product.category}</span>
 
               <h1 className="text-4xl lg:text-5xl font-black text-[#0A1828] uppercase mt-3 leading-tight">
-                {product.name}
+                {product.material} {product.name}
               </h1>
 
               <div className="w-16 h-[2px] bg-[#E5A93C] mt-6 mb-6" />
@@ -96,7 +165,7 @@ export default function ProductDetailPage() {
                   className="bg-[#0A1828] text-white px-8 py-4 uppercase font-bold tracking-widest hover:bg-[#1A3A5C] transition-colors">
                   Request Quote
                 </button>
-                <a href={`https://wa.me/917073895597?text=${encodeURIComponent(`Hi, I'm interested in ${product.name}. Please share more details.`)}`}
+                <a href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent(`Hi, I'm interested in ${product.name}. Please share more details.`)}`}
                   target="_blank" rel="noreferrer"
                   className="border border-gray-300 text-[#0A1828] px-8 py-4 uppercase font-bold tracking-widest hover:border-[#0A1828] transition-colors text-center">
                   Ask on WhatsApp
@@ -158,7 +227,7 @@ export default function ProductDetailPage() {
                     className="bg-[#E5A93C] text-[#0A1828] px-8 py-3 uppercase font-black text-[11px] tracking-widest hover:bg-[#d4982b] transition-colors">
                     Request Quote
                   </button>
-                  <a href={`https://wa.me/917073895597?text=${encodeURIComponent(`Hi, I need a quote for ${product.name}.`)}`}
+                  <a href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent(`Hi, I need a quote for ${product.name}.`)}`}
                     target="_blank" rel="noreferrer"
                     className="border border-white/30 text-white px-8 py-3 uppercase font-black text-[11px] tracking-widest hover:border-white transition-colors text-center">
                     WhatsApp Us
@@ -169,22 +238,47 @@ export default function ProductDetailPage() {
             </article>
           )}
 
+          {/* Further reading — links product pages into the editorial hub */}
+          {guides.length > 0 && (
+            <div className="mt-24">
+              <h2 className="text-2xl font-black text-[#0A1828] uppercase mb-3">Further Reading</h2>
+              <div className="w-16 h-[2px] bg-[#E5A93C] mb-8" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {guides.map((a) => (
+                  <Link key={a.slug} to={`/blog/${a.slug}`}
+                    className="group flex gap-5 items-center bg-white rounded-tl-[24px] rounded-br-[24px] overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 transition-shadow p-5">
+                    <img src={a.image} alt={a.title}
+                      className="w-20 h-20 object-cover rounded-xl shrink-0 bg-gray-100"
+                      loading="lazy" decoding="async" />
+                    <div>
+                      <span className="text-[#E5A93C] text-[10px] font-black tracking-widest uppercase">{a.category} · {a.readTime} min</span>
+                      <h3 className="text-[15px] font-black text-[#0A1828] uppercase mt-1.5 leading-tight group-hover:text-[#E5A93C] transition-colors">{a.title}</h3>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Related Products */}
           {related.length > 0 && (
             <div className="mt-24">
               <h2 className="text-2xl font-black text-[#0A1828] uppercase mb-8">Related Products</h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {related.map((r) => (
-                  <div key={r.id} onClick={() => navigate(`/products/${r.id}`)}
-                    className="cursor-pointer bg-white rounded-tl-[30px] rounded-br-[30px] overflow-hidden shadow-md hover:shadow-xl border border-gray-100 transition-all">
+                  <Link key={r.id} to={`/products/${r.slug}`}
+                    className="block bg-white rounded-tl-[30px] rounded-br-[30px] overflow-hidden shadow-md hover:shadow-xl border border-gray-100 transition-all">
                     <div className="h-[180px] bg-gray-100 overflow-hidden">
-                      <img src={r.image} alt={`${r.name} ${r.material} supplier Mumbai`} className="w-full h-full object-cover" onError={(e)=>{e.target.style.display='none';}} />
+                      <img src={r.image} alt={`${r.material} ${r.name} supplied from Mumbai by ${site.name}`}
+                        className="w-full h-full object-cover"
+                        loading="lazy" decoding="async"
+                        onError={(e)=>{e.target.style.display='none';}} />
                     </div>
                     <div className="p-4">
                       <span className="text-[#E5A93C] text-[10px] font-black tracking-widest uppercase">{r.material}</span>
-                      <h4 className="text-[15px] font-black text-[#0A1828] uppercase mt-1">{r.name}</h4>
+                      <h3 className="text-[15px] font-black text-[#0A1828] uppercase mt-1">{r.name}</h3>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>

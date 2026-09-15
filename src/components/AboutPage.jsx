@@ -134,8 +134,10 @@ export default function AboutPage() {
           <div ref={whoImgR} className="ab-left relative h-[420px] sm:h-[500px] img-zoom">
             <div className="w-[82%] h-[88%] overflow-hidden shadow-2xl relative z-10"
               style={{clipPath:'polygon(0 0,100% 0,100% 88%,88% 100%,0 100%)'}}>
-              <img src="https://images.unsplash.com/photo-1565793979231-5a39d2ff4ce1?auto=format&fit=crop&q=80&w=900"
-                alt="" className="w-full h-full object-cover" />
+              <img src="/images/about.jpg"
+                alt="Ritvik Metal Impex stainless steel and non-ferrous stock, Mumbai"
+                className="w-full h-full object-cover"
+                loading="lazy" decoding="async" />
             </div>
             {/* accent box */}
             <div className="absolute right-0 bottom-4 w-[46%] bg-[#0A1828] p-6 z-20 shadow-xl"
@@ -154,9 +156,9 @@ export default function AboutPage() {
               <span className="text-[10px] font-black tracking-[0.3em] text-[#E5A93C] uppercase">Who We Are</span>
             </div>
             <div ref={whoHR} className="ab-h mt-3">
-              <h2 className="text-[30px] sm:text-[40px] lg:text-[50px] font-black text-[#0A1828] uppercase tracking-tight leading-[1.08]">
+              <h1 className="text-[30px] sm:text-[40px] lg:text-[50px] font-black text-[#0A1828] uppercase tracking-tight leading-[1.08]">
                 ABOUT<br />RITVIK METAL IMPEX
-              </h2>
+              </h1>
             </div>
             <div ref={whoTxtR} className="ab-up mt-1">
               <div className="ab-line w-12 h-[2px] bg-[#E5A93C]/50 mt-5 mb-6" />
