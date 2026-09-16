@@ -17,8 +17,15 @@ const WEB3FORMS_KEY =
   import.meta.env.VITE_WEB3FORMS_KEY || 'ca4e124f-93f4-42fc-9910-0ff419185838';
 
 /**
- * Fires the email notification. Best effort only — Postgres is the system of
- * record, so a failure here must not lose the enquiry or block the user.
+ * Browser-side email fallback.
+ *
+ * The normal path is server-side: an AFTER INSERT trigger on public.enquiries
+ * calls the notify-enquiry edge function, which sends the email and the
+ * WhatsApp alert. That happens regardless of what the browser does next.
+ *
+ * This runs ONLY when the database insert failed, so a dropped connection or a
+ * Supabase outage still gets the enquiry in front of the sales team instead of
+ * losing it. On the happy path it never fires, so nobody receives a duplicate.
  */
 async function notifyByEmail(fields, productName) {
   try {
@@ -86,9 +93,10 @@ export default function ContactForm() {
       productName: context?.productName ?? null,
     };
 
-    // Postgres first — it is the record. Email is a notification on top.
+    // Postgres is the record; its insert trigger sends the email and WhatsApp
+    // alerts. Only fall back to a browser-side email if that write failed.
     const saved = await saveEnquiry(payload);
-    const emailed = await notifyByEmail(formData, context?.productName);
+    const emailed = saved.ok ? false : await notifyByEmail(formData, context?.productName);
 
     setLoading(false);
 
