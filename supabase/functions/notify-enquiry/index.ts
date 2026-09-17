@@ -201,7 +201,15 @@ async function sendEmail(e: Enquiry) {
 
 /* --------------------------- whatsapp ------------------------------ */
 
-async function sendWhatsApp(e: Enquiry) {
+async function sendWhatsApp(e: Enquiry, cfg: Record<string, string> = {}) {
+  /*
+   * Credentials come from the Edge Function secrets when set, otherwise from
+   * the Vault-stored config the database trigger passes in. Vault can be
+   * written with SQL, so WhatsApp can be switched on without a dashboard visit;
+   * either way the value never reaches the browser.
+   */
+  const conf = (envName: string, key: string) => Deno.env.get(envName) || cfg[key] || undefined;
+
   const summary =
     `*New enquiry — ${SITE_NAME}*\n\n` +
     `*Name:* ${e.name}\n*Email:* ${e.email}\n` +
@@ -212,10 +220,10 @@ async function sendWhatsApp(e: Enquiry) {
     `\n${String(e.message).slice(0, 600)}`;
 
   // 1. Meta WhatsApp Cloud API
-  const metaToken = Deno.env.get("WHATSAPP_TOKEN");
-  const metaPhoneId = Deno.env.get("WHATSAPP_PHONE_NUMBER_ID");
+  const metaToken = conf("WHATSAPP_TOKEN", "whatsapp_token");
+  const metaPhoneId = conf("WHATSAPP_PHONE_NUMBER_ID", "whatsapp_phone_number_id");
   if (metaToken && metaPhoneId) {
-    const template = Deno.env.get("WHATSAPP_TEMPLATE_NAME");
+    const template = conf("WHATSAPP_TEMPLATE_NAME", "whatsapp_template_name");
     const payload = template
       ? {
           messaging_product: "whatsapp",
@@ -223,7 +231,7 @@ async function sendWhatsApp(e: Enquiry) {
           type: "template",
           template: {
             name: template,
-            language: { code: Deno.env.get("WHATSAPP_TEMPLATE_LANG") || "en" },
+            language: { code: conf("WHATSAPP_TEMPLATE_LANG", "whatsapp_template_lang") || "en" },
             components: [{
               type: "body",
               parameters: [
@@ -246,9 +254,9 @@ async function sendWhatsApp(e: Enquiry) {
   }
 
   // 2. Twilio WhatsApp
-  const twSid = Deno.env.get("TWILIO_ACCOUNT_SID");
-  const twToken = Deno.env.get("TWILIO_AUTH_TOKEN");
-  const twFrom = Deno.env.get("TWILIO_WHATSAPP_FROM");
+  const twSid = conf("TWILIO_ACCOUNT_SID", "twilio_account_sid");
+  const twToken = conf("TWILIO_AUTH_TOKEN", "twilio_auth_token");
+  const twFrom = conf("TWILIO_WHATSAPP_FROM", "twilio_whatsapp_from");
   if (twSid && twToken && twFrom) {
     const res = await fetch(`https://api.twilio.com/2010-04-01/Accounts/${twSid}/Messages.json`, {
       method: "POST",
@@ -267,14 +275,21 @@ async function sendWhatsApp(e: Enquiry) {
   }
 
   // 3. CallMeBot — free, intended for alerting your own number
-  const cmbKey = Deno.env.get("CALLMEBOT_APIKEY");
+  const cmbKey = conf("CALLMEBOT_APIKEY", "callmebot_apikey");
   if (cmbKey) {
     const res = await fetch(
       `https://api.callmebot.com/whatsapp.php?phone=${WHATSAPP_TO}` +
         `&text=${encodeURIComponent(summary)}&apikey=${cmbKey}`,
     );
     const body = await res.text();
-    return { provider: "callmebot", ok: res.ok, status: res.status, body: body.slice(0, 500) };
+    const text = body.slice(0, 500);
+    /*
+     * CallMeBot answers 200 with an HTML page even when it rejects the request,
+     * so the status alone is not a success signal. Treat an explicit error or
+     * an APIKey complaint in the body as a failure.
+     */
+    const looksFailed = /error|invalid|not allowed|apikey/i.test(text) && !/queued|sent|success/i.test(text);
+    return { provider: "callmebot", ok: res.ok && !looksFailed, status: res.status, body: text };
   }
 
   return {
@@ -282,8 +297,10 @@ async function sendWhatsApp(e: Enquiry) {
     ok: false,
     skipped: true,
     reason:
-      "No WhatsApp provider configured. Set WHATSAPP_TOKEN + WHATSAPP_PHONE_NUMBER_ID (Meta Cloud API), " +
-      "TWILIO_ACCOUNT_SID + TWILIO_AUTH_TOKEN + TWILIO_WHATSAPP_FROM, or CALLMEBOT_APIKEY.",
+      "No WhatsApp provider configured. Either set Edge Function secrets " +
+      "(WHATSAPP_TOKEN + WHATSAPP_PHONE_NUMBER_ID, TWILIO_ACCOUNT_SID + TWILIO_AUTH_TOKEN + " +
+      "TWILIO_WHATSAPP_FROM, or CALLMEBOT_APIKEY), or store them in Vault with: " +
+      "select public.set_whatsapp_config('{\"callmebot_apikey\":\"<key>\"}'::jsonb);",
   };
 }
 
@@ -301,9 +318,11 @@ Deno.serve(async (req: Request) => {
   }
 
   let enquiry: Enquiry;
+  let whatsappConfig: Record<string, string> = {};
   try {
     const payload = await req.json();
     enquiry = payload.record ?? payload.enquiry ?? payload;
+    whatsappConfig = payload.whatsapp ?? {};
   } catch {
     return new Response(JSON.stringify({ error: "invalid json" }), {
       status: 400,
@@ -320,7 +339,7 @@ Deno.serve(async (req: Request) => {
 
   const [email, whatsapp] = await Promise.all([
     sendEmail(enquiry).catch((err) => ({ provider: "error", ok: false, body: String(err) })),
-    sendWhatsApp(enquiry).catch((err) => ({ provider: "error", ok: false, body: String(err) })),
+    sendWhatsApp(enquiry, whatsappConfig).catch((err) => ({ provider: "error", ok: false, body: String(err) })),
   ]);
 
   // Record the outcome, failures included, so nothing fails silently.

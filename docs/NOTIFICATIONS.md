@@ -33,7 +33,7 @@ Two properties worth keeping:
 | Save to Postgres | **Working** | Verified end to end |
 | Email → the inbox on the Web3Forms key | **Working** | Verified: `200 "Form submitted successfully!"` |
 | Email → the second inbox | **Needs setup** | Web3Forms free tier limit — see below |
-| WhatsApp → +91 7073895597 | **Needs credentials** | No provider can send without an account |
+| WhatsApp → +91 7073895597 | **One step left** | Pipeline verified; needs the CallMeBot key — see below |
 
 ## Security
 
@@ -111,16 +111,34 @@ automated alert. Pick one:
 3. For the sandbox, +91 7073895597 must join once by sending the sandbox join
    code. Production needs your own approved sender.
 
-### CallMeBot — free, zero cost, for alerting your own number
+### CallMeBot — free, and already wired up
 
-1. From +91 7073895597, WhatsApp `I allow callmebot to send me messages` to
-   **+34 644 51 95 23**.
-2. It replies with an API key.
-3. Add the secret `CALLMEBOT_APIKEY`.
+Everything is in place except the key itself, which CallMeBot will only issue in
+reply to a message sent **from the phone that will receive the alerts**. That is
+the one step nobody can do on your behalf.
 
-Simplest option, and a good fit because the alert goes to your own phone. It is
-a free third-party service, so enquiry text passes through it — fine for
-internal alerts, not something to route customer data through at volume.
+1. From **+91 7073895597**, open WhatsApp and send
+   `I allow callmebot to send me messages`
+   to **+34 644 51 95 23**.
+2. It replies within a minute or two with your personal API key.
+3. Turn it on with one statement (Supabase Dashboard → SQL Editor):
+
+   ```sql
+   select public.set_whatsapp_config('{"callmebot_apikey":"YOUR_KEY"}'::jsonb);
+   ```
+
+That is all — no redeploy, no dashboard secrets. The next enquiry will send a
+WhatsApp message.
+
+**Verified:** storing a deliberately invalid key made the pipeline call
+CallMeBot's API, which answered
+`ERROR: apikey can not be empty or it has an invalid format`, and the failure was
+recorded in `notification_log`. So the path from Vault through the trigger to
+CallMeBot works; only a valid key is missing.
+
+It is a free third-party service, so enquiry text passes through it. Fine for
+internal alerts to your own phone; use Meta Cloud API or Twilio if you would
+rather customer details did not transit a third party.
 
 Indian resellers of the Cloud API (AiSensy, WATI, Interakt) handle the Meta
 setup for you if you would rather not do step 1–5 yourself; they expose the same
@@ -152,6 +170,30 @@ Raw HTTP responses from the trigger's calls:
 select id, status_code, content, created
 from net._http_response
 order by created desc limit 10;
+```
+
+## Where WhatsApp credentials live
+
+Two options, and the function checks them in this order:
+
+1. **Edge Function secrets** (Dashboard → Edge Functions → notify-enquiry →
+   Secrets) — `CALLMEBOT_APIKEY`, `WHATSAPP_TOKEN`, `TWILIO_*` and so on.
+2. **Vault**, via `public.set_whatsapp_config(jsonb)`. The trigger reads the
+   config and passes it to the function in the request body.
+
+Vault exists as an option because it can be written with plain SQL, so WhatsApp
+can be switched on from the SQL Editor without touching the dashboard. Either
+way the credential travels database → edge function server-side and never
+reaches the browser. Accepted JSON keys mirror the env var names in lower case:
+`callmebot_apikey`, `whatsapp_token`, `whatsapp_phone_number_id`,
+`whatsapp_template_name`, `whatsapp_template_lang`, `twilio_account_sid`,
+`twilio_auth_token`, `twilio_whatsapp_from`.
+
+To check or clear what is stored:
+
+```sql
+select name from vault.secrets where name = 'whatsapp_config';
+delete from vault.secrets where name = 'whatsapp_config';
 ```
 
 ## Changing recipients
