@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import { site, absoluteUrl, clamp, TITLE_MAX, DESCRIPTION_MAX } from '../data/site';
+import { site, absoluteUrl, clamp, socialImage, TITLE_MAX, DESCRIPTION_MAX } from '../data/site';
 import { imageSize } from '../data/imageSizes';
 
 /**
@@ -44,14 +44,21 @@ export default function Seo({
   const metaDescription = clamp(description, DESCRIPTION_MAX);
 
   const canonical = absoluteUrl(path);
-  const ogImage = absoluteUrl(image);
+
+  /*
+   * Swap in a large brand image when the page's own image is below Google's
+   * ~1200px bar, so the card still qualifies for a large preview.
+   */
+  const localImage = image.startsWith(site.url) ? image.slice(site.url.length) : image;
+  const shareImage = socialImage(localImage, imageSize);
+  const ogImage = absoluteUrl(shareImage);
 
   /*
    * Declaring the real pixel dimensions lets a scraper reserve the card layout
    * before the image downloads, and is one of the signals Google uses to decide
    * whether an image qualifies for a large preview rather than a thumbnail.
    */
-  const dims = imageSize(image.startsWith(site.url) ? image.slice(site.url.length) : image);
+  const dims = imageSize(shareImage);
   const imageAlt = imageAltText || `${title || site.name} — ${site.name}`;
   const schemaList = Array.isArray(schema) ? schema.filter(Boolean) : [schema].filter(Boolean);
 

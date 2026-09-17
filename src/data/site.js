@@ -38,7 +38,15 @@ export const site = {
     'Ritvik Metal Impex',
   ].join(', '),
   logo: `${SITE_URL}/images/logo.png`,
-  defaultImage: `${SITE_URL}/images/hero.jpeg`,
+  /*
+   * Must be at least 1200px on the long edge — that is Google's threshold for a
+   * large image preview and Discover eligibility, and the minimum a WhatsApp or
+   * LinkedIn share needs to render as a full card rather than a thumbnail.
+   * hero.jpeg was used here and is only 726x1085, so every page without its own
+   * product image was serving an image too small to qualify.
+   */
+  defaultImagePath: '/images/about.jpg',
+  defaultImage: `${SITE_URL}/images/about.jpg`,
   locale: 'en_IN',
   language: 'en-IN',
   themeColor: '#0A1828',
@@ -135,6 +143,29 @@ export const clamp = (text = '', max = DESCRIPTION_MAX) => {
   const cut = clean.slice(0, max - 1);
   const lastSpace = cut.lastIndexOf(' ');
   return `${(lastSpace > max * 0.6 ? cut.slice(0, lastSpace) : cut).replace(/[\s,;:.\-—–]+$/, '')}…`;
+};
+
+/** Google needs roughly this on the long edge for a large image preview. */
+export const MIN_SOCIAL_IMAGE_EDGE = 1200;
+
+/**
+ * Picks the image to advertise as the page's social/search thumbnail.
+ *
+ * Product photos are preferred because they are specific, but an undersized one
+ * is rejected for a large preview and renders as a small square card. When a
+ * photo is below the threshold we fall back to a brand image that clears it.
+ *
+ * This is a stopgap. The real fix is replacing the source files — the build
+ * prints a warning listing every product image still under the limit.
+ */
+export const socialImage = (path, size) => {
+  // Always returns a PUBLIC PATH, never an absolute URL — callers look the
+  // dimensions up in the image manifest, which is keyed by path.
+  if (!path) return site.defaultImagePath;
+  const local = path.startsWith(SITE_URL) ? path.slice(SITE_URL.length) : path;
+  const dims = typeof size === 'function' ? size(local) : size;
+  if (!dims) return local;
+  return Math.max(dims[0], dims[1]) >= MIN_SOCIAL_IMAGE_EDGE ? local : site.defaultImagePath;
 };
 
 /** Absolute URL helper — accepts "/products/1" or a full URL. */
