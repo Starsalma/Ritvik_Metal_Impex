@@ -41,6 +41,7 @@ function RouteFallback() {
 
 import { products } from './data/products';
 import { MOQ } from './data/specifications';
+import { priceRanges, PRICE_AS_OF } from './data/pricing';
 import {
   site,
   absoluteUrl,
@@ -49,6 +50,8 @@ import {
   websiteSchema,
   faqSchema,
 } from './data/site';
+
+const PUBLISHES_PRICES = Object.values(priceRanges).some((r) => r.verified);
 
 const homeFaqs = [
   {
@@ -86,7 +89,15 @@ const homeFaqs = [
   },
   {
     question: 'Do you publish prices?',
-    answer: `No. Industrial metal pricing moves with alloy surcharges and depends on grade, size, schedule and quantity, so every enquiry is quoted individually. Send the specification and quantity and we reply with a firm price; the minimum order quantity is ${MOQ}.`,
+    /*
+     * Answers whichever is actually true. Once a range in src/data/pricing.js is
+     * marked verified the product pages start showing prices, and an FAQ still
+     * saying "no" would contradict them — and contradictory answers on the same
+     * page are exactly what an AI assistant surfaces back to a buyer.
+     */
+    answer: PUBLISHES_PRICES
+      ? `We publish indicative ranges on our product pages, reviewed as of ${PRICE_AS_OF}. They are a guide only — industrial metal pricing moves with alloy surcharges and depends on grade, size, schedule and quantity, so send your specification and quantity and we reply with a firm quotation. The minimum order quantity is ${MOQ}.`
+      : `No. Industrial metal pricing moves with alloy surcharges and depends on grade, size, schedule and quantity, so every enquiry is quoted individually. Send the specification and quantity and we reply with a firm price; the minimum order quantity is ${MOQ}.`,
   },
   {
     question: 'What certification is supplied with an order?',

@@ -5,11 +5,13 @@ import { scrollToContact, setEnquiryContext } from '../utils/navigation';
 import SpecTables from '../components/SpecTables';
 import RelatedLinks from '../components/RelatedLinks';
 import CTABand from '../components/CTABand';
+import PriceRange from '../components/PriceRange';
 import { products } from '../data/products';
 import { articles } from '../data/articles';
 import { getSpecTables, getQuickFacts, MOQ } from '../data/specifications';
 import { imageSize } from '../data/imageSizes';
 import { productLinkClusters } from '../data/internalLinks';
+import { priceOfferSchema } from '../data/pricing';
 import {
   site,
   absoluteUrl,
@@ -87,6 +89,8 @@ export default function ProductDetailPage() {
   );
   const seoKeywords = `${product.name}, ${product.material} ${product.name}, ${product.name} supplier Mumbai, ${product.name} stockist India, ${product.name} price India, ${product.material} supplier, ${product.form} supplier India, Ritvik Metal Impex`;
 
+  const offers = priceOfferSchema(product, absoluteUrl(path));
+
   const productSchema = {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -129,12 +133,12 @@ export default function ProductDetailPage() {
       { '@type': 'PropertyValue', name: 'Packing', value: site.packing },
     ],
     /*
-     * No `offers` node. Pricing here is genuinely quote-based (it depends on
-     * size, grade, schedule and quantity), and schema.org Offer requires a
-     * price or a priced priceSpecification. Emitting an Offer with no price
-     * is invalid structured data and fails the Rich Results Test — a Product
-     * without offers is valid, so that is what we publish.
+     * An AggregateOffer (lowPrice/highPrice) only when the product has a
+     * verified indicative range. schema.org rejects an Offer with no price, so
+     * for everything still quote-only the node is omitted entirely — a Product
+     * without offers is valid structured data; one with an empty Offer is not.
      */
+    ...(offers ? { offers } : {}),
   };
 
   const crumbs = breadcrumbSchema([
@@ -208,6 +212,8 @@ export default function ProductDetailPage() {
               <div className="w-16 h-[2px] bg-[#E5A93C] mt-6 mb-6" />
 
               <p className="text-gray-600 text-[16px] leading-relaxed">{product.description}</p>
+
+              <PriceRange product={product} />
 
               {/* Spec table */}
               <div className="mt-10 border border-gray-200 rounded-lg overflow-hidden">

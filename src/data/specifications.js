@@ -13,6 +13,8 @@
  */
 
 /** Minimum order quantity, quoted on every product page and in schema. */
+import { getPriceRange, formatPriceRange, PRICE_AS_OF } from './pricing.js';
+
 export const MOQ = '5 kg';
 
 /* ------------------------------------------------------------------ */
@@ -620,6 +622,24 @@ const socketWeldInstallation = {
 /* Commercial terms — the same for every line                          */
 /* ------------------------------------------------------------------ */
 
+/*
+ * The ordering table shows a real indicative range when one has been verified,
+ * and falls back to describing the quoting basis when it has not. Both rows
+ * would be redundant together, so it is one or the other.
+ */
+const priceRows = (product) => {
+  const range = getPriceRange(product);
+  if (!range) {
+    return [
+      ['Price basis', 'Ex-works Mumbai, FOB or CIF — quoted per kg, per metre or per piece depending on the form'],
+    ];
+  }
+  return [
+    ['Indicative price', `${formatPriceRange(range)} (${range.basis}, as of ${PRICE_AS_OF}) — indicative only, confirmed at quotation`],
+    ['Price basis', 'Ex-works Mumbai, FOB or CIF — quoted per kg, per metre or per piece depending on the form'],
+  ];
+};
+
 const commercial = (product) => ({
   id: 'ordering',
   title: 'Ordering & Supply',
@@ -627,7 +647,7 @@ const commercial = (product) => ({
   columns: ['Parameter', 'Detail'],
   rows: [
     ['Minimum order quantity', `${MOQ} (mixed sizes within a grade can be combined to reach the MOQ)`],
-    ['Price basis', 'Ex-works Mumbai, FOB or CIF — quoted per kg, per metre or per piece depending on the form'],
+    ...priceRows(product),
     ['Lead time', 'Ready stock dispatched in 1–3 working days; mill orders typically 2–6 weeks'],
     ['Certification', 'Mill test certificate to EN 10204 3.1 as standard; 3.2 with third-party witness, IBR and NACE MR0175 on request'],
     ['Testing available', 'PMI, IGC (ASTM A262), hydrostatic, ultrasonic, radiographic, impact and hardness testing'],
@@ -675,9 +695,18 @@ export function getSpecTables(product) {
 /** Quick-reference facts for the "at a glance" strip on a product page. */
 export function getQuickFacts(product) {
   if (!product) return [];
+  const range = getPriceRange(product);
   return [
     { label: 'Material', value: product.material },
-    { label: 'Product Form', value: product.form },
+    /*
+     * A verified price takes this slot rather than being appended: the strip is
+     * a six-column grid, and a seventh cell leaves an orphan on desktop. Form is
+     * the one to give up — it is already in the spec table directly above,
+     * whereas certification and inspection are trust signals that are not.
+     */
+    range
+      ? { label: 'Indicative Price', value: formatPriceRange(range) }
+      : { label: 'Product Form', value: product.form },
     { label: 'Min. Order Qty', value: MOQ },
     { label: 'Certification', value: 'EN 10204 3.1 MTC' },
     { label: 'Inspection', value: 'BV · TÜV · DNV · SGS' },

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { products } from "../data/products";
+import { getPriceRange, formatPriceRange } from '../data/pricing';
 import AnimatedSection from "../components/AnimatedSection";
 import Seo from "../components/Seo";
 import CTABand from "../components/CTABand";
@@ -168,6 +169,15 @@ export default function ProductsPage() {
                   <span className="text-[#E5A93C] text-xs font-black tracking-[0.2em] uppercase">{product.material}</span>
                   <h3 className="text-xl font-black text-[#0A1828] uppercase mt-3">{product.name}</h3>
                   <p className="text-gray-500 mt-3 text-sm line-clamp-2">{product.description}</p>
+                  {/* Only ever rendered for a verified range — see src/data/pricing.js */}
+                  {getPriceRange(product) && (
+                    <p className="mt-4 text-[#0A1828] font-black text-lg">
+                      {formatPriceRange(getPriceRange(product))}
+                      <span className="block text-[11px] font-semibold tracking-wide text-gray-400 uppercase mt-0.5">
+                        Indicative
+                      </span>
+                    </p>
+                  )}
                   <div className="flex items-center gap-3 mt-6">
                     <span className="font-black uppercase text-xs tracking-widest">View Details</span>
                     <span className="text-[#E5A93C] group-hover:translate-x-1 transition-transform duration-200">→</span>
