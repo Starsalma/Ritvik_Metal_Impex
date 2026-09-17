@@ -441,16 +441,21 @@ export const articles = [
         blocks: [
           {
             type: 'p',
-            text: 'A socketweld fitting has a machined recess. The pipe is inserted, backed off approximately 1.5 mm from the shoulder to allow for thermal expansion, and fillet-welded on the outside. Dimensions and pressure classes come from ASME B16.11, and the fittings are forged rather than cast, giving better grain structure and mechanical strength.',
+            text: 'A socketweld fitting has a machined recess. The pipe is inserted, backed off approximately 1.5 mm from the shoulder to allow for thermal expansion, and fillet-welded on the outside. Dimensions and class designations come from ASME B16.11, and the fittings are forged rather than cast, giving a worked grain structure and better mechanical properties.',
           },
           {
             type: 'table',
-            columns: ['Class', 'Typical use', 'Notes'],
+            columns: ['Class', 'Matched pipe schedule', 'Typical use'],
             rows: [
-              ['3000#', 'Standard high-pressure small-bore process lines', 'Most commonly stocked class'],
-              ['6000#', 'Higher pressure service', 'Often matched with heavier schedule pipe (XS/XXS)'],
-              ['9000#', 'Extreme pressure, typically threaded and socketweld small bore', 'Specified on hydraulic and high-pressure instrument lines'],
+              ['3000#', 'Schedule 80 / XS', 'The standard stocked class for small-bore process piping'],
+              ['6000#', 'Schedule 160', 'Higher-pressure service on heavier-wall pipe'],
+              ['9000#', 'XXS', 'Extreme-pressure small bore, hydraulic and instrument lines'],
             ],
+          },
+          {
+            type: 'note',
+            title: 'The class is not a pressure',
+            text: 'This trips up a lot of buyers, and a lot of supplier websites state it incorrectly. Under ASME B16.11 the Class 3000 / 6000 / 9000 designation identifies the socket bore and the pipe schedule the fitting is bored to accept — it is not a working pressure in psi. A Class 3000 fitting is not rated for 3000 psi. The allowable pressure follows from the material grade, the design temperature and the governing code (ASME B31.1 or B31.3), so check it against your piping class rather than reading it off the class number.',
           },
           {
             type: 'ul',
@@ -546,7 +551,7 @@ export const articles = [
       {
         question: 'What do Class 3000, 6000 and 9000 mean on forged fittings?',
         answer:
-          'They are ASME B16.11 pressure classes for forged socketweld and threaded fittings. Higher class means heavier wall and higher allowable pressure; 3000# is the standard stock class, 6000# is used with heavier schedule pipe, and 9000# is reserved for extreme-pressure small-bore service.',
+          'They are ASME B16.11 class designations, and they identify the socket bore and the pipe schedule the fitting is matched to — not a working pressure. Class 3000 matches Schedule 80/XS pipe, Class 6000 matches Schedule 160, and Class 9000 matches XXS. A Class 3000 fitting is not rated for 3000 psi: the allowable pressure comes from the material grade, the design temperature and the governing code, so confirm it against your piping class.',
       },
       {
         question: 'Can threaded fittings be used in high-pressure service?',

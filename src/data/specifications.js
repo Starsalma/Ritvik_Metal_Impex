@@ -553,6 +553,69 @@ const hollowSections = {
   ],
 };
 
+
+/* ------------------------------------------------------------------ */
+/* Socket weld & threaded forged fittings — ASME B16.11                */
+/* ------------------------------------------------------------------ */
+
+/*
+ * A point almost every supplier page gets wrong: under ASME B16.11 the Class
+ * 3000 / 6000 / 9000 designation identifies the socket bore and the pipe
+ * schedule the fitting is matched to. It is NOT a working pressure in psi — a
+ * Class 3000 fitting does not mean 3000 psi. The allowable pressure comes from
+ * the material and the governing code, so we state the schedule relationship
+ * and say plainly what the class does not mean.
+ */
+const forgedClasses = {
+  id: 'pressure-classes',
+  title: 'Class & Matched Pipe Schedule',
+  note:
+    'Under ASME B16.11 the class designation identifies the socket bore and the pipe schedule the fitting is bored to accept — it is not a pressure in psi. A Class 3000 fitting is not rated for 3000 psi. Allowable working pressure follows from the material grade, the design temperature and the governing code (ASME B31.1 / B31.3), so confirm it against your piping class rather than reading it from the class number.',
+  columns: ['Class', 'Matched pipe schedule', 'Size range', 'Typical use'],
+  rows: [
+    ['Class 2000', 'Schedule 40 / STD', '1/8" to 4" NPS (threaded only)', 'Low-pressure utility and instrument lines'],
+    ['Class 3000', 'Schedule 80 / XS', '1/8" to 4" NPS', 'The standard stocked class for small-bore process piping'],
+    ['Class 6000', 'Schedule 160', '1/8" to 4" NPS', 'Higher-pressure service on heavier-wall pipe'],
+    ['Class 9000', 'XXS', '1/8" to 2" NPS (socket weld)', 'Extreme-pressure small-bore, hydraulic and instrument lines'],
+  ],
+};
+
+const forgedTypes = {
+  id: 'fitting-types',
+  title: 'Types & End Connections',
+  note:
+    'Socket weld and threaded fittings share the same ASME B16.11 body dimensions and pressure classes; only the end preparation differs. Both are made from forgings rather than castings, which gives a worked grain structure and better mechanical properties.',
+  columns: ['Type', 'Socket weld', 'Threaded (NPT / BSP)', 'Notes'],
+  rows: [
+    ['Elbow 90°', 'Yes', 'Yes', 'Also available as 45°'],
+    ['Tee — equal & reducing', 'Yes', 'Yes', 'Reducing tees reduce on the branch'],
+    ['Cross', 'Yes', 'Yes', 'Four-way branch'],
+    ['Coupling — full & half', 'Yes', 'Yes', 'Half coupling for branch connections on a header'],
+    ['Reducer insert / bushing', 'Yes', 'Yes', 'Steps a socket down one or two sizes'],
+    ['Union', 'Yes', 'Yes', 'Three-piece; allows dismantling without cutting'],
+    ['Cap & plug', 'Yes', 'Yes', 'Terminates a line or a test connection'],
+    ['Swage nipple, hex & barrel nipple', 'Plain / bevel end', 'Threaded both ends', 'Concentric or eccentric swages'],
+    ['Welding boss & branch outlet', 'Yes', 'Yes', 'Set-on branch connections'],
+  ],
+};
+
+const socketWeldInstallation = {
+  id: 'installation',
+  title: 'Installation & Inspection Requirements',
+  note:
+    'These are the points that most often cause a socket weld joint to be rejected on site. Follow a qualified WPS and the piping class in all cases.',
+  columns: ['Requirement', 'Detail'],
+  rows: [
+    ['Expansion gap (setback)', 'Insert the pipe fully, then withdraw approximately 1.5 mm (1/16") before welding. Welding a bottomed-out pipe puts the weld root into tension as the joint expands and is a classic cause of root cracking. This is a code requirement, not a preference.'],
+    ['Weld type', 'Fillet weld on the outside of the socket. Minimum fillet leg is normally 1.09 × nominal pipe wall thickness per ASME B31.1 / B31.3.'],
+    ['Non-destructive examination', 'Socket welds cannot be radiographed — the socket geometry blocks a meaningful image. Inspection is limited to visual, dye penetrant (PT) and magnetic particle (MT) on the surface.'],
+    ['Crevice', 'The annular gap between pipe OD and socket bore traps process fluid. Avoid socket weld in high-purity, hygienic, and severely corrosive or crevice-sensitive service; use buttweld instead.'],
+    ['Vibration & cyclic service', 'Socket welds have lower fatigue strength than buttweld joints. Many specifications prohibit them in lines with severe vibration or thermal cycling.'],
+    ['Size limit', 'Generally used up to 2" NB. Above that buttweld is both more economical and inspectable.'],
+    ['Threaded joints', 'Seal with PTFE tape or an approved sealant and make up to the correct torque. Where leak-tightness is critical, the specification may call for a seal weld over the completed thread — which also removes the ability to dismantle it.'],
+  ],
+};
+
 /* ------------------------------------------------------------------ */
 /* Commercial terms — the same for every line                          */
 /* ------------------------------------------------------------------ */
@@ -578,6 +641,15 @@ const commercial = (product) => ({
 
 /* ------------------------------------------------------------------ */
 
+/*
+ * ASME B16.11 covers forged socket-weld and threaded fittings only. Buttweld
+ * fittings (ASME B16.9) and ferrule/compression fittings share the "Fittings"
+ * form but are governed by different standards, so matching on form alone would
+ * put the wrong tables on those pages.
+ */
+const isForgedFitting = (product) =>
+  /socketweld|socket weld|screwed|forged/i.test(product?.name ?? '');
+
 /**
  * Returns the specification tables that apply to a product, in the order
  * they should be rendered. Missing entries are simply skipped, so adding a
@@ -591,6 +663,9 @@ export function getSpecTables(product) {
     dimensional[product.form],
     product.form === 'Pipes' ? pipeDimensions : null,
     product.form === 'Pipes' ? hollowSections : null,
+    isForgedFitting(product) ? forgedClasses : null,
+    isForgedFitting(product) ? forgedTypes : null,
+    isForgedFitting(product) ? socketWeldInstallation : null,
     physical[product.material],
     equivalents[product.material],
     commercial(product),
