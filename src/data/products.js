@@ -51,7 +51,7 @@ export const products = [
       sections: [
         { heading: "Socketweld vs Screwed Fittings", content: "Socketweld fittings are welded onto pipes inserted into a socket, providing a strong permanent joint for high-pressure service. Screwed (threaded) fittings use NPT or BSP threads for quick, non-permanent connections suitable for lower pressure applications." },
         { heading: "Product Range", content: "Includes elbows, tees, crosses, unions, couplings, caps, bushings, plugs, swage nipples, welding bosses, hexagon nipples, barrel nipples, and adaptors in sizes 1/4\" to 4\" NB." },
-        { heading: "Pressure Classes", content: "Available in Class 3000# (for standard service), 6000# (for high pressure), and 9000# (for extreme pressure applications) as per ASME B16.11 standards." },
+        { heading: "Class Designations", content: "Available in Class 3000#, 6000# and 9000# to ASME B16.11. The class identifies the socket bore and the pipe schedule the fitting is bored to accept — Class 3000 matches Schedule 80/XS, Class 6000 matches Schedule 160, and Class 9000 matches XXS. It is not a working pressure in psi: a Class 3000 fitting is not rated for 3000 psi. Allowable pressure follows from the material grade, the design temperature and the governing code (ASME B31.1 or B31.3), so confirm it against your piping class." },
         { heading: "Material Options", content: "Stainless Steel (ASTM A182 F304/F316/F321), Carbon Steel (ASTM A105), Low Temperature Carbon Steel (ASTM A350 LF2), and Alloy Steel grades F5, F9, F11, F22, F91." },
       ]
     }
