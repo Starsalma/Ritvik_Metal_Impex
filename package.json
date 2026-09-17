@@ -13,7 +13,8 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist -r https://github.com/Starsalma/Ritvik_Metal_Impex.git",
-    "images": "node scripts/generate-image-manifest.mjs"
+    "images": "node scripts/generate-image-manifest.mjs",
+    "check:prices": "node scripts/check-prices.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.116.0",

@@ -87,6 +87,34 @@ intent. Say the word and it can be built, including valid `Offer` schema with
 
 **Do not** publish a fixed price you will not honour.
 
+### This is now built — but switched off
+
+`src/data/pricing.js` holds an indicative range per product, and the product
+pages, listing cards, specification tables, FAQ and `AggregateOffer` schema all
+read from it.
+
+**Every range in that file is an unverified placeholder.** They were written to
+give the feature a working shape, not by anyone who knows your costs. Nothing
+renders until an entry is marked `verified: true`, so the live site is unchanged
+until you say otherwise.
+
+To publish one:
+
+1. Open `src/data/pricing.js`, replace `min` and `max` with your own figures.
+2. Check `unit` and `basis` match how you actually quote that line.
+3. Set `verified: true`.
+4. Update `PRICE_AS_OF` to the date you checked.
+
+`npm run check:prices` lists what is live and what is still a placeholder.
+
+Do them a few at a time rather than all at once. Everything downstream follows
+automatically: the homepage FAQ switches from "we don't publish prices" to
+"indicative ranges, reviewed as of …", and the schema starts carrying
+`lowPrice`/`highPrice` so Google can show the range in the result.
+
+Revisit `PRICE_AS_OF` monthly. A range dated eight months ago is worse than no
+range — it tells a buyer the page is abandoned.
+
 ---
 
 ## What actually takes a B2B metals site to "fully optimised"
