@@ -166,9 +166,29 @@ export const imageSizes = {
     500,
     500
   ],
+  "/images/products/ss-channels-angles.jpg": [
+    960,
+    1280
+  ],
+  "/images/products/ss-circles-316l.jpg": [
+    1200,
+    1600
+  ],
   "/images/products/ss-flats.webp": [
     500,
     367
+  ],
+  "/images/products/ss-round-bars.jpg": [
+    1600,
+    1200
+  ],
+  "/images/products/ss-stud-bolts.jpg": [
+    1280,
+    960
+  ],
+  "/images/products/ss-washers.jpg": [
+    960,
+    1280
   ],
   "/images/products/valves.jpg": [
     500,

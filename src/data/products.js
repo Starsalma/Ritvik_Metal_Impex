@@ -100,7 +100,7 @@ export const products = [
     category: "Ferrous",
     form: "Sheets",
     material: "Stainless Steel",
-    image: "/images/products/sheets-plates-coils.jpg",
+    image: "/images/products/ss-circles-316l.jpg",
     description: "Stainless Steel coils, sheets & plates as per ASTM A240 (Gr. TP 202/304/304L/309/310/316/316L/321/347/410/420/430), Alloy Steel plates per ASTM A387, and Boiler Quality Carbon Steel plates as per IS 2062/ASTM A516 Gr. 60-70, with IBR Test Certificate available.",
     blog: {
       title: "Stainless Steel Sheets, Plates & Coils: A Complete Reference",
@@ -119,7 +119,7 @@ export const products = [
     category: "Ferrous",
     form: "Fasteners",
     material: "Stainless Steel",
-    image: "/images/products/fasteners.jpg",
+    image: "/images/products/ss-stud-bolts.jpg",
     description: "Bolts, nuts, washers, anchors, fasteners, stud bolts, eye bolts, threaded rods and cotter pins in Stainless Steel (AISI 302/304/316/321/347), Alloy Steel (4.6 to 12.9 grades) and Carbon Steel (galvanized, phosphated, cadmium plated finishes).",
     blog: {
       title: "Industrial Fasteners & Nut Bolts: Grades, Types & Applications",
@@ -157,7 +157,7 @@ export const products = [
     category: "Ferrous",
     form: "Bars",
     material: "Stainless Steel",
-    image: "/images/products/bars.jpg",
+    image: "/images/products/ss-round-bars.jpg",
     description: "Round, square and hexagonal bars as per ASTM A276/A479 (Grade 202/304/304L/316/316L/321/347/410/420/904L), Nickel Alloys and Duplex Steel. Size range 3mm to 75mm dia, ready stock with Mill Test Certificate, cold drawn & annealed, tolerance H9/H11.",
     blog: {
       title: "Stainless Steel Bars: Round, Square & Hex — Properties & Uses",
@@ -385,7 +385,7 @@ export const products = [
     category: "Ferrous",
     form: "Bars",
     material: "Stainless Steel",
-    image: "/images/products/ss-flats.webp",
+    image: "/images/products/ss-channels-angles.jpg",
     description: "Stainless Steel flat bars in SS 304/304L, 316/316L, 321, 410, 430 and Duplex grades. Width 10mm to 200mm, thickness 3mm to 50mm, in hot rolled, cold drawn and polished conditions per ASTM A276/A479 and EN 10058 standards.",
     blog: {
       title: "Stainless Steel Flat Bars: Grades, Sizes & Engineering Applications",

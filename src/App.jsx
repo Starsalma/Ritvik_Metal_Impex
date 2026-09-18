@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero3D from './components/Hero3D';
 import Showcase3D from './components/Showcase3D';
+import StockyardGallery from './components/StockyardGallery';
 import StatsBar from './components/StatsBar';
 import AboutSection from './components/AboutSection';
 import ProductsGrid from './components/ProductsGrid';
@@ -139,6 +140,7 @@ function HomePage() {
       <StatsBar />
       <Showcase3D />
       <AboutSection />
+      <StockyardGallery />
       <ProductsGrid />
       <IndustriesAndWhyChooseUs />
       <TPISection />

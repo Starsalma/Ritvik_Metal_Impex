@@ -89,9 +89,25 @@ for (const file of walk(join(PUBLIC_DIR, 'images'))) {
   sizes[key] = dims;
   // Google needs roughly 1200px on the long edge for a large image preview.
   if (Math.max(dims[0], dims[1]) < 1200 && key.includes('/products/')) {
-    undersized.push(`${key} (${dims[0]}x${dims[1]})`);
+    undersized.push({ key, label: `${key} (${dims[0]}x${dims[1]})` });
   }
 }
+
+/*
+ * Only an image a page actually points at can hurt a thumbnail. Files left in
+ * public/images/products after a photo is replaced are dead weight, and
+ * counting them made the warning read 17 when 13 products were affected — a
+ * number that never moves as photos get fixed is a number nobody trusts.
+ */
+const referenced = new Set(
+  [...readFileSync(resolve(__dirname, '../src/data/products.js'), 'utf8')
+    .matchAll(/"(\/images\/[^"]+)"/g)].map((m) => m[1]).concat(
+  [...readFileSync(resolve(__dirname, '../src/data/articles.js'), 'utf8')
+    .matchAll(/'(\/images\/[^']+)'/g)].map((m) => m[1])),
+);
+
+const liveUndersized = undersized.filter((u) => referenced.has(u.key));
+const orphanUndersized = undersized.filter((u) => !referenced.has(u.key));
 
 const body = `/**
  * GENERATED FILE — do not edit by hand.
@@ -110,7 +126,10 @@ writeFileSync(OUT, body, 'utf8');
 
 console.log(`imageSizes.js written with ${Object.keys(sizes).length} images`);
 if (unreadable) console.log(`  ${unreadable} file(s) could not be parsed`);
-if (undersized.length) {
-  console.log(`  WARNING: ${undersized.length} product image(s) under 1200px — too small for a Google large thumbnail:`);
-  undersized.forEach((u) => console.log(`    - ${u}`));
+if (liveUndersized.length) {
+  console.log(`  WARNING: ${liveUndersized.length} product image(s) in use are under 1200px — too small for a Google large thumbnail:`);
+  liveUndersized.forEach((u) => console.log(`    - ${u.label}`));
+}
+if (orphanUndersized.length) {
+  console.log(`  (${orphanUndersized.length} undersized file(s) on disk are no longer referenced — safe to delete)`);
 }
