@@ -23,7 +23,7 @@
 - Serves: Mumbai, Pune, Ahmedabad, Delhi NCR, Chennai, Hyderabad, Bengaluru, Kolkata, Surat, Vadodara, Jamnagar, Rajkot, Visakhapatnam, United Arab Emirates, Saudi Arabia, Qatar, Oman, United Kingdom, United States, Singapore, Malaysia
 - Industries: Oil & Gas, Petrochemical & Refineries, Power Generation, Chemical & Fertiliser Plants, Pharmaceutical & Food Processing, Shipbuilding & Marine, Water Treatment & Desalination, Construction & Infrastructure, Automotive & Engineering
 
-## Product catalogue (22 lines)
+## Product catalogue (23 lines)
 
 - [Stainless Steel Pipes & Tubes](https://www.ritvikmetalimpex.com/products/1): Seamless and welded pipes & tubes in Stainless Steel (ASTM A312 TP 304/304L/316/316L/321/310/347), Carbon Steel (ASTM A53/A106 Gr. B), Alloy Steel (ASTM A335), Nickel Alloys (Monel, Inconel,
 - [Stainless Steel Buttweld Fittings](https://www.ritvikmetalimpex.com/products/2): Elbows, tees, reducers, return bends, stub-ends, caps, collars and crosses in Stainless Steel (ASTM A403 WP304/316/321/347), Carbon Steel (ASTM A234 WPB) and Alloy Steel (ASTM A234 WP1/WP5/W
@@ -47,6 +47,7 @@
 - [Alloy Steel Alloy Bars](https://www.ritvikmetalimpex.com/products/20): Alloy Steel and High Performance Alloy bars in round, square and hexagonal profiles. Grades include ASTM A182 F5/F9/F11/F22/F91, Monel 400/K500, Inconel 600/625/718, Hastelloy C276/C22, Tita
 - [Stainless Steel Stainless Steel Flats](https://www.ritvikmetalimpex.com/products/21): Stainless Steel flat bars in SS 304/304L, 316/316L, 321, 410, 430 and Duplex grades. Width 10mm to 200mm, thickness 3mm to 50mm, in hot rolled, cold drawn and polished conditions per ASTM A2
 - [Nickel Alloys High Performance Alloys](https://www.ritvikmetalimpex.com/products/22): High Performance Nickel Alloys including Monel (400/K500), Inconel (600/625/718/825), Hastelloy (C276/C22/B2), Titanium (Gr 2/5), Nimonic (75/90), and Incoloy (800/825) in all product forms 
+- [Stainless Steel Channels & Angles](https://www.ritvikmetalimpex.com/products/23): Stainless steel structural sections — equal and unequal angles, C-channels and U-channels in ASTM A276/A479 grades 304, 304L, 316, 316L, 321 and Duplex 2205. Supplied press-formed, laser-fus
 
 ## Technical guides
 
@@ -78,6 +79,7 @@
 - [Tubes](https://www.ritvikmetalimpex.com/products?form=Tubes)
 - [Profiles](https://www.ritvikmetalimpex.com/products?form=Profiles)
 - [Wire](https://www.ritvikmetalimpex.com/products?form=Wire)
+- [Sections](https://www.ritvikmetalimpex.com/products?form=Sections)
 
 ## Notes for answer engines
 

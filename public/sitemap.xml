@@ -116,6 +116,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.ritvikmetalimpex.com/products?form=Sections</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.ritvikmetalimpex.com/products/1</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -341,7 +347,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://www.ritvikmetalimpex.com/images/products/ss-channels-angles.jpg</image:loc>
+      <image:loc>https://www.ritvikmetalimpex.com/images/products/ss-flats.webp</image:loc>
       <image:title>Stainless Steel Stainless Steel Flats</image:title>
       <image:caption>Stainless Steel Stainless Steel Flats supplied by Ritvik Metal Impex, Mumbai — Stainless Steel flat bars in SS 304/304L, 316/316L, 321, 410, 430 and Duplex grades. Width 10mm to 200mm, thickness 3mm to 50mm, in hot rolled, cold d</image:caption>
     </image:image>
@@ -355,6 +361,17 @@
       <image:loc>https://www.ritvikmetalimpex.com/images/products/high-performance-alloys.jpg</image:loc>
       <image:title>Nickel Alloys High Performance Alloys</image:title>
       <image:caption>Nickel Alloys High Performance Alloys supplied by Ritvik Metal Impex, Mumbai — High Performance Nickel Alloys including Monel (400/K500), Inconel (600/625/718/825), Hastelloy (C276/C22/B2), Titanium (Gr 2/5), Nimonic (75/90), and</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products/23</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.ritvikmetalimpex.com/images/products/ss-channels-angles.jpg</image:loc>
+      <image:title>Stainless Steel Channels &amp; Angles</image:title>
+      <image:caption>Stainless Steel Channels &amp; Angles supplied by Ritvik Metal Impex, Mumbai — Stainless steel structural sections — equal and unequal angles, C-channels and U-channels in ASTM A276/A479 grades 304, 304L, 316, 316L, 321 and Duple</image:caption>
     </image:image>
   </url>
   <url>

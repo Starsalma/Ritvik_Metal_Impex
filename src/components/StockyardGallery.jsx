@@ -45,9 +45,9 @@ const SHOTS = [
   },
   {
     src: '/images/products/ss-channels-angles.jpg',
-    title: 'Channels, Angles & Profiles',
-    detail: 'Press-formed sections in stainless',
-    productId: 21,
+    title: 'Channels & Angles',
+    detail: 'Press-formed stainless sections',
+    productId: 23,
   },
 ];
 

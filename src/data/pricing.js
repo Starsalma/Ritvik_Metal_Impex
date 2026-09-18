@@ -72,6 +72,7 @@ export const priceRanges = {
   20: { min: 150,  max: 420,   unit: 'kg',    basis: 'Ex-works Mumbai',  verified: false },
   21: { min: 200,  max: 340,   unit: 'kg',    basis: 'Ex-works Mumbai',  verified: false },
   22: { min: 1800, max: 6800,  unit: 'kg',    basis: 'Ex-works Mumbai',  verified: false },
+  23: { min: 240,  max: 430,   unit: 'kg',    basis: 'Ex-works Mumbai',  verified: false },
 };
 
 /**

@@ -385,7 +385,7 @@ export const products = [
     category: "Ferrous",
     form: "Bars",
     material: "Stainless Steel",
-    image: "/images/products/ss-channels-angles.jpg",
+    image: "/images/products/ss-flats.webp",
     description: "Stainless Steel flat bars in SS 304/304L, 316/316L, 321, 410, 430 and Duplex grades. Width 10mm to 200mm, thickness 3mm to 50mm, in hot rolled, cold drawn and polished conditions per ASTM A276/A479 and EN 10058 standards.",
     blog: {
       title: "Stainless Steel Flat Bars: Grades, Sizes & Engineering Applications",
@@ -414,6 +414,26 @@ export const products = [
         { heading: "Inconel Alloys (600/625/718)", content: "Inconel 600 — oxidation resistance to 1175°C for furnace components. Inconel 625 — aerospace and offshore fatigue resistance. Inconel 718 — most used superalloy in jet engines and gas turbines." },
         { heading: "Hastelloy Alloys", content: "C276 — resists wet chlorine, ferric chloride, oxidizing/reducing acids. C22 — superior oxidizing environment resistance. B2 — specifically for hydrochloric acid at all concentrations and temperatures." },
         { heading: "Applications", content: "Offshore oil & gas, chemical processing reactors, aerospace turbine blades, nuclear reactor internals, pharmaceutical high-purity equipment, marine seawater systems." },
+      ]
+    }
+  },
+  {
+    id: 23,
+    name: "Channels & Angles",
+    category: "Ferrous",
+    form: "Sections",
+    material: "Stainless Steel",
+    image: "/images/products/ss-channels-angles.jpg",
+    description: "Stainless steel structural sections \u2014 equal and unequal angles, C-channels and U-channels in ASTM A276/A479 grades 304, 304L, 316, 316L, 321 and Duplex 2205. Supplied press-formed, laser-fused or hot rolled. Angles 20\u00d720\u00d73 mm to 200\u00d7200\u00d720 mm, channels 50\u00d725 mm to 400\u00d7100 mm, standard 6 m lengths or cut to size.",
+    blog: {
+      title: "Stainless Steel Channels & Angles: Forming Methods, Sizes & Selection",
+      intro: "Stainless structural sections are specified where a carbon steel section would corrode \u2014 process platforms, marine walkways, food and pharmaceutical plant frames, and architectural work. How the section is made matters more in stainless than in carbon steel, because hot rolling is far less widely available.",
+      sections: [
+        { heading: "Three Ways a Stainless Section Is Made", content: "Press-formed (brake-formed) sections are bent from plate on a press brake. They offer the widest size range, custom dimensions and short lead times, with a generous inner bend radius. Laser-fused sections are laser welded from plate components, giving sharp corners, tight tolerances and a narrow heat-affected zone. Hot rolled sections are rolled from bloom like carbon steel, but the stainless size range is limited and lead times are long. Most stainless channels and angles supplied in India are press-formed or laser-fused." },
+        { heading: "Angles: Equal and Unequal", content: "Equal angles run 20\u00d720\u00d73 mm through 200\u00d7200\u00d720 mm; unequal angles from 30\u00d720\u00d73 mm to 200\u00d7150\u00d715 mm. Dimensional standards are EN 10056-1 for European practice and IS 808 for Indian. Angles are used for framing, edge protection, bracing and supports where a bolted or welded connection carries the load." },
+        { heading: "Channels: C and U Profiles", content: "Channels run 50\u00d725 mm to 400\u00d7100 mm. A press-formed channel has parallel flanges of uniform thickness, which makes its weight per metre straightforward to calculate; a hot rolled ISMC channel has tapered flanges and a thicker web, so its weight differs from a formed section of the same nominal size. Confirm which you are buying when comparing weights or prices." },
+        { heading: "Grade Selection", content: "304/304L covers general atmospheric and indoor structural work. 316/316L is specified for coastal, marine and chloride-bearing environments, and for food and pharmaceutical plant where cleaning chemicals are aggressive. Duplex 2205 offers roughly double the yield strength of 304, which allows a lighter section for the same load, plus superior chloride stress corrosion cracking resistance." },
+        { heading: "Finish and Fabrication", content: "Sections are supplied No.1 (hot rolled, annealed and pickled) as standard, with 2B, No.4 brushed and mirror polish available for visible architectural work. Cutting, drilling, notching and welding are available in-house. Where a section is welded, pickling and passivation of the weld restores corrosion resistance \u2014 specify it at enquiry stage if the environment is aggressive." },
       ]
     }
   },

@@ -461,6 +461,22 @@ const dimensional = {
       ['Standards', 'IEC 60317, IS 13730, NEMA MW 1000, JIS C 3202'],
     ],
   },
+  Sections: {
+    id: 'size-range',
+    title: 'Size Range & Supply Condition',
+    columns: ['Parameter', 'Range'],
+    rows: [
+      ['Equal angles', '20×20×3 mm to 200×200×20 mm'],
+      ['Unequal angles', '30×20×3 mm to 200×150×15 mm'],
+      ['Channels (C / U)', '50×25 mm to 400×100 mm'],
+      ['Thickness', '2 mm to 20 mm depending on section and forming method'],
+      ['Length', '6000 mm standard; 3000 mm and cut-to-size available'],
+      ['Forming method', 'Press-formed (brake-formed), laser-fused, or hot rolled'],
+      ['Finish', 'No.1 hot rolled annealed pickled; 2B, No.4 brushed and mirror on request'],
+      ['Dimensional standards', 'EN 10056-1 (angles), EN 10279 (channels), IS 808, ASTM A484 general requirements'],
+      ['Material standards', 'ASTM A276 / A479 (grades 304, 304L, 316, 316L, 321), ASTM A240 plate for formed sections, EN 10088-3'],
+    ],
+  },
   Profiles: {
     id: 'size-range',
     title: 'Size Range & Supply Condition',
@@ -619,6 +635,71 @@ const socketWeldInstallation = {
 };
 
 /* ------------------------------------------------------------------ */
+/* Structural sections — computed weights                              */
+/* ------------------------------------------------------------------ */
+
+/*
+ * Weights are computed from the section geometry, not transcribed. A formed
+ * section has a uniform wall, so its cross-sectional area is exact arithmetic
+ * and a 30-row table cannot pick up a copy-paste error.
+ *
+ * IMPORTANT: these are PRESS-FORMED sections of uniform thickness. A hot rolled
+ * ISMC channel has tapered flanges and a thicker web and weighs more than a
+ * formed channel of the same nominal size — do not compare the two directly.
+ *
+ * Reuses SS_DENSITY (kg/m³) from the pipe chart above rather than declaring a
+ * second density for the same material — two figures in one file would let the
+ * two weight tables quietly disagree, which is worse than the ~1% a rounded
+ * density costs. area(mm²) × kg/m³ / 1e6 = kg per metre.
+ */
+
+/** Equal angle: area = t(2a − t). Returns kg per metre. */
+const angleKgPerMetre = (a, t) => ((t * (2 * a - t)) * SS_DENSITY) / 1e6;
+
+/** Formed channel, web h and flanges b: area = t(h + 2b − 2t). kg per metre. */
+const channelKgPerMetre = (h, b, t) => ((t * (h + 2 * b - 2 * t)) * SS_DENSITY) / 1e6;
+
+const EQUAL_ANGLES = [
+  [20, 3], [25, 3], [25, 5], [30, 3], [30, 5], [40, 5], [40, 6],
+  [50, 5], [50, 6], [60, 6], [65, 6], [75, 6], [75, 10],
+  [100, 8], [100, 10], [125, 10], [150, 12], [200, 16],
+];
+
+const FORMED_CHANNELS = [
+  [50, 25, 3], [75, 40, 4], [100, 50, 5], [125, 65, 5],
+  [150, 75, 6], [200, 75, 6], [250, 80, 8], [300, 90, 8], [400, 100, 10],
+];
+
+const sectionWeights = {
+  id: 'section-weights',
+  title: 'Section Weights (Press-Formed)',
+  note: 'Theoretical weights computed from section geometry at the nominal austenitic density of 8000 kg/m³, the same figure used in the pipe weight chart. Use them for estimating and confirm against the delivered section. These are uniform-thickness press-formed sections; a hot rolled ISMC channel of the same nominal size has tapered flanges and a thicker web, and weighs more.',
+  columns: ['Section', 'Size (mm)', 'Thickness (mm)', 'Weight (kg/m)', 'Weight per 6 m length (kg)'],
+  rows: [
+    ...EQUAL_ANGLES.map(([a, t]) => {
+      const w = angleKgPerMetre(a, t);
+      return ['Equal angle', `${a} × ${a}`, String(t), w.toFixed(2), (w * 6).toFixed(1)];
+    }),
+    ...FORMED_CHANNELS.map(([h, b, t]) => {
+      const w = channelKgPerMetre(h, b, t);
+      return ['Channel', `${h} × ${b}`, String(t), w.toFixed(2), (w * 6).toFixed(1)];
+    }),
+  ],
+};
+
+const formingMethods = {
+  id: 'forming-methods',
+  title: 'Forming Methods Compared',
+  note: 'Most stainless channels and angles supplied in India are press-formed or laser-fused. Hot rolled stainless sections exist but the size range is limited and lead times are long.',
+  columns: ['Method', 'Corner / Radius', 'Size Range', 'Tolerance', 'Typical Use'],
+  rows: [
+    ['Press-formed (brake)', 'Generous inner bend radius', 'Widest — custom sizes to order', 'Moderate', 'General fabrication, supports, frames, short lead times'],
+    ['Laser-fused', 'Sharp, near-square corner', 'Wide, including deep sections', 'Tight', 'Architectural and visible work, close-tolerance assemblies'],
+    ['Hot rolled', 'Rolled radius, tapered flange possible', 'Limited in stainless', 'Per ASTM A484 / IS 808', 'Where a standard structural profile is specified by code'],
+  ],
+};
+
+/* ------------------------------------------------------------------ */
 /* Commercial terms — the same for every line                          */
 /* ------------------------------------------------------------------ */
 
@@ -681,6 +762,8 @@ export function getSpecTables(product) {
     chemistry[product.material],
     mechanical[product.material],
     dimensional[product.form],
+    product.form === 'Sections' ? sectionWeights : null,
+    product.form === 'Sections' ? formingMethods : null,
     product.form === 'Pipes' ? pipeDimensions : null,
     product.form === 'Pipes' ? hollowSections : null,
     isForgedFitting(product) ? forgedClasses : null,
