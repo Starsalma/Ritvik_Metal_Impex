@@ -102,6 +102,10 @@ export const imageSizes = {
     1100,
     1100
   ],
+  "/images/products/bronze-machined-rings.jpg": [
+    1200,
+    1600
+  ],
   "/images/products/buttweld-fittings.jpg": [
     1462,
     1000
@@ -166,6 +170,10 @@ export const imageSizes = {
     500,
     500
   ],
+  "/images/products/ss-buttweld-elbows.jpg": [
+    1280,
+    960
+  ],
   "/images/products/ss-channels-angles.jpg": [
     960,
     1280
@@ -178,9 +186,17 @@ export const imageSizes = {
     500,
     367
   ],
+  "/images/products/ss-machined-rings.jpg": [
+    1280,
+    960
+  ],
   "/images/products/ss-round-bars.jpg": [
     1600,
     1200
+  ],
+  "/images/products/ss-stud-bolts-washers.jpg": [
+    1280,
+    960
   ],
   "/images/products/ss-stud-bolts.jpg": [
     1280,

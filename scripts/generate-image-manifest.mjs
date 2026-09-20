@@ -99,11 +99,24 @@ for (const file of walk(join(PUBLIC_DIR, 'images'))) {
  * counting them made the warning read 17 when 13 products were affected — a
  * number that never moves as photos get fixed is a number nobody trusts.
  */
+const srcFiles = [];
+(function walkSrc(dir) {
+  for (const entry of readdirSync(dir)) {
+    const full = join(dir, entry);
+    if (statSync(full).isDirectory()) walkSrc(full);
+    // Skip the manifest this script generates: it lists every image path as a
+    // key, so scanning it would make every file look referenced.
+    else if (/\.(jsx?|mjs|ts|tsx)$/.test(entry) && full !== OUT) srcFiles.push(full);
+  }
+})(resolve(__dirname, '../src'));
+
+/*
+ * Scans all of src, not just the data files. An image referenced only by a
+ * component — the homepage gallery, for instance — is still in use, and
+ * reporting it as unreferenced would invite someone to delete a live asset.
+ */
 const referenced = new Set(
-  [...readFileSync(resolve(__dirname, '../src/data/products.js'), 'utf8')
-    .matchAll(/"(\/images\/[^"]+)"/g)].map((m) => m[1]).concat(
-  [...readFileSync(resolve(__dirname, '../src/data/articles.js'), 'utf8')
-    .matchAll(/'(\/images\/[^']+)'/g)].map((m) => m[1])),
+  srcFiles.flatMap((f) => [...readFileSync(f, 'utf8').matchAll(/['"`](\/images\/[^'"`]+)['"`]/g)].map((m) => m[1])),
 );
 
 const liveUndersized = undersized.filter((u) => referenced.has(u.key));
@@ -131,5 +144,5 @@ if (liveUndersized.length) {
   liveUndersized.forEach((u) => console.log(`    - ${u.label}`));
 }
 if (orphanUndersized.length) {
-  console.log(`  (${orphanUndersized.length} undersized file(s) on disk are no longer referenced — safe to delete)`);
+  console.log(`  (${orphanUndersized.length} undersized file(s) on disk are not referenced by any page)`);
 }

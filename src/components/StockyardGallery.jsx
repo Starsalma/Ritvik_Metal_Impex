@@ -27,9 +27,6 @@ const SHOTS = [
     title: 'Stainless Steel Round Bars',
     detail: 'Colour-coded by grade and diameter',
     productId: 9,
-    /* The only wide tile. 3 cols x 2 rows = 6 cells; five tiles plus this
-     * one extra cell fills the grid exactly, with no implicit overflow row. */
-    span: 'sm:col-span-2',
   },
   {
     src: '/images/products/ss-stud-bolts.jpg',
@@ -42,6 +39,12 @@ const SHOTS = [
     title: 'Stainless Steel Washers',
     detail: 'Sorted and binned by size',
     productId: 7,
+  },
+  {
+    src: '/images/products/ss-buttweld-elbows.jpg',
+    title: 'Buttweld Elbows',
+    detail: 'Long-radius 90° elbows, ASME B16.9',
+    productId: 2,
   },
   {
     src: '/images/products/ss-channels-angles.jpg',

@@ -24,7 +24,7 @@ export const products = [
     category: "Ferrous",
     form: "Fittings",
     material: "Stainless Steel",
-    image: "/images/products/buttweld-fittings.jpg",
+    image: "/images/products/ss-buttweld-elbows.jpg",
     description: "Elbows, tees, reducers, return bends, stub-ends, caps, collars and crosses in Stainless Steel (ASTM A403 WP304/316/321/347), Carbon Steel (ASTM A234 WPB) and Alloy Steel (ASTM A234 WP1/WP5/WP9/WP11). Sizes 1/4\" to 32\" NB, Schedule 5S to XXS, seamless & welded.",
     blog: {
       title: "Buttweld Pipe Fittings: Types, Standards & Applications",
@@ -119,7 +119,7 @@ export const products = [
     category: "Ferrous",
     form: "Fasteners",
     material: "Stainless Steel",
-    image: "/images/products/ss-stud-bolts.jpg",
+    image: "/images/products/ss-stud-bolts-washers.jpg",
     description: "Bolts, nuts, washers, anchors, fasteners, stud bolts, eye bolts, threaded rods and cotter pins in Stainless Steel (AISI 302/304/316/321/347), Alloy Steel (4.6 to 12.9 grades) and Carbon Steel (galvanized, phosphated, cadmium plated finishes).",
     blog: {
       title: "Industrial Fasteners & Nut Bolts: Grades, Types & Applications",
