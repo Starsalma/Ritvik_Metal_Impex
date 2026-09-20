@@ -26,6 +26,42 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.ritvikmetalimpex.com/grades</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/grades/stainless-steel-304</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/grades/stainless-steel-316</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/grades/duplex-2205</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/grades/inconel</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/grades/monel</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.ritvikmetalimpex.com/products?material=Stainless%20Steel</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>

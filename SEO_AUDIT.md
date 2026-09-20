@@ -202,7 +202,9 @@ Worth recording so it is not "fixed" again:
 
 | Date | Finding | Change | Verified |
 |---|---|---|---|
-| 2026-09-20 | P0-1 | Build-time prerendering of all sitemap routes | Yes — see `seo/reports/` |
+| 2026-09-20 | P0-1 | Build-time prerendering of all sitemap routes | Yes — 7 checks |
+| 2026-09-20 | P2-5 | `public/CNAME` added (`www.ritvikmetalimpex.com`) | Yes — matches live gh-pages CNAME |
+| 2026-09-20 | P1-3 | Grade pages for 304, 316, Duplex 2205, Inconel, Monel | Yes — 9 checks |
 
 ---
 
@@ -210,10 +212,14 @@ Worth recording so it is not "fixed" again:
 
 These cannot be resolved from the codebase:
 
-1. **Canonical host** — apex or `www`? Everything else follows from this.
+1. ~~Canonical host~~ — **resolved: `www.ritvikmetalimpex.com`**, confirmed against
+   the CNAME already live on `gh-pages`.
 2. **Search Console + Bing verification**, and Google Business Profile.
 3. **Photographs** for the 15 products still on stock images.
 4. **Price ranges** — review and set `verified: true`.
-5. **Grade availability** — confirm which of Hastelloy C22, Alloy 286,
-   Nitronic 50, SMO 254 and Titanium Grade 2 fasteners are genuinely stocked,
-   so grade pages are built only for real inventory.
+5. ~~Grade availability~~ — **resolved: 304, 316, Duplex 2205, Inconel, Monel.**
+   Pages built for those five only. Titanium Grade 2, Hastelloy, 904L, Alloy 20,
+   Nitronic 50 and SMO 254 remain unbuilt pending confirmation.
+6. **Deploy.** The live site runs from `gh-pages`, last updated 8 July 2026 and
+   now 45+ commits behind `main`. Nothing in this audit is live until someone
+   runs `npm run deploy`.

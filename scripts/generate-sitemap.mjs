@@ -10,6 +10,7 @@ import { fileURLToPath } from 'node:url';
 
 import { products } from '../src/data/products.js';
 import { articles } from '../src/data/articles.js';
+import { grades } from '../src/data/grades.js';
 import { SITE_URL, CATALOGUE_MODIFIED, site } from '../src/data/site.js';
 import { MOQ } from '../src/data/specifications.js';
 
@@ -35,6 +36,19 @@ const urls = [
   { path: '/products', changefreq: 'weekly', priority: '0.9', lastmod: CATALOGUE_MODIFIED },
   { path: '/blog', changefreq: 'weekly', priority: '0.8', lastmod: latestArticleDate },
   { path: '/about', changefreq: 'monthly', priority: '0.7', lastmod: CATALOGUE_MODIFIED },
+
+  /*
+   * Grade pages. Priority sits just under the product listing: buyers search
+   * by grade at least as often as by form, and these are the pages with a
+   * realistic chance of ranking for a specific commercial query.
+   */
+  { path: '/grades', changefreq: 'monthly', priority: '0.9', lastmod: CATALOGUE_MODIFIED },
+  ...grades.map((g) => ({
+    path: `/grades/${g.slug}`,
+    changefreq: 'monthly',
+    priority: '0.9',
+    lastmod: CATALOGUE_MODIFIED,
+  })),
 
   /*
    * Single-facet catalogue views. ProductsPage gives each of these its own
@@ -169,6 +183,12 @@ ${products
   .join('\n')}
 
 ## Technical guides
+
+${grades
+  .map((g) => `- [${g.name}](${SITE_URL}/grades/${g.slug}): UNS ${g.uns}. ${g.summary}`)
+  .join('\n')}
+
+## Technical Guides
 
 ${articles
   .map((a) => `- [${a.title}](${SITE_URL}/blog/${a.slug}): ${a.description}`)

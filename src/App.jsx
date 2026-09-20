@@ -28,6 +28,8 @@ const ProductsPage = lazy(() => import('./pages/ProductsPage'));
 const ProductDetailPage = lazy(() => import('./pages/ProductDetailPage'));
 const BlogPage = lazy(() => import('./pages/BlogPage'));
 const ArticlePage = lazy(() => import('./pages/ArticlePage'));
+const GradesIndexPage = lazy(() => import('./pages/GradesIndexPage'));
+const GradePage = lazy(() => import('./pages/GradePage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 /** Minimal, layout-stable fallback — avoids a CLS penalty while a chunk loads. */
@@ -169,6 +171,8 @@ export default function App() {
           <Route path="/products/:id" element={<ProductDetailPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<ArticlePage />} />
+          <Route path="/grades" element={<GradesIndexPage />} />
+          <Route path="/grades/:slug" element={<GradePage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         </Suspense>
