@@ -1,4 +1,3 @@
-import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
@@ -18,29 +17,32 @@ import Seo from './components/Seo';
 import CTABand from './components/CTABand';
 
 /*
- * Route-level code splitting. The article and specification data is large and
- * only the homepage matters for the first paint, so everything below the
- * landing page loads on demand. This keeps the initial JS payload — and
- * therefore LCP — small on mobile connections.
+ * Routes are imported statically, not behind React.lazy.
+ *
+ * The split cost more than it saved. Every page is prerendered, so the browser
+ * paints the full page immediately; React would then mount, find the route
+ * chunk unresolved and replace that content with the Suspense spinner. The
+ * document collapsed from 11,270px to 2,323px — <main> shrank to the
+ * fallback's min-h-[70vh] — the footer jumped up, and it snapped back ~300ms
+ * later. That measured 0.147 CLS on every product, article and grade page,
+ * against Google's 0.1 "good" threshold.
+ *
+ * Awaiting the import before mounting does not fix it: React.lazy calls its
+ * factory again on first render and suspends on that fresh promise regardless.
+ *
+ * And the split bought nothing. The entry bundle measures the same either way
+ * (268 kB raw) because the heavy shared chunks — article, product and
+ * specification data, plus Seo — are pulled in by the homepage anyway. Static
+ * imports mean no spinner, no layout jump and no request waterfall.
  */
-const AboutPage = lazy(() => import('./components/AboutPage'));
-const ProductsPage = lazy(() => import('./pages/ProductsPage'));
-const ProductDetailPage = lazy(() => import('./pages/ProductDetailPage'));
-const BlogPage = lazy(() => import('./pages/BlogPage'));
-const ArticlePage = lazy(() => import('./pages/ArticlePage'));
-const GradesIndexPage = lazy(() => import('./pages/GradesIndexPage'));
-const GradePage = lazy(() => import('./pages/GradePage'));
-const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
-
-/** Minimal, layout-stable fallback — avoids a CLS penalty while a chunk loads. */
-function RouteFallback() {
-  return (
-    <div className="min-h-[70vh] flex items-center justify-center" role="status" aria-live="polite">
-      <span className="sr-only">Loading…</span>
-      <span className="w-8 h-8 rounded-full border-2 border-gray-200 border-t-[#E5A93C] animate-spin" />
-    </div>
-  );
-}
+import AboutPage from './components/AboutPage';
+import ProductsPage from './pages/ProductsPage';
+import ProductDetailPage from './pages/ProductDetailPage';
+import BlogPage from './pages/BlogPage';
+import ArticlePage from './pages/ArticlePage';
+import GradesIndexPage from './pages/GradesIndexPage';
+import GradePage from './pages/GradePage';
+import NotFoundPage from './pages/NotFoundPage';
 
 import { products } from './data/products';
 import { MOQ } from './data/specifications';
@@ -163,7 +165,6 @@ export default function App() {
       <ScrollToTop />
       <Navbar />
       <main className="overflow-x-hidden flex-grow">
-        <Suspense fallback={<RouteFallback />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
@@ -175,7 +176,6 @@ export default function App() {
           <Route path="/grades/:slug" element={<GradePage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
-        </Suspense>
       </main>
       <Footer />
       <FloatingButtons />

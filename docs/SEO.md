@@ -64,13 +64,66 @@ whole site changed on every deploy, and crawlers that notice start discounting
 `lastmod` entirely — so bump `CATALOGUE_MODIFIED` by hand when the catalogue
 actually changes.
 
+## Prerendering
+
+`seo/scripts/prerender.mjs` runs on `postbuild`. It loads every sitemap route in
+Chromium against `vite preview` and saves the rendered HTML, so a client that
+executes no JavaScript — every social scraper, most AI crawlers — still gets the
+right title, canonical, Open Graph card and body copy.
+
+Each route is written **twice**:
+
+| File | Serves |
+|---|---|
+| `dist/products/4.html` | `/products/4` — the canonical, extensionless URL |
+| `dist/products/4/index.html` | `/products/4/` — the trailing-slash variant |
+
+Both are needed. The canonical URLs in the sitemap and in every internal link
+carry no trailing slash, but a static host only resolves a directory index for
+the slash form; a preview server with an SPA fallback answers the extensionless
+form with the homepage shell. Writing both means every form serves the same
+document with no redirect hop, and since both carry the same canonical tag,
+search engines consolidate them.
+
+After writing, the script **re-fetches every URL with plain `fetch`** and checks
+the served title and canonical. This is deliberately a check on the bytes the
+server sends, not on what the browser ends up showing: an earlier version read
+the canonical after Playwright had run the page's JavaScript, so React had
+already corrected the head — every route passed while `curl /products/4`
+returned the homepage. A mismatch now fails the build.
+
+Playwright is a devDependency; the browser is not. After `npm install`, run
+`npx playwright install chromium` once. A missing browser **fails the build**
+rather than skipping, because a silent skip ships every page with the
+homepage's canonical — the exact defect this script exists to prevent. Set
+`SKIP_PRERENDER=1` to opt out deliberately.
+
 ## Routing on static hosts
 
 - **Netlify** — `public/_redirects` and `netlify.toml` rewrite everything to `index.html`.
 - **GitHub Pages** — no server rewrites, so `public/404.html` stores the requested
   path in `sessionStorage` and bounces to `/`; `src/main.jsx` restores it before
-  React Router mounts. Without this, every deep link (`/products/4`,
-  `/blog/…`) would 404 for crawlers.
+  React Router mounts. This is now only a safety net for URLs that were not
+  prerendered — every sitemap route is served as a real file.
+
+## Performance
+
+Routes are imported **statically**, not behind `React.lazy`. Because every page
+is prerendered, the browser paints full content immediately; a lazy route then
+made React mount, suspend and replace that content with the Suspense spinner,
+collapsing the document from 11,270px to 2,323px and jumping the footer. That
+measured 0.147 CLS on every product, article and grade page. Static imports
+brought it to 0, and the entry bundle is the same size either way (268 kB raw)
+because the heavy shared data chunks load on the homepage regardless.
+
+The rotating hero headline reserves the height of its longest phrase (all four
+share one CSS grid cell), so the line count never changes as it types.
+
+`npm run images:optimise` re-encodes `public/images` with sharp — max 1600px
+edge, mozjpeg q80. Keep that ceiling at or above `MIN_SOCIAL_IMAGE_EDGE` (1200)
+in `src/data/site.js`, or `socialImage()` starts substituting the brand image
+into every social card. Run `npm run images` afterwards to refresh the
+dimension manifest that feeds `og:image:width`/`height`.
 
 ## Content
 

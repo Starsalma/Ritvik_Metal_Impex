@@ -11,14 +11,26 @@
  * fifty URLs were duplicates of the homepage.
  *
  * This renders each sitemap route in a real browser and writes the resulting
- * HTML to dist/<route>/index.html. GitHub Pages serves those directly, so a
- * crawler gets correct per-page metadata and real body copy with no JS. The
- * hydrated SPA still takes over for anyone with JavaScript, so navigation and
- * behaviour are unchanged.
+ * HTML to BOTH dist/<route>.html and dist/<route>/index.html. GitHub Pages
+ * serves those directly, so a crawler gets correct per-page metadata and real
+ * body copy with no JS. The hydrated SPA still takes over for anyone with
+ * JavaScript, so navigation and behaviour are unchanged.
  *
- * Run as part of `npm run build` (postbuild). Requires a Chromium that
- * Playwright can find; skips with a warning rather than failing the build if
- * one is unavailable, so a deploy is never blocked by a missing browser.
+ * Two files per route, because the canonical URLs carry no trailing slash.
+ * A static host resolves `/products/4` to `products/4.html` but resolves
+ * `/products/4/` to `products/4/index.html`, and a dev/preview server with an
+ * SPA fallback will happily answer the extensionless form with the homepage
+ * shell instead. Writing both means the canonical URL, the trailing-slash
+ * variant and `vite preview` all serve the same correct document with no
+ * redirect hop. Both copies carry the same canonical tag, so search engines
+ * consolidate them.
+ *
+ * Run as part of `npm run build` (postbuild). Requires Playwright (a
+ * devDependency) plus its Chromium: `npx playwright install chromium`.
+ * A missing browser FAILS the build rather than skipping, because a silent
+ * skip ships every page with the homepage's title and canonical — the exact
+ * defect this script exists to prevent. Set SKIP_PRERENDER=1 to opt out
+ * deliberately.
  */
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { dirname, resolve, join } from 'node:path';
@@ -36,16 +48,20 @@ const routes = [...readFileSync(join(ROOT, 'public/sitemap.xml'), 'utf8')
    * write files we have just told crawlers not to fetch. */
   .filter((r) => !r.includes('?'));
 
+if (process.env.SKIP_PRERENDER === '1') {
+  console.log('  prerender skipped: SKIP_PRERENDER=1');
+  console.log('  WARNING: every route will ship with the homepage title and canonical.');
+  process.exit(0);
+}
+
 let chromium;
 try {
   ({ chromium } = await import('playwright'));
-} catch {
-  try {
-    ({ chromium } = await import('/opt/node22/lib/node_modules/playwright/index.mjs'));
-  } catch {
-    console.log('  prerender skipped: playwright unavailable (SPA fallback still works)');
-    process.exit(0);
-  }
+} catch (err) {
+  console.error('\n  Prerender failed: could not load Playwright.\n');
+  console.error('  Install it with:  npm install\n');
+  console.error(`  (${err.message})\n`);
+  process.exit(1);
 }
 
 /*
@@ -64,11 +80,33 @@ const server = await preview({
   logLevel: 'error',
 });
 
-const browser = await chromium.launch({ args: ['--no-proxy-server'] });
+let browser;
+try {
+  browser = await chromium.launch({ args: ['--no-proxy-server'] });
+} catch (err) {
+  await server.httpServer.close();
+  console.error('\n  Prerender failed: Playwright could not launch Chromium.\n');
+  console.error('  Install the browser with:  npx playwright install chromium\n');
+  console.error(`  (${err.message})\n`);
+  process.exit(1);
+}
 const page = await browser.newPage();
+
+/*
+ * Record the JS chunks each route pulls in, so the saved HTML can preload
+ * them. Without this the browser has to download and parse the entry bundle
+ * before it discovers the shared data chunks it also needs, turning one round
+ * trip into two. A modulepreload in the head starts them in parallel instead.
+ */
+let currentChunks = new Set();
+page.on('response', (res) => {
+  const { pathname } = new URL(res.url());
+  if (pathname.startsWith('/assets/') && pathname.endsWith('.js')) currentChunks.add(pathname);
+});
 
 const report = [];
 for (const route of routes) {
+  currentChunks = new Set();
   await page.goto(`http://localhost:5733${route}`, { waitUntil: 'networkidle' });
 
   /*
@@ -88,12 +126,28 @@ for (const route of routes) {
    *    everyone else. No new mechanism, and it cannot drift from the one the
    *    app already relies on.
    */
-  await page.evaluate(() => {
+  await page.evaluate((chunks) => {
     document.querySelectorAll('[data-seo-fallback]').forEach((el) => el.remove());
     document.head
       .querySelectorAll('title, link[rel="canonical"], meta[name="description"], meta[name="robots"], meta[name^="twitter:"], meta[property^="og:"], meta[name="keywords"], meta[name="author"]')
       .forEach((el) => el.setAttribute('data-seo-fallback', ''));
-  });
+
+    /* Preload this route's lazy chunks so React never paints the Suspense
+     * fallback over already-rendered content. Skip anything the document
+     * already references, so the entry bundle is not fetched twice. */
+    const referenced = new Set(
+      [...document.querySelectorAll('script[src], link[href]')].map((el) =>
+        new URL(el.getAttribute('src') || el.getAttribute('href'), location.origin).pathname,
+      ),
+    );
+    for (const href of chunks) {
+      if (referenced.has(href)) continue;
+      const link = document.createElement('link');
+      link.rel = 'modulepreload';
+      link.href = href;
+      document.head.appendChild(link);
+    }
+  }, [...currentChunks].sort());
 
   const html = await page.content();
   const title = await page.title();
@@ -123,20 +177,83 @@ await server.httpServer.close();
 /* Written only after every route is captured, so no route is ever rendered
  * from a file this script just produced. */
 for (const r of report) {
-  const dir = r.route === '/' ? DIST : join(DIST, r.route);
-  mkdirSync(dir, { recursive: true });
-  writeFileSync(join(dir, 'index.html'), r.html, 'utf8');
+  if (r.route === '/') {
+    writeFileSync(join(DIST, 'index.html'), r.html, 'utf8');
+  } else {
+    /* <route>/index.html serves the trailing-slash form... */
+    mkdirSync(join(DIST, r.route), { recursive: true });
+    writeFileSync(join(DIST, r.route, 'index.html'), r.html, 'utf8');
+    /* ...and <route>.html serves the canonical, extensionless form. */
+    mkdirSync(dirname(join(DIST, `${r.route}.html`)), { recursive: true });
+    writeFileSync(join(DIST, `${r.route}.html`), r.html, 'utf8');
+  }
   delete r.html;
 }
 
-const bad = report.filter((r) => r.canonical !== `${SITE}${r.route === '/' ? '/' : r.route}`);
+/*
+ * Verify what the server actually SENDS, not what the browser ended up
+ * showing. The previous check read the canonical after Playwright had run the
+ * page's JavaScript, so React had already corrected the head — which meant a
+ * route could pass here while the raw bytes on the wire were the homepage
+ * shell. That is exactly what happened to the extensionless URLs: every
+ * canonical looked right, and `curl /products/4` returned the homepage.
+ *
+ * Plain fetch runs no JavaScript, so this sees precisely what a social
+ * scraper or an AI crawler sees.
+ */
+const verifyServer = await preview({
+  root: ROOT,
+  preview: { port: 5734, strictPort: true },
+  logLevel: 'error',
+});
+
+/* The served bytes carry HTML entities ("&amp;"); page.title() gave us the
+ * decoded text. Decode before comparing so "Pipes &amp; Tubes" matches. */
+const decode = (s = '') =>
+  s
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#0?39;|&apos;/g, "'")
+    .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
+    .replace(/&amp;/g, '&');
+
+const titleOf = (html) =>
+  decode((html.match(/<title[^>]*>([\s\S]*?)<\/title>/) || [])[1] || '').trim();
+const canonicalOf = (html) =>
+  (html.match(/<link[^>]*rel="canonical"[^>]*href="([^"]+)"/) || [])[1];
+
+const failures = [];
+for (const r of report) {
+  const expected = `${SITE}${r.route === '/' ? '/' : r.route}`;
+  /* Both forms must serve the page: the canonical URL and the slash variant. */
+  for (const url of r.route === '/' ? ['/'] : [r.route, `${r.route}/`]) {
+    const html = await (await fetch(`http://localhost:5734${url}`)).text();
+    const canonical = canonicalOf(html);
+    if (canonical !== expected) {
+      failures.push(`${url} served canonical ${canonical || '(none)'} — expected ${expected}`);
+    } else if (titleOf(html) !== r.title) {
+      failures.push(`${url} served title ${JSON.stringify(titleOf(html))} — expected ${JSON.stringify(r.title)}`);
+    }
+  }
+}
+
+await verifyServer.httpServer.close();
+
+mkdirSync(join(ROOT, 'seo/reports'), { recursive: true });
 writeFileSync(
   join(ROOT, 'seo/reports/prerender.json'),
   JSON.stringify({ generated: new Date().toISOString(), count: report.length, routes: report }, null, 2),
 );
 
-console.log(`  prerendered ${report.length} routes to dist/`);
-if (bad.length) {
-  console.log(`  WARNING: ${bad.length} route(s) have a canonical that does not match their URL:`);
-  bad.slice(0, 5).forEach((r) => console.log(`    - ${r.route} -> ${r.canonical}`));
+console.log(`  prerendered ${report.length} routes to dist/ (${report.length * 2 - 1} files)`);
+
+if (failures.length) {
+  console.error(`\n  Prerender verification FAILED for ${failures.length} URL(s):`);
+  failures.slice(0, 10).forEach((f) => console.error(`    - ${f}`));
+  if (failures.length > 10) console.error(`    ... and ${failures.length - 10} more`);
+  console.error('\n  These URLs would serve the wrong page to crawlers. Not shipping.\n');
+  process.exit(1);
 }
+
+console.log(`  verified ${report.length * 2 - 1} served URLs: correct title and canonical, no JS required`);

@@ -80,16 +80,27 @@ const tpiStyles = `
   }
 `;
 
+/*
+ * Rendered as wordmarks, not images. The previous version pointed at
+ * /logos/*.png, a directory that does not exist — 9 files requested 36 times
+ * per homepage load, each one falling through the SPA rewrite and coming back
+ * as ~127 kB of index.html. An onError handler hid the broken images, so the
+ * page looked fine while shipping several megabytes of wasted HTML.
+ *
+ * These are other companies' trademarks, so placing real logo files here would
+ * need their permission. Names set in type carry the same trust signal, cost
+ * nothing to load, and stay accurate.
+ */
 const tpiLogos = [
-  { name: "Larsen & Toubro",    logo: "/logos/lt.png"   },
-  { name: "Nuclear Power Corp", logo: "/logos/npcil.png" },
-  { name: "TUV India",          logo: "/logos/tuv.png"  },
-  { name: "DNV",                logo: "/logos/dnv.png"  },
-  { name: "Tata Projects",      logo: "/logos/tata.png" },
-  { name: "PDIL",               logo: "/logos/pdil.png" },
-  { name: "ONGC",               logo: "/logos/ongc.png" },
-  { name: "NTPC",               logo: "/logos/ntpc.png" },
-  { name: "SAIL",               logo: "/logos/sail.png" },
+  { name: "Larsen & Toubro" },
+  { name: "Nuclear Power Corp" },
+  { name: "TUV India" },
+  { name: "DNV" },
+  { name: "Tata Projects" },
+  { name: "PDIL" },
+  { name: "ONGC" },
+  { name: "NTPC" },
+  { name: "SAIL" },
 ];
 
 export default function TPISection() {
@@ -150,25 +161,12 @@ export default function TPISection() {
           {repeated.map((item, idx) => (
             <div
               key={idx}
-              className="tpi-logo-card flex flex-col items-center justify-center shrink-0 w-32 mx-8 filter grayscale cursor-pointer"
+              className="tpi-logo-card flex items-center justify-center shrink-0 w-32 mx-8"
+              aria-hidden={idx >= tpiLogos.length ? 'true' : undefined}
             >
-              <img
-                src={item.logo}
-                alt={item.name}
-                className="w-24 h-14 object-contain"
-                onError={e => {
-                  // Graceful fallback while real logos aren't present
-                  e.currentTarget.style.display = 'none';
-                  e.currentTarget.nextSibling.style.display = 'flex';
-                }}
-              />
-              {/* Fallback placeholder — hidden once real logo loads */}
-              <div
-                style={{ display: 'none' }}
-                className="w-24 h-14 bg-gray-100 border border-gray-200 rounded flex items-center justify-center text-[9px] text-gray-400 font-bold p-2 text-center leading-tight"
-              >
+              <span className="w-28 h-14 px-2 bg-white border border-gray-200 rounded flex items-center justify-center text-center text-[10px] font-black uppercase tracking-wider text-[#041125]/70 leading-tight">
                 {item.name}
-              </div>
+              </span>
             </div>
           ))}
         </div>

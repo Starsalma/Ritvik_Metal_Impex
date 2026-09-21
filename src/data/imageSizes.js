@@ -43,8 +43,8 @@ export const imageSizes = {
     1600
   ],
   "/images/logo.png": [
-    1254,
-    1254
+    256,
+    256
   ],
   "/images/new/img1.jpg": [
     726,
@@ -155,8 +155,8 @@ export const imageSizes = {
     276
   ],
   "/images/products/high-performance-alloys.jpg": [
-    1654,
-    792
+    1600,
+    766
   ],
   "/images/products/pipes-tubes.jpg": [
     1200,

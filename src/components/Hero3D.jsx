@@ -223,9 +223,23 @@ export default function Hero3D() {
               style={{ animationDelay: '.15s' }}
             >
               Your Reliable<br />Source For<br />
-              <span className="inline-flex items-baseline bg-gradient-to-r from-[#E5A93C] via-[#F2C879] to-[#E5A93C] bg-clip-text text-transparent">
-                {typed || ' '}
-                <span className="h3d-caret inline-block w-[4px] h-[0.78em] bg-[#E5A93C] ml-2 translate-y-[2px]" />
+              {/*
+                All four phrases share one grid cell, so this line always
+                reserves the height of the tallest. Without it the headline
+                gained or lost a line as the typed phrase wrapped, and on a
+                390px viewport everything below jumped ~40px — a layout shift
+                on every rotation.
+              */}
+              <span className="grid">
+                {ROTATING_WORDS.map((w) => (
+                  <span key={w} aria-hidden="true" className="col-start-1 row-start-1 invisible">
+                    {w}
+                  </span>
+                ))}
+                <span className="col-start-1 row-start-1 inline-flex items-baseline bg-gradient-to-r from-[#E5A93C] via-[#F2C879] to-[#E5A93C] bg-clip-text text-transparent">
+                  {typed || ' '}
+                  <span className="h3d-caret inline-block w-[4px] h-[0.78em] bg-[#E5A93C] ml-2 translate-y-[2px]" />
+                </span>
               </span>
               <span className="sr-only">
                 {' '}— stainless steel, carbon steel, duplex, nickel alloy, copper and brass
