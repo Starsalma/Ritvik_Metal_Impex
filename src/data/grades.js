@@ -398,6 +398,158 @@ export const grades = [
       },
     ],
   },
+
+  {
+    slug: 'titanium-grade-2',
+    name: 'Titanium Grade 2',
+    shortName: 'Titanium Gr 2',
+    uns: 'R50400',
+    family: 'Commercially pure titanium',
+    tagline: 'Seawater and wet chlorine, at 56% the weight of steel',
+    summary:
+      'Titanium Grade 2 is unalloyed commercially pure titanium, the most widely used titanium grade in industrial plant. It offers outstanding resistance to seawater, wet chlorine, hypochlorite and oxidising acids, good formability and weldability, and a density of 4.51 g/cm³ — a little over half that of steel. It is the standard choice for condenser and heat exchanger tubing in seawater service.',
+    whenToUse:
+      'Choose Grade 2 where chlorides defeat stainless steel — seawater cooling, desalination, hypochlorite and bleaching plant — and where weight matters. It is not an all-purpose corrosion alloy: titanium is attacked by dry chlorine, by hydrofluoric acid at any concentration, and by strong reducing acids unless inhibited. Where high strength is needed rather than corrosion resistance, Grade 5 (Ti-6Al-4V) is the alloyed choice.',
+    standards: [
+      ['ASTM B265', 'Plate, sheet and strip'],
+      ['ASTM B348', 'Bar and billet'],
+      ['ASTM B338', 'Seamless and welded tube for condensers and heat exchangers'],
+      ['ASTM B861 / B862', 'Seamless and welded pipe'],
+      ['ASTM B363', 'Welding fittings'],
+      ['ASTM B381', 'Forgings'],
+      ['ASTM F467 / F468', 'Nuts and bolts'],
+    ],
+    chemistry: {
+      columns: ['Element', 'Titanium Grade 2 (R50400)'],
+      rows: [
+        ['Titanium', 'Balance'],
+        ['Oxygen', '0.25 max'],
+        ['Iron', '0.30 max'],
+        ['Carbon', '0.08 max'],
+        ['Nitrogen', '0.03 max'],
+        ['Hydrogen', '0.015 max'],
+        ['Residuals, each / total', '0.1 max / 0.4 max'],
+      ],
+    },
+    mechanical: {
+      columns: ['Property', 'Titanium Grade 2', 'SS 316 for comparison'],
+      rows: [
+        ['Tensile strength', '345 MPa min', '515 MPa min'],
+        ['Yield strength (0.2%)', '275 – 450 MPa', '205 MPa min'],
+        ['Elongation in 50 mm', '20% min', '40% min'],
+        ['Density', '4.51 g/cm³', '8.00 g/cm³'],
+        ['Max continuous service in air', '≈ 425 °C', '≈ 870 °C'],
+      ],
+    },
+    equivalents: [
+      ['UNS', 'R50400'],
+      ['EN / Werkstoff', '3.7035 (Ti2)'],
+      ['JIS', 'Class 2 (TP 270)'],
+      ['Common name', 'CP Ti Grade 2, Ti Gr 2'],
+    ],
+    applications: [
+      'Condenser and heat exchanger tubing in seawater',
+      'Desalination and coastal power plant',
+      'Chlor-alkali and bleaching plant',
+      'Anodising and plating racks and jigs',
+      'Marine hardware and fasteners where weight matters',
+    ],
+    industries: ['Marine', 'Chemical', 'Power', 'Water Treatment', 'Aerospace'],
+    productIds: [1, 20, 22],
+    faqs: [
+      {
+        question: 'What is the difference between Titanium Grade 2 and Grade 5?',
+        answer:
+          'Grade 2 is commercially pure titanium — unalloyed, with about 345 MPa tensile strength, readily formed and welded, and chosen for corrosion resistance. Grade 5 is Ti-6Al-4V, alloyed with aluminium and vanadium, reaching roughly 900 MPa and chosen for strength, principally in aerospace and high-load components. Grade 5 is harder to form and weld. For chemical and marine plant, Grade 2 is almost always the correct specification.',
+      },
+      {
+        question: 'Where does titanium not work?',
+        answer:
+          'Titanium is attacked by dry chlorine gas, by hydrofluoric acid at any concentration, and by strong reducing acids such as hot concentrated hydrochloric or sulphuric unless they are inhibited by oxidising species. It also has a red-hot fire risk in pure oxygen. Titanium is exceptional in the right medium, and a poor choice in the wrong one — always confirm against your actual service chemistry.',
+      },
+      {
+        question: 'Why is titanium priced per kilogram when it is so light?',
+        answer:
+          'Because the density is 4.51 g/cm³ against 8.00 for stainless, a kilogram of titanium yields roughly 1.8 times the volume of a kilogram of 316. Comparing price per kilogram alone therefore overstates the difference — compare on the finished component, not on raw rate. Our minimum order quantity applies by weight, so a small titanium requirement goes further than the same weight in steel.',
+      },
+    ],
+  },
+
+  {
+    slug: 'stainless-steel-904l',
+    name: '904L Stainless Steel',
+    shortName: '904L',
+    uns: 'N08904',
+    family: 'Super austenitic stainless steel',
+    tagline: 'Built for sulphuric acid',
+    summary:
+      '904L is a low-carbon, high-alloy austenitic stainless steel with 23–28% nickel, 4–5% molybdenum and a deliberate 1–2% copper addition. The copper is what distinguishes it: it gives resistance to sulphuric and phosphoric acid that ordinary austenitic grades cannot match, while the high nickel and molybdenum provide strong resistance to chloride pitting and stress corrosion cracking.',
+    whenToUse:
+      'Choose 904L where reducing acids — particularly sulphuric and phosphoric — attack 316, and where chloride stress corrosion cracking must also be controlled. If the duty is chloride resistance alone and higher strength would help, Duplex 2205 is usually more economical. If the medium is more aggressive still, a nickel alloy such as Inconel 625 or Hastelloy is the next step.',
+    standards: [
+      ['ASTM B677 / B673', 'Seamless and welded pipe'],
+      ['ASTM B674', 'Welded tube'],
+      ['ASTM B625', 'Plate, sheet and strip'],
+      ['ASTM B649', 'Bar and wire'],
+      ['ASTM A240 (UNS N08904)', 'Plate, sheet and coil'],
+      ['ASTM A182 F904L', 'Forged fittings and flanges'],
+    ],
+    chemistry: {
+      columns: ['Element', '904L (N08904)'],
+      rows: [
+        ['Carbon', '0.020 max'],
+        ['Chromium', '19.0 – 23.0'],
+        ['Nickel', '23.0 – 28.0'],
+        ['Molybdenum', '4.0 – 5.0'],
+        ['Copper', '1.0 – 2.0'],
+        ['Manganese', '2.00 max'],
+        ['Silicon', '1.00 max'],
+        ['Phosphorus', '0.045 max'],
+        ['Sulphur', '0.035 max'],
+      ],
+    },
+    mechanical: {
+      columns: ['Property', '904L', 'SS 316L for comparison'],
+      rows: [
+        ['Tensile strength', '490 MPa min', '485 MPa min'],
+        ['Yield strength (0.2%)', '220 MPa min', '170 MPa min'],
+        ['Elongation in 50 mm', '35% min', '40% min'],
+        ['Density', '7.95 g/cm³', '8.00 g/cm³'],
+        ['PREN (typical)', '≈ 35', '≈ 25'],
+      ],
+    },
+    equivalents: [
+      ['UNS', 'N08904'],
+      ['EN / Werkstoff', '1.4539 (X1NiCrMoCu25-20-5)'],
+      ['Common name', '904L, Alloy 904L, UNS N08904'],
+    ],
+    applications: [
+      'Sulphuric and phosphoric acid plant',
+      'Flue gas desulphurisation and scrubbers',
+      'Pulp and paper bleaching equipment',
+      'Seawater and brine handling',
+      'Pickling lines and acid storage',
+    ],
+    industries: ['Chemical', 'Petrochemical', 'Power', 'Marine', 'Pharmaceutical'],
+    productIds: [9],
+    faqs: [
+      {
+        question: 'Why does 904L contain copper?',
+        answer:
+          'The 1–2% copper addition is deliberate and is the reason 904L exists. Copper markedly improves resistance to reducing acids, above all sulphuric acid across a wide range of concentrations, where standard austenitic grades corrode. Without the copper, 904L would behave much like a high-nickel version of 317L.',
+      },
+      {
+        question: 'Is 904L better than Duplex 2205?',
+        answer:
+          'They solve different problems. 904L is better in reducing acids such as sulphuric and phosphoric. Duplex 2205 has roughly twice the yield strength, which often allows a thinner and cheaper section, and is generally more economical where the requirement is chloride resistance rather than acid resistance. Tell us the medium, concentration and temperature and we will advise which fits.',
+      },
+      {
+        question: 'Is 904L magnetic?',
+        answer:
+          'No. 904L is fully austenitic and remains non-magnetic even after cold work, unlike 304 and 316 which can become weakly magnetic when formed or machined. This matters in instrumentation and in applications where magnetic permeability is specified.',
+      },
+    ],
+  },
 ];
 
 export const gradeBySlug = (slug) => grades.find((g) => g.slug === slug) ?? null;

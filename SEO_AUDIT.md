@@ -205,6 +205,8 @@ Worth recording so it is not "fixed" again:
 | 2026-09-20 | P0-1 | Build-time prerendering of all sitemap routes | Yes — 7 checks |
 | 2026-09-20 | P2-5 | `public/CNAME` added (`www.ritvikmetalimpex.com`) | Yes — matches live gh-pages CNAME |
 | 2026-09-20 | P1-3 | Grade pages for 304, 316, Duplex 2205, Inconel, Monel | Yes — 9 checks |
+| 2026-09-21 | P1-3 | Grade pages for Titanium Grade 2 and 904L | Yes — 6 checks |
+| 2026-09-21 | — | Deployed to gh-pages; live site was 45 commits behind | Branch verified; live host unreachable from CI |
 
 ---
 
@@ -218,8 +220,9 @@ These cannot be resolved from the codebase:
 3. **Photographs** for the 15 products still on stock images.
 4. **Price ranges** — review and set `verified: true`.
 5. ~~Grade availability~~ — **resolved: 304, 316, Duplex 2205, Inconel, Monel.**
-   Pages built for those five only. Titanium Grade 2, Hastelloy, 904L, Alloy 20,
-   Nitronic 50 and SMO 254 remain unbuilt pending confirmation.
+   Titanium Grade 2 and 904L confirmed 21 Sep and now built, making seven.
+   Hastelloy C22/C276, Alloy 20, Alloy 286, Nitronic 50 and SMO 254 remain
+   unbuilt pending confirmation.
 6. **Deploy.** The live site runs from `gh-pages`, last updated 8 July 2026 and
    now 45+ commits behind `main`. Nothing in this audit is live until someone
    runs `npm run deploy`.
