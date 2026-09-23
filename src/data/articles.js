@@ -1363,6 +1363,327 @@ export const articles = [
       },
     ],
   },
+  {
+    slug: 'titanium-grade-2-vs-grade-5',
+    title: 'Titanium Grade 2 vs Grade 5: Which One Your Job Actually Needs',
+    seoTitle: 'Titanium Grade 2 vs Grade 5 — Selection Guide',
+    description:
+      'Grade 2 is commercially pure titanium chosen for corrosion resistance; Grade 5 is Ti-6Al-4V chosen for strength. How to tell which your application needs.',
+    keywords:
+      'titanium grade 2 vs grade 5, ti 6al 4v vs cp titanium, titanium grade 2 properties, titanium grade 5 properties, titanium fasteners grade 2, commercially pure titanium, titanium grade 2 supplier India',
+    category: 'Grade Selection',
+    readTime: '8 min read',
+    datePublished: '2026-09-23',
+    dateModified: '2026-09-23',
+    image: '/images/products/pipes-tubes.jpg',
+    relatedProductIds: [1, 7, 20, 22],
+    relatedGradeSlugs: ['titanium-grade-2'],
+    intro:
+      'Most titanium sold into chemical and marine plant is Grade 2, and most titanium sold into aerospace is Grade 5. Buyers who cross those lines usually do it by accident — specifying Grade 5 because it sounds better, or Grade 2 because it is cheaper — and both mistakes are expensive in different ways.',
+    takeaways: [
+      'Grade 2 is unalloyed titanium: ~345 MPa tensile, easily formed and welded, chosen for corrosion resistance.',
+      'Grade 5 is Ti-6Al-4V: ~900 MPa tensile, chosen for strength-to-weight, harder to form and weld.',
+      'Their corrosion resistance in most media is similar — Grade 5 is not the "better" corrosion grade.',
+      'Both are attacked by hydrofluoric acid at any concentration and by dry chlorine gas.',
+      'Compare on the finished component, not price per kilogram: titanium is 4.51 g/cm³ against 8.00 for stainless.',
+    ],
+    sections: [
+      {
+        id: 'difference',
+        heading: 'The actual difference is alloying, not quality',
+        blocks: [
+          { type: 'p', text: 'Grade 2 is commercially pure titanium. "Pure" here means unalloyed — it still carries controlled amounts of oxygen, iron, carbon, nitrogen and hydrogen, and those interstitials are what set its strength. Grade 5 is Ti-6Al-4V: roughly 6% aluminium and 4% vanadium, which raise strength by a factor of two and a half at the cost of ductility and weldability.' },
+          { type: 'p', text: 'The grade numbers are not a quality ladder. Grade 5 is not a better Grade 2. They are different materials chosen for different reasons, and in a corrosive process line Grade 2 is usually the correct and cheaper answer.' },
+          {
+            type: 'table',
+            columns: ['Property', 'Grade 2 (R50400)', 'Grade 5 (R56400)', 'What it means in practice'],
+            rows: [
+              ['Composition', 'Unalloyed', 'Ti-6Al-4V', 'Grade 5 is heat-treatable; Grade 2 is not'],
+              ['Tensile strength', '345 MPa min', '895 MPa min', 'Grade 5 carries roughly 2.5x the load'],
+              ['Yield strength', '275 – 450 MPa', '828 MPa min', 'Grade 5 for high-stress parts'],
+              ['Elongation', '20% min', '10% min', 'Grade 2 forms and bends far more readily'],
+              ['Density', '4.51 g/cm³', '4.43 g/cm³', 'Effectively the same'],
+              ['Weldability', 'Excellent', 'Requires qualified procedure', 'The deciding factor on fabricated plant'],
+              ['Relative cost', 'Lower', 'Higher', 'Grade 5 commands a premium'],
+            ],
+          },
+        ],
+      },
+      {
+        id: 'corrosion',
+        heading: 'Corrosion resistance is broadly the same — which surprises people',
+        blocks: [
+          { type: 'p', text: 'Titanium resists corrosion because of a tenacious titanium dioxide film that reforms almost instantly when damaged, provided oxygen or moisture is present. That film forms on both grades, so in seawater, wet chlorine, hypochlorite and most oxidising acids their performance is comparable.' },
+          { type: 'p', text: 'This is why paying the Grade 5 premium for a corrosion duty is usually wasted money. If the part is not highly stressed, Grade 2 does the same corrosion job, welds more easily and costs less.' },
+          {
+            type: 'note',
+            title: 'Where titanium fails, both grades fail',
+            text: 'Hydrofluoric acid attacks titanium at any concentration. Dry chlorine gas can cause rapid ignition. Strong reducing acids — hot concentrated hydrochloric or sulphuric — attack it unless oxidising inhibitors are present. Choosing Grade 5 does not buy immunity to any of these.',
+          },
+        ],
+      },
+      {
+        id: 'choosing',
+        heading: 'A short decision sequence',
+        blocks: [
+          {
+            type: 'ol',
+            items: [
+              'Is the part carrying high mechanical load — a shaft, a structural bracket, a high-tension fastener? If yes, Grade 5.',
+              'Will it be welded into an assembly? If yes, Grade 2 unless the load genuinely requires Grade 5 and a qualified welding procedure exists.',
+              'Is the driver corrosion resistance in seawater, chlorides or oxidising acids? Grade 2, almost always.',
+              'Is hydrofluoric acid or dry chlorine present? Neither grade — reconsider the material entirely.',
+              'Is the medium a hot reducing acid? Check inhibitor content before specifying titanium at all.',
+            ],
+          },
+          { type: 'p', text: 'For process piping, heat exchanger tubing, tank linings, anodising jigs and most fasteners in chemical plant, Grade 2 is the answer. Grade 5 earns its premium in aerospace structure, high-load fasteners and rotating components.' },
+        ],
+      },
+      {
+        id: 'pricing',
+        heading: 'Why price per kilogram misleads',
+        blocks: [
+          { type: 'p', text: 'Titanium is 4.51 g/cm³ against 8.00 for austenitic stainless. A kilogram of titanium therefore yields roughly 1.8 times the volume of a kilogram of 316, so comparing raw rates overstates the difference by a wide margin. Compare the cost of the finished component, in the quantity you actually need.' },
+          { type: 'p', text: 'Whole-life cost matters more still. Where titanium is the right selection, it frequently outlasts several replacement cycles of a stainless component, and in a plant where a shutdown costs more than the material, that is the number that decides.' },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Is Grade 5 titanium more corrosion resistant than Grade 2?',
+        answer:
+          'Generally no. Both form the same protective titanium dioxide film, and in seawater, chlorides and oxidising acids their resistance is comparable. Grade 5 is selected for strength, not corrosion performance. Specifying it for a corrosion duty usually means paying a premium for no benefit — and accepting harder welding and forming.',
+      },
+      {
+        question: 'Can Titanium Grade 2 be used for bolts and fasteners?',
+        answer:
+          'Yes. Grade 2 fasteners to ASTM F467 (nuts) and F468 (bolts) are widely used in chemical and marine plant where corrosion, not tensile load, is the governing concern. Where high preload is required, Grade 5 fasteners are specified instead. State the load and the medium at enquiry and we will confirm which is appropriate.',
+      },
+      {
+        question: 'Does titanium need to be welded under shielding?',
+        answer:
+          'Yes. Titanium absorbs oxygen, nitrogen and hydrogen readily at welding temperature, and contamination embrittles the weld. Inert gas shielding of the weld pool, the root and the cooling weld — commonly with trailing shields and purge — is mandatory for both grades, and a discoloured weld is a reject indicator.',
+      },
+    ],
+  },
+  {
+    slug: 'inconel-vs-stainless-steel',
+    title: 'Inconel vs Stainless Steel: When the Upgrade Is Worth It',
+    seoTitle: 'Inconel vs Stainless Steel — When to Upgrade',
+    description:
+      'Inconel costs several times more than 316. Where that premium is justified — temperature, chloride cracking and aggressive acids — and where it is not.',
+    keywords:
+      'inconel vs stainless steel, inconel 625 vs 316, when to use inconel, inconel 600 vs 625 vs 718, nickel alloy vs stainless, inconel supplier India, chloride stress corrosion cracking',
+    category: 'Grade Selection',
+    readTime: '9 min read',
+    datePublished: '2026-09-23',
+    dateModified: '2026-09-23',
+    image: '/images/products/high-performance-alloys.jpg',
+    relatedProductIds: [1, 20, 22],
+    relatedGradeSlugs: ['inconel', 'stainless-steel-316'],
+    intro:
+      'Inconel costs several times what 316 costs, so the useful question is not whether it performs better — it does — but whether your service actually needs it. There are three conditions where the premium pays for itself, and a great many where it does not.',
+    takeaways: [
+      'Nickel alloys are effectively immune to chloride stress corrosion cracking; austenitic stainless is not.',
+      'Austenitic stainless is limited by strength at temperature well before it melts.',
+      'Inconel 625 is the general corrosion grade, 600 the high-temperature grade, 718 the high-strength grade.',
+      'If the duty is chlorides at moderate temperature, Duplex 2205 is often the cheaper correct answer.',
+      'Where the medium is mild, upgrading from 316 buys nothing.',
+    ],
+    sections: [
+      {
+        id: 'three-reasons',
+        heading: 'Three conditions that justify the upgrade',
+        blocks: [
+          { type: 'p', text: 'Nickel alloys differ from stainless steels in the base metal itself. Austenitic stainless is an iron alloy with enough chromium and nickel to hold an austenitic structure; Inconel is a nickel alloy with chromium added. That change of base is what produces the three advantages below.' },
+          {
+            type: 'ol',
+            items: [
+              'Chloride stress corrosion cracking. Austenitic stainless steels crack under tensile stress in hot chloride environments, sometimes within months, and the failure is sudden rather than gradual. High-nickel alloys are effectively immune. This is the single most common legitimate reason to upgrade.',
+              'Temperature. Austenitic stainless loses useful strength long before it approaches melting. Inconel 600 holds oxidation resistance to around 1100°C and 625 to around 980°C, which puts furnace internals, flare tips and combustion hardware out of reach of stainless.',
+              'Aggressive acids and mixed media. The molybdenum and niobium in 625 handle reducing and oxidising conditions together, which defeats both 316 and duplex.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'comparison',
+        heading: 'Side by side',
+        blocks: [
+          {
+            type: 'table',
+            columns: ['Property', 'SS 316L', 'Duplex 2205', 'Inconel 625'],
+            rows: [
+              ['Base metal', 'Iron', 'Iron', 'Nickel'],
+              ['Nickel content', '10 – 14%', '4.5 – 6.5%', '58% min'],
+              ['Yield strength', '170 MPa min', '450 MPa min', '414 MPa min'],
+              ['PREN (typical)', '≈ 25', '≈ 35', '≈ 50'],
+              ['Chloride SCC', 'Susceptible', 'Highly resistant', 'Effectively immune'],
+              ['Max continuous service', '≈ 870 °C', '≈ 300 °C', '≈ 980 °C'],
+              ['Relative cost', 'Baseline', '1.5 – 2x', '6 – 10x'],
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Duplex is the step most buyers skip',
+            text: 'A large share of enquiries that ask for Inconel are solved by Duplex 2205 at a fraction of the cost. Duplex has roughly twice the yield strength of 316 and strong chloride resistance. Its limit is temperature — about 300°C — so if your service is chlorides at ambient or moderate temperature, ask about duplex before paying for a nickel alloy.',
+          },
+        ],
+      },
+      {
+        id: 'which-grade',
+        heading: 'Which Inconel, if you do need one',
+        blocks: [
+          {
+            type: 'ul',
+            items: [
+              'Inconel 625 — the general-purpose corrosion grade. Seawater, acids, offshore and subsea. The right default unless temperature or strength dictates otherwise.',
+              'Inconel 600 — high-temperature oxidation resistance. Furnace muffles, retorts, heat-treatment fixtures.',
+              'Inconel 718 — precipitation hardened for high strength to around 700°C. Turbine components and high-load fasteners.',
+            ],
+          },
+          { type: 'p', text: 'Specifying "Inconel" without a number is a common source of quoting delay and error, because the three behave quite differently and are priced differently. Give the medium, temperature, pressure and any chloride content, and the grade follows from those.' },
+        ],
+      },
+      {
+        id: 'not-worth-it',
+        heading: 'When it is not worth it',
+        blocks: [
+          { type: 'p', text: 'If the medium is fresh water, mild chemicals, food product or indoor atmosphere, 304 or 316 will outlast the plant around it, and upgrading buys nothing except cost and a harder machining job. If the driver is chlorides at moderate temperature, duplex is usually the economic answer. If the driver is strength alone with no corrosion concern, a carbon or alloy steel with the right heat treatment will be cheaper and stronger still.' },
+          { type: 'p', text: 'The honest test is whether you can name the specific failure mechanism you are buying protection against. If you cannot, the upgrade is probably not justified.' },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Is Inconel always better than stainless steel?',
+        answer:
+          'Better in specific conditions, not universally. Inconel is superior in high temperature, in chloride stress corrosion cracking and in aggressive mixed acids. In ordinary atmospheric, freshwater or mild chemical service, 316 performs the same duty at a fraction of the cost, and it machines and welds more easily. Upgrading without a named failure mechanism to defend against is usually wasted spend.',
+      },
+      {
+        question: 'Can Inconel replace 316 directly in a piping system?',
+        answer:
+          'Dimensionally yes — Inconel pipe and fittings are made to the same dimensional standards. Practically, welding procedures, filler metals and machining parameters all differ, and galvanic considerations apply where dissimilar metals are joined in an electrolyte. Treat it as a material change requiring procedure qualification, not a drop-in substitution.',
+      },
+      {
+        question: 'Why is Inconel so expensive?',
+        answer:
+          'It is 58% or more nickel against 10 to 14% in 316, and nickel dominates the cost. Molybdenum and niobium additions raise it further, and the alloys are harder to melt, form and machine, which adds conversion cost at every stage.',
+      },
+    ],
+  },
+  {
+    slug: '904l-stainless-steel-applications',
+    title: '904L Stainless Steel: Where the Copper Earns Its Keep',
+    seoTitle: '904L Stainless Steel Applications & Properties',
+    description:
+      '904L is specified for sulphuric and phosphoric acid service. What the copper addition does, how it compares with 316 and duplex, and where it is the wrong choice.',
+    keywords:
+      '904l stainless steel applications, 904l properties, uns n08904, 904l vs 316, 904l vs duplex 2205, 904l sulphuric acid, 904l stainless steel supplier India',
+    category: 'Grade Selection',
+    readTime: '8 min read',
+    datePublished: '2026-09-23',
+    dateModified: '2026-09-23',
+    image: '/images/products/ss-round-bars.jpg',
+    relatedProductIds: [1, 6, 9],
+    relatedGradeSlugs: ['stainless-steel-904l', 'stainless-steel-316', 'duplex-2205'],
+    intro:
+      '904L exists for one reason: the deliberate 1 to 2% copper addition. Without it, the grade would behave like a high-nickel 317L. With it, 904L handles sulphuric and phosphoric acid in a range where ordinary austenitic stainless corrodes steadily away.',
+    takeaways: [
+      'The copper addition is what gives 904L its reducing-acid resistance.',
+      'Nickel at 23 to 28% also makes it far more resistant to chloride stress corrosion cracking than 316.',
+      'It is fully austenitic, so it stays non-magnetic even after cold work.',
+      'For chloride resistance alone, Duplex 2205 is usually the more economical choice.',
+      'It is not a universal acid grade — hydrochloric and hydrofluoric still defeat it.',
+    ],
+    sections: [
+      {
+        id: 'composition',
+        heading: 'What is in it, and why',
+        blocks: [
+          { type: 'p', text: '904L is a super austenitic stainless steel: low carbon, high nickel, high molybdenum, with copper. Each element is doing a specific job, and the combination is what separates it from the 300 series.' },
+          {
+            type: 'table',
+            columns: ['Element', 'Range', 'What it is doing'],
+            rows: [
+              ['Carbon', '0.020% max', 'Very low, to resist intergranular attack after welding'],
+              ['Chromium', '19.0 – 23.0%', 'Forms the passive film'],
+              ['Nickel', '23.0 – 28.0%', 'Stabilises austenite and resists chloride stress corrosion cracking'],
+              ['Molybdenum', '4.0 – 5.0%', 'Pitting and crevice corrosion resistance'],
+              ['Copper', '1.0 – 2.0%', 'Resistance to sulphuric and phosphoric acid — the defining addition'],
+            ],
+          },
+          { type: 'p', text: 'The high nickel content is also why 904L is expensive relative to 316, and why it sits close to the nickel alloys in price rather than close to the 300 series.' },
+        ],
+      },
+      {
+        id: 'applications',
+        heading: 'Where it is genuinely the right grade',
+        blocks: [
+          {
+            type: 'ul',
+            items: [
+              'Sulphuric acid plant — storage, handling and process lines across a wide concentration range.',
+              'Phosphoric acid production, including wet-process fertiliser plant.',
+              'Flue gas desulphurisation scrubbers, where acidic condensate and chlorides occur together.',
+              'Pulp and paper bleaching equipment.',
+              'Pickling lines and acid regeneration.',
+              'Seawater and brine handling where stress corrosion cracking is a concern.',
+            ],
+          },
+          {
+            type: 'note',
+            title: 'Concentration and temperature decide it',
+            text: 'Acid resistance is never a simple yes or no. 904L handles a broad band of sulphuric acid concentrations, but there are concentration and temperature combinations where it corrodes and a nickel alloy is required. Always quote the concentration, temperature and aeration when asking whether 904L is suitable.',
+          },
+        ],
+      },
+      {
+        id: 'comparison',
+        heading: '904L against the alternatives',
+        blocks: [
+          {
+            type: 'table',
+            columns: ['Consideration', 'SS 316L', '904L', 'Duplex 2205'],
+            rows: [
+              ['Sulphuric acid', 'Poor', 'Strong', 'Moderate'],
+              ['Chloride pitting (PREN)', '≈ 25', '≈ 35', '≈ 35'],
+              ['Chloride SCC', 'Susceptible', 'Highly resistant', 'Highly resistant'],
+              ['Yield strength', '170 MPa min', '220 MPa min', '450 MPa min'],
+              ['Magnetic after cold work', 'Can become slightly', 'No', 'Yes, ferromagnetic'],
+              ['Relative cost', 'Baseline', 'High', 'Moderate'],
+            ],
+          },
+          { type: 'p', text: 'The practical rule: if the problem is acid, 904L. If the problem is chlorides and you would also welcome higher strength, Duplex 2205 — it costs less and its extra yield often permits a thinner section. If the problem is neither, 316L is sufficient.' },
+        ],
+      },
+      {
+        id: 'limits',
+        heading: 'Where 904L is the wrong answer',
+        blocks: [
+          { type: 'p', text: 'It is not a universal acid-resistant grade. Hydrochloric acid attacks it. Hydrofluoric acid attacks it — Monel is the usual selection there. Strongly oxidising chloride media such as hot ferric chloride will pit it. And where chloride levels or temperatures are high enough, a super duplex or nickel alloy is required instead.' },
+          { type: 'p', text: 'It is also over-specified surprisingly often. Buyers who have had a 316 failure sometimes jump to 904L when the actual failure mechanism was chloride stress corrosion cracking, for which duplex would have been both sufficient and cheaper. Diagnose the mechanism before selecting the replacement.' },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Is 904L better than 316 stainless steel?',
+        answer:
+          'In acids and in chloride stress corrosion cracking resistance, substantially. In ordinary atmospheric, freshwater or mild chemical service the two perform the same duty and 904L simply costs several times more. It is a grade for a specific problem, not a general upgrade.',
+      },
+      {
+        question: 'Is 904L magnetic?',
+        answer:
+          'No. 904L is fully austenitic and its high nickel content keeps it stable, so unlike 304 and 316 it does not become weakly magnetic after cold working. That matters in instrumentation and anywhere magnetic permeability is specified.',
+      },
+      {
+        question: 'Do I need 904L or would Duplex 2205 do?',
+        answer:
+          'If the governing problem is sulphuric or phosphoric acid, 904L. If it is chlorides — pitting or stress corrosion cracking — at moderate temperature, Duplex 2205 is usually sufficient, costs less, and its roughly double yield strength often allows a thinner and cheaper section. Send the medium, concentration and temperature and we will advise rather than sell you the dearer grade.',
+      },
+    ],
+  },
 ];
 
 export const getArticle = (slug) => articles.find((a) => a.slug === slug);

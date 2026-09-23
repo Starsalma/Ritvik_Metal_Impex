@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.ritvikmetalimpex.com/</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -15,7 +15,7 @@
   </url>
   <url>
     <loc>https://www.ritvikmetalimpex.com/blog</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -635,6 +635,39 @@
       <image:loc>https://www.ritvikmetalimpex.com/images/products/high-performance-alloys.jpg</image:loc>
       <image:title>Nickel Alloys Compared: Monel 400, Inconel 625 and Hastelloy C-276</image:title>
       <image:caption>Monel 400, Inconel 625 and Hastelloy C-276 compared: chemistry, acid and seawater resistance, temperature limits, cost order and how to pick the right nickel alloy.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/blog/titanium-grade-2-vs-grade-5</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.ritvikmetalimpex.com/images/products/pipes-tubes.jpg</image:loc>
+      <image:title>Titanium Grade 2 vs Grade 5: Which One Your Job Actually Needs</image:title>
+      <image:caption>Grade 2 is commercially pure titanium chosen for corrosion resistance; Grade 5 is Ti-6Al-4V chosen for strength. How to tell which your application needs.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/blog/inconel-vs-stainless-steel</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.ritvikmetalimpex.com/images/products/high-performance-alloys.jpg</image:loc>
+      <image:title>Inconel vs Stainless Steel: When the Upgrade Is Worth It</image:title>
+      <image:caption>Inconel costs several times more than 316. Where that premium is justified — temperature, chloride cracking and aggressive acids — and where it is not.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/blog/904l-stainless-steel-applications</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.ritvikmetalimpex.com/images/products/ss-round-bars.jpg</image:loc>
+      <image:title>904L Stainless Steel: Where the Copper Earns Its Keep</image:title>
+      <image:caption>904L is specified for sulphuric and phosphoric acid service. What the copper addition does, how it compares with 316 and duplex, and where it is the wrong choice.</image:caption>
     </image:image>
   </url>
 </urlset>

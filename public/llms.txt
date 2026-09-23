@@ -68,6 +68,9 @@
 - [Mill Test Certificates, IBR and Third-Party Inspection: A Buyer's Guide](https://www.ritvikmetalimpex.com/blog/mill-test-certificate-en-10204-ibr-guide): What EN 10204 2.1, 2.2, 3.1 and 3.2 certificates prove, how to read an MTC, when IBR Forms III-A and III-C apply, and how third-party inspection works.
 - [Flanges Explained: Types, Faces and Pressure Classes under ASME B16.5](https://www.ritvikmetalimpex.com/blog/flange-types-pressure-classes-asme-b16-5): ASME B16.5 flanges: weld neck vs slip-on, Class 150 to 2500 ratings, RF vs FF vs RTJ faces, gasket pairing, materials and an enquiry checklist.
 - [Nickel Alloys Compared: Monel 400, Inconel 625 and Hastelloy C-276](https://www.ritvikmetalimpex.com/blog/nickel-alloys-monel-inconel-hastelloy-guide): Monel 400, Inconel 625 and Hastelloy C-276 compared: chemistry, acid and seawater resistance, temperature limits, cost order and how to pick the right nickel alloy.
+- [Titanium Grade 2 vs Grade 5: Which One Your Job Actually Needs](https://www.ritvikmetalimpex.com/blog/titanium-grade-2-vs-grade-5): Grade 2 is commercially pure titanium chosen for corrosion resistance; Grade 5 is Ti-6Al-4V chosen for strength. How to tell which your application needs.
+- [Inconel vs Stainless Steel: When the Upgrade Is Worth It](https://www.ritvikmetalimpex.com/blog/inconel-vs-stainless-steel): Inconel costs several times more than 316. Where that premium is justified — temperature, chloride cracking and aggressive acids — and where it is not.
+- [904L Stainless Steel: Where the Copper Earns Its Keep](https://www.ritvikmetalimpex.com/blog/904l-stainless-steel-applications): 904L is specified for sulphuric and phosphoric acid service. What the copper addition does, how it compares with 316 and duplex, and where it is the wrong choice.
 
 ## Browse by material
 
