@@ -226,6 +226,26 @@ export default function GradePage() {
                 </li>
               ))}
             </ul>
+
+            {/*
+              * Several grades are listed against only one or two product forms,
+              * because the catalogue descriptions only mention them there. That
+              * is honest but it dead-ends a buyer who wants the grade in a form
+              * we have not written up. This routes them to an enquiry instead of
+              * to a competitor, without claiming stock we have not confirmed.
+              */}
+            <p className="mt-6 text-[14px] leading-relaxed text-gray-500">
+              Need {grade.shortName} in a form not listed above? We source to
+              requirement —{' '}
+              <button
+                type="button"
+                onClick={() => scrollToContact(navigate, path, { productName: `${grade.name} enquiry` })}
+                className="font-semibold text-[#0A1828] underline underline-offset-2 hover:text-[#E5A93C]"
+              >
+                send us the specification
+              </button>{' '}
+              and we will confirm availability and lead time.
+            </p>
           </section>
 
           <section className="mt-16">

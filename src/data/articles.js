@@ -30,6 +30,7 @@ export const articles = [
     dateModified: '2026-08-02',
     image: '/images/products/pipes-tubes.jpg',
     relatedProductIds: [1, 2, 4, 6, 7, 9],
+    relatedGradeSlugs: ['stainless-steel-304', 'stainless-steel-316'],
     intro:
       'SS 304 and SS 316 look identical, machine similarly and often sit side by side in a stockyard — yet specifying the wrong one is the single most common cause of premature corrosion failure in Indian process plants. The difference comes down to roughly 2% molybdenum, and to whether your service environment contains chlorides.',
     takeaways: [
@@ -225,6 +226,7 @@ export const articles = [
     dateModified: '2026-08-02',
     image: '/images/products/high-performance-alloys.jpg',
     relatedProductIds: [1, 2, 4, 6, 22],
+    relatedGradeSlugs: ['duplex-2205'],
     intro:
       'Duplex stainless steels give you roughly twice the yield strength of 304/316 with substantially better chloride resistance — which is why offshore, desalination and chemical projects specify them. But 2205 and 2507 are not interchangeable, and the cost gap between them is large enough that over-specifying is an expensive habit.',
     takeaways: [
@@ -401,6 +403,7 @@ export const articles = [
     dateModified: '2026-08-02',
     image: '/images/products/buttweld-fittings.jpg',
     relatedProductIds: [2, 3, 5, 18, 19, 4],
+    relatedGradeSlugs: ['stainless-steel-304', 'stainless-steel-316'],
     intro:
       'Three joint types dominate industrial piping, and the choice between them is driven by line size, pressure, inspectability and whether the joint will ever need to come apart. Getting it wrong produces either an unnecessarily expensive piping system or a leak path in a line that should never have had one.',
     takeaways: [
@@ -962,6 +965,7 @@ export const articles = [
     dateModified: '2026-08-13',
     image: '/images/products/flanges.jpg',
     relatedProductIds: [4, 2, 3, 7, 1],
+    relatedGradeSlugs: ['stainless-steel-304', 'stainless-steel-316', 'duplex-2205'],
     intro:
       'A flange is the joint you design in so the system can be taken apart again — for maintenance, for inspection, for replacing a valve. Choosing one means answering three separate questions: which type, which pressure class, and which face. Get any of the three wrong and the joint either leaks, does not bolt up, or costs far more than it needed to.',
     takeaways: [
@@ -1135,6 +1139,7 @@ export const articles = [
     dateModified: '2026-08-15',
     image: '/images/products/high-performance-alloys.jpg',
     relatedProductIds: [22, 1, 2, 4, 5, 8],
+    relatedGradeSlugs: ['inconel', 'monel'],
     intro:
       'When stainless steel and even super duplex stop coping, the next step is a nickel-base alloy. These are not interchangeable premium metals — each one was developed for a specific chemical enemy, and the cheapest correct choice is rarely the most expensive alloy on the shelf. Picking by reputation instead of by service environment is how projects end up paying four times the price for worse performance.',
     takeaways: [

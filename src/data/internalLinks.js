@@ -107,6 +107,27 @@ export function articleLinkClusters(article) {
 
   const clusters = [];
 
+  /*
+   * Grades first: an informational search ("304 vs 316") is one step from a
+   * commercial one, and the grade page is where that reader converts. Only
+   * articles that genuinely cover a grade carry these — a guide to mill test
+   * certificates applies to every grade, which makes a link to any one of
+   * them unpredictable, and a link the reader cannot predict is noise.
+   */
+  const coveredGrades = (article.relatedGradeSlugs ?? [])
+    .map((slug) => grades.find((g) => g.slug === slug))
+    .filter(Boolean);
+  if (coveredGrades.length) {
+    clusters.push({
+      heading: 'Grades covered in this guide',
+      links: coveredGrades.map((g) => ({
+        label: g.name,
+        to: `/grades/${g.slug}`,
+        sub: `UNS ${g.uns}`,
+      })),
+    });
+  }
+
   const covered = productsForGuide(article);
   if (covered.length) {
     clusters.push({
