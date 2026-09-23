@@ -9,6 +9,7 @@
  */
 import { products } from './products';
 import { articles } from './articles';
+import { grades } from './grades';
 
 /** Distinct material families present in the catalogue, in catalogue order. */
 export const materials = [...new Set(products.map((p) => p.material))];
@@ -18,6 +19,17 @@ export const forms = [...new Set(products.map((p) => p.form))];
 
 export const byMaterial = (material) => products.filter((p) => p.material === material);
 export const byForm = (form) => products.filter((p) => p.form === form);
+
+/**
+ * Grades available in this product form.
+ *
+ * The grade pages link down to products; without this nothing linked back up,
+ * so the seven pages with the best commercial ranking potential were reachable
+ * only from the navbar and the sitemap. Internal links are how authority
+ * reaches a page, and a page the rest of the site ignores does not rank.
+ */
+export const gradesForProduct = (productId) =>
+  grades.filter((g) => g.productIds.includes(productId));
 
 /** Guides whose relatedProductIds include this product. */
 export const guidesForProduct = (productId) =>
@@ -35,6 +47,18 @@ export function productLinkClusters(product) {
   if (!product) return [];
 
   const clusters = [];
+
+  const productGrades = gradesForProduct(product.id);
+  if (productGrades.length) {
+    clusters.push({
+      heading: `Grades available in ${product.name}`,
+      links: productGrades.map((g) => ({
+        label: `${g.shortName} ${product.name}`,
+        to: `/grades/${g.slug}`,
+        sub: `UNS ${g.uns}`,
+      })),
+    });
+  }
 
   const materialSiblings = byMaterial(product.material).filter((p) => p.id !== product.id);
   if (materialSiblings.length) {

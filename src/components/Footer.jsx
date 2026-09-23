@@ -1,5 +1,6 @@
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { articles } from '../data/articles';
+import { grades } from '../data/grades';
 import { site } from '../data/site';
 import { scrollToContact } from '../utils/navigation';
 
@@ -257,6 +258,37 @@ export default function Footer() {
             ))}
           </div>
 
+        </div>
+      </div>
+
+      {/* ========================================================================
+          TIER 2A: MATERIAL GRADES — site-wide links to the commercial pages
+
+          The grade pages target how buyers actually search ("duplex 2205 pipe
+          supplier"), but until now they were reachable only from the navbar and
+          the sitemap. A site-wide footer link is the cheapest way to give every
+          one of them inbound authority from all 42 pages.
+         ========================================================================
+      */}
+      <div className="w-full bg-[#030E1E] px-4 sm:px-8 lg:px-16 py-6 border-b border-gray-800/60">
+        <div className="max-w-[1240px] mx-auto flex flex-col sm:flex-row sm:items-center gap-x-6 gap-y-3">
+          <Link
+            to="/grades"
+            className="text-[10px] font-black tracking-[0.25em] text-[#E5A93C] uppercase shrink-0 hover:text-white transition-colors"
+          >
+            Material Grades
+          </Link>
+          <div className="flex flex-wrap gap-x-5 gap-y-2">
+            {grades.map((grade) => (
+              <Link
+                key={grade.slug}
+                to={`/grades/${grade.slug}`}
+                className="text-[11px] font-semibold text-gray-400 hover:text-[#E5A93C] transition-colors"
+              >
+                {grade.name}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
 
