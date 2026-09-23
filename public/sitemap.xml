@@ -3,6 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.ritvikmetalimpex.com/</loc>
+<<<<<<< HEAD
     <lastmod>2026-08-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -44,10 +45,170 @@
   <url>
     <loc>https://www.ritvikmetalimpex.com/products/stainless-steel-pipes-and-tubes</loc>
     <lastmod>2026-08-01</lastmod>
+=======
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/blog</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/about</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/grades</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/grades/stainless-steel-304</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/grades/stainless-steel-316</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/grades/duplex-2205</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/grades/inconel</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/grades/monel</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products?material=Stainless%20Steel</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products?material=Alloy%20Steel</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products?material=Copper</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products?material=Brass</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products?material=Nickel%20Alloys</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products?form=Pipes</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products?form=Fittings</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products?form=Flanges</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products?form=Sheets</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products?form=Fasteners</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products?form=Valves</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products?form=Bars</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products?form=Tubes</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products?form=Profiles</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products?form=Wire</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products?form=Sections</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products/1</loc>
+    <lastmod>2026-08-15</lastmod>
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.ritvikmetalimpex.com/images/products/pipes-tubes.jpg</image:loc>
+<<<<<<< HEAD
       <image:title>Pipes &amp; Tubes — Stainless Steel Supplier &amp; Stockist in Mumbai | Ritvik Metal Impex</image:title>
     </image:image>
   </url>
@@ -64,30 +225,71 @@
   <url>
     <loc>https://www.ritvikmetalimpex.com/products/forged-socketweld-screwed-fittings</loc>
     <lastmod>2026-08-01</lastmod>
+=======
+      <image:title>Stainless Steel Pipes &amp; Tubes</image:title>
+      <image:caption>Stainless Steel Pipes &amp; Tubes supplied by Ritvik Metal Impex, Mumbai — Seamless and welded pipes &amp; tubes in Stainless Steel (ASTM A312 TP 304/304L/316/316L/321/310/347), Carbon Steel (ASTM A53/A106 Gr. B), Alloy Steel (AS</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products/2</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.ritvikmetalimpex.com/images/products/ss-buttweld-elbows.jpg</image:loc>
+      <image:title>Stainless Steel Buttweld Fittings</image:title>
+      <image:caption>Stainless Steel Buttweld Fittings supplied by Ritvik Metal Impex, Mumbai — Elbows, tees, reducers, return bends, stub-ends, caps, collars and crosses in Stainless Steel (ASTM A403 WP304/316/321/347), Carbon Steel (ASTM A234 W</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products/3</loc>
+    <lastmod>2026-08-15</lastmod>
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.ritvikmetalimpex.com/images/products/forged-fittings.jpg</image:loc>
+<<<<<<< HEAD
       <image:title>Forged Socketweld &amp; Screwed Fittings — Alloy Steel Supplier &amp; Stockist in Mumbai | Ritvik Metal Impex</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.ritvikmetalimpex.com/products/industrial-flanges</loc>
     <lastmod>2026-08-01</lastmod>
+=======
+      <image:title>Alloy Steel Forged Socketweld &amp; Screwed Fittings</image:title>
+      <image:caption>Alloy Steel Forged Socketweld &amp; Screwed Fittings supplied by Ritvik Metal Impex, Mumbai — Forged elbows, tees, unions, crosses, couplings, caps, bushings, plugs, swage nipples, welding bosses, hexagon nipples and adaptors in Stainless Steel</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products/4</loc>
+    <lastmod>2026-08-15</lastmod>
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.ritvikmetalimpex.com/images/products/flanges.jpg</image:loc>
+<<<<<<< HEAD
       <image:title>Flanges — Stainless Steel Supplier &amp; Stockist in Mumbai | Ritvik Metal Impex</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.ritvikmetalimpex.com/products/ferrule-fittings</loc>
     <lastmod>2026-08-01</lastmod>
+=======
+      <image:title>Stainless Steel Flanges</image:title>
+      <image:caption>Stainless Steel Flanges supplied by Ritvik Metal Impex, Mumbai — Weld neck, slip-on, blind, socket weld, lap joint, spectacle, ring joint and orifice flanges in Stainless Steel (ASTM A182 F304/316/321), Carbon Steel</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products/5</loc>
+    <lastmod>2026-08-15</lastmod>
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.ritvikmetalimpex.com/images/products/ferrule-fittings.jpg</image:loc>
+<<<<<<< HEAD
       <image:title>Ferrule Fittings — Stainless Steel Supplier &amp; Stockist in Mumbai | Ritvik Metal Impex</image:title>
     </image:image>
   </url>
@@ -114,10 +316,42 @@
   <url>
     <loc>https://www.ritvikmetalimpex.com/products/industrial-valves</loc>
     <lastmod>2026-08-01</lastmod>
+=======
+      <image:title>Stainless Steel Ferrule Fittings</image:title>
+      <image:caption>Stainless Steel Ferrule Fittings supplied by Ritvik Metal Impex, Mumbai — Precision instrumentation ferrule fittings including nipples, adaptors, crosses, union ball joints, reducing bushings, pipe caps, couplings and pipe p</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products/6</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.ritvikmetalimpex.com/images/products/ss-circles-316l.jpg</image:loc>
+      <image:title>Stainless Steel Sheets, Plates &amp; Coils</image:title>
+      <image:caption>Stainless Steel Sheets, Plates &amp; Coils supplied by Ritvik Metal Impex, Mumbai — Stainless Steel coils, sheets &amp; plates as per ASTM A240 (Gr. TP 202/304/304L/309/310/316/316L/321/347/410/420/430), Alloy Steel plates per ASTM A387, </image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products/7</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.ritvikmetalimpex.com/images/products/ss-stud-bolts-washers.jpg</image:loc>
+      <image:title>Stainless Steel Fasteners &amp; Nut Bolts</image:title>
+      <image:caption>Stainless Steel Fasteners &amp; Nut Bolts supplied by Ritvik Metal Impex, Mumbai — Bolts, nuts, washers, anchors, fasteners, stud bolts, eye bolts, threaded rods and cotter pins in Stainless Steel (AISI 302/304/316/321/347), Alloy St</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products/8</loc>
+    <lastmod>2026-08-15</lastmod>
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.ritvikmetalimpex.com/images/products/valves.jpg</image:loc>
+<<<<<<< HEAD
       <image:title>Valves — Stainless Steel Supplier &amp; Stockist in Mumbai | Ritvik Metal Impex</image:title>
     </image:image>
   </url>
@@ -134,90 +368,191 @@
   <url>
     <loc>https://www.ritvikmetalimpex.com/products/dairy-sanitary-fittings</loc>
     <lastmod>2026-08-01</lastmod>
+=======
+      <image:title>Stainless Steel Valves</image:title>
+      <image:caption>Stainless Steel Valves supplied by Ritvik Metal Impex, Mumbai — Ball valves, gate valves, check valves, globe valves, needle valves, mini valves and gauge root valves in Stainless Steel (AISI 304/316/321/347), Carb</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products/9</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.ritvikmetalimpex.com/images/products/ss-round-bars.jpg</image:loc>
+      <image:title>Stainless Steel Round, Square &amp; Hex Bars</image:title>
+      <image:caption>Stainless Steel Round, Square &amp; Hex Bars supplied by Ritvik Metal Impex, Mumbai — Round, square and hexagonal bars as per ASTM A276/A479 (Grade 202/304/304L/316/316L/321/347/410/420/904L), Nickel Alloys and Duplex Steel. Size range </image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products/10</loc>
+    <lastmod>2026-08-15</lastmod>
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.ritvikmetalimpex.com/images/products/dairy-fittings.jpg</image:loc>
+<<<<<<< HEAD
       <image:title>Dairy Fittings — Stainless Steel Supplier &amp; Stockist in Mumbai | Ritvik Metal Impex</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.ritvikmetalimpex.com/products/copper-tubes</loc>
     <lastmod>2026-08-01</lastmod>
+=======
+      <image:title>Stainless Steel Dairy Fittings</image:title>
+      <image:caption>Stainless Steel Dairy Fittings supplied by Ritvik Metal Impex, Mumbai — Sanitary fittings for food, beverage and dairy industries — nipples, unions, S.M.S., I.D.F., dairy valves, butterfly valves, ball valves, needle valve</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products/11</loc>
+    <lastmod>2026-08-15</lastmod>
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.ritvikmetalimpex.com/images/products/copper-tubes.jpg</image:loc>
+<<<<<<< HEAD
       <image:title>Copper Tubes — Copper Supplier &amp; Stockist in Mumbai | Ritvik Metal Impex</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.ritvikmetalimpex.com/products/brass-tubes</loc>
     <lastmod>2026-08-01</lastmod>
+=======
+      <image:title>Copper Copper Tubes</image:title>
+      <image:caption>Copper Copper Tubes supplied by Ritvik Metal Impex, Mumbai — DHP Copper, ETP Copper, DPA Copper and OFHC Copper tubes available 2mm to 200mm OD with wall thickness 0.10mm to 15mm, in lengths up to 10 meters stra</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products/12</loc>
+    <lastmod>2026-08-15</lastmod>
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.ritvikmetalimpex.com/images/products/brass-tubes.jpg</image:loc>
+<<<<<<< HEAD
       <image:title>Brass Tubes — Brass Supplier &amp; Stockist in Mumbai | Ritvik Metal Impex</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.ritvikmetalimpex.com/products/brass-rods</loc>
     <lastmod>2026-08-01</lastmod>
+=======
+      <image:title>Brass Brass Tubes</image:title>
+      <image:caption>Brass Brass Tubes supplied by Ritvik Metal Impex, Mumbai — Precision brass tubes in 63/37 Brass, 70/30 Brass, Admirality Brass and Aluminium Brass compositions, for industrial and engineering applications incl</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products/13</loc>
+    <lastmod>2026-08-15</lastmod>
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.ritvikmetalimpex.com/images/products/brass-rods.jpg</image:loc>
+<<<<<<< HEAD
       <image:title>Brass Rods — Brass Supplier &amp; Stockist in Mumbai | Ritvik Metal Impex</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.ritvikmetalimpex.com/products/copper-sections-and-profiles</loc>
     <lastmod>2026-08-01</lastmod>
+=======
+      <image:title>Brass Brass Rods</image:title>
+      <image:caption>Brass Brass Rods supplied by Ritvik Metal Impex, Mumbai — High-quality brass rods available up to 160mm diameter in multiple grades and compositions including 63/37 Brass and Admirality Brass, supplied as per</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products/14</loc>
+    <lastmod>2026-08-15</lastmod>
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.ritvikmetalimpex.com/images/products/copper-sections.jpg</image:loc>
+<<<<<<< HEAD
       <image:title>Copper Tube &amp; Sections — Copper Supplier &amp; Stockist in Mumbai | Ritvik Metal Impex</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.ritvikmetalimpex.com/products/copper-strips-and-bronze-profiles</loc>
     <lastmod>2026-08-01</lastmod>
+=======
+      <image:title>Copper Copper Tube &amp; Sections</image:title>
+      <image:caption>Copper Copper Tube &amp; Sections supplied by Ritvik Metal Impex, Mumbai — Copper sections, hollow profiles and engineered copper components manufactured to customer-specific requirements, available in Copper, Brass and Bronz</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products/15</loc>
+    <lastmod>2026-08-15</lastmod>
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.ritvikmetalimpex.com/images/products/copper-strips.jpg</image:loc>
+<<<<<<< HEAD
       <image:title>Copper Strips &amp; Profiles — Copper Supplier &amp; Stockist in Mumbai | Ritvik Metal Impex</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.ritvikmetalimpex.com/products/copper-wires</loc>
     <lastmod>2026-08-01</lastmod>
+=======
+      <image:title>Copper Copper Strips &amp; Profiles</image:title>
+      <image:caption>Copper Copper Strips &amp; Profiles supplied by Ritvik Metal Impex, Mumbai — Copper strips and custom profiles manufactured to customer specifications, including Phosphorous Bronze, Aluminium Bronze and Gun Metal sections, test</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products/16</loc>
+    <lastmod>2026-08-15</lastmod>
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.ritvikmetalimpex.com/images/products/copper-wire.jpg</image:loc>
+<<<<<<< HEAD
       <image:title>Copper Wires — Copper Supplier &amp; Stockist in Mumbai | Ritvik Metal Impex</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.ritvikmetalimpex.com/products/super-enameled-copper-winding-wire</loc>
     <lastmod>2026-08-01</lastmod>
+=======
+      <image:title>Copper Copper Wires</image:title>
+      <image:caption>Copper Copper Wires supplied by Ritvik Metal Impex, Mumbai — Industrial copper wires up to 42 SWG in bright annealed condition, for electrical and engineering applications, manufactured from DHP/ETP/OFHC Copper </image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products/17</loc>
+    <lastmod>2026-08-15</lastmod>
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.ritvikmetalimpex.com/images/products/enameled-wire.jpg</image:loc>
+<<<<<<< HEAD
       <image:title>Super Enameled Copper Wires — Copper Supplier &amp; Stockist in Mumbai | Ritvik Metal Impex</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.ritvikmetalimpex.com/products/stainless-steel-bends</loc>
     <lastmod>2026-08-01</lastmod>
+=======
+      <image:title>Copper Super Enameled Copper Wires</image:title>
+      <image:caption>Copper Super Enameled Copper Wires supplied by Ritvik Metal Impex, Mumbai — Super enameled copper winding wires available up to 42 SWG, used in motor windings, transformers and electrical coil applications, manufactured with h</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products/18</loc>
+    <lastmod>2026-08-15</lastmod>
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.ritvikmetalimpex.com/images/products/ss-bends.jpg</image:loc>
+<<<<<<< HEAD
       <image:title>Stainless Steel Bends — Stainless Steel Supplier &amp; Stockist in Mumbai | Ritvik Metal Impex</image:title>
     </image:image>
   </url>
@@ -234,10 +569,31 @@
   <url>
     <loc>https://www.ritvikmetalimpex.com/products/alloy-steel-bars</loc>
     <lastmod>2026-08-01</lastmod>
+=======
+      <image:title>Stainless Steel Stainless Steel Bends</image:title>
+      <image:caption>Stainless Steel Stainless Steel Bends supplied by Ritvik Metal Impex, Mumbai — Stainless Steel bends in 45°, 90° and 180° configurations in SS 304/304L, 316/316L, 321, 347 and Duplex grades. Available in long radius (1.5D) and sh</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products/19</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.ritvikmetalimpex.com/images/products/electro-polish.webp</image:loc>
+      <image:title>Stainless Steel Electro Polish Fittings</image:title>
+      <image:caption>Stainless Steel Electro Polish Fittings supplied by Ritvik Metal Impex, Mumbai — Electropolished stainless steel fittings with mirror-bright surface finish (Ra ≤ 0.5μm) for pharmaceutical, biotech, and semiconductor applications. A</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products/20</loc>
+    <lastmod>2026-08-15</lastmod>
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.ritvikmetalimpex.com/images/products/alloy-bars.jpg</image:loc>
+<<<<<<< HEAD
       <image:title>Alloy Bars — Alloy Steel Supplier &amp; Stockist in Mumbai | Ritvik Metal Impex</image:title>
     </image:image>
   </url>
@@ -254,30 +610,93 @@
   <url>
     <loc>https://www.ritvikmetalimpex.com/products/high-performance-nickel-alloys</loc>
     <lastmod>2026-08-01</lastmod>
+=======
+      <image:title>Alloy Steel Alloy Bars</image:title>
+      <image:caption>Alloy Steel Alloy Bars supplied by Ritvik Metal Impex, Mumbai — Alloy Steel and High Performance Alloy bars in round, square and hexagonal profiles. Grades include ASTM A182 F5/F9/F11/F22/F91, Monel 400/K500, Incon</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products/21</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.ritvikmetalimpex.com/images/products/ss-flats.webp</image:loc>
+      <image:title>Stainless Steel Stainless Steel Flats</image:title>
+      <image:caption>Stainless Steel Stainless Steel Flats supplied by Ritvik Metal Impex, Mumbai — Stainless Steel flat bars in SS 304/304L, 316/316L, 321, 410, 430 and Duplex grades. Width 10mm to 200mm, thickness 3mm to 50mm, in hot rolled, cold d</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products/22</loc>
+    <lastmod>2026-08-15</lastmod>
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.ritvikmetalimpex.com/images/products/high-performance-alloys.jpg</image:loc>
+<<<<<<< HEAD
       <image:title>High Performance Alloys — Nickel Alloys Supplier &amp; Stockist in Mumbai | Ritvik Metal Impex</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.ritvikmetalimpex.com/blog/ss-304-vs-ss-316-which-stainless-steel-grade-to-choose</loc>
     <lastmod>2026-08-01</lastmod>
+=======
+      <image:title>Nickel Alloys High Performance Alloys</image:title>
+      <image:caption>Nickel Alloys High Performance Alloys supplied by Ritvik Metal Impex, Mumbai — High Performance Nickel Alloys including Monel (400/K500), Inconel (600/625/718/825), Hastelloy (C276/C22/B2), Titanium (Gr 2/5), Nimonic (75/90), and</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/products/23</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.ritvikmetalimpex.com/images/products/ss-channels-angles.jpg</image:loc>
+      <image:title>Stainless Steel Channels &amp; Angles</image:title>
+      <image:caption>Stainless Steel Channels &amp; Angles supplied by Ritvik Metal Impex, Mumbai — Stainless steel structural sections — equal and unequal angles, C-channels and U-channels in ASTM A276/A479 grades 304, 304L, 316, 316L, 321 and Duple</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/blog/stainless-steel-304-vs-316</loc>
+    <lastmod>2026-08-02</lastmod>
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://www.ritvikmetalimpex.com/images/products/pipes-tubes.jpg</image:loc>
+<<<<<<< HEAD
       <image:title>SS 304 vs SS 316 Stainless Steel: Complete Selection Guide (2026)</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.ritvikmetalimpex.com/blog/buttweld-vs-socketweld-vs-threaded-pipe-fittings</loc>
     <lastmod>2026-08-01</lastmod>
+=======
+      <image:title>SS 304 vs SS 316: How to Choose the Right Stainless Steel Grade</image:title>
+      <image:caption>Stainless steel 304 vs 316 compared: molybdenum, PREN pitting resistance, L-grades, temperature limits, and when the 316 price premium is worth paying.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/blog/duplex-2205-vs-super-duplex-2507</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.ritvikmetalimpex.com/images/products/high-performance-alloys.jpg</image:loc>
+      <image:title>Duplex 2205 vs Super Duplex 2507: A Material Selection Guide</image:title>
+      <image:caption>Duplex 2205 vs super duplex 2507: PREN, yield strength, chloride and temperature limits, welding precautions, and when the 30–50% premium pays off.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/blog/buttweld-vs-socketweld-vs-threaded-fittings</loc>
+    <lastmod>2026-08-02</lastmod>
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://www.ritvikmetalimpex.com/images/products/buttweld-fittings.jpg</image:loc>
+<<<<<<< HEAD
       <image:title>Buttweld vs Socketweld vs Threaded Pipe Fittings — Selection Guide</image:title>
     </image:image>
   </url>
@@ -294,21 +713,67 @@
   <url>
     <loc>https://www.ritvikmetalimpex.com/blog/copper-brass-cupronickel-heat-exchanger-tube-selection</loc>
     <lastmod>2026-08-01</lastmod>
+=======
+      <image:title>Buttweld vs Socketweld vs Threaded Fittings: Choosing the Right Joint</image:title>
+      <image:caption>Buttweld, socketweld and threaded fittings compared: size ranges, ASME B16.9 and B16.11, Class 3000/6000/9000 and how to pick the right joint.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/blog/copper-tube-grades-and-standards</loc>
+    <lastmod>2026-08-02</lastmod>
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://www.ritvikmetalimpex.com/images/products/copper-tubes.jpg</image:loc>
+<<<<<<< HEAD
       <image:title>Copper vs Brass vs Cupronickel Heat Exchanger Tubes — Selection Guide</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.ritvikmetalimpex.com/blog/flange-selection-guide-types-pressure-classes-facings</loc>
     <lastmod>2026-08-01</lastmod>
+=======
+      <image:title>Copper Tubes, Strips and Wires: Grades, Standards and Applications</image:title>
+      <image:caption>Copper grades explained: ETP vs DHP, ASTM B88 Types K/L/M, B280 ACR tube, B111 condenser tube, temper, busbar strip and enamelled winding wire.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/blog/mill-test-certificate-en-10204-ibr-guide</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.ritvikmetalimpex.com/images/products/sheets-plates-coils.jpg</image:loc>
+      <image:title>Mill Test Certificates, IBR and Third-Party Inspection: A Buyer&apos;s Guide</image:title>
+      <image:caption>What EN 10204 2.1, 2.2, 3.1 and 3.2 certificates prove, how to read an MTC, when IBR Forms III-A and III-C apply, and how third-party inspection works.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/blog/flange-types-pressure-classes-asme-b16-5</loc>
+    <lastmod>2026-08-13</lastmod>
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://www.ritvikmetalimpex.com/images/products/flanges.jpg</image:loc>
+<<<<<<< HEAD
       <image:title>Industrial Flange Selection Guide — Types, Classes &amp; Facings (ASME B16.5)</image:title>
+=======
+      <image:title>Flanges Explained: Types, Faces and Pressure Classes under ASME B16.5</image:title>
+      <image:caption>ASME B16.5 flanges: weld neck vs slip-on, Class 150 to 2500 ratings, RF vs FF vs RTJ faces, gasket pairing, materials and an enquiry checklist.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/blog/nickel-alloys-monel-inconel-hastelloy-guide</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.ritvikmetalimpex.com/images/products/high-performance-alloys.jpg</image:loc>
+      <image:title>Nickel Alloys Compared: Monel 400, Inconel 625 and Hastelloy C-276</image:title>
+      <image:caption>Monel 400, Inconel 625 and Hastelloy C-276 compared: chemistry, acid and seawater resistance, temperature limits, cost order and how to pick the right nickel alloy.</image:caption>
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
     </image:image>
   </url>
 </urlset>

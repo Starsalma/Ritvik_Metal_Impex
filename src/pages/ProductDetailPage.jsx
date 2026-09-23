@@ -1,9 +1,36 @@
+<<<<<<< HEAD
 import React from 'react';
 import { useParams, useNavigate, Link, Navigate } from 'react-router-dom';
 import { products } from '../data/products';
 import { articles } from '../data/articles';
 import Seo from '../components/Seo';
 import { site, absoluteUrl, breadcrumbSchema } from '../data/siteConfig';
+=======
+import { useEffect } from 'react';
+import { useParams, useNavigate, Link } from 'react-router-dom';
+import Seo from '../components/Seo';
+import { scrollToContact, setEnquiryContext } from '../utils/navigation';
+import SpecTables from '../components/SpecTables';
+import RelatedLinks from '../components/RelatedLinks';
+import CTABand from '../components/CTABand';
+import PriceRange from '../components/PriceRange';
+import { products } from '../data/products';
+import { articles } from '../data/articles';
+import { getSpecTables, getQuickFacts, MOQ } from '../data/specifications';
+import { imageSize } from '../data/imageSizes';
+import { productLinkClusters } from '../data/internalLinks';
+import { priceOfferSchema } from '../data/pricing';
+import {
+  site,
+  absoluteUrl,
+  breadcrumbSchema,
+  clamp,
+  TITLE_MAX,
+  DESCRIPTION_MAX,
+  CATALOGUE_PUBLISHED,
+  CATALOGUE_MODIFIED,
+} from '../data/site';
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
 
 export default function ProductDetailPage() {
   const { id } = useParams();
@@ -15,21 +42,44 @@ export default function ProductDetailPage() {
   const legacy = !product && products.find((p) => p.id === Number(id));
   if (legacy) return <Navigate to={`/products/${legacy.slug}`} replace />;
 
+  /*
+   * Publish the product for every contact CTA on the page (navbar, floating
+   * buttons, CTA band, the in-page quote buttons) and clear it on unmount so it
+   * never leaks onto an unrelated page.
+   *
+   * This must sit ABOVE the 404 early return: hooks have to run in the same
+   * order on every render, and the id can change to a missing product while the
+   * component stays mounted.
+   */
+  useEffect(() => {
+    if (!product) return undefined;
+    return setEnquiryContext({ productId: product.id, productName: product.name });
+  }, [product]);
+
   if (!product) {
     return (
-      <section className="bg-white min-h-screen flex items-center justify-center px-6">
-        <div className="text-center">
-          <h1 className="text-3xl font-black text-[#0A1828] uppercase">Product Not Found</h1>
-          <p className="text-gray-500 mt-4">The product you're looking for doesn't exist.</p>
-          <Link to="/products" className="inline-block mt-8 bg-[#0A1828] text-white px-8 py-4 uppercase font-bold tracking-widest">Back to Products</Link>
-        </div>
-      </section>
+      <>
+        <Seo
+          title="Product Not Found"
+          description="The product you are looking for is not available in our catalogue."
+          path={`/products/${id}`}
+          noindex
+        />
+        <section className="bg-white min-h-screen flex items-center justify-center px-6">
+          <div className="text-center">
+            <h1 className="text-3xl font-black text-[#0A1828] uppercase">Product Not Found</h1>
+            <p className="text-gray-500 mt-4">The product you're looking for doesn't exist.</p>
+            <Link to="/products" className="inline-block mt-8 bg-[#0A1828] text-white px-8 py-4 uppercase font-bold tracking-widest">Back to Products</Link>
+          </div>
+        </section>
+      </>
     );
   }
 
   const related = products.filter((p) => p.category === product.category && p.id !== product.id).slice(0, 3);
   const guides = articles.filter((a) => a.relatedProducts?.includes(product.slug)).slice(0, 2);
 
+<<<<<<< HEAD
   const url = `/products/${product.slug}`;
   const seoTitle = `${product.name} — ${product.material} Supplier & Stockist in Mumbai | Ritvik Metal Impex`;
   const seoDescription = `${product.name} in ${product.material}: ${product.description.slice(0, 130)}… Supplied ex-Mumbai with Mill Test Certificates and third-party inspection. Request a same-day quotation.`;
@@ -94,6 +144,110 @@ export default function ProductDetailPage() {
       inLanguage: 'en-IN',
     });
   }
+=======
+  /* Technical guides that reference this product — internal linking for topical authority */
+  const relatedGuides = articles.filter((a) => a.relatedProductIds?.includes(product.id)).slice(0, 3);
+
+  const specTables = getSpecTables(product);
+  const quickFacts = getQuickFacts(product);
+  const linkClusters = productLinkClusters(product);
+
+  /* Attached to the enquiry so sales sees which product it came from. */
+  const enquiryContext = { productId: product.id, productName: product.name };
+  const productImageDims = imageSize(product.image);
+
+  const path = `/products/${product.id}`;
+
+  /*
+   * Both of these used to run 87–106 and 262–281 characters, so Google cut the
+   * brand off every title and half of every description. clamp() in <Seo />
+   * is the backstop; keeping the source strings short is the actual fix.
+   */
+  const seoTitle = clamp(`${product.name} Supplier in Mumbai`, TITLE_MAX);
+  const seoDescription = clamp(
+    `${product.material} ${product.name.toLowerCase()} from Ritvik Metal Impex, Mumbai. ${product.description}`,
+    DESCRIPTION_MAX,
+  );
+  const seoKeywords = `${product.name}, ${product.material} ${product.name}, ${product.name} supplier Mumbai, ${product.name} stockist India, ${product.name} price India, ${product.material} supplier, ${product.form} supplier India, Ritvik Metal Impex`;
+
+  const offers = priceOfferSchema(product, absoluteUrl(path));
+
+  const productSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    '@id': `${absoluteUrl(path)}#product`,
+    name: `${product.material} ${product.name}`,
+    alternateName: product.name,
+    description: product.description,
+    /*
+     * A full ImageObject rather than a bare URL: width, height and a caption
+     * are what let Google treat this as the page's representative image and
+     * surface it as the search thumbnail.
+     */
+    image: [
+      {
+        '@type': 'ImageObject',
+        url: absoluteUrl(product.image),
+        contentUrl: absoluteUrl(product.image),
+        ...(productImageDims
+          ? { width: productImageDims[0], height: productImageDims[1] }
+          : {}),
+        caption: `${product.material} ${product.name} supplied by ${site.name}, Mumbai`,
+        representativeOfPage: true,
+        creditText: site.name,
+        copyrightNotice: `© ${site.name}`,
+      },
+    ],
+    category: `${product.category} Metals > ${product.form}`,
+    material: product.material,
+    sku: `RMI-${String(product.id).padStart(3, '0')}`,
+    url: absoluteUrl(path),
+    brand: { '@type': 'Brand', name: site.name },
+    manufacturer: { '@id': `${site.url}/#organization` },
+    additionalProperty: [
+      { '@type': 'PropertyValue', name: 'Material', value: product.material },
+      { '@type': 'PropertyValue', name: 'Product Form', value: product.form },
+      { '@type': 'PropertyValue', name: 'Category', value: product.category },
+      { '@type': 'PropertyValue', name: 'Certification', value: 'Mill Test Certificate (EN 10204 3.1); 3.2 / IBR on request' },
+      { '@type': 'PropertyValue', name: 'Minimum Order Quantity', value: MOQ },
+      { '@type': 'PropertyValue', name: 'Lead Time', value: site.leadTime },
+      { '@type': 'PropertyValue', name: 'Packing', value: site.packing },
+    ],
+    /*
+     * An AggregateOffer (lowPrice/highPrice) only when the product has a
+     * verified indicative range. schema.org rejects an Offer with no price, so
+     * for everything still quote-only the node is omitted entirely — a Product
+     * without offers is valid structured data; one with an empty Offer is not.
+     */
+    ...(offers ? { offers } : {}),
+  };
+
+  const crumbs = breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Products', path: '/products' },
+    { name: product.name, path },
+  ]);
+
+  const guideSchema = product.blog
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: clamp(product.blog.title, 110),
+        description: clamp(product.blog.intro, 250),
+        image: [absoluteUrl(product.image)],
+        inLanguage: site.language,
+        datePublished: CATALOGUE_PUBLISHED,
+        dateModified: CATALOGUE_MODIFIED,
+        author: { '@type': 'Organization', name: site.name },
+        publisher: {
+          '@type': 'Organization',
+          name: site.name,
+          logo: { '@type': 'ImageObject', url: site.logo },
+        },
+        mainEntityOfPage: { '@type': 'WebPage', '@id': absoluteUrl(path) },
+      }
+    : null;
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
 
   return (
     <>
@@ -101,10 +255,18 @@ export default function ProductDetailPage() {
         title={seoTitle}
         description={seoDescription}
         keywords={seoKeywords}
+<<<<<<< HEAD
         path={url}
         image={product.image}
         type="product"
         schema={schema}
+=======
+        path={path}
+        image={product.image}
+        imageAltText={`${product.material} ${product.name} — supplier and stockist in Mumbai, India`}
+        type="product"
+        schema={[productSchema, crumbs, guideSchema]}
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
       />
 
       <section className="bg-white min-h-screen py-16 px-6 lg:px-16">
@@ -122,8 +284,13 @@ export default function ProductDetailPage() {
           {/* Product Header */}
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div className="rounded-tl-[60px] rounded-br-[60px] overflow-hidden shadow-xl bg-gray-100 h-[420px] lg:h-[520px]">
+<<<<<<< HEAD
               <img src={product.image}
                 alt={`${product.material} ${product.name} in stock at ${site.name}, Mumbai`}
+=======
+              <img src={product.image} alt={`${product.material} ${product.name} supplied by Ritvik Metal Impex, Mumbai`}
+                loading="eager"
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
                 className="w-full h-full object-cover"
                 loading="eager" fetchPriority="high"
                 onError={(e) => { e.target.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center"><span class="text-gray-300 uppercase tracking-widest">Product Image</span></div>'; }} />
@@ -133,12 +300,19 @@ export default function ProductDetailPage() {
               <span className="text-[#E5A93C] font-black tracking-[0.2em] uppercase text-xs">{product.material} · {product.category}</span>
 
               <h1 className="text-4xl lg:text-5xl font-black text-[#0A1828] uppercase mt-3 leading-tight">
+<<<<<<< HEAD
                 {product.material} {product.name}
+=======
+                {product.name}
+                <span className="sr-only"> — {product.material} supplier and stockist in Mumbai, India</span>
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
               </h1>
 
               <div className="w-16 h-[2px] bg-[#E5A93C] mt-6 mb-6" />
 
               <p className="text-gray-600 text-[16px] leading-relaxed">{product.description}</p>
+
+              <PriceRange product={product} />
 
               {/* Spec table */}
               <div className="mt-10 border border-gray-200 rounded-lg overflow-hidden">
@@ -161,7 +335,7 @@ export default function ProductDetailPage() {
               {/* Actions */}
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
                 <button
-                  onClick={() => { navigate('/'); setTimeout(() => document.getElementById('contact-us')?.scrollIntoView({behavior:'smooth'}), 300); }}
+                  onClick={() => scrollToContact(navigate, path, enquiryContext)}
                   className="bg-[#0A1828] text-white px-8 py-4 uppercase font-bold tracking-widest hover:bg-[#1A3A5C] transition-colors">
                   Request Quote
                 </button>
@@ -173,6 +347,30 @@ export default function ProductDetailPage() {
               </div>
             </div>
           </div>
+
+          {/* At-a-glance strip */}
+          <dl className="mt-20 grid grid-cols-2 lg:grid-cols-6 border border-gray-200 rounded-tl-[26px] rounded-br-[26px] overflow-hidden">
+            {quickFacts.map((fact, i) => (
+              <div
+                key={fact.label}
+                className={`p-5 ${i % 2 === 0 ? 'border-r' : ''} lg:border-r lg:last:border-r-0 border-b lg:border-b-0 border-gray-200 last:border-r-0`}
+              >
+                <dt className="text-[10px] font-black tracking-[0.16em] text-gray-400 uppercase">
+                  {fact.label}
+                </dt>
+                <dd className="text-[#0A1828] font-bold text-[14px] mt-1.5 leading-snug">
+                  {fact.value}
+                </dd>
+              </div>
+            ))}
+          </dl>
+
+          {/* Technical specifications — chemistry, mechanicals, sizes, equivalents */}
+          {specTables.length > 0 && (
+            <div className="mt-24">
+              <SpecTables tables={specTables} productName={product.name} />
+            </div>
+          )}
 
           {/* SEO ARTICLE SECTION */}
           {product.blog && (
@@ -223,7 +421,7 @@ export default function ProductDetailPage() {
                 </div>
                 <div className="flex gap-4 flex-wrap">
                   <button
-                    onClick={() => { navigate('/'); setTimeout(() => document.getElementById('contact-us')?.scrollIntoView({behavior:'smooth'}), 300); }}
+                    onClick={() => scrollToContact(navigate, path, enquiryContext)}
                     className="bg-[#E5A93C] text-[#0A1828] px-8 py-3 uppercase font-black text-[11px] tracking-widest hover:bg-[#d4982b] transition-colors">
                     Request Quote
                   </button>
@@ -238,6 +436,7 @@ export default function ProductDetailPage() {
             </article>
           )}
 
+<<<<<<< HEAD
           {/* Further reading — links product pages into the editorial hub */}
           {guides.length > 0 && (
             <div className="mt-24">
@@ -254,6 +453,36 @@ export default function ProductDetailPage() {
                       <span className="text-[#E5A93C] text-[10px] font-black tracking-widest uppercase">{a.category} · {a.readTime} min</span>
                       <h3 className="text-[15px] font-black text-[#0A1828] uppercase mt-1.5 leading-tight group-hover:text-[#E5A93C] transition-colors">{a.title}</h3>
                     </div>
+=======
+          {/* Technical guides referencing this product — internal links */}
+          {relatedGuides.length > 0 && (
+            <div className="mt-24">
+              <h2 className="text-2xl font-black text-[#0A1828] uppercase mb-2">
+                Technical Guides
+              </h2>
+              <p className="text-gray-500 text-sm mb-8">
+                In-depth reading on grades, standards and specification for this product.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                {relatedGuides.map((guide) => (
+                  <Link
+                    key={guide.slug}
+                    to={`/blog/${guide.slug}`}
+                    className="group border border-gray-200 rounded-tl-[24px] rounded-br-[24px] p-6 hover:border-[#E5A93C] hover:shadow-lg transition-all"
+                  >
+                    <span className="text-[#E5A93C] text-[10px] font-black tracking-[0.18em] uppercase">
+                      {guide.category}
+                    </span>
+                    <h3 className="text-[15px] font-black text-[#0A1828] uppercase mt-2 leading-snug">
+                      {guide.title}
+                    </h3>
+                    <p className="text-gray-500 text-[12px] mt-3 leading-relaxed line-clamp-3">
+                      {guide.description}
+                    </p>
+                    <span className="inline-block mt-4 text-[11px] font-black tracking-[0.15em] text-[#0A1828] uppercase group-hover:text-[#E5A93C] transition-colors">
+                      Read Guide →
+                    </span>
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
                   </Link>
                 ))}
               </div>
@@ -266,6 +495,7 @@ export default function ProductDetailPage() {
               <h2 className="text-2xl font-black text-[#0A1828] uppercase mb-8">Related Products</h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {related.map((r) => (
+<<<<<<< HEAD
                   <Link key={r.id} to={`/products/${r.slug}`}
                     className="block bg-white rounded-tl-[30px] rounded-br-[30px] overflow-hidden shadow-md hover:shadow-xl border border-gray-100 transition-all">
                     <div className="h-[180px] bg-gray-100 overflow-hidden">
@@ -273,6 +503,12 @@ export default function ProductDetailPage() {
                         className="w-full h-full object-cover"
                         loading="lazy" decoding="async"
                         onError={(e)=>{e.target.style.display='none';}} />
+=======
+                  <Link key={r.id} to={`/products/${r.id}`}
+                    className="block bg-white rounded-tl-[30px] rounded-br-[30px] overflow-hidden shadow-md hover:shadow-xl border border-gray-100 transition-all">
+                    <div className="h-[180px] bg-gray-100 overflow-hidden">
+                      <img src={r.image} alt={`${r.material} ${r.name} supplier in Mumbai, India`} loading="lazy" className="w-full h-full object-cover" onError={(e)=>{e.target.style.display='none';}} />
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
                     </div>
                     <div className="p-4">
                       <span className="text-[#E5A93C] text-[10px] font-black tracking-widest uppercase">{r.material}</span>
@@ -284,8 +520,19 @@ export default function ProductDetailPage() {
             </div>
           )}
 
+          <RelatedLinks clusters={linkClusters} title="Explore More" className="mt-24" />
+
         </div>
       </section>
+
+      <CTABand
+        eyebrow="Enquire Now"
+        title={`Need a price for ${product.name}?`}
+        body={`Tell us the grade, size, schedule and quantity and we will confirm stock position and a firm price. Every consignment ships with a mill test certificate traceable to the heat number.`}
+        primaryLabel="Get a Quote"
+        context={enquiryContext}
+        whatsappMessage={`Hi, I need a quote for ${product.name} (min order ${site.moq}).`}
+      />
     </>
   );
 }

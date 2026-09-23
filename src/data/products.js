@@ -26,7 +26,7 @@ export const products = [
     category: "Ferrous",
     form: "Fittings",
     material: "Stainless Steel",
-    image: "/images/products/buttweld-fittings.jpg",
+    image: "/images/products/ss-buttweld-elbows.jpg",
     description: "Elbows, tees, reducers, return bends, stub-ends, caps, collars and crosses in Stainless Steel (ASTM A403 WP304/316/321/347), Carbon Steel (ASTM A234 WPB) and Alloy Steel (ASTM A234 WP1/WP5/WP9/WP11). Sizes 1/4\" to 32\" NB, Schedule 5S to XXS, seamless & welded.",
     blog: {
       title: "Buttweld Pipe Fittings: Types, Standards & Applications",
@@ -54,7 +54,7 @@ export const products = [
       sections: [
         { heading: "Socketweld vs Screwed Fittings", content: "Socketweld fittings are welded onto pipes inserted into a socket, providing a strong permanent joint for high-pressure service. Screwed (threaded) fittings use NPT or BSP threads for quick, non-permanent connections suitable for lower pressure applications." },
         { heading: "Product Range", content: "Includes elbows, tees, crosses, unions, couplings, caps, bushings, plugs, swage nipples, welding bosses, hexagon nipples, barrel nipples, and adaptors in sizes 1/4\" to 4\" NB." },
-        { heading: "Pressure Classes", content: "Available in Class 3000# (for standard service), 6000# (for high pressure), and 9000# (for extreme pressure applications) as per ASME B16.11 standards." },
+        { heading: "Class Designations", content: "Available in Class 3000#, 6000# and 9000# to ASME B16.11. The class identifies the socket bore and the pipe schedule the fitting is bored to accept — Class 3000 matches Schedule 80/XS, Class 6000 matches Schedule 160, and Class 9000 matches XXS. It is not a working pressure in psi: a Class 3000 fitting is not rated for 3000 psi. Allowable pressure follows from the material grade, the design temperature and the governing code (ASME B31.1 or B31.3), so confirm it against your piping class." },
         { heading: "Material Options", content: "Stainless Steel (ASTM A182 F304/F316/F321), Carbon Steel (ASTM A105), Low Temperature Carbon Steel (ASTM A350 LF2), and Alloy Steel grades F5, F9, F11, F22, F91." },
       ]
     }
@@ -106,7 +106,7 @@ export const products = [
     category: "Ferrous",
     form: "Sheets",
     material: "Stainless Steel",
-    image: "/images/products/sheets-plates-coils.jpg",
+    image: "/images/products/ss-circles-316l.jpg",
     description: "Stainless Steel coils, sheets & plates as per ASTM A240 (Gr. TP 202/304/304L/309/310/316/316L/321/347/410/420/430), Alloy Steel plates per ASTM A387, and Boiler Quality Carbon Steel plates as per IS 2062/ASTM A516 Gr. 60-70, with IBR Test Certificate available.",
     blog: {
       title: "Stainless Steel Sheets, Plates & Coils: A Complete Reference",
@@ -126,7 +126,7 @@ export const products = [
     category: "Ferrous",
     form: "Fasteners",
     material: "Stainless Steel",
-    image: "/images/products/fasteners.jpg",
+    image: "/images/products/ss-stud-bolts-washers.jpg",
     description: "Bolts, nuts, washers, anchors, fasteners, stud bolts, eye bolts, threaded rods and cotter pins in Stainless Steel (AISI 302/304/316/321/347), Alloy Steel (4.6 to 12.9 grades) and Carbon Steel (galvanized, phosphated, cadmium plated finishes).",
     blog: {
       title: "Industrial Fasteners & Nut Bolts: Grades, Types & Applications",
@@ -166,7 +166,7 @@ export const products = [
     category: "Ferrous",
     form: "Bars",
     material: "Stainless Steel",
-    image: "/images/products/bars.jpg",
+    image: "/images/products/ss-round-bars.jpg",
     description: "Round, square and hexagonal bars as per ASTM A276/A479 (Grade 202/304/304L/316/316L/321/347/410/420/904L), Nickel Alloys and Duplex Steel. Size range 3mm to 75mm dia, ready stock with Mill Test Certificate, cold drawn & annealed, tolerance H9/H11.",
     blog: {
       title: "Stainless Steel Bars: Round, Square & Hex — Properties & Uses",
@@ -366,7 +366,7 @@ export const products = [
     category: "Ferrous",
     form: "Fittings",
     material: "Stainless Steel",
-    image: "/images/products/electro-polish.jpg",
+    image: "/images/products/electro-polish.webp",
     description: "Electropolished stainless steel fittings with mirror-bright surface finish (Ra ≤ 0.5μm) for pharmaceutical, biotech, and semiconductor applications. Available in SS 316L with full compliance to ASME BPE, FDA 21 CFR, and cGMP requirements.",
     blog: {
       title: "Electropolished Fittings: Surface Finishing for Critical Applications",
@@ -406,7 +406,7 @@ export const products = [
     category: "Ferrous",
     form: "Bars",
     material: "Stainless Steel",
-    image: "/images/products/ss-flats.jpg",
+    image: "/images/products/ss-flats.webp",
     description: "Stainless Steel flat bars in SS 304/304L, 316/316L, 321, 410, 430 and Duplex grades. Width 10mm to 200mm, thickness 3mm to 50mm, in hot rolled, cold drawn and polished conditions per ASTM A276/A479 and EN 10058 standards.",
     blog: {
       title: "Stainless Steel Flat Bars: Grades, Sizes & Engineering Applications",
@@ -436,6 +436,26 @@ export const products = [
         { heading: "Inconel Alloys (600/625/718)", content: "Inconel 600 — oxidation resistance to 1175°C for furnace components. Inconel 625 — aerospace and offshore fatigue resistance. Inconel 718 — most used superalloy in jet engines and gas turbines." },
         { heading: "Hastelloy Alloys", content: "C276 — resists wet chlorine, ferric chloride, oxidizing/reducing acids. C22 — superior oxidizing environment resistance. B2 — specifically for hydrochloric acid at all concentrations and temperatures." },
         { heading: "Applications", content: "Offshore oil & gas, chemical processing reactors, aerospace turbine blades, nuclear reactor internals, pharmaceutical high-purity equipment, marine seawater systems." },
+      ]
+    }
+  },
+  {
+    id: 23,
+    name: "Channels & Angles",
+    category: "Ferrous",
+    form: "Sections",
+    material: "Stainless Steel",
+    image: "/images/products/ss-channels-angles.jpg",
+    description: "Stainless steel structural sections \u2014 equal and unequal angles, C-channels and U-channels in ASTM A276/A479 grades 304, 304L, 316, 316L, 321 and Duplex 2205. Supplied press-formed, laser-fused or hot rolled. Angles 20\u00d720\u00d73 mm to 200\u00d7200\u00d720 mm, channels 50\u00d725 mm to 400\u00d7100 mm, standard 6 m lengths or cut to size.",
+    blog: {
+      title: "Stainless Steel Channels & Angles: Forming Methods, Sizes & Selection",
+      intro: "Stainless structural sections are specified where a carbon steel section would corrode \u2014 process platforms, marine walkways, food and pharmaceutical plant frames, and architectural work. How the section is made matters more in stainless than in carbon steel, because hot rolling is far less widely available.",
+      sections: [
+        { heading: "Three Ways a Stainless Section Is Made", content: "Press-formed (brake-formed) sections are bent from plate on a press brake. They offer the widest size range, custom dimensions and short lead times, with a generous inner bend radius. Laser-fused sections are laser welded from plate components, giving sharp corners, tight tolerances and a narrow heat-affected zone. Hot rolled sections are rolled from bloom like carbon steel, but the stainless size range is limited and lead times are long. Most stainless channels and angles supplied in India are press-formed or laser-fused." },
+        { heading: "Angles: Equal and Unequal", content: "Equal angles run 20\u00d720\u00d73 mm through 200\u00d7200\u00d720 mm; unequal angles from 30\u00d720\u00d73 mm to 200\u00d7150\u00d715 mm. Dimensional standards are EN 10056-1 for European practice and IS 808 for Indian. Angles are used for framing, edge protection, bracing and supports where a bolted or welded connection carries the load." },
+        { heading: "Channels: C and U Profiles", content: "Channels run 50\u00d725 mm to 400\u00d7100 mm. A press-formed channel has parallel flanges of uniform thickness, which makes its weight per metre straightforward to calculate; a hot rolled ISMC channel has tapered flanges and a thicker web, so its weight differs from a formed section of the same nominal size. Confirm which you are buying when comparing weights or prices." },
+        { heading: "Grade Selection", content: "304/304L covers general atmospheric and indoor structural work. 316/316L is specified for coastal, marine and chloride-bearing environments, and for food and pharmaceutical plant where cleaning chemicals are aggressive. Duplex 2205 offers roughly double the yield strength of 304, which allows a lighter section for the same load, plus superior chloride stress corrosion cracking resistance." },
+        { heading: "Finish and Fabrication", content: "Sections are supplied No.1 (hot rolled, annealed and pickled) as standard, with 2B, No.4 brushed and mirror polish available for visible architectural work. Cutting, drilling, notching and welding are available in-house. Where a section is welded, pickling and passivation of the weld restores corrosion resistance \u2014 specify it at enquiry stage if the environment is aggressive." },
       ]
     }
   },

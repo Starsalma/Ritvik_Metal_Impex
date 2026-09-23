@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { products } from '../data/products';
@@ -5,11 +6,40 @@ import { articles } from '../data/articles';
 import { site } from '../data/siteConfig';
 
 const PRIMARY_LINKS = [
+=======
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { articles } from '../data/articles';
+import { site } from '../data/site';
+import { scrollToContact } from '../utils/navigation';
+
+const contactChannels = [
+  {
+    label: 'Chat on WhatsApp',
+    href: `https://wa.me/${site.contact.whatsapp}`,
+    external: true,
+    icon: 'M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884',
+  },
+  {
+    label: `Call ${site.contact.phoneDisplay}`,
+    href: `tel:${site.contact.phone}`,
+    icon: 'M6.62 10.79a15.15 15.15 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-11.05 0-20-8.95-20-20 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.24.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z',
+  },
+  {
+    label: `Email ${site.contact.emails[0]}`,
+    href: `mailto:${site.contact.emails[0]}`,
+    icon: 'M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z',
+  },
+];
+
+/* Crawlable internal links — replaces the previous dead "#home" style anchors. */
+const footerLinks = [
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
   { label: 'HOME', to: '/' },
   { label: 'ABOUT US', to: '/about' },
   { label: 'PRODUCTS', to: '/products' },
   { label: 'KNOWLEDGE HUB', to: '/blog' },
 ];
+<<<<<<< HEAD
 
 // A curated set of high-intent product pages surfaced site-wide, so every page
 // links into the catalogue rather than leaving those URLs orphaned.
@@ -25,6 +55,8 @@ const FOOTER_PRODUCT_SLUGS = [
   'super-enameled-copper-winding-wire',
   'high-performance-nickel-alloys',
 ];
+=======
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
 
 const footerStyles = `
   @media (min-width: 1024px) {
@@ -37,6 +69,9 @@ const footerStyles = `
 const MAP_SRC = "https://maps.google.com/maps?q=18.9544,72.8253&t=&z=17&ie=UTF8&iwloc=&output=embed";
 
 export default function Footer() {
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+
   return (
     <footer className="w-full bg-[#030914] text-white font-sans overflow-hidden">
       <style>{footerStyles}</style>
@@ -66,15 +101,29 @@ export default function Footer() {
               <span className="text-gray-200 font-bold text-[14px] tracking-wide">+91 7073895597</span>
             </div>
 
-            {/* Email */}
-            <div className="flex items-center gap-4">
-              <svg className="w-5 h-5 text-[#E5A93C] shrink-0" fill="currentColor" viewBox="0 0 24 24">
+            {/* Email — one link per address, no duplicates */}
+            <div className="flex items-start gap-4">
+              <svg className="w-5 h-5 text-[#E5A93C] shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
               </svg>
+<<<<<<< HEAD
               <a href="mailto:suresh.prajapat@ritvikmetalimpex.com" className="text-gray-200 font-bold text-[14px] tracking-wide hover:text-[#E5A93C] transition-colors break-all">
                 suresh.prajapat@ritvikmetalimpex.com
               </a>
               <a href="mailto:salesritvikmetal@gmail.com" className="text-gray-200 font-bold text-[14px] tracking-wide hover:text-[#E5A93C] transition-colors break-all">salesritvikmetal@gmail.com</a>
+=======
+              <div className="flex flex-col gap-1.5 min-w-0">
+                {site.contact.emails.map((email) => (
+                  <a
+                    key={email}
+                    href={`mailto:${email}`}
+                    className="text-gray-200 font-bold text-[14px] tracking-wide hover:text-[#E5A93C] transition-colors break-all"
+                  >
+                    {email}
+                  </a>
+                ))}
+              </div>
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
             </div>
 
             {/* Website */}
@@ -273,6 +322,7 @@ export default function Footer() {
             </div>
           </div>
 
+<<<<<<< HEAD
           {/* Navigation Hyperlinks — real routes, so crawlers can follow them */}
           <nav aria-label="Footer" className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-[11px] sm:text-[12px] font-bold tracking-widest text-gray-300">
             {PRIMARY_LINKS.map(({ label, to }) => (
@@ -280,10 +330,20 @@ export default function Footer() {
                 key={label}
                 to={to}
                 className="hover:text-[#E5A93C] transition-colors duration-150"
+=======
+          {/* Navigation Hyperlinks */}
+          <nav aria-label="Footer" className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-[11px] sm:text-[12px] font-bold tracking-widest text-gray-300">
+            {footerLinks.map(({ label, to }) => (
+              <Link
+                key={label}
+                to={to}
+                className="hover:text-[#E5A93C] transition-colors duration-150 cursor-pointer"
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
               >
                 {label}
               </Link>
             ))}
+<<<<<<< HEAD
             <a href="#contact-us" className="hover:text-[#E5A93C] transition-colors duration-150">
               CONTACT US
             </a>
@@ -300,14 +360,63 @@ export default function Footer() {
                 key={soc.label}
                 aria-label={soc.label}
                 className="w-8 h-8 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 bg-black/20"
+=======
+            <button
+              type="button"
+              onClick={() => scrollToContact(navigate, pathname)}
+              className="hover:text-[#E5A93C] transition-colors duration-150 cursor-pointer tracking-widest font-bold"
+            >
+              CONTACT US
+            </button>
+          </nav>
+
+          {/*
+            Working contact channels. These were previously three social icons
+            pointing at href="#", which jumped to the top of the page and gave
+            crawlers dead links. Real profile URLs can be added to
+            site.sameAs and rendered here once they exist.
+          */}
+          <div className="flex items-center gap-2.5">
+            {contactChannels.map(({ href, label, icon, external }) => (
+              <a
+                key={label}
+                href={href}
+                aria-label={label}
+                title={label}
+                {...(external ? { target: '_blank', rel: 'noreferrer' } : {})}
+                className="w-8 h-8 rounded-full border border-gray-700 hover:border-[#E5A93C] flex items-center justify-center text-gray-400 hover:text-[#E5A93C] bg-black/20 hover:bg-[#E5A93C]/5 transition-all duration-200"
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
               >
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                  <path d={soc.icon} />
+                <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d={icon} />
                 </svg>
               </span>
             ))}
           </div>
 
+        </div>
+      </div>
+
+      {/* ========================================================================
+          TIER 2B: TECHNICAL GUIDES — internal links for crawl depth
+         ========================================================================
+      */}
+      <div className="w-full bg-[#030E1E] px-4 sm:px-8 lg:px-16 py-6 border-b border-gray-800/60">
+        <div className="max-w-[1240px] mx-auto flex flex-col sm:flex-row sm:items-center gap-x-6 gap-y-3">
+          <span className="text-[10px] font-black tracking-[0.25em] text-[#E5A93C] uppercase shrink-0">
+            Technical Guides
+          </span>
+          <div className="flex flex-wrap gap-x-5 gap-y-2">
+            {articles.map((article) => (
+              <Link
+                key={article.slug}
+                to={`/blog/${article.slug}`}
+                className="text-[11px] font-semibold text-gray-400 hover:text-[#E5A93C] transition-colors"
+              >
+                {article.title}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
 

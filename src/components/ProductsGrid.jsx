@@ -1,7 +1,13 @@
+<<<<<<< HEAD
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+=======
+import { useEffect, useRef } from 'react';
+>>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
 
-function useReveal(options = {}) {
+// Destructured to primitives: an `options` object literal would be a new
+// reference each render and re-run the effect on every render if added to deps.
+function useReveal({ threshold = 0.15, rootMargin = '0px' } = {}) {
   const ref = useRef(null);
   useEffect(() => {
     const el = ref.current;
@@ -13,11 +19,11 @@ function useReveal(options = {}) {
           observer.disconnect();
         }
       },
-      { threshold: 0.15, ...options }
+      { threshold, rootMargin }
     );
     observer.observe(el);
     return () => observer.disconnect();
-  }, []);
+  }, [threshold, rootMargin]);
   return ref;
 }
 
