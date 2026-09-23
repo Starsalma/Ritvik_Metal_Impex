@@ -30,6 +30,7 @@ const BlogPage = lazy(() => import('./pages/BlogPage'));
 const ArticlePage = lazy(() => import('./pages/ArticlePage'));
 const GradesIndexPage = lazy(() => import('./pages/GradesIndexPage'));
 const GradePage = lazy(() => import('./pages/GradePage'));
+const GradeFormPage = lazy(() => import('./pages/GradeFormPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 /** Minimal, layout-stable fallback — avoids a CLS penalty while a chunk loads. */
@@ -127,7 +128,6 @@ function HomePage() {
       <Seo
         title={site.defaultTitle}
         description={site.defaultDescription}
-        keywords={site.defaultKeywords}
         path="/"
         image="/images/hero.jpeg"
         schema={[
@@ -173,6 +173,7 @@ export default function App() {
           <Route path="/blog/:slug" element={<ArticlePage />} />
           <Route path="/grades" element={<GradesIndexPage />} />
           <Route path="/grades/:slug" element={<GradePage />} />
+          <Route path="/grades/:slug/:form" element={<GradeFormPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         </Suspense>

@@ -48,7 +48,6 @@ export default function BlogPage() {
       <Seo
         title="Metal Knowledge Hub — Technical Guides & Articles"
         description="In-depth technical guides from Ritvik Metal Impex: SS 304 vs 316, duplex vs super duplex, buttweld vs socketweld fittings, copper tube standards, and how to read EN 10204 mill test certificates and IBR documentation."
-        keywords="stainless steel guide, 304 vs 316, duplex vs super duplex, buttweld vs socketweld, copper tube grades, EN 10204 mill test certificate, IBR certification, metal technical articles India"
         path="/blog"
         image="/images/products/pipes-tubes.jpg"
         schema={[blogSchema, crumbs]}

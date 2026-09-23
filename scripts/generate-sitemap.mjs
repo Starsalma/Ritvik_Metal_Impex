@@ -11,6 +11,7 @@ import { fileURLToPath } from 'node:url';
 import { products } from '../src/data/products.js';
 import { articles } from '../src/data/articles.js';
 import { grades } from '../src/data/grades.js';
+import { gradeForms } from '../src/data/gradeForms.js';
 import { SITE_URL, CATALOGUE_MODIFIED, site } from '../src/data/site.js';
 import { MOQ } from '../src/data/specifications.js';
 
@@ -45,6 +46,18 @@ const urls = [
   { path: '/grades', changefreq: 'monthly', priority: '0.9', lastmod: CATALOGUE_MODIFIED },
   ...grades.map((g) => ({
     path: `/grades/${g.slug}`,
+    changefreq: 'monthly',
+    priority: '0.9',
+    lastmod: CATALOGUE_MODIFIED,
+  })),
+
+  /*
+   * Grade x form pages. These target the most specific commercial queries on
+   * the site ("duplex 2205 pipe supplier"), so they sit at the same priority
+   * as the grade pages themselves.
+   */
+  ...gradeForms.map((c) => ({
+    path: c.path,
     changefreq: 'monthly',
     priority: '0.9',
     lastmod: CATALOGUE_MODIFIED,

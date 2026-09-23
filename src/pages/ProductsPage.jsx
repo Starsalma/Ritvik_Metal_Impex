@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { productImageAlt } from '../utils/imageAlt';
 import { Link, useSearchParams } from "react-router-dom";
 import { products } from "../data/products";
 import { getPriceRange, formatPriceRange } from '../data/pricing';
@@ -100,7 +101,6 @@ export default function ProductsPage() {
       <Seo
         title={facetTitle}
         description={facetDescription}
-        keywords="stainless steel products supplier, pipe fittings flanges supplier Mumbai, stainless steel sheet plate coil supplier, copper tube brass rod supplier India, duplex nickel alloy stockist, industrial metal catalogue India"
         path={facetPath}
         noindex={multiFacet}
         image="/images/products/pipes-tubes.jpg"
@@ -160,7 +160,7 @@ export default function ProductsPage() {
                 to={`/products/${product.id}`}
                 className="group block bg-white rounded-tl-[50px] rounded-br-[50px] overflow-hidden shadow-md hover:shadow-2xl border border-gray-100 transition-shadow duration-500 h-full">
                 <div className="h-[260px] overflow-hidden bg-gray-100">
-                  <img src={product.image} alt={`${product.material} ${product.name} supplier and stockist in Mumbai, India`}
+                  <img src={product.image} alt={productImageAlt(product)}
                     loading={index < 4 ? "eager" : "lazy"}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     onError={(e) => { e.target.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center"><span class="text-gray-300 uppercase tracking-widest text-sm">Product Image</span></div>'; }} />

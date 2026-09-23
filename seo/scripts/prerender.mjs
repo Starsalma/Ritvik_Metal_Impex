@@ -126,6 +126,24 @@ for (const r of report) {
   const dir = r.route === '/' ? DIST : join(DIST, r.route);
   mkdirSync(dir, { recursive: true });
   writeFileSync(join(dir, 'index.html'), r.html, 'utf8');
+
+  /*
+   * Also write the flat form, so /products/23 is served directly instead of
+   * being 301'd to /products/23/.
+   *
+   * GitHub Pages serves a directory's index.html only at the trailing-slash
+   * URL and redirects the bare path to it. Our canonicals and sitemap both use
+   * the bare path, so every canonical pointed at a URL that redirected — which
+   * Google resolves, but reports as "Page with redirect" and costs a hop on
+   * every crawl.
+   *
+   * Both files carry the same canonical, naming the bare path, so the two URLs
+   * consolidate to one. That is precisely what a canonical is for, and it beats
+   * a redirect chain on all 42 pages.
+   */
+  if (r.route !== '/') {
+    writeFileSync(join(DIST, `${r.route}.html`), r.html, 'utf8');
+  }
   delete r.html;
 }
 

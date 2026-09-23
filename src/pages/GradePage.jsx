@@ -5,6 +5,7 @@ import CTABand from '../components/CTABand';
 import NotFoundPage from './NotFoundPage';
 import { scrollToContact, setEnquiryContext } from '../utils/navigation';
 import { gradeBySlug, GRADE_DATA_NOTE } from '../data/grades';
+import { formsForGrade } from '../data/gradeForms';
 import { products } from '../data/products';
 import { MOQ } from '../data/specifications';
 import {
@@ -65,6 +66,7 @@ export default function GradePage() {
 
   const path = `/grades/${grade.slug}`;
   const available = products.filter((p) => grade.productIds.includes(p.id));
+  const formPages = formsForGrade(grade.slug);
 
   const seoTitle = clamp(`${grade.shortName} Supplier in Mumbai`, TITLE_MAX);
   const seoDescription = clamp(
@@ -103,7 +105,6 @@ export default function GradePage() {
       <Seo
         title={seoTitle}
         description={seoDescription}
-        keywords={`${grade.shortName}, ${grade.name}, ${grade.shortName} supplier, ${grade.shortName} stockist Mumbai, ${grade.shortName} exporter India, UNS ${grade.uns}, ${grade.shortName} properties, ${grade.shortName} composition`}
         path={path}
         type="article"
         schema={[articleSchema, crumbs, faqSchema(grade.faqs)]}
@@ -122,7 +123,6 @@ export default function GradePage() {
           </span>
           <h1 className="mt-3 text-4xl font-black uppercase leading-tight text-[#0A1828] lg:text-5xl">
             {grade.name}
-            <span className="sr-only"> supplier, stockist and exporter in Mumbai, India</span>
           </h1>
           <p className="mt-3 text-[15px] font-semibold text-gray-500">
             UNS {grade.uns} · {grade.tagline}
@@ -247,6 +247,26 @@ export default function GradePage() {
               and we will confirm availability and lead time.
             </p>
           </section>
+
+          {formPages.length > 0 && (
+            <section className="mt-16">
+              <h2 className="text-2xl font-black uppercase text-[#0A1828]">
+                {grade.shortName} by product form
+              </h2>
+              <p className="mt-3 text-[15px] text-gray-600">
+                Governing standards, dimensions and stock availability for each form.
+              </p>
+              <ul className="mt-6 flex flex-wrap gap-3">
+                {formPages.map((c) => (
+                  <li key={c.path}>
+                    <Link to={c.path} className="inline-block rounded-full border border-gray-200 px-5 py-2.5 text-[13px] font-semibold text-gray-600 transition-colors hover:border-[#E5A93C] hover:text-[#0A1828]">
+                      {c.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
 
           <section className="mt-16">
             <h2 className="text-2xl font-black uppercase text-[#0A1828]">

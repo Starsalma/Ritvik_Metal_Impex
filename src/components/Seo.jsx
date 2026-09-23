@@ -8,7 +8,6 @@ import { imageSize } from '../data/imageSizes';
  * <Seo
  *   title="Flanges Supplier in Mumbai"
  *   description="..."
- *   keywords="..."
  *   path="/products/4"
  *   image="/images/products/flanges.jpg"
  *   type="product"
@@ -18,7 +17,6 @@ import { imageSize } from '../data/imageSizes';
 export default function Seo({
   title,
   description = site.defaultDescription,
-  keywords = site.defaultKeywords,
   path = '/',
   image = site.defaultImage,
   type = 'website',
@@ -67,7 +65,6 @@ export default function Seo({
       <html lang={site.language} />
       <title>{fullTitle}</title>
       <meta name="description" content={metaDescription} />
-      <meta name="keywords" content={keywords} />
       <link rel="canonical" href={canonical} />
       <meta
         name="robots"

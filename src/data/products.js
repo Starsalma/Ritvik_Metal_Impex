@@ -6,7 +6,7 @@ export const products = [
     form: "Pipes",
     material: "Stainless Steel",
     image: "/images/products/pipes-tubes.jpg",
-    description: "Seamless and welded pipes & tubes in Stainless Steel (ASTM A312 TP 304/304L/316/316L/321/310/347), Carbon Steel (ASTM A53/A106 Gr. B), Alloy Steel (ASTM A335), Nickel Alloys (Monel, Inconel, Hastelloy, Titanium) and Duplex/Super Duplex Steel (UNS S31803/S32750). Sizes 1/2\" to 24\" NB, Schedule 5S to XXS.",
+    description: "Seamless and welded pipes & tubes in Stainless Steel (ASTM A312 TP 304/304L/316/316L/321/310/347), Carbon Steel (ASTM A53/A106 Gr. B), Alloy Steel (ASTM A335), Nickel Alloys (Monel, Inconel, Hastelloy, Titanium Grade 2), 904L (UNS N08904) and Duplex/Super Duplex Steel (UNS S31803/S32750). Sizes 1/2\" to 24\" NB, Schedule 5S to XXS.",
     blog: {
       title: "Complete Guide to Stainless Steel Pipes & Tubes",
       intro: "Stainless steel pipes and tubes are the backbone of modern industrial infrastructure. From chemical plants to power generation, these components ensure safe and efficient fluid transport across demanding environments.",
@@ -25,6 +25,7 @@ export const products = [
     form: "Fittings",
     material: "Stainless Steel",
     image: "/images/products/ss-buttweld-elbows.jpg",
+    imageAlt: "Stacked stainless steel long-radius buttweld elbows in the warehouse",
     description: "Elbows, tees, reducers, return bends, stub-ends, caps, collars and crosses in Stainless Steel (ASTM A403 WP304/316/321/347), Carbon Steel (ASTM A234 WPB) and Alloy Steel (ASTM A234 WP1/WP5/WP9/WP11). Sizes 1/4\" to 32\" NB, Schedule 5S to XXS, seamless & welded.",
     blog: {
       title: "Buttweld Pipe Fittings: Types, Standards & Applications",
@@ -101,7 +102,8 @@ export const products = [
     form: "Sheets",
     material: "Stainless Steel",
     image: "/images/products/ss-circles-316l.jpg",
-    description: "Stainless Steel coils, sheets & plates as per ASTM A240 (Gr. TP 202/304/304L/309/310/316/316L/321/347/410/420/430), Alloy Steel plates per ASTM A387, and Boiler Quality Carbon Steel plates as per IS 2062/ASTM A516 Gr. 60-70, with IBR Test Certificate available.",
+    imageAlt: "Stacks of 316L stainless steel circles cut from plate, with size and heat markings",
+    description: "Stainless Steel coils, sheets & plates as per ASTM A240 (Gr. TP 202/304/304L/309/310/316/316L/321/347/410/420/430) and 904L (UNS N08904), Alloy Steel plates per ASTM A387, and Boiler Quality Carbon Steel plates as per IS 2062/ASTM A516 Gr. 60-70, with IBR Test Certificate available.",
     blog: {
       title: "Stainless Steel Sheets, Plates & Coils: A Complete Reference",
       intro: "Stainless steel flat products — sheets, plates, and coils — form the foundation of fabricated equipment across chemical, pharmaceutical, food processing, and architectural applications. Their versatility, corrosion resistance, and aesthetic appeal make them indispensable.",
@@ -120,7 +122,8 @@ export const products = [
     form: "Fasteners",
     material: "Stainless Steel",
     image: "/images/products/ss-stud-bolts-washers.jpg",
-    description: "Bolts, nuts, washers, anchors, fasteners, stud bolts, eye bolts, threaded rods and cotter pins in Stainless Steel (AISI 302/304/316/321/347), Alloy Steel (4.6 to 12.9 grades) and Carbon Steel (galvanized, phosphated, cadmium plated finishes).",
+    imageAlt: "Stainless steel stud bolts with heavy hex nuts and washers",
+    description: "Bolts, nuts, washers, anchors, fasteners, stud bolts, eye bolts, threaded rods and cotter pins in Stainless Steel (AISI 302/304/316/321/347), Titanium Grade 2 (UNS R50400, ASTM F467/F468), Alloy Steel (4.6 to 12.9 grades) and Carbon Steel (galvanized, phosphated, cadmium plated finishes).",
     blog: {
       title: "Industrial Fasteners & Nut Bolts: Grades, Types & Applications",
       intro: "Industrial fasteners are the unsung heroes of engineering assemblies. From flanged pipe joints to pressure vessel covers, the correct fastener selection ensures joint integrity, safety, and long service life.",
@@ -158,6 +161,7 @@ export const products = [
     form: "Bars",
     material: "Stainless Steel",
     image: "/images/products/ss-round-bars.jpg",
+    imageAlt: "Bundle of stainless steel round bars with colour-coded grade markings on the ends",
     description: "Round, square and hexagonal bars as per ASTM A276/A479 (Grade 202/304/304L/316/316L/321/347/410/420/904L), Nickel Alloys and Duplex Steel. Size range 3mm to 75mm dia, ready stock with Mill Test Certificate, cold drawn & annealed, tolerance H9/H11.",
     blog: {
       title: "Stainless Steel Bars: Round, Square & Hex — Properties & Uses",
@@ -424,6 +428,7 @@ export const products = [
     form: "Sections",
     material: "Stainless Steel",
     image: "/images/products/ss-channels-angles.jpg",
+    imageAlt: "Press-formed stainless steel channels and angles laid out for despatch",
     description: "Stainless steel structural sections \u2014 equal and unequal angles, C-channels and U-channels in ASTM A276/A479 grades 304, 304L, 316, 316L, 321 and Duplex 2205. Supplied press-formed, laser-fused or hot rolled. Angles 20\u00d720\u00d73 mm to 200\u00d7200\u00d720 mm, channels 50\u00d725 mm to 400\u00d7100 mm, standard 6 m lengths or cut to size.",
     blog: {
       title: "Stainless Steel Channels & Angles: Forming Methods, Sizes & Selection",

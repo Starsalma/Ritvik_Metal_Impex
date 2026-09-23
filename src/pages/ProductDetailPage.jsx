@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { productImageAlt } from '../utils/imageAlt';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import { scrollToContact, setEnquiryContext } from '../utils/navigation';
@@ -87,7 +88,6 @@ export default function ProductDetailPage() {
     `${product.material} ${product.name.toLowerCase()} from Ritvik Metal Impex, Mumbai. ${product.description}`,
     DESCRIPTION_MAX,
   );
-  const seoKeywords = `${product.name}, ${product.material} ${product.name}, ${product.name} supplier Mumbai, ${product.name} stockist India, ${product.name} price India, ${product.material} supplier, ${product.form} supplier India, Ritvik Metal Impex`;
 
   const offers = priceOfferSchema(product, absoluteUrl(path));
 
@@ -172,10 +172,9 @@ export default function ProductDetailPage() {
       <Seo
         title={seoTitle}
         description={seoDescription}
-        keywords={seoKeywords}
         path={path}
         image={product.image}
-        imageAltText={`${product.material} ${product.name} — supplier and stockist in Mumbai, India`}
+        imageAltText={productImageAlt(product)}
         type="product"
         schema={[productSchema, crumbs, guideSchema]}
       />
@@ -195,7 +194,7 @@ export default function ProductDetailPage() {
           {/* Product Header */}
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div className="rounded-tl-[60px] rounded-br-[60px] overflow-hidden shadow-xl bg-gray-100 h-[420px] lg:h-[520px]">
-              <img src={product.image} alt={`${product.material} ${product.name} supplied by Ritvik Metal Impex, Mumbai`}
+              <img src={product.image} alt={productImageAlt(product)}
                 loading="eager"
                 className="w-full h-full object-cover"
                 onError={(e) => { e.target.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center"><span class="text-gray-300 uppercase tracking-widest">Product Image</span></div>'; }} />
@@ -206,7 +205,6 @@ export default function ProductDetailPage() {
 
               <h1 className="text-4xl lg:text-5xl font-black text-[#0A1828] uppercase mt-3 leading-tight">
                 {product.name}
-                <span className="sr-only"> — {product.material} supplier and stockist in Mumbai, India</span>
               </h1>
 
               <div className="w-16 h-[2px] bg-[#E5A93C] mt-6 mb-6" />
@@ -380,7 +378,7 @@ export default function ProductDetailPage() {
                   <Link key={r.id} to={`/products/${r.id}`}
                     className="block bg-white rounded-tl-[30px] rounded-br-[30px] overflow-hidden shadow-md hover:shadow-xl border border-gray-100 transition-all">
                     <div className="h-[180px] bg-gray-100 overflow-hidden">
-                      <img src={r.image} alt={`${r.material} ${r.name} supplier in Mumbai, India`} loading="lazy" className="w-full h-full object-cover" onError={(e)=>{e.target.style.display='none';}} />
+                      <img src={r.image} alt={productImageAlt(r)} loading="lazy" className="w-full h-full object-cover" onError={(e)=>{e.target.style.display='none';}} />
                     </div>
                     <div className="p-4">
                       <span className="text-[#E5A93C] text-[10px] font-black tracking-widest uppercase">{r.material}</span>

@@ -8,8 +8,9 @@
  *
  * ONLY grades the business has confirmed it stocks belong here. Publishing a
  * page for a grade we cannot supply produces enquiries we have to turn down,
- * which costs more than the traffic is worth. Confirmed on 20 Sep 2026:
- * 304, 316, Duplex 2205, Inconel, Monel.
+ * which costs more than the traffic is worth. Confirmed by the business:
+ * 304, 316, Duplex 2205, Inconel and Monel (20 Sep 2026); Titanium Grade 2 and
+ * 904L (21 Sep); titanium fasteners and 904L pipe and plate (23 Sep).
  *
  * Composition and mechanical values are the nominal limits from the governing
  * ASTM specification, quoted so a buyer can sanity-check a requirement. They
@@ -455,7 +456,7 @@ export const grades = [
       'Marine hardware and fasteners where weight matters',
     ],
     industries: ['Marine', 'Chemical', 'Power', 'Water Treatment', 'Aerospace'],
-    productIds: [1, 20, 22],
+    productIds: [1, 7, 20, 22],
     faqs: [
       {
         question: 'What is the difference between Titanium Grade 2 and Grade 5?',
@@ -531,7 +532,7 @@ export const grades = [
       'Pickling lines and acid storage',
     ],
     industries: ['Chemical', 'Petrochemical', 'Power', 'Marine', 'Pharmaceutical'],
-    productIds: [9],
+    productIds: [1, 6, 9],
     faqs: [
       {
         question: 'Why does 904L contain copper?',

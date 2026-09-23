@@ -1,4 +1,5 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
+import { productImageAlt } from '../utils/imageAlt';
 import Seo from '../components/Seo';
 import { scrollToContact } from '../utils/navigation';
 import RelatedLinks from '../components/RelatedLinks';
@@ -183,7 +184,6 @@ export default function ArticlePage() {
       <Seo
         title={article.seoTitle}
         description={article.description}
-        keywords={article.keywords}
         path={path}
         image={article.image}
         type="article"
@@ -363,7 +363,7 @@ export default function ArticlePage() {
                     <div className="h-[130px] bg-gray-100 overflow-hidden">
                       <img
                         src={product.image}
-                        alt={`${product.material} ${product.name} supplier in Mumbai, India`}
+                        alt={productImageAlt(product)}
                         loading="lazy"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         onError={(e) => {

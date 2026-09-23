@@ -120,7 +120,6 @@ export default function AboutPage() {
       <Seo
         title="About Ritvik Metal Impex — Metal Supplier, Mumbai"
         description="Ritvik Metal Impex is a Mumbai-based supplier, stockist and exporter of stainless steel, carbon steel, alloy steel, duplex, nickel alloy, copper and brass products. Learn about our quality systems, third-party inspection support and the industries we serve."
-        keywords="about Ritvik Metal Impex, stainless steel supplier Mumbai, metal stockist India, industrial metal exporter India, steel supplier company Maharashtra"
         path="/about"
         image="/images/about.jpg"
         schema={[aboutSchema, breadcrumbSchema([
@@ -165,7 +164,6 @@ export default function AboutPage() {
             <div ref={whoHR} className="ab-h mt-3">
               <h1 className="text-[30px] sm:text-[40px] lg:text-[50px] font-black text-[#0A1828] uppercase tracking-tight leading-[1.08]">
                 ABOUT<br />RITVIK METAL IMPEX
-                <span className="sr-only"> — industrial metal supplier and stockist in Mumbai, India</span>
               </h1>
             </div>
             <div ref={whoTxtR} className="ab-up mt-1">

@@ -30,7 +30,6 @@ export default function GradesIndexPage() {
       <Seo
         title="Material Grades We Stock"
         description="Stainless steel 304 and 316, Duplex 2205, Inconel and Monel supplied from Mumbai as pipe, fittings, flanges, bars and fasteners. Composition, properties and standards for each grade."
-        keywords="stainless steel grades supplier, ss 304 supplier, ss 316 supplier, duplex 2205 stockist, inconel supplier India, monel supplier Mumbai, alloy grades stockist"
         path="/grades"
         schema={[itemList, breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Grades', path: '/grades' }])]}
       />
