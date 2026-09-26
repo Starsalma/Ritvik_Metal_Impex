@@ -371,7 +371,19 @@ const dimensional = {
       ['Buttweld size range', '1/4" NB to 32" NB seamless, up to 48" NB welded'],
       ['Forged fitting size range', '1/4" NB to 4" NB'],
       ['Wall thickness', 'Schedule 5S to XXS'],
-      ['Pressure class (forged)', 'Class 2000#, 3000#, 6000#, 9000#'],
+      /*
+       * No "Pressure class (forged)" row here on purpose. This table renders
+       * for every product on form "Fittings" — buttweld, ferrule, dairy,
+       * electropolish and bends included — but Class 2000/3000/6000/9000 is an
+       * ASME B16.11 forged socket-weld/threaded designation and applies to
+       * NONE of those. It was showing on five products it has nothing to do
+       * with, labelled "Pressure class" when the whole point of the correction
+       * elsewhere in this file is that the class is not a pressure. The
+       * correct, fully-explained, properly-labelled table (forgedClasses)
+       * already exists below and is gated to the one product it actually
+       * describes via isForgedFitting() — nothing is lost by removing the
+       * duplicate here, only the wrong version of it.
+       */
       ['End connection', 'Buttweld, socketweld, screwed (NPT / BSP / BSPT)'],
       ['Dimensional standards', 'ASME B16.9 (buttweld), B16.11 (forged), B16.28 (short radius), MSS SP-43 / SP-75 / SP-79 / SP-83 / SP-95'],
       ['Material standards', 'ASTM A403 / A234 / A182 / A815 / B366'],
