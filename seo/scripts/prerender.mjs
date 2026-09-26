@@ -90,8 +90,16 @@ for (const route of routes) {
    */
   await page.evaluate(() => {
     document.querySelectorAll('[data-seo-fallback]').forEach((el) => el.remove());
+    /*
+     * script[type="application/ld+json"] is included here for the same reason
+     * as the others: without it, the schema Helmet renders during this capture
+     * gets baked into the saved file unmarked, and a fresh JS boot on that file
+     * mounts Helmet's OWN copy alongside it rather than replacing it — the
+     * static index.html schema bug repeated one layer down, on every
+     * prerendered route instead of just the SPA shell.
+     */
     document.head
-      .querySelectorAll('title, link[rel="canonical"], meta[name="description"], meta[name="robots"], meta[name^="twitter:"], meta[property^="og:"], meta[name="keywords"], meta[name="author"]')
+      .querySelectorAll('title, link[rel="canonical"], meta[name="description"], meta[name="robots"], meta[name^="twitter:"], meta[property^="og:"], meta[name="keywords"], meta[name="author"], script[type="application/ld+json"]')
       .forEach((el) => el.setAttribute('data-seo-fallback', ''));
   });
 

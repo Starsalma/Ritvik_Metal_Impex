@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Award, ShieldCheck, Users, Briefcase } from 'lucide-react';
 
 const stats = [
-  { id: 1, value: 10,   suffix: "+", label: "YEARS OF EXPERIENCE", icon: Award },
+  { id: 1, value: 3,    suffix: "+", label: "YEARS OF EXPERIENCE", icon: Award },
   { id: 2, value: 500,  suffix: "+", label: "PRODUCT VARIANTS",    icon: ShieldCheck },
   { id: 3, value: 1000, suffix: "+", label: "HAPPY CLIENTS",       icon: Users },
   { id: 4, value: 25,   suffix: "+", label: "INDUSTRIES SERVED",   icon: Briefcase },

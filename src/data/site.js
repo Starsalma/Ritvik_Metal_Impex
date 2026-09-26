@@ -61,14 +61,12 @@ export const site = {
   packing: 'Wooden crates, plastic caps on pipe ends, seaworthy export packing',
 
   /**
-   * Fill these in with the real values and they will flow into the
-   * LocalBusiness / Organization schema. Left empty deliberately — publishing a
-   * guessed founding date or guessed opening hours as structured data is worse
-   * than publishing none.
-   *   founded: '2015',
+   * founded confirmed by the business: 2023. openingHours remains empty —
+   * still unconfirmed, and a guessed opening-hours claim in structured data is
+   * worse than publishing none.
    *   openingHours: [{ days: ['Monday', …], opens: '09:30', closes: '19:00' }],
    */
-  founded: '',
+  founded: '2023',
   openingHours: [],
 
   contact: {
