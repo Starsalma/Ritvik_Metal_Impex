@@ -1684,6 +1684,113 @@ export const articles = [
       },
     ],
   },
+  {
+    slug: 'enamelled-copper-winding-wire-buying-guide',
+    title: 'Enamelled Copper Winding Wire: A Buying Guide for Motor and Transformer Manufacturers',
+    seoTitle: 'Enamelled Copper Winding Wire Buying Guide',
+    description:
+      'How to specify enamelled copper winding wire: conductor grade, insulation class by temperature, SWG vs AWG, for motor, transformer and coil manufacturers.',
+    keywords:
+      'enamelled copper wire supplier, super enamelled copper wire, magnet wire supplier India, winding wire manufacturer, motor winding wire, transformer winding wire, enamelled wire insulation class, SWG copper wire, IS 13730, NEMA MW 1000, IEC 60317',
+    category: 'Non-Ferrous',
+    readTime: '8 min read',
+    datePublished: '2026-09-27',
+    dateModified: '2026-09-27',
+    image: '/images/products/enameled-wire.jpg',
+    relatedProductIds: [17, 16],
+    relatedGradeSlugs: [],
+    intro:
+      'If you build motors, transformers, chokes or coils, winding wire is not a commodity line item — a wrong enamel class shortens coil life, and an unnecessarily high one adds cost for no benefit. This is written for the buyer specifying it, not the wire itself: what actually changes between conductor grades and insulation classes, and how to match one to your winding rather than default to whichever class your last supplier happened to stock.',
+    takeaways: [
+      'Insulation class is a temperature rating, not a quality ladder — Class 200 is not "better" than Class 130, it is rated for a hotter winding.',
+      'Conductor purity (ETP copper, high IACS conductivity) affects resistive loss and heat in the winding as much as the enamel does.',
+      'SWG, AWG and direct millimetre sizing are three different systems — confirm which one a drawing is using before it goes to production.',
+      'Inverter-duty and servo motors need enamel rated for repetitive voltage spikes from PWM switching, not just thermal class.',
+      'Standards to ask for: IS 13730, IEC 60317, NEMA MW 1000, JIS C 3202.',
+    ],
+    sections: [
+      {
+        id: 'conductor',
+        heading: 'The conductor: why purity is not an afterthought',
+        blocks: [
+          { type: 'p', text: 'The copper itself is Electrolytic Tough Pitch (ETP) grade, drawn to a controlled diameter before enamelling. Conductivity is usually stated as a percentage of the International Annealed Copper Standard (%IACS) — commercial ETP wire runs close to 100% IACS. Lower conductivity means higher resistance for the same cross-section, which means more resistive heating in the winding at the same current. In a motor or transformer, that heat is what ages the enamel and shortens service life, so conductor quality and enamel class are solving the same problem from two directions.' },
+          { type: 'p', text: 'This is worth stating plainly to a supplier at enquiry stage rather than assumed: ask for the conductivity grade, not just "copper wire." A wire that is dimensionally correct but drawn from lower-purity stock will still fit the bobbin and still fail early.' },
+        ],
+      },
+      {
+        id: 'insulation-class',
+        heading: 'Insulation class is a temperature rating, not a quality ladder',
+        blocks: [
+          { type: 'p', text: 'This is the single most common misunderstanding in winding wire procurement. The thermal class — 105, 130, 155, 180, 200 and above — states the maximum continuous operating temperature the enamel is designed to withstand, not a grade of quality. Specifying Class 200 for a winding that only ever reaches 110°C is not "extra safety margin" bought cheaply; it is unnecessary cost, and in some coatings a stiffer, less flexible film that is harder to wind tightly.' },
+          {
+            type: 'table',
+            columns: ['Class', 'Typical coating', 'Continuous rating', 'Common use'],
+            rows: [
+              ['105 (A)', 'Polyvinyl formal (Formvar)', '105°C', 'General-purpose, low-cost windings'],
+              ['130 (B)', 'Polyurethane', '130°C', 'Self-bonding, solderable coils, small motors'],
+              ['155 (F)', 'Polyester', '155°C', 'General industrial motors and transformers'],
+              ['180 (H)', 'Polyesterimide', '180°C', 'High-temperature motors, distribution transformers'],
+              ['200+ (C)', 'Polyamide-imide', '200°C and above', 'Inverter-duty, servo and demanding continuous-duty motors'],
+            ],
+          },
+          { type: 'note', title: 'The rating is on the wire, not on the finished winding', text: 'The insulation class tells you what the enamel film itself tolerates. The winding’s actual operating temperature depends on load, duty cycle, cooling and ambient conditions — measure or calculate that first, then select the class with margin, rather than choosing the highest class available and assuming it covers every case.' },
+        ],
+      },
+      {
+        id: 'sizing',
+        heading: 'SWG, AWG and millimetres are three different systems',
+        blocks: [
+          { type: 'p', text: 'Indian drawings commonly specify Standard Wire Gauge (SWG); US and many international drawings use American Wire Gauge (AWG); either can also be given directly in millimetres. The gauge number runs the opposite way to the diameter in both systems — a higher gauge number is a thinner wire — and SWG and AWG numbers do not correspond to the same diameter at the same gauge. A drawing marked "24 gauge" without stating which system is genuinely ambiguous, and the difference between 24 SWG and 24 AWG is significant enough to change the wire’s current-carrying capacity.' },
+          {
+            type: 'ul',
+            items: [
+              'Confirm the gauge system on the drawing before ordering, not after the coil is wound.',
+              'When in doubt, specify the diameter in millimetres directly — it removes the ambiguity entirely.',
+              'Keep the gauge system consistent across a single winding specification; mixing SWG and AWG references on one drawing is a common source of rework.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'application',
+        heading: 'Matching class to application',
+        blocks: [
+          { type: 'p', text: 'A practical starting point, to be confirmed against your actual duty cycle and ambient conditions rather than taken as a fixed rule:' },
+          {
+            type: 'ol',
+            items: [
+              'Small appliance and fan motors, low-cost general windings — Class 105 or 130 is usually sufficient and keeps cost down.',
+              'General industrial motors, distribution transformers — Class 155 or 180 covers most continuous-duty applications with reasonable margin.',
+              'Inverter-duty and servo motors — the winding sees repetitive fast voltage spikes from PWM switching, not just heat, and needs enamel rated for that stress specifically, typically Class 200 or a coating designated inverter-duty or corona-resistant. Ask explicitly; "high temperature class" alone does not guarantee PWM resistance.',
+              'Hermetic and refrigeration compressor motors — the winding is immersed in refrigerant and oil, which needs a coating compatible with that environment, not decided on temperature class alone.',
+            ],
+          },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Is Class 200 enamelled wire always better than Class 130?',
+        answer:
+          'No. The class states the maximum continuous temperature the enamel tolerates, not a quality tier. A winding that operates well within Class 130’s rating gains nothing from Class 200 except cost, and in some formulations a stiffer film that is harder to wind tightly into a small bobbin. Specify the class the winding’s actual operating temperature calls for.',
+      },
+      {
+        question: 'What is the difference between enamelled wire and magnet wire?',
+        answer:
+          'They are the same product. "Enamelled wire" and "magnet wire" are used interchangeably for copper conductor coated with a thin insulating polymer film, wound into the coils of motors, transformers, relays and solenoids. "Super enamelled" typically indicates a double coat for a more robust, pinhole-free insulation layer.',
+      },
+      {
+        question: 'Can I specify wire size in SWG if my drawing is in AWG, or the other way round?',
+        answer:
+          'Not directly — SWG and AWG are different systems and the same gauge number does not give the same diameter in each. Convert to millimetres to compare, or better, specify the diameter in millimetres on the drawing from the start so gauge-system ambiguity cannot enter the specification at all.',
+      },
+      {
+        question: 'What actually causes enamelled wire to fail in a winding?',
+        answer:
+          'Most commonly, sustained operation above the insulation class rating, which accelerates thermal breakdown of the enamel film; mechanical damage to the coating during winding, which creates a pinhole that becomes a failure point under voltage stress; and, in inverter-duty motors, repetitive voltage spikes attacking enamel not rated for that stress. Matching class and coating to the actual duty is the main lever a buyer controls.',
+      },
+    ],
+  },
 ];
 
 export const getArticle = (slug) => articles.find((a) => a.slug === slug);

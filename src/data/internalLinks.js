@@ -10,6 +10,7 @@
 import { products } from './products';
 import { articles } from './articles';
 import { grades } from './grades';
+import { gradeFormBy, FORM_SLUGS } from './gradeForms';
 
 /** Distinct material families present in the catalogue, in catalogue order. */
 export const materials = [...new Set(products.map((p) => p.material))];
@@ -50,13 +51,25 @@ export function productLinkClusters(product) {
 
   const productGrades = gradesForProduct(product.id);
   if (productGrades.length) {
+    /*
+     * Link to the specific grade x form page (e.g. /grades/duplex-2205/pipes)
+     * when one exists for this exact product's form, rather than always the
+     * general grade page. A buyer looking at Flanges wants the flanges-specific
+     * standards and specification table, not the grade overview — and it also
+     * gives every grade x form page a second inbound link from the product it
+     * actually describes, rather than relying solely on its parent grade page.
+     */
+    const formSlug = FORM_SLUGS[product.form]?.slug;
     clusters.push({
       heading: `Grades available in ${product.name}`,
-      links: productGrades.map((g) => ({
-        label: `${g.shortName} ${product.name}`,
-        to: `/grades/${g.slug}`,
-        sub: `UNS ${g.uns}`,
-      })),
+      links: productGrades.map((g) => {
+        const specific = formSlug ? gradeFormBy(g.slug, formSlug) : null;
+        return {
+          label: `${g.shortName} ${product.name}`,
+          to: specific ? specific.path : `/grades/${g.slug}`,
+          sub: `UNS ${g.uns}`,
+        };
+      }),
     });
   }
 
