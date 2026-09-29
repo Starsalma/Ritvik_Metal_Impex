@@ -43,8 +43,8 @@ export const imageSizes = {
     1600
   ],
   "/images/logo.png": [
-    1254,
-    1254
+    400,
+    400
   ],
   "/images/new/img1.jpg": [
     726,
