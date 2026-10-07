@@ -177,6 +177,7 @@ export default function ProductDetailPage() {
         imageAltText={productImageAlt(product)}
         type="product"
         schema={[productSchema, crumbs, guideSchema]}
+        preloadImage={product.image}
       />
 
       <section className="bg-white min-h-screen py-16 px-6 lg:px-16">
@@ -196,6 +197,7 @@ export default function ProductDetailPage() {
             <div className="rounded-tl-[60px] rounded-br-[60px] overflow-hidden shadow-xl bg-gray-100 h-[420px] lg:h-[520px]">
               <img src={product.image} alt={productImageAlt(product)}
                 loading="eager"
+                fetchpriority="high"
                 className="w-full h-full object-cover"
                 onError={(e) => { e.target.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center"><span class="text-gray-300 uppercase tracking-widest">Product Image</span></div>'; }} />
             </div>

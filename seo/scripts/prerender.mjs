@@ -97,9 +97,14 @@ for (const route of routes) {
      * mounts Helmet's OWN copy alongside it rather than replacing it — the
      * static index.html schema bug repeated one layer down, on every
      * prerendered route instead of just the SPA shell.
+     *
+     * link[rel="preload"] is the same pattern applied to Seo's preloadImage
+     * tag: it is only on pages that pass that prop (currently products), so
+     * marking it here is a no-op everywhere else and prevents the identical
+     * duplication on a fresh JS boot of a saved product page.
      */
     document.head
-      .querySelectorAll('title, link[rel="canonical"], meta[name="description"], meta[name="robots"], meta[name^="twitter:"], meta[property^="og:"], meta[name="keywords"], meta[name="author"], script[type="application/ld+json"]')
+      .querySelectorAll('title, link[rel="canonical"], link[rel="preload"], meta[name="description"], meta[name="robots"], meta[name^="twitter:"], meta[property^="og:"], meta[name="keywords"], meta[name="author"], script[type="application/ld+json"]')
       .forEach((el) => el.setAttribute('data-seo-fallback', ''));
   });
 

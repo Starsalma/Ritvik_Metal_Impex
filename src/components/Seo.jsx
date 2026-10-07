@@ -26,6 +26,15 @@ export default function Seo({
   publishedTime,
   modifiedTime,
   author,
+  /*
+   * A local path (e.g. "/images/products/pipes-tubes.jpg") to preload as the
+   * page's LCP candidate. Deliberately separate from `image`/`shareImage`
+   * above: those exist for social-card correctness and may be substituted
+   * with the brand fallback when the real photo is undersized, but preload is
+   * a pure performance hint and must point at the actual element the browser
+   * will paint, not a stand-in. Omit it on pages with no single dominant image.
+   */
+  preloadImage,
   children,
 }) {
   /*
@@ -66,6 +75,16 @@ export default function Seo({
       <title>{fullTitle}</title>
       <meta name="description" content={metaDescription} />
       <link rel="canonical" href={canonical} />
+      {/*
+        * fetchpriority="high" plus preload tells the browser to start the
+        * request for this image as soon as the HTML is parsed, before it
+        * would otherwise discover the <img> tag deep in the component tree.
+        * Because the site is prerendered (seo/scripts/prerender.mjs), this
+        * link is baked into the static HTML a crawler or first-time visitor
+        * receives — it has to be in the initial document to help LCP at all;
+        * one injected into the DOM after React mounts is too late to matter.
+        */}
+      {preloadImage && <link rel="preload" as="image" href={preloadImage} fetchpriority="high" />}
       <meta
         name="robots"
         content={noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'}

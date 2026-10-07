@@ -51,7 +51,14 @@
     <!-- Performance hints -->
     <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
     <link rel="dns-prefetch" href="https://maps.google.com" />
-    <link rel="preload" as="image" href="/images/hero1.jpeg" fetchpriority="high" />
+    <!--
+      Fallback only — matches the title/meta/canonical pattern elsewhere in
+      this file. This is correct solely for the homepage; every other route
+      needs its own LCP image preloaded instead (handled by Seo's
+      preloadImage prop). Marked data-seo-fallback so main.jsx removes it on
+      mount, same as those other tags.
+    -->
+    <link data-seo-fallback rel="preload" as="image" href="/images/hero1.jpeg" fetchpriority="high" />
 
     <!-- Baseline organisation markup so crawlers that don't execute JS still get entity data -->
     <script data-seo-fallback type="application/ld+json">

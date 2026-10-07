@@ -130,6 +130,7 @@ function HomePage() {
         description={site.defaultDescription}
         path="/"
         image="/images/hero.jpeg"
+        preloadImage="/images/hero1.jpeg"
         schema={[
           organizationSchema(),
           localBusinessSchema(),
