@@ -102,9 +102,23 @@ for (const route of routes) {
      * tag: it is only on pages that pass that prop (currently products), so
      * marking it here is a no-op everywhere else and prevents the identical
      * duplication on a fresh JS boot of a saved product page.
+     *
+     * link[rel="modulepreload"] is not something this script inserts — it is
+     * Vite's own runtime preloading the lazy route chunk the moment its
+     * import() actually fires during this capture, with the correct
+     * as="script" crossorigin attributes Vite always uses. Capturing it as
+     * part of the settled page is a genuine, free win: baked into the
+     * initial HTML a fresh visitor receives, it lets the browser start
+     * fetching that exact chunk from the first byte instead of only
+     * discovering it needs to once the shared bundle has downloaded and
+     * executed far enough to reach the same import() call — which was the
+     * real cause of the Suspense fallback visibly flashing before the real
+     * page content, and the 0.147 CLS that came with it. Marked here for
+     * the same reason as the others: a client-side navigation away from this
+     * route should not leave a stale preload sitting around.
      */
     document.head
-      .querySelectorAll('title, link[rel="canonical"], link[rel="preload"], meta[name="description"], meta[name="robots"], meta[name^="twitter:"], meta[property^="og:"], meta[name="keywords"], meta[name="author"], script[type="application/ld+json"]')
+      .querySelectorAll('title, link[rel="canonical"], link[rel="preload"], link[rel="modulepreload"], meta[name="description"], meta[name="robots"], meta[name^="twitter:"], meta[property^="og:"], meta[name="keywords"], meta[name="author"], script[type="application/ld+json"]')
       .forEach((el) => el.setAttribute('data-seo-fallback', ''));
   });
 

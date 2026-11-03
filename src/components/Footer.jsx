@@ -1,6 +1,13 @@
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { articles } from '../data/articles';
-import { grades } from '../data/grades';
+/*
+ * Lightweight {title, slug} / {name, slug} summaries, not the full data
+ * modules. Footer renders on every page and only ever shows a title and a
+ * link here — importing the real articles/grades arrays would pull their
+ * entire body content (chemistry tables, FAQs, every paragraph — 123 KB of
+ * source for articles alone) into the always-loaded shared bundle. See
+ * scripts/generate-footer-links.mjs.
+ */
+import { articleLinks, gradeLinks } from '../data/footerLinks';
 import { site } from '../data/site';
 import { scrollToContact } from '../utils/navigation';
 
@@ -279,7 +286,7 @@ export default function Footer() {
             Material Grades
           </Link>
           <div className="flex flex-wrap gap-x-5 gap-y-2">
-            {grades.map((grade) => (
+            {gradeLinks.map((grade) => (
               <Link
                 key={grade.slug}
                 to={`/grades/${grade.slug}`}
@@ -302,7 +309,7 @@ export default function Footer() {
             Technical Guides
           </span>
           <div className="flex flex-wrap gap-x-5 gap-y-2">
-            {articles.map((article) => (
+            {articleLinks.map((article) => (
               <Link
                 key={article.slug}
                 to={`/blog/${article.slug}`}

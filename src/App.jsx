@@ -33,7 +33,46 @@ const GradePage = lazy(() => import('./pages/GradePage'));
 const GradeFormPage = lazy(() => import('./pages/GradeFormPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
-/** Minimal, layout-stable fallback — avoids a CLS penalty while a chunk loads. */
+/*
+ * Minimal, layout-stable fallback — avoids a CLS penalty while a chunk loads
+ * on a route that was NOT already prerendered. On one that was (every route
+ * in the sitemap), it still costs real CLS, and the comment used to end
+ * there without saying why or what was tried, so the next person repeats the
+ * same investigation. The actual mechanism, confirmed by measurement, not
+ * assumption:
+ *
+ * createRoot().render() discards whatever prerendering baked into #root and
+ * renders the tree fresh in the browser. For a lazy route that means this
+ * fallback (≈70vh) genuinely paints first, then gets replaced by the real
+ * page (thousands of px on a product or grade page) once the chunk resolves
+ * — a real, visible pop, measured at CLS 0.1466 on every such route.
+ *
+ * hydrateRoot looks like the fix — reuse the prerendered markup instead of
+ * discarding it — but it is not compatible with this combination. Confirmed
+ * by forcing dev-mode React to hydrate against the real prerendered output
+ * (see git history on this file around the date this comment was added): it
+ * throws a genuine hydration-mismatch error, because prerendering captures
+ * the page's fully-resolved state (Suspense already resolved, Helmet's tags
+ * already hoisted) while hydration compares against what the client's
+ * FIRST, pre-resolution render would produce — genuinely a different tree
+ * whenever a route lazy-loads. That is a structural mismatch between
+ * "prerender via headless browser capture" and synchronous hydration of a
+ * Suspense boundary, not a bug hydrateRoot's own code can route around.
+ *
+ * Two fixes were tried and kept because they are real, independently
+ * verified wins — a smaller main bundle and earlier chunk fetching both
+ * matter for load time — but neither moved the CLS number, and the reason
+ * why is itself useful to know: CLS measures the geometric size and
+ * distance of a shift, not how long it took to happen. Making the chunk
+ * arrive earlier does not shrink the gap between this fallback's height and
+ * the real page's height, which is the only thing that would.
+ *
+ * A real fix needs one of: dropping route-level code splitting entirely (a
+ * genuine bundle-size trade against the work that just shrank it), or a true
+ * SSR streaming setup where the server can send the resolved content with
+ * hydration markers Suspense understands — a materially bigger change than
+ * this file.
+ */
 function RouteFallback() {
   return (
     <div className="min-h-[70vh] flex items-center justify-center" role="status" aria-live="polite">
