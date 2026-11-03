@@ -161,6 +161,14 @@ for (const r of report) {
 }
 
 const bad = report.filter((r) => r.canonical !== `${SITE}${r.route === '/' ? '/' : r.route}`);
+/*
+ * seo/reports/ is gitignored (it's a build artefact, regenerated every run)
+ * and git never tracks an empty directory, so a fresh clone has no
+ * seo/reports/ folder at all until something creates it. Without this line
+ * the very first build after cloning threw ENOENT here and failed outright —
+ * reproduced in this session on a fresh container.
+ */
+mkdirSync(join(ROOT, 'seo/reports'), { recursive: true });
 writeFileSync(
   join(ROOT, 'seo/reports/prerender.json'),
   JSON.stringify({ generated: new Date().toISOString(), count: report.length, routes: report }, null, 2),

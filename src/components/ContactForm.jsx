@@ -79,7 +79,7 @@ export default function ContactForm() {
     e.preventDefault();
 
     // Honeypot: real users never see this field, bots fill everything.
-    if (e.target.website?.value) {
+    if (e.target.rmi_hp?.value) {
       setSubmitted(true);
       return;
     }
@@ -158,12 +158,25 @@ export default function ContactForm() {
               </div>
             )}
 
-            {/* Honeypot — visually hidden, never announced to screen readers */}
+            {/*
+              * Honeypot — visually hidden, never announced to screen readers.
+              * Deliberately NOT named "website", "url" or anything else that
+              * matches a real profile field: some autofill engines (password
+              * managers especially) fill every input matching a known field
+              * semantic across a page, hidden ones included, regardless of
+              * autocomplete="off". If that ever happened here, a genuine
+              * visitor's submission would silently report success while
+              * sending nothing — the field would read as "a bot filled it"
+              * and the enquiry would vanish with no error shown to anyone.
+              * autoComplete="new-password" is a more reliable suppressor for
+              * Chrome specifically than "off", which it is known to ignore
+              * on plain text fields.
+              */}
             <input
               type="text"
-              name="website"
+              name="rmi_hp"
               tabIndex={-1}
-              autoComplete="off"
+              autoComplete="new-password"
               aria-hidden="true"
               className="hidden"
             />
