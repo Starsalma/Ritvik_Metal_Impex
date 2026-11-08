@@ -72,6 +72,7 @@
 - [Inconel vs Stainless Steel: When the Upgrade Is Worth It](https://www.ritvikmetalimpex.com/blog/inconel-vs-stainless-steel): Inconel costs several times more than 316. Where that premium is justified — temperature, chloride cracking and aggressive acids — and where it is not.
 - [904L Stainless Steel: Where the Copper Earns Its Keep](https://www.ritvikmetalimpex.com/blog/904l-stainless-steel-applications): 904L is specified for sulphuric and phosphoric acid service. What the copper addition does, how it compares with 316 and duplex, and where it is the wrong choice.
 - [Enamelled Copper Winding Wire: A Buying Guide for Motor and Transformer Manufacturers](https://www.ritvikmetalimpex.com/blog/enamelled-copper-winding-wire-buying-guide): How to specify enamelled copper winding wire: conductor grade, insulation class by temperature, SWG vs AWG, for motor, transformer and coil manufacturers.
+- [Sanitary Fittings: Connection Standards and Surface Finish, Explained](https://www.ritvikmetalimpex.com/blog/sanitary-fittings-connection-standards-surface-finish): SMS, IDF, DIN 11851 and Tri-Clamp are not interchangeable, and electropolish is not always required. A specification guide for dairy, food and pharma buyers.
 
 ## Browse by material
 
