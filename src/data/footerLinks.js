@@ -52,6 +52,10 @@ export const articleLinks = [
   {
     "title": "Enamelled Copper Winding Wire: A Buying Guide for Motor and Transformer Manufacturers",
     "slug": "enamelled-copper-winding-wire-buying-guide"
+  },
+  {
+    "title": "Sanitary Fittings: Connection Standards and Surface Finish, Explained",
+    "slug": "sanitary-fittings-connection-standards-surface-finish"
   }
 ];
 

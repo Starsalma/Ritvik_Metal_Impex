@@ -1791,6 +1791,112 @@ export const articles = [
       },
     ],
   },
+  {
+    slug: 'sanitary-fittings-connection-standards-surface-finish',
+    title: 'Sanitary Fittings: Connection Standards and Surface Finish, Explained',
+    seoTitle: 'Sanitary Fittings: Connections & Surface Finish Guide',
+    description:
+      'SMS, IDF, DIN 11851 and Tri-Clamp are not interchangeable, and electropolish is not always required. A specification guide for dairy, food and pharma buyers.',
+    keywords:
+      'sanitary fittings supplier, hygienic fittings India, SMS fittings, IDF fittings, DIN 11851, tri-clamp fittings, dairy fittings supplier, electropolished fittings, ASME BPE fittings, 3-A sanitary standards, EHEDG, surface finish Ra value',
+    category: 'Quality & Compliance',
+    readTime: '9 min read',
+    datePublished: '2026-11-08',
+    dateModified: '2026-11-08',
+    image: '/images/products/dairy-fittings.jpg',
+    relatedProductIds: [10, 19],
+    relatedGradeSlugs: ['stainless-steel-304', 'stainless-steel-316'],
+    intro:
+      'Two mistakes account for most of the cost and delay in sanitary fitting procurement. The first is ordering a connection type that does not match what is already installed — SMS, IDF, DIN 11851 and Tri-Clamp all do the same job and are not interchangeable. The second is specifying electropolish, or failing to specify it, without knowing which your application actually requires. Both are avoidable with the right questions asked at enquiry stage.',
+    takeaways: [
+      'SMS, IDF, DIN 11851 and Tri-Clamp (ISO 2852) are different, incompatible connection families — match what is already on site, do not assume.',
+      'A standard sanitary mechanical finish runs Ra ≤ 0.8µm; electropolish brings that down to Ra ≤ 0.5µm or finer.',
+      'Electropolish is mandatory for ASME BPE / pharmaceutical and biotech duty, not for general dairy and food processing.',
+      '"Food grade" and "sanitary" are not the same claim — a fitting can be FDA-compliant in material without meeting any hygienic design standard.',
+      '316L, not 304, is the default for anything in contact with CIP/SIP cleaning chemicals or product with any chloride content.',
+    ],
+    sections: [
+      {
+        id: 'connection-standards',
+        heading: 'Four connection standards, and they do not mix',
+        blocks: [
+          { type: 'p', text: 'A "sanitary fitting" is not one product — it is a family of mechanical connection standards, developed in different countries for the same purpose, and a fitting built to one will not seal against a fitting built to another even though both look similar at a glance. Ordering by material and size alone, without stating the connection standard, is the single most common reason a shipment does not fit on arrival.' },
+          {
+            type: 'table',
+            columns: ['Standard', 'Origin', 'Where it is used', 'Connection style'],
+            rows: [
+              ['SMS (Swedish Milk Standard)', 'Sweden', 'Nordic and wider European dairy', 'Union nut with a single flat gasket'],
+              ['IDF (International Dairy Federation)', 'International', 'Dairy processing worldwide, close to SMS', 'Union nut, broadly compatible with SMS on nominal size but not guaranteed interchangeable'],
+              ['DIN 11851', 'Germany', 'European food and dairy process piping generally, beyond dairy alone', 'Union nut with a shaped (grooved) gasket seat'],
+              ['Tri-Clamp / ISO 2852', 'United States, now global', 'Pharmaceutical, biotech, and food and beverage worldwide', 'Ferrule ends closed by an external clamp, no threaded union'],
+            ],
+          },
+          { type: 'note', title: 'State the standard, not just "sanitary"', text: 'The single most useful line on an enquiry for these products: name the connection standard and size together — "DIN 11851 DN50" or "2 inch Tri-Clamp", not "sanitary fitting, 2 inch." If you are matching into an existing line, the fastest way to confirm it is to check the markings on an existing fitting or ask your process engineer which standard the plant was built to.' },
+        ],
+      },
+      {
+        id: 'surface-finish',
+        heading: 'Surface finish: mechanical polish is not the same claim as electropolish',
+        blocks: [
+          { type: 'p', text: 'Every sanitary fitting needs a smooth internal bore — the entire point of the hygienic design is removing crevices and surface roughness where product residue and bacteria can lodge and survive cleaning. How smooth is stated as an Ra value, the average roughness of the surface measured in micrometres, and it is this number — not a general claim of "polished" or "sanitary" — that a specification should state.' },
+          {
+            type: 'table',
+            columns: ['Finish', 'Typical Ra', 'How it is achieved', 'Where it applies'],
+            rows: [
+              ['Mechanically polished (2B/BA mill finish, further buffed)', '≤ 0.8µm', 'Mechanical abrasive polishing', 'General dairy, food and beverage processing'],
+              ['Electropolished', '≤ 0.5µm, often finer on request', 'Electrochemical removal of 20–40 microns of surface material in an electrolytic bath', 'Pharmaceutical, biotech, semiconductor, high-purity food processing'],
+            ],
+          },
+          { type: 'p', text: 'Electropolishing is not simply a better version of mechanical polishing — it removes the smeared, mechanically-disturbed surface layer a polishing wheel leaves behind, which is what actually resists product adhesion and corrosion at that level. It is also the reason ASME BPE (the Bioprocessing Equipment standard) specifies it directly for pharmaceutical and biotech contact surfaces, rather than treating a fine mechanical polish as equivalent.' },
+          { type: 'note', title: 'Do you actually need electropolish?', text: 'If the duty is general dairy, beverage or food processing and the plant was not designed to ASME BPE, a well-executed 2B/BA mechanical finish at Ra ≤ 0.8µm is the industry-standard choice and electropolish adds cost without a corresponding requirement. If the product is pharmaceutical, biotech, or the specification explicitly calls for ASME BPE or a finer Ra, electropolish is not optional — state it on the enquiry along with the Ra value required.' },
+        ],
+      },
+      {
+        id: 'standards-bodies',
+        heading: 'The standards bodies behind the finish requirement',
+        blocks: [
+          {
+            type: 'ul',
+            items: [
+              'ASME BPE — the US bioprocessing equipment standard; covers surface finish, weld documentation and material certification for pharmaceutical and biotech contact surfaces.',
+              '3-A Sanitary Standards — the North American dairy and food equipment design standard, administered by 3-A Sanitary Standards, Inc.; widely referenced by equipment specified for the US market.',
+              'EHEDG (European Hygienic Engineering & Design Group) — European hygienic design guidelines, commonly referenced alongside DIN and SMS connections in European food and dairy plant.',
+              'FDA 21 CFR — US food-contact material regulation. This is a material compliance requirement, not a hygienic design standard — a fitting can be FDA 21 CFR compliant in material and still not meet ASME BPE, 3-A or EHEDG design requirements. The two claims answer different questions and a buyer checking only one has not checked the other.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'material',
+        heading: 'Material: 316L is the default once cleaning chemicals are involved',
+        blocks: [
+          { type: 'p', text: '304/304L is adequate for dry product contact with no chloride exposure. The moment Clean-in-Place (CIP) or Sterilize-in-Place (SIP) chemicals enter the picture — and in a dairy, food or pharma line they almost always do — 316/316L is the correct default. CIP cleaning regularly uses chlorinated and caustic chemicals, and repeated exposure is exactly the chloride-bearing, elevated-temperature condition 304 is vulnerable to. Specifying 316L for the fittings while leaving the rest of the line in 304 is also a common and avoidable inconsistency — confirm the grade for the whole wetted path, not just the fitting.' },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'What is the difference between SMS and DIN 11851 fittings?',
+        answer:
+          'Both are union-nut connections used in European dairy and food processing, but they are not interchangeable: SMS originates from the Swedish dairy industry and uses a flat gasket seal, while DIN 11851 is the broader German food-process standard and uses a shaped, grooved gasket seat. A DIN 11851 union will not seal correctly against an SMS fitting of the same nominal size. Confirm which standard your existing line uses before ordering — the markings on an installed fitting, or your process engineer, will tell you.',
+      },
+      {
+        question: 'Do I need electropolished fittings for a dairy plant?',
+        answer:
+          'Usually not. Electropolish is specified for pharmaceutical, biotech and high-purity applications, typically where ASME BPE governs the design. General dairy and food processing is normally specified to a mechanically polished finish at Ra ≤ 0.8µm, which is the industry standard and costs less. Specify electropolish only when your own standard, your customer’s specification, or the duty genuinely calls for it — state the Ra value required rather than the word "electropolished" alone, since the number is what a certificate actually verifies.',
+      },
+      {
+        question: 'Is a food-grade fitting the same as a sanitary fitting?',
+        answer:
+          'No, and this is a common point of confusion. "Food grade" (FDA 21 CFR compliance, for instance) is a claim about the material being safe for food contact. "Sanitary" or "hygienic" is a claim about the mechanical design — smooth bore, no dead legs, a cleanable connection, verified to a standard such as 3-A, EHEDG or ASME BPE. A fitting can satisfy one without the other. Check both independently against what your specification actually requires.',
+      },
+      {
+        question: 'Can Tri-Clamp fittings be used in place of SMS or DIN fittings?',
+        answer:
+          'Not directly — the connection geometry is entirely different, a clamped ferrule joint rather than a threaded union, so they cannot be swapped into an existing SMS or DIN line without replacing the mating fitting too. Tri-Clamp (ISO 2852) is the dominant standard in pharmaceutical and biotech work and is increasingly used in food and beverage globally, but a plant built to SMS or DIN will need that same standard maintained through to the next connection point, or a transition fitting specified deliberately.',
+      },
+    ],
+  },
 ];
 
 export const getArticle = (slug) => articles.find((a) => a.slug === slug);

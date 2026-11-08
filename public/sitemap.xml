@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.ritvikmetalimpex.com/</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -15,7 +15,7 @@
   </url>
   <url>
     <loc>https://www.ritvikmetalimpex.com/blog</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -679,6 +679,17 @@
       <image:loc>https://www.ritvikmetalimpex.com/images/products/enameled-wire.jpg</image:loc>
       <image:title>Enamelled Copper Winding Wire: A Buying Guide for Motor and Transformer Manufacturers</image:title>
       <image:caption>How to specify enamelled copper winding wire: conductor grade, insulation class by temperature, SWG vs AWG, for motor, transformer and coil manufacturers.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/blog/sanitary-fittings-connection-standards-surface-finish</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.ritvikmetalimpex.com/images/products/dairy-fittings.jpg</image:loc>
+      <image:title>Sanitary Fittings: Connection Standards and Surface Finish, Explained</image:title>
+      <image:caption>SMS, IDF, DIN 11851 and Tri-Clamp are not interchangeable, and electropolish is not always required. A specification guide for dairy, food and pharma buyers.</image:caption>
     </image:image>
   </url>
 </urlset>
