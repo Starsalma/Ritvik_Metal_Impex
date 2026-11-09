@@ -56,6 +56,10 @@ export const articleLinks = [
   {
     "title": "Sanitary Fittings: Connection Standards and Surface Finish, Explained",
     "slug": "sanitary-fittings-connection-standards-surface-finish"
+  },
+  {
+    "title": "Stainless Steel Angles and Channels: Forming Method, Standards and Grade Selection",
+    "slug": "stainless-steel-angles-channels-structural-buying-guide"
   }
 ];
 

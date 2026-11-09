@@ -1897,6 +1897,118 @@ export const articles = [
       },
     ],
   },
+  {
+    slug: 'stainless-steel-angles-channels-structural-buying-guide',
+    title: 'Stainless Steel Angles and Channels: Forming Method, Standards and Grade Selection',
+    seoTitle: 'Stainless Steel Angles & Channels Buying Guide',
+    description:
+      'How to specify stainless steel structural angles and channels: press-formed vs hot rolled vs laser-fused sections, EN 10056-1 and IS 808 sizing, and grade selection for platforms, skids and frames.',
+    keywords:
+      'stainless steel angle supplier, stainless steel channel supplier, SS structural sections India, press-formed stainless channel, hot rolled stainless angle, EN 10056-1, IS 808, stainless steel platform structure, ISMC stainless equivalent',
+    category: 'Piping Design',
+    readTime: '7 min read',
+    datePublished: '2026-11-09',
+    dateModified: '2026-11-09',
+    image: '/images/products/ss-channels-angles.jpg',
+    relatedProductIds: [23, 21, 9],
+    relatedGradeSlugs: ['stainless-steel-304', 'stainless-steel-316', 'duplex-2205'],
+    intro:
+      'Carbon steel angles and channels are a commodity — any steel stockist can quote ISMC and ISA sizes off a standard rolling table. Stainless structural sections are not, because hot rolling stainless in those profiles is far less widely available than it is in carbon steel. Most of what reaches a fabricator today is press-formed or laser-fused from flat stock instead, and that choice changes the section\'s weight, strength and price — details a buyer needs to pin down before comparing two quotes as if they were the same product.',
+    takeaways: [
+      'Most stainless angles and channels in the market are press-formed or laser-fused, not hot rolled — ask which, because the three are not interchangeable in weight or strength.',
+      'A press-formed channel has uniform flange thickness; a hot rolled ISMC-pattern channel has tapered flanges — their weight-per-metre differs even at the same nominal size.',
+      'Sizing standards are EN 10056-1 for angles and EN 10279 for channels in European practice, or IS 808 in Indian practice — state which one a drawing follows.',
+      '304/304L covers general indoor structural work; 316/316L is for coastal, marine or chemical-wash environments; Duplex 2205 gives roughly double the yield strength for a lighter section carrying the same load.',
+      'Specify forming method, standard, grade and finish together on the enquiry — any one left out is normally assumed, not confirmed, by the quoting supplier.',
+    ],
+    sections: [
+      {
+        id: 'why-stainless-structural',
+        heading: 'Why specify stainless structural sections at all',
+        blocks: [
+          { type: 'p', text: 'A carbon steel angle or channel corrodes wherever its paint or galvanizing is breached — at a weld, a bolt hole, a scratch from site handling. That is an acceptable maintenance cost indoors in a dry plant. It is not acceptable on a coastal platform, a marine walkway, a food or pharmaceutical processing frame that gets washed down daily, or any structure where repainting after installation is impractical or forbidden. Stainless structural sections exist for exactly that gap: load-bearing shapes that do not depend on an applied coating to survive the environment.' },
+          { type: 'p', text: 'They cost more than the carbon steel equivalent, so the decision is usually about where corrosion protection genuinely cannot be maintained over the structure\'s life, not a blanket upgrade.' },
+        ],
+      },
+      {
+        id: 'forming-method',
+        heading: 'Forming method: the detail that decides weight and strength',
+        blocks: [
+          { type: 'p', text: 'This is the single most important thing to confirm before comparing two stainless angle or channel quotes, because the three common forming methods produce genuinely different sections at the same nominal size.' },
+          {
+            type: 'table',
+            columns: ['Method', 'How it is made', 'Flange profile', 'What it means for the buyer'],
+            rows: [
+              ['Press-formed (brake-formed)', 'Flat plate or coil bent to shape on a press brake', 'Uniform thickness throughout', 'Most common and most widely available size range; weight per metre is simple to calculate since thickness does not vary'],
+              ['Laser-fused', 'Two flat strips laser-welded along the inside corner', 'Uniform thickness, sharp inside radius', 'Used for sizes or thicknesses a press brake cannot form cleanly; the weld seam is a genuine feature to disclose, not a defect, but ask whether it is tested'],
+              ['Hot rolled', 'Rolled from billet, same process family as carbon steel ISMC/ISA sections', 'Tapered flange, thicker web, radiused root', 'Closest to a true structural section mechanically, but far less available in stainless — expect longer lead time and a mill-order minimum, not stock availability'],
+            ],
+          },
+          { type: 'note', title: 'Comparing weight on a quote', text: 'A press-formed channel and a hot rolled channel of the same nominal size (say 100×50 mm) do not weigh the same per metre, because the hot rolled section\'s web and flange thickness vary by design while the formed section\'s does not. If two quotes show different weights for "the same size," this is almost always why — ask which forming method each one is quoting before assuming either number is wrong.' },
+        ],
+      },
+      {
+        id: 'angles',
+        heading: 'Angles: equal and unequal',
+        blocks: [
+          { type: 'p', text: 'Equal angles (both legs the same length) run roughly 20×20×3 mm through 200×200×20 mm in stock ranges; unequal angles from about 30×20×3 mm to 200×150×15 mm. They are used for framing, edge protection, bracing, and supports carrying a bolted or welded connection rather than a continuous load along the section\'s length — that is what a channel is for.' },
+          { type: 'p', text: 'Dimensional standards are EN 10056-1 in European practice and IS 808 in Indian practice. The two tables do not line up size-for-size at every entry, so a drawing referencing one and a quote pricing against the other can silently mismatch.' },
+        ],
+      },
+      {
+        id: 'channels',
+        heading: 'Channels: C and U profiles',
+        blocks: [
+          { type: 'p', text: 'Channels run roughly 50×25 mm to 400×100 mm and carry load along their length — runway beams, platform edge members, cable tray support, equipment skid framing. The forming-method distinction matters most here: a press-formed channel\'s flanges are the same thickness as its web, while a hot rolled, ISMC-pattern channel has a thicker web and tapered flanges that are thinner at the tip. Two channels of the same nominal depth and width can differ meaningfully in both weight and section strength depending on which one you are actually buying.' },
+          { type: 'p', text: 'Sizing reference is EN 10279 for European cold-formed channel sections, or IS 808 where an Indian ISMC-pattern size is being matched in stainless.' },
+        ],
+      },
+      {
+        id: 'grade-selection',
+        heading: 'Grade selection',
+        blocks: [
+          {
+            type: 'ul',
+            items: [
+              '304/304L — general indoor structural and architectural work with no chloride exposure; the default unless the environment says otherwise.',
+              '316/316L — coastal and marine structures, and any frame exposed to chloride-bearing wash-down chemicals, which covers most food, dairy and pharmaceutical plant structures.',
+              '321 — structural work that also sees sustained elevated temperature, such as framing near furnace or oven equipment.',
+              'Duplex 2205 — roughly double the yield strength of 304, which allows a lighter, thinner section to carry the same load. Specified where weight matters (offshore platforms, long-span structures) or where chloride stress corrosion cracking resistance beyond 316 is needed.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'ordering',
+        heading: 'What to put on the enquiry',
+        blocks: [
+          { type: 'p', text: 'Four details, stated together, remove almost every ambiguity a stainless angle or channel enquiry can carry: the forming method if you have a preference or an existing structure to match; the sizing standard the drawing follows (EN or IS); the grade; and the finish (mill/hot rolled annealed pickled, or a brushed/polished finish for a visible architectural application). A size and a grade alone is normally enough to get a quote, but not necessarily the section the drawing assumed.' },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Is a stainless steel channel the same weight as the equivalent carbon steel ISMC section?',
+        answer:
+          'Not directly comparable on weight alone, because most stainless channels in the market are press-formed with uniform flange thickness, while ISMC is a hot rolled section with a tapered flange and thicker web. Even where a true hot rolled stainless equivalent exists, confirm you are comparing the same forming method before using an ISMC weight table to estimate a stainless order.',
+      },
+      {
+        question: 'Can I get hot rolled stainless angles and channels, or only press-formed?',
+        answer:
+          'Hot rolled stainless sections exist and are mechanically closer to a true structural shape, but availability is far more limited than in carbon steel — expect a longer lead time and typically a mill-order quantity rather than stock availability. Press-formed and laser-fused sections cover most stock sizes and are readily available; state your preference at enquiry stage if the hot rolled profile specifically matters to your design.',
+      },
+      {
+        question: 'Do I need 316 for an outdoor structural frame, or is 304 enough?',
+        answer:
+          'For general outdoor exposure without chlorides — most inland industrial sites — 304/304L is normally adequate. 316/316L is the correct call once the environment is coastal, marine, or exposed to chloride-bearing wash-down or process chemicals. If in doubt, the proximity to seawater or saline air and the frequency of chemical wash-down are the two questions that decide it.',
+      },
+      {
+        question: 'What standard governs stainless angle and channel sizes?',
+        answer:
+          'EN 10056-1 for angles and EN 10279 for channels in European practice; IS 808 for the equivalent Indian ISMC/ISA-pattern sizes. State which one your drawing follows — the two systems size differently enough at some entries that assuming they match can produce the wrong section.',
+      },
+    ],
+  },
 ];
 
 export const getArticle = (slug) => articles.find((a) => a.slug === slug);
