@@ -60,6 +60,10 @@ export const articleLinks = [
   {
     "title": "Stainless Steel Angles and Channels: Forming Method, Standards and Grade Selection",
     "slug": "stainless-steel-angles-channels-structural-buying-guide"
+  },
+  {
+    "title": "Industrial Valves: Types, End Connections and Material Selection for Process Piping",
+    "slug": "industrial-valve-types-selection-guide"
   }
 ];
 

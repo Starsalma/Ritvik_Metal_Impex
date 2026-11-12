@@ -2009,6 +2009,99 @@ export const articles = [
       },
     ],
   },
+  {
+    slug: 'industrial-valve-types-selection-guide',
+    title: 'Industrial Valves: Types, End Connections and Material Selection for Process Piping',
+    seoTitle: 'Industrial Valve Selection Guide: Types & Materials',
+    description:
+      'How to choose the right industrial valve: ball vs gate vs globe vs check vs butterfly, cast vs wrought stainless equivalence (CF8/CF8M), end connections, pressure class and fire-safe testing.',
+    keywords:
+      'industrial valve supplier India, ball valve vs gate valve, CF8M valve material, stainless steel valve supplier, API 598 valve testing, fire safe valve API 607, valve end connection types, API 600 602 6D',
+    category: 'Piping Design',
+    readTime: '7 min read',
+    datePublished: '2026-11-12',
+    dateModified: '2026-11-12',
+    image: '/images/products/valves.jpg',
+    relatedProductIds: [8, 4, 1],
+    relatedGradeSlugs: ['stainless-steel-304', 'stainless-steel-316'],
+    intro:
+      'A valve selection mistake is harder to walk back than a pipe or fitting one — it is usually buried inside a skid or behind insulation by the time it is wrong. The two decisions that actually drive most valve enquiries are which type suits the service (on/off shutoff is not the same job as flow regulation or backflow prevention) and which material form you are really getting, since a cast valve body and a wrought pipe of the "same" grade are not identical in composition even when a mill calls them equivalent.',
+    takeaways: [
+      'Ball and gate valves are for on/off shutoff; globe valves are for throttling/flow regulation; check valves are automatic, not operator-actuated — picking by "what is available" instead of by duty is the most common selection error.',
+      'CF8 and CF8M are cast equivalents of wrought 304 and 316 respectively, not the identical alloy — composition and mechanical properties differ slightly even though corrosion performance is treated as equivalent.',
+      'End connection (flanged, screwed, socket weld, butt weld, wafer, lug) is chosen to match the adjoining pipework, not the valve type — the same ball valve can usually be had in several end connections.',
+      'Fire-safe certification (API 607 / API 6FA) is a specific, separately-tested design feature, not a property every valve has by default — state it on the enquiry if the service calls for it.',
+      'Pressure class and actual working pressure at temperature are not the same number — confirm the class-to-pressure derating at your operating temperature, the same caution that applies to flanges.',
+    ],
+    sections: [
+      {
+        id: 'types',
+        heading: 'Valve types: match the duty, not the catalogue page',
+        blocks: [
+          { type: 'p', text: 'Every valve type does one of three jobs: stop or start flow, regulate flow, or prevent flow reversing. Specifying a type that does the wrong job is the single most common valve selection mistake — a globe valve left permanently open to act as a shutoff wastes its own high pressure-drop design; a gate valve throttled partway open erodes its seat and will not seal properly afterward.' },
+          {
+            type: 'table',
+            columns: ['Type', 'Operation', 'Best suited for', 'Avoid for'],
+            rows: [
+              ['Ball valve', 'Quarter-turn, bubble-tight shutoff', 'Clean on/off service, frequent operation', 'Fine throttling — full open or full closed only'],
+              ['Gate valve', 'Multi-turn, full bore when open', 'Infrequent on/off, minimal pressure drop when open', 'Throttling — erodes the seat, and quick operation'],
+              ['Globe valve', 'Multi-turn, S-shaped flow path', 'Flow regulation and throttling duty', 'Where low pressure drop matters — the flow path itself is restrictive'],
+              ['Check valve', 'Automatic, no actuator', 'Preventing backflow in one direction', 'Any duty needing operator control — it has none'],
+              ['Butterfly valve', 'Quarter-turn disc', 'Large-diameter lines, space-constrained installs', 'High-pressure-class service — generally a lower-class option'],
+              ['Needle valve', 'Fine-thread multi-turn', 'Precise low-flow regulation, instrumentation', 'Main process lines — sized for small bore only'],
+            ],
+          },
+          { type: 'note', title: 'Manifold configurations', text: '2-way, 3-way and 5-way manifold valves (gauge root and instrument valves) are a distinct line item from the process valves above — they isolate and vent pressure instruments rather than control process flow, and are sized and rated separately, commonly to 6000 psi for instrument service.' },
+        ],
+      },
+      {
+        id: 'material',
+        heading: 'Cast vs wrought: what "CF8M" actually means',
+        blocks: [
+          { type: 'p', text: 'Valve bodies are almost always cast, not forged or machined from bar, because the shape is impractical to produce any other way. CF8 and CF8M are the cast-alloy designations treated as equivalent to wrought 304 and 316 respectively — CF8M to 316 the same way CF8 corresponds to 304. They are close enough in corrosion resistance that the equivalence is standard industry practice, but the casting process and the exact composition are not identical to the wrought bar or plate a pipe or fitting is made from. For most process services this distinction does not change the selection; it matters when a specification calls for exact wrought-grade chemistry or when matching a cast valve body to a fabricated wrought assembly under the same material certificate requirement.' },
+          { type: 'p', text: 'Carbon steel valve bodies are typically ASTM A216 Grade WCB, the cast equivalent used where corrosion resistance is not the driver. Bronze and brass bodies cover general water and low-pressure utility service at lower cost than stainless.' },
+        ],
+      },
+      {
+        id: 'connections',
+        heading: 'End connections and pressure class',
+        blocks: [
+          { type: 'p', text: 'End connection is chosen to match the pipework the valve sits in, independent of valve type — flanged (ASME B16.5), screwed (NPT or BSP), socket weld, butt weld, or wafer/lug style for butterfly valves bolted between flanges. Most valve types are available in several end connections, so specify the connection to match your line, not because a particular valve type is assumed to come in only one.' },
+          { type: 'p', text: 'Pressure class runs Class 150# through 2500# for flanged valves, following the same ASME B16.5 class system as flanges — and the same caution applies: the class number is not a pressure in itself, and the pressure a given class actually permits falls as temperature rises. Confirm the class-to-pressure table for the body material at your operating temperature, not just the class number on the datasheet.' },
+        ],
+      },
+      {
+        id: 'testing',
+        heading: 'Testing, certification and fire-safe design',
+        blocks: [
+          { type: 'p', text: 'Standard valve testing covers shell test (body integrity under pressure), seat test (shutoff tightness) and backseat test, normally to API 598 or BS 6755. Design standards — API 600 and 602 for gate valves, API 6D for pipeline valves, ASME B16.34 for pressure-temperature ratings, BS 1868 and 1873 for check and globe valves — govern how the valve itself is built and rated.' },
+          { type: 'p', text: 'Fire-safe design (certified to API 607 or API 6FA) is a specific, separately tested feature — the valve is proven to maintain an acceptable seal for a defined period in a fire scenario, typically achieved with a secondary metal-to-metal seat behind the primary soft seat. It is not automatic on every valve of a given type and material; state it on the enquiry when the service (hydrocarbon, flammable chemical) calls for it, rather than assuming a standard valve includes it.' },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Can I use a gate valve for throttling flow instead of a globe valve?',
+        answer:
+          'Not reliably. A gate valve is designed for full-open or full-closed service; throttled partway open, the flow erodes and wire-draws the seat and disc, and the valve will likely leak when next closed fully. A globe valve\'s S-shaped flow path is specifically designed for the erosion and flow characteristics of partial-open regulation. Use the gate valve for on/off and the globe valve for throttling — substituting one for the other\'s job is the most common cause of early valve failure.',
+      },
+      {
+        question: 'Is a CF8M valve body the same material as 316 stainless steel pipe?',
+        answer:
+          'Treated as equivalent for corrosion resistance, but not identical. CF8M is the cast-alloy designation corresponding to wrought 316, with a composition and mechanical property range specific to castings rather than bar or plate. For the great majority of process services the equivalence is standard practice and causes no issue; state a requirement for exact wrought chemistry only if your specification explicitly calls for it.',
+      },
+      {
+        question: 'Do all stainless steel valves have fire-safe certification?',
+        answer:
+          'No. Fire-safe design to API 607 or API 6FA is a specific feature, proven by separate testing, usually involving a secondary metal seat behind the primary soft seat. A standard valve of the same type and material is not fire-safe unless built and certified to one of these standards. State the requirement explicitly at enquiry stage for hydrocarbon or flammable-service lines.',
+      },
+      {
+        question: 'What is the difference between a wafer and a lug-style butterfly valve?',
+        answer:
+          'Both bolt between two pipe flanges rather than having their own flanged ends, but a lug-style valve has threaded inserts (lugs) that let it be unbolted on one side while still holding pressure on the other — useful where one side of the line may need to be opened for maintenance without draining the whole system. A wafer-style valve has no such lugs and is held in place purely by the flange bolts running through it, so both sides must be unbolted together.',
+      },
+    ],
+  },
 ];
 
 export const getArticle = (slug) => articles.find((a) => a.slug === slug);
