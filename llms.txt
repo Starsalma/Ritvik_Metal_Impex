@@ -74,6 +74,7 @@
 - [Enamelled Copper Winding Wire: A Buying Guide for Motor and Transformer Manufacturers](https://www.ritvikmetalimpex.com/blog/enamelled-copper-winding-wire-buying-guide): How to specify enamelled copper winding wire: conductor grade, insulation class by temperature, SWG vs AWG, for motor, transformer and coil manufacturers.
 - [Sanitary Fittings: Connection Standards and Surface Finish, Explained](https://www.ritvikmetalimpex.com/blog/sanitary-fittings-connection-standards-surface-finish): SMS, IDF, DIN 11851 and Tri-Clamp are not interchangeable, and electropolish is not always required. A specification guide for dairy, food and pharma buyers.
 - [Stainless Steel Angles and Channels: Forming Method, Standards and Grade Selection](https://www.ritvikmetalimpex.com/blog/stainless-steel-angles-channels-structural-buying-guide): How to specify stainless steel structural angles and channels: press-formed vs hot rolled vs laser-fused sections, EN 10056-1 and IS 808 sizing, and grade selection for platforms, skids and frames.
+- [Industrial Valves: Types, End Connections and Material Selection for Process Piping](https://www.ritvikmetalimpex.com/blog/industrial-valve-types-selection-guide): How to choose the right industrial valve: ball vs gate vs globe vs check vs butterfly, cast vs wrought stainless equivalence (CF8/CF8M), end connections, pressure class and fire-safe testing.
 
 ## Browse by material
 
