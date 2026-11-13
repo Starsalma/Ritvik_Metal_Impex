@@ -233,7 +233,7 @@ export const articles = [
     category: 'Grade Selection',
     readTime: '8 min read',
     datePublished: '2026-02-06',
-    dateModified: '2026-08-02',
+    dateModified: '2026-11-14',
     image: '/images/products/high-performance-alloys.jpg',
     relatedProductIds: [1, 2, 4, 6, 22],
     relatedGradeSlugs: ['duplex-2205'],
@@ -251,6 +251,11 @@ export const articles = [
         id: 'what-is-duplex',
         heading: 'What makes a stainless steel "duplex"',
         blocks: [
+          {
+            type: 'note',
+            title: 'Quick answer',
+            text: 'Super duplex 2507 (PREN 40–43) handles roughly 2–3× the chloride level of standard duplex 2205 (PREN 33–36) at the same temperature, and costs 30–50% more. Specify 2205 for brackish water and general offshore/chemical duty; move to 2507 only for natural seawater or genuinely aggressive chloride service. Both demand controlled heat input, over-alloyed filler and a qualified WPS — standard welding practice is not enough for either grade.',
+          },
           {
             type: 'p',
             text: 'Austenitic grades such as 304 and 316 have a single-phase face-centred cubic structure. Duplex grades are deliberately balanced to hold approximately equal proportions of austenite and ferrite. That mixed microstructure delivers three things at once: the ferrite contributes high strength and resistance to chloride stress corrosion cracking, the austenite contributes toughness and general corrosion resistance, and the reduced nickel content makes the grade less exposed to nickel price swings than 316.',
@@ -378,6 +383,11 @@ export const articles = [
         question: 'Is duplex stainless steel stronger than 316?',
         answer:
           'Yes, substantially. Duplex 2205 has a minimum yield strength of about 450 MPa against roughly 205 MPa for 316 — more than double. That often permits thinner walls for the same design pressure, which offsets part of the higher material price.',
+      },
+      {
+        question: 'Is super duplex 2507 harder to fabricate than standard duplex 2205?',
+        answer:
+          'Yes, somewhat — the same heat-input control, interpass temperature limits and over-alloyed filler (2594 rather than 2209) apply, but 2507\'s higher alloy content narrows the safe processing window further, so sigma-phase precipitation and HAZ toughness loss happen faster if heat input drifts. A qualified welding procedure specification (WPS) with a fabricator experienced on super duplex specifically — not just duplex — is worth confirming before awarding the job.',
       },
       {
         question: 'Can duplex stainless steel be welded like 316?',
@@ -1146,7 +1156,7 @@ export const articles = [
     category: 'Grade Selection',
     readTime: '10 min read',
     datePublished: '2026-07-22',
-    dateModified: '2026-08-15',
+    dateModified: '2026-11-14',
     image: '/images/products/high-performance-alloys.jpg',
     relatedProductIds: [22, 1, 2, 4, 5, 8],
     relatedGradeSlugs: ['inconel', 'monel'],
@@ -1164,6 +1174,11 @@ export const articles = [
         id: 'why-nickel',
         heading: 'Why nickel alloys exist at all',
         blocks: [
+          {
+            type: 'note',
+            title: 'Quick answer: Hastelloy vs Inconel',
+            text: 'Hastelloy C-276 has the most molybdenum of the three and wins in reducing acids — hot hydrochloric, sulphuric, and wet chlorine. Inconel 625 has more chromium and wins in oxidising conditions and at high temperature, where it also keeps more mechanical strength. Monel 400 is the separate, cheaper specialist for seawater and hydrofluoric acid, with no chromium at all. Cost runs Monel 400 < Inconel 625 < Hastelloy C-276.',
+          },
           {
             type: 'p',
             text: 'Austenitic stainless steels protect themselves with a chromium oxide film. That film is excellent in oxidising conditions and in mildly aggressive service, but it breaks down in two situations: strong reducing acids, which dissolve it, and high chloride concentrations, which pit through it. Raise the temperature and both problems accelerate.',
@@ -1347,6 +1362,11 @@ export const articles = [
     ],
     faqs: [
       {
+        question: 'What is the difference between Hastelloy and Inconel?',
+        answer:
+          'Hastelloy C-276 carries the highest molybdenum content of common nickel alloys (15–17%), which makes it the specialist for reducing acids — hot hydrochloric, sulphuric and wet chlorine. Inconel 625 carries more chromium (20–23%) and less molybdenum, which makes it the better choice in oxidising conditions and at high temperature, where it also retains more mechanical strength. Neither is universally "better" — C-276 is also the more expensive of the two, so specifying it for an oxidising or high-temperature duty can mean paying more for worse performance than 625 would give.',
+      },
+      {
         question: 'What is the difference between Monel, Inconel and Hastelloy?',
         answer:
           'They are different alloy systems for different enemies. Monel 400 is nickel-copper with no chromium — best for seawater, alkalis and hydrofluoric acid. Inconel 625 is nickel-chromium-molybdenum-niobium — an all-rounder combining high-temperature strength with broad corrosion resistance. Hastelloy C-276 is nickel-molybdenum-chromium with the highest molybdenum of the three — the specialist for reducing acids such as hot hydrochloric and sulphuric, and for wet chlorine.',
@@ -1487,7 +1507,7 @@ export const articles = [
     category: 'Grade Selection',
     readTime: '9 min read',
     datePublished: '2026-09-23',
-    dateModified: '2026-09-23',
+    dateModified: '2026-11-14',
     image: '/images/products/high-performance-alloys.jpg',
     relatedProductIds: [1, 20, 22],
     relatedGradeSlugs: ['inconel', 'stainless-steel-316'],
@@ -1505,6 +1525,11 @@ export const articles = [
         id: 'three-reasons',
         heading: 'Three conditions that justify the upgrade',
         blocks: [
+          {
+            type: 'note',
+            title: 'Quick answer',
+            text: 'Inconel is a nickel-base alloy, not a stainless steel — the base metal itself is different, not just the alloying. It is effectively immune to chloride stress corrosion cracking (a failure mode that affects 316), holds strength at much higher temperature (up to ~980°C for Inconel 625 vs well below that for 316), and resists mixed oxidising/reducing acids that defeat stainless. It also costs several times more, so the upgrade is worth it only when one of those three specific conditions applies — not as a general "better metal" purchase.',
+          },
           { type: 'p', text: 'Nickel alloys differ from stainless steels in the base metal itself. Austenitic stainless is an iron alloy with enough chromium and nickel to hold an austenitic structure; Inconel is a nickel alloy with chromium added. That change of base is what produces the three advantages below.' },
           {
             type: 'ol',
@@ -1565,6 +1590,11 @@ export const articles = [
       },
     ],
     faqs: [
+      {
+        question: 'What is the difference between Inconel and stainless steel?',
+        answer:
+          'Inconel is a nickel-base alloy; stainless steel is an iron-base alloy. That difference in base metal is why Inconel resists chloride stress corrosion cracking that stainless is vulnerable to, holds strength at far higher temperatures (up to roughly 980°C for Inconel 625), and tolerates aggressive mixed acids that attack 316. It also costs several times more per kilogram, so the difference only matters commercially when your service actually hits one of those three specific failure modes.',
+      },
       {
         question: 'Is Inconel always better than stainless steel?',
         answer:
