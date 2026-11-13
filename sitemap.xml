@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.ritvikmetalimpex.com/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -15,7 +15,7 @@
   </url>
   <url>
     <loc>https://www.ritvikmetalimpex.com/blog</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -712,6 +712,17 @@
       <image:loc>https://www.ritvikmetalimpex.com/images/products/valves.jpg</image:loc>
       <image:title>Industrial Valves: Types, End Connections and Material Selection for Process Piping</image:title>
       <image:caption>How to choose the right industrial valve: ball vs gate vs globe vs check vs butterfly, cast vs wrought stainless equivalence (CF8/CF8M), end connections, pressure class and fire-safe testing.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/blog/stainless-steel-fasteners-property-class-galling-guide</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.ritvikmetalimpex.com/images/products/ss-stud-bolts-washers.jpg</image:loc>
+      <image:title>Stainless Steel Fasteners: Property Classes, Thread Standards and Preventing Galling</image:title>
+      <image:caption>A2 vs A4 stainless fastener property classes, A193/A194 high-temperature bolting for flanges, and why stainless bolts seize on tightening (galling) — and how to prevent it.</image:caption>
     </image:image>
   </url>
 </urlset>
