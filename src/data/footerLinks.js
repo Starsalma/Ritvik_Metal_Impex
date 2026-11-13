@@ -64,6 +64,10 @@ export const articleLinks = [
   {
     "title": "Industrial Valves: Types, End Connections and Material Selection for Process Piping",
     "slug": "industrial-valve-types-selection-guide"
+  },
+  {
+    "title": "Stainless Steel Fasteners: Property Classes, Thread Standards and Preventing Galling",
+    "slug": "stainless-steel-fasteners-property-class-galling-guide"
   }
 ];
 

@@ -2102,6 +2102,102 @@ export const articles = [
       },
     ],
   },
+  {
+    slug: 'stainless-steel-fasteners-property-class-galling-guide',
+    title: 'Stainless Steel Fasteners: Property Classes, Thread Standards and Preventing Galling',
+    seoTitle: 'Stainless Steel Fastener Guide: Grades & Galling',
+    description:
+      'A2 vs A4 stainless fastener property classes, A193/A194 high-temperature bolting for flanges, and why stainless bolts seize on tightening (galling) — and how to prevent it.',
+    keywords:
+      'stainless steel bolt supplier, A2-70 vs A4-80, stainless fastener galling, anti seize stainless bolts, A193 B7 B8 B8M, A194 2H 8 8M, stud bolt supplier India, stainless steel bolt seizing',
+    category: 'Piping Design',
+    readTime: '7 min read',
+    datePublished: '2026-11-13',
+    dateModified: '2026-11-13',
+    image: '/images/products/ss-stud-bolts-washers.jpg',
+    relatedProductIds: [7, 4, 8],
+    relatedGradeSlugs: ['stainless-steel-304', 'stainless-steel-316'],
+    intro:
+      'Stainless fasteners fail buyers in a way carbon steel ones do not: they can seize solid mid-tightening, on a bolt that has never seen a day of service. That is galling, not a defective batch, and it catches people who have specified fasteners correctly for years in carbon or alloy steel and assume stainless behaves the same way under a wrench. The property-class and thread-standard side of fastener selection is more straightforward, but the two numbers on a stainless fastener (A2-70, A4-80) are routinely misread as if they worked like carbon steel\'s 8.8 or 10.9 — they do not quite.',
+    takeaways: [
+      'A2 is the property-class designation for austenitic stainless corresponding roughly to 304, A4 to 316 — the number after the dash is a minimum tensile strength code, not a hardness or quality grade.',
+      'Galling is cold welding between mating stainless threads under friction and pressure, caused by the same chromium oxide passive layer that gives stainless its corrosion resistance — it is a property of the material pairing, not a sign of a bad part.',
+      'The standard prevention is lubrication (anti-seize or thread lubricant) plus slow, steady tightening — never run stainless fasteners down dry and fast, especially on larger diameters.',
+      'High-temperature bolted joints (flanges, pressure vessels) use ASTM A193 studs with ASTM A194 nuts — B7/2H for alloy steel service, B8/B8M (8/8M) for stainless service — not the general-purpose A2/A4 classes.',
+      'Mixing a carbon steel bolt with a stainless nut, or vice versa, is sometimes done deliberately for anti-galling or cost reasons, but introduces a galvanic corrosion pair — confirm it suits the service environment before specifying it that way.',
+    ],
+    sections: [
+      {
+        id: 'property-classes',
+        heading: 'Decoding the property class marking',
+        blocks: [
+          { type: 'p', text: 'Carbon and alloy steel fasteners use a two-part number — 8.8, 10.9, 12.9 — where the first figure is roughly one-tenth of the minimum tensile strength in kgf/mm² and the second, divided by 10, gives the yield-to-tensile ratio. Stainless fasteners use a different system entirely: a letter-number class such as A2-70 or A4-80, where A2 and A4 identify the base alloy group (A2 ≈ 304/304L family, A4 ≈ 316/316L family, the "4" grades containing molybdenum) and the number after the dash is a minimum tensile strength code — 70 for roughly 700 N/mm², 80 for roughly 800 N/mm². A4-80 is not simply "a better A2-70" in the way 10.9 is stronger than 8.8 — it identifies both a different alloy group and a different strength level, usually achieved by cold working.' },
+        ],
+      },
+      {
+        id: 'high-temp',
+        heading: 'High-temperature bolting is a separate system',
+        blocks: [
+          { type: 'p', text: 'Flanged pipe joints and pressure vessel closures at elevated temperature are not specified in A2/A4 at all — they use ASTM A193 for the stud and ASTM A194 for the nut, paired by grade.' },
+          {
+            type: 'table',
+            columns: ['Stud grade (A193)', 'Nut grade (A194)', 'Material', 'Typical use'],
+            rows: [
+              ['B7', '2H', 'Alloy steel (chromium-molybdenum)', 'General high-temperature and high-pressure flanged joints, the default for most carbon/alloy steel piping'],
+              ['B8', '8', 'Stainless steel (304 family)', 'Corrosive service flanged joints where carbon steel studs are not acceptable'],
+              ['B8M', '8M', 'Stainless steel (316 family)', 'Corrosive and chloride-bearing service, matching 316 flanges and fittings'],
+            ],
+          },
+          { type: 'note', title: 'Match the stud to the flange material family', text: 'A B7 stud with a 2H nut is the standard pairing for carbon or alloy steel flanges; B8/B8M studs with their matching 8/8M nuts are specified to stay consistent with a stainless flange and fitting system. Mixing grade families on a single joint without a specific reason is a common source of confusion when the bolting is re-torqued or replaced years later and no one can tell which standard the original joint used.' },
+        ],
+      },
+      {
+        id: 'galling',
+        heading: 'Galling: why stainless fasteners seize, and how to prevent it',
+        blocks: [
+          { type: 'p', text: 'Stainless steel\'s corrosion resistance comes from a thin, self-healing chromium oxide layer on its surface. Under the friction and pressure of two stainless threads engaging — especially the same alloy mated to itself, such as an A2 bolt into an A2 nut — that oxide layer can be disrupted faster than it re-forms, and the exposed metal surfaces cold-weld to each other. The result is a fastener that seizes partway through tightening, often with enough force to twist the bolt off rather than back out. This is a known behaviour of the material pairing, not evidence of a defective part or a bad batch.' },
+          {
+            type: 'ul',
+            items: [
+              'Always lubricate stainless fastener threads — a dedicated anti-seize compound or thread lubricant — before assembly. Running a stainless bolt in dry is the single biggest avoidable cause of galling.',
+              'Tighten slowly and steadily, particularly on larger diameters and on blind or deep-thread engagements where heat from friction has nowhere to dissipate quickly.',
+              'Where galling risk is high, pairing dissimilar property classes or coated fasteners (such as a coated bolt with an uncoated nut) reduces the self-welding tendency compared with two identical, uncoated stainless surfaces.',
+              'If a fastener does start to bind during tightening, stop rather than forcing it — reversing out, re-lubricating and restarting is far cheaper than a seized, broken stud inside an assembled joint.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'mixing-materials',
+        heading: 'Mixing fastener and parent materials',
+        blocks: [
+          { type: 'p', text: 'A carbon steel bolt with a stainless nut, or the reverse, is sometimes specified deliberately — it reduces galling risk compared with two stainless surfaces, and can be a lower-cost option where full stainless bolting is not required by the service. It does introduce a galvanic couple between two dissimilar metals, which is a real corrosion consideration in a wet, humid or chloride-bearing environment, even if the fastener performs mechanically as intended. Confirm the environment tolerates it, or specify a protective coating or isolation measure, before mixing materials on that basis.' },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Is A4-80 always a better choice than A2-70?',
+        answer:
+          'Not automatically. A2 and A4 identify different base alloys (A2 is the 304 family, A4 is the 316 family with added molybdenum for better corrosion resistance), and the -70/-80 is a tensile strength code, not a quality tier. A4-80 gives higher strength and the 316-family corrosion resistance, but if the service only needs 304-level resistance and the lower strength class is adequate, A2-70 is the more economical, equally correct choice. Pick by the service requirement, not by assuming the higher numbers are always the safer pick.',
+      },
+      {
+        question: 'Why did my stainless bolt seize while I was tightening it, with no visible damage beforehand?',
+        answer:
+          'This is almost certainly galling — cold welding between the mating stainless threads caused by disruption of the thread surfaces\' protective oxide layer under friction and pressure. It is especially common with two parts of the same stainless alloy run together dry and fast. It is not a sign of a defective fastener; prevention is thread lubrication before assembly and a slow, steady tightening speed, not a different supplier or batch.',
+      },
+      {
+        question: 'Can I use a B7 stud with a stainless flange?',
+        answer:
+          'Mechanically it can be done, but B7 is an alloy steel and will corrode in the service a stainless flange was specified to resist, undermining the reason the flange is stainless in the first place. B8 or B8M studs, matched to 304 or 316 flanges respectively, with their corresponding A194 nut grade (8 or 8M), are the consistent specification for a stainless flanged joint.',
+      },
+      {
+        question: 'What does the property class on a carbon steel bolt, like 8.8, actually mean?',
+        answer:
+          'The first number, divided by 10, is approximately the minimum tensile strength in hundreds of N/mm² (8.8 ≈ 800 N/mm² tensile). The second number, divided by 10, is the yield-to-tensile ratio (8.8\'s ".8" means yield strength is about 80% of tensile strength). Together they describe both how strong the bolt is and how it behaves as it approaches failure — a higher ratio means less margin between yielding and breaking.',
+      },
+    ],
+  },
 ];
 
 export const getArticle = (slug) => articles.find((a) => a.slug === slug);
