@@ -27,12 +27,12 @@ export const articles = [
     category: 'Grade Selection',
     readTime: '9 min read',
     datePublished: '2026-01-14',
-    dateModified: '2026-08-02',
+    dateModified: '2026-11-14',
     image: '/images/products/pipes-tubes.jpg',
     relatedProductIds: [1, 2, 4, 6, 7, 9],
     relatedGradeSlugs: ['stainless-steel-304', 'stainless-steel-316'],
     intro:
-      'SS 304 and SS 316 look identical, machine similarly and often sit side by side in a stockyard — yet specifying the wrong one is the single most common cause of premature corrosion failure in Indian process plants. The difference comes down to roughly 2% molybdenum, and to whether your service environment contains chlorides.',
+      'SS 304 (SS304) and SS 316 (SS316) look identical, machine similarly and often sit side by side in a stockyard — yet specifying the wrong one is the single most common cause of premature corrosion failure in Indian process plants. The difference comes down to roughly 2% molybdenum, and to whether your service environment contains chlorides.',
     takeaways: [
       '316 adds 2–3% molybdenum, which is what buys chloride pitting and crevice corrosion resistance.',
       'PREN is ~18–20 for 304 and ~24–28 for 316 — a 20–40% improvement in pitting resistance.',
@@ -45,6 +45,11 @@ export const articles = [
         id: 'chemistry',
         heading: 'The chemistry: what actually separates 304 from 316',
         blocks: [
+          {
+            type: 'note',
+            title: 'Quick answer',
+            text: 'The difference between 304 and 316 stainless steel is 2–3% molybdenum, added in 316 to resist chloride pitting and crevice corrosion. 304 (PREN ~18–20) suits clean, dry, non-chloride service; 316 (PREN ~24–28) is for coastal, marine, chemical or chlorinated-water environments. Mechanically the two are near identical — the choice is about corrosion environment, not strength.',
+          },
           {
             type: 'p',
             text: 'Both grades are austenitic stainless steels built on the same iron–chromium–nickel foundation, and both rely on a self-healing chromium oxide passive layer for corrosion resistance. The functional difference is that 316 trades a little chromium for extra nickel and adds molybdenum.',
@@ -182,6 +187,11 @@ export const articles = [
       },
     ],
     faqs: [
+      {
+        question: 'What is the difference between 304 and 316 stainless steel?',
+        answer:
+          'The core difference is 2–3% molybdenum, present in 316 (and 316L) but absent from 304. That addition raises 316\'s Pitting Resistance Equivalent Number (PREN) from roughly 18–20 to roughly 24–28, which is what gives it meaningfully better resistance to chloride pitting and crevice corrosion. Mechanically — tensile strength, yield strength, elongation — the two grades are nearly identical, so the decision between them is driven by the service environment\'s chloride exposure, not by strength requirements.',
+      },
       {
         question: 'Is 316 stainless steel always better than 304?',
         answer:
