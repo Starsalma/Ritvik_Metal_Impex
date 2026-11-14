@@ -2238,6 +2238,123 @@ export const articles = [
       },
     ],
   },
+  {
+    slug: 'brass-grade-selection-machinability-dezincification',
+    title: 'Brass Rods and Tubes: Alloy Selection, Machinability and Dezincification Resistance',
+    seoTitle: 'Brass Grade Guide: Machinability & Dezincification',
+    description:
+      'Brass alloy selection for machined parts and tube: free-cutting vs naval vs admiralty vs aluminium brass, lead content, machinability, and dezincification resistance.',
+    keywords:
+      'brass rod supplier India, free cutting brass C36000, naval brass vs admiralty brass, dezincification resistant brass, DZR brass, brass tube supplier, leaded brass machinability, low lead brass fittings',
+    category: 'Non-Ferrous',
+    readTime: '7 min read',
+    datePublished: '2026-11-14',
+    dateModified: '2026-11-14',
+    image: '/images/products/brass-rods.jpg',
+    relatedProductIds: [12, 13],
+    relatedGradeSlugs: [],
+    intro:
+      '"Brass" is treated as one material far too often, when it is really a family of copper-zinc alloys with genuinely different jobs. The free-cutting grade that makes a CNC shop\'s life easy is not the grade you want sitting in a water line for ten years, and the difference is not academic — it is the difference between a part that lasts and one that dezincifies into a porous, weak shell from the inside out.',
+    takeaways: [
+      'Free-cutting brass (C36000) owes its machinability to 2.5–3.7% lead — excellent for turned parts, not the right default for prolonged potable water contact.',
+      'Dezincification is selective corrosion that strips zinc from the alloy, leaving a weak, porous copper-rich structure behind — it is a brass-specific failure mode, not ordinary corrosion.',
+      'Admiralty brass and aluminium brass both carry a small arsenic addition (0.02–0.06%) specifically to inhibit dezincification — that is what the "As" in their composition is for.',
+      'Machinability is benchmarked against C36000 at 100 — admiralty, aluminium and cartridge brass all sit around 30, meaning slower cycles and more tool wear if substituted into a high-volume turning job.',
+      'Match the grade to the job: free-cutting for turned parts, forging brass for hot-forged valve bodies, admiralty or aluminium brass for condenser tube, naval brass for marine hardware, cartridge brass for deep-drawn pressed parts.',
+    ],
+    sections: [
+      {
+        id: 'family',
+        heading: 'Brass is a family, not one material',
+        blocks: [
+          {
+            type: 'note',
+            title: 'Quick answer',
+            text: 'Pick the brass grade by what the part has to do, not by "brass" alone: free-cutting (C36000) for machined turned parts, forging brass (C37700) for hot-forged bodies, admiralty (C44300) or aluminium brass (C68700) for seawater-cooled tube, naval brass (C46400) for marine hardware, and cartridge brass (C26000) for deep-drawn pressed parts. The lead and arsenic content differences between them are not minor — they decide machinability, dezincification resistance and whether the grade belongs in a water line at all.',
+          },
+          {
+            type: 'table',
+            columns: ['Grade', 'UNS', 'Cu %', 'Pb %', 'Other additions', 'Typical use'],
+            rows: [
+              ['Free-cutting brass', 'C36000', '60.0–63.0', '2.5–3.7', 'Fe 0.35 max', 'CNC-turned components, fittings'],
+              ['Forging brass', 'C37700', '58.0–61.0', '1.5–2.5', 'Fe 0.30 max', 'Hot-forged valve bodies and fittings'],
+              ['Naval brass', 'C46400', '59.0–62.0', '0.20 max', 'Sn 0.50–1.00', 'Marine hardware, condenser plate'],
+              ['Admiralty brass', 'C44300', '70.0–73.0', '0.07 max', 'Sn 0.8–1.2, As 0.02–0.06', 'Condenser and heat exchanger tube'],
+              ['Aluminium brass', 'C68700', '76.0–79.0', '0.07 max', 'Al 1.8–2.5, As 0.02–0.06', 'Seawater-cooled condenser tube'],
+              ['Cartridge brass', 'C26000', '68.5–71.5', '0.07 max', 'Fe 0.05 max', 'Deep-drawn and pressed parts'],
+            ],
+          },
+        ],
+      },
+      {
+        id: 'machinability',
+        heading: 'Machinability: why free-cutting brass dominates turned-parts work',
+        blocks: [
+          { type: 'p', text: 'Free-cutting brass (C36000) is the machinability benchmark the whole alloy family is measured against — set at an index of 100. Its 2.5–3.7% lead content works as an internal chip-breaker: it does not alloy into the copper-zinc matrix so much as sit as fine, soft particles that let the cutting tool shear the chip cleanly rather than tear it. The result is short chips, lower cutting forces, better surface finish and longer tool life, which is exactly why it is the default for automatic screw-machine production of fittings, valves and connectors.' },
+          { type: 'p', text: 'Every other common grade sits well below that benchmark — admiralty, aluminium and cartridge brass all machine at roughly a 30 index, meaning noticeably slower cycle times and faster tool wear if one of them is substituted into a job that was costed assuming free-cutting brass. Confirm the grade before quoting a machining job on brass, not just the alloy family.' },
+        ],
+      },
+      {
+        id: 'dezincification',
+        heading: 'Dezincification: the failure mode specific to brass',
+        blocks: [
+          { type: 'p', text: 'Dezincification is selective corrosion in which zinc leaches preferentially out of the alloy, usually in stagnant or slow-moving water with a particular chemistry (often warm, chlorinated, or low in carbonate hardness). What is left behind is a weak, porous, copper-rich structure that looks intact from the outside but has lost most of its mechanical strength — a dezincified valve body or fitting can fail under normal working pressure with no visible external warning.' },
+          { type: 'p', text: 'Admiralty brass (C44300) and aluminium brass (C68700) both carry a small arsenic addition (0.02–0.06%) specifically to inhibit this mechanism, which is why both are specified for seawater-cooled condenser and heat exchanger tube — exactly the warm, continuously wetted service where dezincification risk is highest. Free-cutting and forging brass carry no such inhibitor in their standard chemistry; they are not the grades to specify for a part that will sit in water for years.' },
+          {
+            type: 'note',
+            title: 'DZR is a specification, not a guess',
+            text: 'Where a project or export market specification calls for dezincification-resistant ("DZR") brass, that is a tested and certified requirement, not something to assume a standard free-cutting or forging grade satisfies. Ask your supplier for material tested and certified to the DZR requirement the specification actually names, rather than substituting a grade that merely sounds similar.',
+          },
+        ],
+      },
+      {
+        id: 'lead',
+        heading: 'Lead content and water-contact compliance',
+        blocks: [
+          { type: 'p', text: 'Free-cutting brass\'s 2.5–3.7% lead is what makes it machine so well, but lead content is exactly what a low-lead or lead-free plumbing specification is written to restrict — a real consideration on export orders into markets with low-lead plumbing requirements, or on any project specification that names a maximum lead content for water-contact parts. Confirm the actual requirement named in your specification or destination market\'s regulation before assuming a standard free-cutting part is acceptable for a potable-water application; low-lead and DZR-rated brass alternatives exist precisely for this reason, usually at a machinability trade-off versus C36000.' },
+        ],
+      },
+      {
+        id: 'matching',
+        heading: 'Matching grade to job',
+        blocks: [
+          {
+            type: 'ul',
+            items: [
+              'High-volume CNC or screw-machine turned parts, no prolonged water contact: free-cutting brass (C36000) — best machinability, lowest cost.',
+              'Hot-forged valve bodies and fittings: forging brass (C37700) — formulated for forging rather than turning.',
+              'Seawater-cooled condenser or heat exchanger tube: admiralty brass (C44300) for general service, or aluminium brass (C68700) where impingement attack from high-velocity flow is the specific risk.',
+              'Marine hardware and condenser plate: naval brass (C46400) — higher copper and tin for strength and seawater service.',
+              'Deep-drawn or pressed parts: cartridge brass (C26000) — the classic deep-drawing composition.',
+              'Any part in prolonged potable or process water contact, or under a low-lead/DZR specification: confirm the exact requirement and ask for brass tested and certified against it, rather than assuming a standard machining grade qualifies.',
+            ],
+          },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Is leaded brass safe to use for drinking water fittings?',
+        answer:
+          'Lead content is precisely the concern a low-lead or lead-free plumbing specification exists to control, so a standard free-cutting brass (2.5–3.7% lead) is not automatically acceptable for potable water parts — it depends entirely on the specification or market regulation that applies to your project or destination market. Where that requirement applies, ask for low-lead or DZR-certified brass tested against it, rather than assuming a standard machining grade is suitable.',
+      },
+      {
+        question: 'What causes dezincification and how do I avoid it?',
+        answer:
+          'Dezincification is selective leaching of zinc from the brass, usually triggered by stagnant or slow-moving water with a particular chemistry, leaving a weak, porous copper-rich structure behind with no obvious external sign of damage. The standard way to avoid it in water-contact parts is specifying a dezincification-resistant grade — admiralty brass and aluminium brass both carry a small arsenic addition specifically for this — or DZR-certified material where the specification requires tested, certified resistance rather than an inherently resistant composition.',
+      },
+      {
+        question: 'Which brass grade machines the best?',
+        answer:
+          'Free-cutting brass (C36000) is the machinability benchmark, set at an index of 100, due to its 2.5–3.7% lead content acting as an internal chip-breaker. Every other common grade — admiralty, aluminium and cartridge brass among them — machines at roughly a 30 index, meaning significantly slower cycle times and higher tool wear if substituted into a job costed for free-cutting brass.',
+      },
+      {
+        question: 'Can naval brass be substituted for admiralty brass, or the other way round?',
+        answer:
+          'Not as a direct swap. Naval brass (C46400) is formulated for strength and general seawater service in hardware and condenser plate; admiralty brass (C44300) carries an arsenic addition specifically for dezincification resistance in condenser and heat exchanger tube. If the application is tube in continuous warm seawater service, admiralty or aluminium brass is the grade actually formulated for that duty — specify by the grade\'s intended service, not by assuming any two marine-sounding brasses are interchangeable.',
+      },
+    ],
+  },
 ];
 
 export const getArticle = (slug) => articles.find((a) => a.slug === slug);

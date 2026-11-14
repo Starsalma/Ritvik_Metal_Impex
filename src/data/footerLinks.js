@@ -68,6 +68,10 @@ export const articleLinks = [
   {
     "title": "Stainless Steel Fasteners: Property Classes, Thread Standards and Preventing Galling",
     "slug": "stainless-steel-fasteners-property-class-galling-guide"
+  },
+  {
+    "title": "Brass Rods and Tubes: Alloy Selection, Machinability and Dezincification Resistance",
+    "slug": "brass-grade-selection-machinability-dezincification"
   }
 ];
 
