@@ -1,4 +1,4 @@
-import{A as e,E as t,S as n,T as r,b as i,g as a,h as o,k as s,l as c,u as l,w as u,x as d,y as f}from"./index-CPhcHW-c.js";var p=e(s(),1),m=d();function h(e=.12){let t=(0,p.useRef)(null);return(0,p.useEffect)(()=>{let n=t.current;if(!n)return;let r=new IntersectionObserver(([e])=>{e.isIntersecting&&(n.classList.add(`in`),r.disconnect())},{threshold:e});return r.observe(n),()=>r.disconnect()},[e]),t}var g=`
+import{A as e,E as t,S as n,T as r,b as i,g as a,h as o,k as s,l as c,u as l,w as u,x as d,y as f}from"./index-DLax1M2T.js";var p=e(s(),1),m=d();function h(e=.12){let t=(0,p.useRef)(null);return(0,p.useEffect)(()=>{let n=t.current;if(!n)return;let r=new IntersectionObserver(([e])=>{e.isIntersecting&&(n.classList.add(`in`),r.disconnect())},{threshold:e});return r.observe(n),()=>r.disconnect()},[e]),t}var g=`
   .ab-tag  { opacity:0; transform:translateY(12px); transition:opacity .6s ease, transform .6s ease; }
   .ab-tag.in  { opacity:1; transform:translateY(0); }
 
