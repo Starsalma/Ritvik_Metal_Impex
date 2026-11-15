@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.ritvikmetalimpex.com/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -15,7 +15,7 @@
   </url>
   <url>
     <loc>https://www.ritvikmetalimpex.com/blog</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -734,6 +734,17 @@
       <image:loc>https://www.ritvikmetalimpex.com/images/products/brass-rods.jpg</image:loc>
       <image:title>Brass Rods and Tubes: Alloy Selection, Machinability and Dezincification Resistance</image:title>
       <image:caption>Brass alloy selection for machined parts and tube: free-cutting vs naval vs admiralty vs aluminium brass, lead content, machinability, and dezincification resistance.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/blog/seamless-vs-welded-pipe-schedule-selection-guide</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.ritvikmetalimpex.com/images/products/pipes-tubes.jpg</image:loc>
+      <image:title>Seamless vs Welded Pipe: Manufacturing Type, Schedule and Sizing Explained</image:title>
+      <image:caption>Seamless vs ERW, EFW and LSAW pipe compared: when seamless is actually required, why schedule is not a pressure rating, and how NB/NPS sizing differs from actual OD.</image:caption>
     </image:image>
   </url>
 </urlset>
