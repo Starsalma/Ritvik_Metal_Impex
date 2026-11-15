@@ -77,6 +77,7 @@
 - [Industrial Valves: Types, End Connections and Material Selection for Process Piping](https://www.ritvikmetalimpex.com/blog/industrial-valve-types-selection-guide): How to choose the right industrial valve: ball vs gate vs globe vs check vs butterfly, cast vs wrought stainless equivalence (CF8/CF8M), end connections, pressure class and fire-safe testing.
 - [Stainless Steel Fasteners: Property Classes, Thread Standards and Preventing Galling](https://www.ritvikmetalimpex.com/blog/stainless-steel-fasteners-property-class-galling-guide): A2 vs A4 stainless fastener property classes, A193/A194 high-temperature bolting for flanges, and why stainless bolts seize on tightening (galling) — and how to prevent it.
 - [Brass Rods and Tubes: Alloy Selection, Machinability and Dezincification Resistance](https://www.ritvikmetalimpex.com/blog/brass-grade-selection-machinability-dezincification): Brass alloy selection for machined parts and tube: free-cutting vs naval vs admiralty vs aluminium brass, lead content, machinability, and dezincification resistance.
+- [Seamless vs Welded Pipe: Manufacturing Type, Schedule and Sizing Explained](https://www.ritvikmetalimpex.com/blog/seamless-vs-welded-pipe-schedule-selection-guide): Seamless vs ERW, EFW and LSAW pipe compared: when seamless is actually required, why schedule is not a pressure rating, and how NB/NPS sizing differs from actual OD.
 
 ## Browse by material
 

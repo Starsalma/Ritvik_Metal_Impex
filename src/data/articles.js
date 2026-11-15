@@ -2355,6 +2355,115 @@ export const articles = [
       },
     ],
   },
+  {
+    slug: 'seamless-vs-welded-pipe-schedule-selection-guide',
+    title: 'Seamless vs Welded Pipe: Manufacturing Type, Schedule and Sizing Explained',
+    seoTitle: 'Seamless vs Welded Pipe: Schedule & Sizing Guide',
+    description:
+      'Seamless vs ERW, EFW and LSAW pipe compared: when seamless is actually required, why schedule is not a pressure rating, and how NB/NPS sizing differs from actual OD.',
+    keywords:
+      'seamless vs welded pipe, seamless vs ERW pipe, pipe schedule chart, NB vs OD pipe, ASTM A312 seamless welded, pipe schedule not pressure rating, stainless steel pipe supplier India, LSAW EFW pipe',
+    category: 'Piping Design',
+    readTime: '7 min read',
+    datePublished: '2026-11-15',
+    dateModified: '2026-11-15',
+    image: '/images/products/pipes-tubes.jpg',
+    relatedProductIds: [1],
+    relatedGradeSlugs: ['stainless-steel-304', 'stainless-steel-316'],
+    intro:
+      '"Seamless is always better" is one of the most repeated half-truths in pipe procurement. Seamless genuinely is required in some services, but a great deal of welded pipe — ERW, EFW, LSAW — is specified correctly and performs exactly as intended, often at a size seamless manufacturing cannot even reach. The decision is about what your governing code actually requires and what size you need, not a blanket assumption that one manufacturing route is categorically superior.',
+    takeaways: [
+      'Seamless pipe has no weld seam (hot extruded or rotary pierced); ERW, EFW and LSAW are all welded from plate or strip and do have one.',
+      'Many governing standards — A312, A358, A790, A53 among them — explicitly cover both seamless and welded pipe under the same standard number, distinguished by a designation on the certificate, not by the standard name alone.',
+      'LSAW is the standard route for large-diameter pipe (roughly above 16–20") that exceeds common seamless mill capability — it is not a lesser substitute, it is often the only practical option at that size.',
+      'Pipe schedule (5S, 10S, 40, 80, XXS...) sets wall thickness, not an allowable pressure — the same schedule permits a different pressure at a different grade, size or temperature.',
+      'Nominal bore (NB/NPS) sizing does not equal actual outside diameter, especially in smaller sizes — 1" NB pipe has an actual OD of 33.4 mm, not 25.4 mm.',
+    ],
+    sections: [
+      {
+        id: 'manufacturing',
+        heading: 'Seamless vs welded: what actually differs',
+        blocks: [
+          {
+            type: 'note',
+            title: 'Quick answer',
+            text: 'Seamless pipe is hot extruded or rotary pierced from solid billet — no weld seam exists to inspect or fail. ERW (electric resistance welded) and EFW (electric fusion welded) pipe are rolled from plate or strip and welded along a longitudinal seam; LSAW (longitudinal or spiral submerged-arc welded) is the equivalent route for large diameters beyond seamless mill capability. None of the welded routes is automatically inferior — the right choice depends on your governing code, pressure/temperature duty, and the size you actually need.',
+          },
+          {
+            type: 'table',
+            columns: ['Type', 'How it is made', 'Seam', 'Typical size range'],
+            rows: [
+              ['Seamless', 'Hot extrusion or rotary piercing of solid billet', 'None', 'Smaller to mid-range NB; mill capability limits larger sizes'],
+              ['ERW', 'Strip rolled into a cylinder, resistance-welded along the seam', 'Longitudinal', 'Small to large NB, widely available'],
+              ['EFW', 'Plate rolled and fusion-welded, often with filler', 'Longitudinal', 'Mid to large NB, including alloys less suited to ERW'],
+              ['LSAW', 'Plate rolled and submerged-arc welded, longitudinal or spiral seam', 'Longitudinal or spiral', 'Large diameter, above common seamless mill capability'],
+            ],
+          },
+        ],
+      },
+      {
+        id: 'when-seamless',
+        heading: 'When seamless is actually required',
+        blocks: [
+          { type: 'p', text: 'Seamless is specified where a code or project specification names it explicitly — commonly for high-pressure, high-temperature or sour/corrosive service where eliminating the weld seam removes a known inspection and failure point. Outside of that, welded pipe manufactured and inspected to the correct standard is not a compromise; it is frequently the economically and dimensionally correct choice, especially at larger diameters where it may be the only option at all.' },
+          { type: 'p', text: 'The standard name alone often does not tell you which manufacturing type you are getting. Several governing pipe standards — ASTM A312 for austenitic stainless, A790 for duplex, A53 for carbon steel among them — explicitly cover both seamless and welded pipe under one specification number, with the manufacturing route distinguished by a type designation on the mill certificate rather than by the standard number itself. Check the certificate, not just the ASTM number, if the manufacturing type matters to your specification.' },
+        ],
+      },
+      {
+        id: 'sizing',
+        heading: 'NB/NPS sizing vs actual outside diameter',
+        blocks: [
+          { type: 'p', text: 'Nominal Bore (NB), also called Nominal Pipe Size (NPS), is a sizing label, not a direct measurement of anything on the pipe. At larger sizes the nominal figure happens to be close to actual OD; at smaller sizes it is not, which trips up buyers who assume "1 inch pipe" means a 1-inch (25.4 mm) outside diameter.' },
+          {
+            type: 'table',
+            columns: ['Nominal size (NB/NPS)', 'Actual outside diameter'],
+            rows: [
+              ['1/2"', '21.3 mm'],
+              ['1"', '33.4 mm'],
+              ['2"', '60.3 mm'],
+              ['6"', '168.3 mm'],
+              ['12"', '323.9 mm'],
+            ],
+          },
+          { type: 'p', text: 'Always confirm OD and wall thickness explicitly on a critical enquiry rather than relying on the nominal size label alone, particularly when matching into existing pipework or fittings.' },
+        ],
+      },
+      {
+        id: 'schedule',
+        heading: 'Schedule is a wall thickness, not a pressure rating',
+        blocks: [
+          { type: 'p', text: 'Schedule numbers (5S, 10S, 20, 30, 40/40S, 60, 80/80S, 100, 120, 140, 160, XXS) standardise a series of wall thicknesses at a given nominal size — nothing more. The same schedule 40 in two different grades, or at two different temperatures, permits a different allowable pressure, because that figure is calculated from the material\'s allowable stress, the OD, the wall thickness and the design temperature together, per the governing code\'s own formula — the same caution that applies to a flange\'s pressure class.' },
+          {
+            type: 'note',
+            title: 'Specify both, not either',
+            text: 'A pipe enquiry that states only "schedule 40" or only "a pressure rating" without the other leaves the supplier to assume the missing half. State the schedule (or exact wall thickness), the grade, and the design temperature together if an actual pressure capability needs confirming — or ask for the allowable pressure to be calculated and stated on the quotation.',
+          },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Is seamless pipe always stronger than welded pipe?',
+        answer:
+          'Not automatically. Properly manufactured and inspected ERW, EFW and LSAW pipe meets the same mechanical property requirements as seamless pipe under the governing standard, and modern welding and non-destructive testing have closed most of the historical gap. Seamless is specified where a code or project specification names it explicitly for a particular service, not because welded pipe is inherently inferior in general.',
+      },
+      {
+        question: 'What is the actual outside diameter of 1 inch nominal bore pipe?',
+        answer:
+          '33.4 mm, not 25.4 mm (1 inch). Nominal Bore / Nominal Pipe Size is a sizing label rather than a literal measurement, and the gap between the nominal figure and the actual outside diameter is largest at smaller sizes. Always confirm actual OD and wall thickness for a critical fit, rather than assuming the nominal size equals a physical dimension.',
+      },
+      {
+        question: 'Does an ASTM A312 certificate mean the pipe is seamless?',
+        answer:
+          'Not by itself. A312 explicitly covers both seamless and welded austenitic stainless pipe under the same specification number — the manufacturing route is distinguished by a type designation stated on the mill certificate, not by the ASTM number alone. Check the certificate\'s designation if the manufacturing type matters to your specification.',
+      },
+      {
+        question: 'Can schedule 40 pipe be used at any pressure?',
+        answer:
+          'No. Schedule sets the wall thickness only. The actual allowable pressure for that wall thickness depends on the material grade, the outside diameter and the design temperature, calculated per the governing code\'s formula — the same schedule 40 permits a different pressure in a different grade or at a different temperature. State the grade and design temperature alongside the schedule if an allowable pressure needs confirming.',
+      },
+    ],
+  },
 ];
 
 export const getArticle = (slug) => articles.find((a) => a.slug === slug);

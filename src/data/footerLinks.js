@@ -72,6 +72,10 @@ export const articleLinks = [
   {
     "title": "Brass Rods and Tubes: Alloy Selection, Machinability and Dezincification Resistance",
     "slug": "brass-grade-selection-machinability-dezincification"
+  },
+  {
+    "title": "Seamless vs Welded Pipe: Manufacturing Type, Schedule and Sizing Explained",
+    "slug": "seamless-vs-welded-pipe-schedule-selection-guide"
   }
 ];
 
