@@ -76,6 +76,10 @@ export const articleLinks = [
   {
     "title": "Seamless vs Welded Pipe: Manufacturing Type, Schedule and Sizing Explained",
     "slug": "seamless-vs-welded-pipe-schedule-selection-guide"
+  },
+  {
+    "title": "Stainless Steel Sheet Finish Guide: 2B, BA, No.4 and No.8 Explained",
+    "slug": "stainless-steel-sheet-finish-guide-2b-ba-no4-no8"
   }
 ];
 

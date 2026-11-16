@@ -2464,6 +2464,109 @@ export const articles = [
       },
     ],
   },
+  {
+    slug: 'stainless-steel-sheet-finish-guide-2b-ba-no4-no8',
+    title: 'Stainless Steel Sheet Finish Guide: 2B, BA, No.4 and No.8 Explained',
+    seoTitle: 'Stainless Sheet Finish Guide: 2B vs BA vs No.4/8',
+    description:
+      'Stainless steel sheet and plate surface finishes compared: 2B mill finish, BA bright annealed, No.4 brushed, No.8 mirror, Hairline and Scotch-Brite — what each is and when to specify it.',
+    keywords:
+      'stainless steel 2B finish, BA finish vs 2B, No.4 vs No.8 stainless finish, mirror finish stainless steel, hairline finish stainless, Scotch-Brite finish stainless steel, stainless sheet supplier India',
+    category: 'Quality & Compliance',
+    readTime: '7 min read',
+    datePublished: '2026-11-16',
+    dateModified: '2026-11-16',
+    image: '/images/products/sheets-plates-coils.jpg',
+    relatedProductIds: [6],
+    relatedGradeSlugs: ['stainless-steel-304', 'stainless-steel-316'],
+    intro:
+      'Stainless sheet is usually specified by grade and thickness first, with finish treated as an afterthought — right up until a kitchen equipment panel or elevator cladding sheet arrives in the wrong one. Finish is not purely cosmetic: it changes how the sheet was actually produced, what it costs, how forgiving it is of fingerprints and scratches, and in a mild but real way, how the surface behaves against corrosion.',
+    takeaways: [
+      '2B is the default cold-rolled mill finish — smooth and slightly reflective — used for the large majority of process and fabrication work where appearance is not the driver.',
+      'BA (bright annealed) gets its higher reflectivity from a controlled-atmosphere annealing process, not mechanical polishing — it is not the same thing as "polished".',
+      'No.4 (brushed/satin) and No.8 (mirror) are both mechanically abraded finishes applied after the mill finish, and are frequently confused with each other when a buyer just asks for "polished" — specify the number.',
+      'Hairline and Scotch-Brite finishes exist specifically to hide fingerprints and light scratches in visible architectural and kitchen-equipment work, where a true mirror finish would show every mark immediately.',
+      'Finish naming can differ slightly between ASTM, EN and JIS systems — state a surface roughness (Ra) value alongside the finish name on an export order to remove ambiguity.',
+    ],
+    sections: [
+      {
+        id: 'mill-vs-mechanical',
+        heading: 'Mill finishes vs mechanical finishes',
+        blocks: [
+          {
+            type: 'note',
+            title: 'Quick answer',
+            text: '2B, BA and No.1 come directly from the rolling and annealing process itself — no separate mechanical step is applied. No.4, No.8, Hairline and Scotch-Brite are mechanically abraded or buffed after that mill finish, each to a different texture and reflectivity. 2B is the default for process and fabrication work; the mechanical finishes are specified for visible, architectural or hygiene-driven applications.',
+          },
+          {
+            type: 'table',
+            columns: ['Finish', 'Origin', 'Appearance', 'Typical use'],
+            rows: [
+              ['No.1', 'Hot rolled, annealed, pickled', 'Dull, matte, slightly rough', 'Heavy plate for structural and pressure vessel work'],
+              ['2B', 'Cold rolled, annealed, pickled, light skin-pass', 'Smooth, moderately reflective', 'General-purpose default — most process and fabrication sheet'],
+              ['BA (Bright Annealed)', 'Cold rolled, annealed in controlled atmosphere (no pickling)', 'Bright, reflective, smooth', 'Appliance panels, decorative work where a bright look is wanted without mechanical polishing'],
+              ['No.4', 'Mechanically brushed/satin finished after rolling', 'Directional satin lines, low glare', 'Kitchen equipment, handrails, elevator interiors — visible but forgiving of marks'],
+              ['No.8', 'Mechanically buffed to a mirror finish', 'High-gloss mirror reflection', 'Showcase architectural panels, reflective decorative work'],
+              ['Hairline', 'Fine, uniform directional abrasive finish', 'Very fine linear texture', 'Architectural cladding and equipment where fingerprints must stay hidden'],
+              ['Scotch-Brite', 'Non-directional abrasive-pad finish', 'Uniform matte-satin texture', 'Kitchen and hygiene equipment wanting a non-reflective, easy-clean surface'],
+            ],
+          },
+        ],
+      },
+      {
+        id: 'ba-vs-polished',
+        heading: '"Bright annealed" is not the same as "polished"',
+        blocks: [
+          { type: 'p', text: 'BA is one of the most commonly mis-specified finishes because its name and appearance suggest mechanical polishing when the brightness actually comes from annealing in a controlled, oxygen-free atmosphere rather than open-air annealing followed by pickling. No mechanical abrasion step is involved at all. It is an excellent, genuinely bright finish for decorative and appliance work, but if a specification or buyer says "polished" meaning BA, a supplier reading that literally may quote a mechanically buffed No.4 or No.8 finish instead — a different product at a different cost. State "BA" explicitly if that is what is actually wanted.' },
+        ],
+      },
+      {
+        id: 'no4-vs-no8',
+        heading: 'No.4 vs No.8: brushed vs mirror',
+        blocks: [
+          { type: 'p', text: 'Both are mechanically applied after the base mill finish, and both get casually called "polished" in conversation, which is exactly how the wrong one ends up on a purchase order. No.4 is a directional, satin-brushed finish with low glare — it hides fingerprints and light scratches reasonably well, which is why it dominates visible kitchen equipment, handrails and elevator interiors. No.8 is buffed to a true mirror reflection, used where the showcase look is the point, but it shows every fingerprint, scratch and water mark immediately and needs more careful handling and cleaning to stay looking that way.' },
+          {
+            type: 'ul',
+            items: [
+              'Specify "No.4" or "No.8" by name or number, not just "polished" or "shiny".',
+              'For equipment that will be touched and cleaned constantly, No.4 or Scotch-Brite is usually the more practical choice than No.8, even where budget allows mirror finish.',
+              'For a genuinely showcase architectural panel where maintenance is accounted for, No.8 delivers a look none of the other finishes can match.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'corrosion-and-standards',
+        heading: 'Finish, corrosion resistance and cross-standard naming',
+        blocks: [
+          { type: 'p', text: 'Surface finish has a real, if secondary, effect on corrosion performance: a smoother surface has fewer microscopic defects and crevices that can act as pitting initiation sites, so a more finely finished surface is marginally more corrosion resistant than a rough one in the same grade and environment — the same principle behind specifying a controlled Ra value for sanitary and hygienic equipment. Finish is a refinement on top of grade selection, not a substitute for it; a 2B-finished 316L sheet is still far more corrosion resistant than a mirror-polished 304 sheet in a chloride environment.' },
+          { type: 'p', text: 'Finish nomenclature set out in ASTM A480 is the common reference in Indian and export documentation, but EN 10088 and JIS standards describe comparable finishes with their own designations, and the match between systems is close rather than exact. On an export order or when sourcing against a non-ASTM specification, state a numeric Ra (surface roughness) value alongside the finish name — the number is what a certificate actually verifies, and it removes any ambiguity the finish name alone could carry across standards.' },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'What is the difference between 2B and BA finish?',
+        answer:
+          'Both are mill finishes with no mechanical polishing step, but they diverge in the annealing stage: 2B is annealed in open air and then pickled and given a light final skin-pass roll, giving a smooth, moderately reflective surface. BA is annealed in a controlled, oxygen-free atmosphere with no pickling step, giving a brighter, more reflective surface. 2B is the general-purpose default; BA is specified where a brighter look is wanted without paying for mechanical polishing.',
+      },
+      {
+        question: 'Is a mirror finish the same as "polished" stainless steel?',
+        answer:
+          'Mirror finish usually means No.8, a specific mechanically buffed finish, but "polished" is used loosely in conversation to mean anything from BA to No.4 to No.8. The three look progressively more reflective but are produced differently and cost differently. Specify the finish by name or number (BA, No.4, No.8) rather than the word "polished" alone to avoid receiving the wrong one.',
+      },
+      {
+        question: 'Can I get mirror (No.8) finish on thick plate instead of thin sheet?',
+        answer:
+          'Mechanically polished finishes like No.4 and No.8 are most commonly produced and readily available on sheet-gauge material; availability on heavier plate thicknesses is less standard and worth confirming directly, since buffing a large, heavy plate to a true mirror finish is a less routine mill operation than finishing thin coil or sheet. State the thickness alongside the finish requirement at enquiry stage.',
+      },
+      {
+        question: 'Why do finish names sometimes not match between an Indian and an export order?',
+        answer:
+          'ASTM A480 finish designations (2B, BA, No.4, No.8, etc.) are the common reference in Indian and most export documentation, but EN 10088 and JIS standards use their own designations for broadly comparable finishes, and the correspondence between systems is close rather than exact. Stating a numeric surface roughness (Ra) value alongside the finish name removes the ambiguity, since the Ra figure is what gets verified on a certificate regardless of which naming system either party is used to.',
+      },
+    ],
+  },
 ];
 
 export const getArticle = (slug) => articles.find((a) => a.slug === slug);
