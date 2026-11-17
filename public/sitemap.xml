@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.ritvikmetalimpex.com/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -15,7 +15,7 @@
   </url>
   <url>
     <loc>https://www.ritvikmetalimpex.com/blog</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -756,6 +756,17 @@
       <image:loc>https://www.ritvikmetalimpex.com/images/products/sheets-plates-coils.jpg</image:loc>
       <image:title>Stainless Steel Sheet Finish Guide: 2B, BA, No.4 and No.8 Explained</image:title>
       <image:caption>Stainless steel sheet and plate surface finishes compared: 2B mill finish, BA bright annealed, No.4 brushed, No.8 mirror, Hairline and Scotch-Brite — what each is and when to specify it.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/blog/stainless-steel-bar-supply-condition-guide</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.ritvikmetalimpex.com/images/products/ss-round-bars.jpg</image:loc>
+      <image:title>Stainless Steel Bar Stock: Hot Rolled, Cold Drawn, Peeled and Ground — Choosing the Right Supply Condition</image:title>
+      <image:caption>Stainless steel bar supply conditions compared: hot rolled (black) vs cold drawn, peeled, centreless ground and polished — tolerance, finish, straightness and which standard applies.</image:caption>
     </image:image>
   </url>
 </urlset>

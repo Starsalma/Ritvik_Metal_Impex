@@ -2567,6 +2567,119 @@ export const articles = [
       },
     ],
   },
+  {
+    slug: 'stainless-steel-bar-supply-condition-guide',
+    title: 'Stainless Steel Bar Stock: Hot Rolled, Cold Drawn, Peeled and Ground — Choosing the Right Supply Condition',
+    seoTitle: 'Stainless Bar Supply Condition Guide',
+    description:
+      'Stainless steel bar supply conditions compared: hot rolled (black) vs cold drawn, peeled, centreless ground and polished — tolerance, finish, straightness and which standard applies.',
+    keywords:
+      'stainless steel bright bar, cold drawn vs centreless ground, stainless round bar supplier India, black bar vs bright bar, ASTM A276 vs A479, bar stock straightness tolerance, CNC bar feeder stock',
+    category: 'Piping Design',
+    readTime: '7 min read',
+    datePublished: '2026-11-17',
+    dateModified: '2026-11-17',
+    image: '/images/products/ss-round-bars.jpg',
+    relatedProductIds: [9, 20],
+    relatedGradeSlugs: ['stainless-steel-304', 'stainless-steel-316'],
+    intro:
+      'Asking for "bright bar" when the job actually needs centreless-ground stock, or ordering black bar for a precision CNC fixture, is a common and avoidable mismatch — the supply conditions sound like minor finishing variants but carry genuinely different dimensional tolerance, straightness and surface outcomes. Picking the wrong one either overpays for precision a structural application never needed, or hands a machining job stock it cannot hold tolerance with.',
+    takeaways: [
+      '"Black bar" is hot rolled, mill-scale finish with the widest dimensional tolerance — correct for structural and forging feedstock, not for anything needing a precise fit.',
+      'Cold drawn bar is pulled through a die, improving both surface finish and diameter tolerance over hot rolled, and is the common default for general machining stock.',
+      'Centreless ground gives the tightest diameter tolerance and best surface finish of the common conditions — specify it where precision shafts, pins or tight-fit components are the job.',
+      'Peeled bar removes the hot-rolled skin by turning, giving a clean round surface without the full tolerance tightness of grinding — a middle ground, often used ahead of further machining.',
+      'Straightness is a separate specification from diameter tolerance — bar within diameter tolerance can still be bowed enough to jam a CNC bar feeder, so call out straightness explicitly for feeder-fed production.',
+    ],
+    sections: [
+      {
+        id: 'conditions',
+        heading: 'The supply conditions compared',
+        blocks: [
+          {
+            type: 'note',
+            title: 'Quick answer',
+            text: 'Hot rolled (black) bar is correct for structural and forging feedstock where dimensional precision is not the point. Cold drawn is the general machining default — better surface and tolerance than black bar at a modest premium. Centreless ground is for precision shafts, pins and tight-fit parts where diameter tolerance and surface finish genuinely matter. Peeled sits between cold drawn and ground — a clean turned surface without full grinding precision, often specified ahead of further machining.',
+          },
+          {
+            type: 'table',
+            columns: ['Condition', 'Process', 'Surface', 'Typical use'],
+            rows: [
+              ['Hot rolled (black)', 'Rolled hot, left as-rolled with mill scale', 'Rough, scaled, widest tolerance', 'Structural feedstock, forging blanks, further hot working'],
+              ['Forged', 'Hot forged to rough shape', 'Rough, oversized for machining', 'Large or non-standard sizes ahead of machining'],
+              ['Cold drawn', 'Pulled through a sizing die at room temperature', 'Smooth, bright, tighter tolerance than hot rolled', 'General-purpose machining stock — the common default'],
+              ['Peeled', 'Hot-rolled skin removed by turning', 'Clean, round, uniform — no mill scale', 'Stock ahead of further machining, or where scale must be removed without full grinding'],
+              ['Centreless ground', 'Ground between rotating wheels after cold drawing', 'Very smooth, tightest diameter tolerance', 'Precision shafts, pins, tight-fit components'],
+              ['Polished', 'Further mechanical polishing after grinding or drawing', 'Bright, reflective', 'Visible or decorative bar applications'],
+            ],
+          },
+        ],
+      },
+      {
+        id: 'straightness',
+        heading: 'Straightness is a separate spec from diameter tolerance',
+        blocks: [
+          { type: 'p', text: 'A bar can sit comfortably within its diameter tolerance band and still be bowed along its length — straightness and diameter are independently controlled properties of the same bar. This matters most for CNC turning fed from a bar feeder: a bar within tolerance but insufficiently straight can bind, vibrate excessively, or jam the feed mechanism, stopping unattended production. If the bar is destined for feeder-fed machining, state the straightness requirement explicitly rather than assuming diameter tolerance alone covers it — ask for cold drawn or centreless ground stock specified and certified as straightened for feeder use.' },
+        ],
+      },
+      {
+        id: 'standards',
+        heading: 'Which standard actually applies',
+        blocks: [
+          { type: 'p', text: 'The ASTM designation on a bar\'s certificate signals the application it was qualified for, not just the alloy — check it rather than assuming any stainless bar standard covers your use.' },
+          {
+            type: 'ul',
+            items: [
+              'ASTM A276 — general-purpose wrought stainless bar; the common reference for machining and general fabrication stock.',
+              'ASTM A479 — bar specifically for boilers and pressure vessels, where the application drives additional requirements beyond A276.',
+              'ASTM A484 — general requirements that apply across the wrought stainless and alloy bar family, typically referenced alongside a specific grade standard rather than used alone.',
+              'ASTM A582 — cold-finished free-machining stainless bar, relevant where machinability (not just mechanical property) is the deciding factor.',
+              'ASTM A182 — covers forged bar and other forged products, distinct from the rolled/drawn conditions above.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'matching',
+        heading: 'Matching condition to the job',
+        blocks: [
+          {
+            type: 'ol',
+            items: [
+              'Structural or forging feedstock with no precision requirement: hot rolled (black) bar — lowest cost, widest tolerance.',
+              'General CNC or manual machining stock: cold drawn — the standard default for most turned-part production.',
+              'Precision shafts, pins or tight-fit components: centreless ground — tightest tolerance and best surface finish.',
+              'Stock needing mill scale removed before further machining, without paying for full grinding precision: peeled.',
+              'Bar feeder-fed CNC production: cold drawn or centreless ground, with straightness specified and certified explicitly — do not rely on diameter tolerance alone.',
+              'Visible or decorative bar: polished, specified on top of the underlying drawn or ground condition.',
+            ],
+          },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'What is the difference between black bar and bright bar?',
+        answer:
+          '"Black bar" is hot rolled stainless bar left in its as-rolled condition, with mill scale on the surface and the widest dimensional tolerance of the common supply conditions. "Bright bar" is a general term for any bar that has been cold drawn, peeled, ground or polished to remove the scale and tighten tolerance — it is not one specific condition, so if precision matters, specify cold drawn, peeled or centreless ground explicitly rather than just "bright".',
+      },
+      {
+        question: 'Is centreless ground bar always necessary for precision machining?',
+        answer:
+          'Not always — cold drawn bar is adequate for a great deal of general machining work, and centreless ground carries a cost premium for its tighter tolerance and finer surface finish. Specify centreless ground where the component genuinely needs that tolerance and finish — a precision shaft or close-fit pin — rather than defaulting to it for every job.',
+      },
+      {
+        question: 'Why did my bar feeder jam even though the bar was within diameter tolerance?',
+        answer:
+          'Diameter tolerance and straightness are separately controlled properties. A bar can be fully within its diameter tolerance band and still be insufficiently straight for feeder-fed production, which causes binding, vibration or jamming at the feed mechanism. State and request certification of straightness explicitly for any bar destined for a CNC bar feeder, rather than assuming diameter tolerance alone guarantees it.',
+      },
+      {
+        question: 'Does ASTM A276 cover bar for pressure vessel use?',
+        answer:
+          'A276 is the general-purpose wrought stainless bar standard and is not the specification written for pressure vessel and boiler service — that is ASTM A479. Check which standard is actually named on your project specification and on the mill certificate, since the two cover different qualification requirements despite both applying to stainless bar.',
+      },
+    ],
+  },
 ];
 
 export const getArticle = (slug) => articles.find((a) => a.slug === slug);

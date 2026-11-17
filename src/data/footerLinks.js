@@ -80,6 +80,10 @@ export const articleLinks = [
   {
     "title": "Stainless Steel Sheet Finish Guide: 2B, BA, No.4 and No.8 Explained",
     "slug": "stainless-steel-sheet-finish-guide-2b-ba-no4-no8"
+  },
+  {
+    "title": "Stainless Steel Bar Stock: Hot Rolled, Cold Drawn, Peeled and Ground — Choosing the Right Supply Condition",
+    "slug": "stainless-steel-bar-supply-condition-guide"
   }
 ];
 
