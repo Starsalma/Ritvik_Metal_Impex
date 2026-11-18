@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.ritvikmetalimpex.com/</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -15,7 +15,7 @@
   </url>
   <url>
     <loc>https://www.ritvikmetalimpex.com/blog</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -767,6 +767,17 @@
       <image:loc>https://www.ritvikmetalimpex.com/images/products/ss-round-bars.jpg</image:loc>
       <image:title>Stainless Steel Bar Stock: Hot Rolled, Cold Drawn, Peeled and Ground — Choosing the Right Supply Condition</image:title>
       <image:caption>Stainless steel bar supply conditions compared: hot rolled (black) vs cold drawn, peeled, centreless ground and polished — tolerance, finish, straightness and which standard applies.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/blog/pipe-elbow-vs-bend-radius-guide</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.ritvikmetalimpex.com/images/products/ss-bends.jpg</image:loc>
+      <image:title>Pipe Elbows vs Bends: What Actually Differs, and When You Need Each</image:title>
+      <image:caption>Elbow vs bend compared: fixed-radius factory fittings vs formed pipe, 1D/1.5D/3D/5D radius options, why pigging lines need bends not elbows, and wall-thickness thinning on the bend arc.</image:caption>
     </image:image>
   </url>
 </urlset>

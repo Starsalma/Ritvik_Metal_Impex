@@ -84,6 +84,10 @@ export const articleLinks = [
   {
     "title": "Stainless Steel Bar Stock: Hot Rolled, Cold Drawn, Peeled and Ground — Choosing the Right Supply Condition",
     "slug": "stainless-steel-bar-supply-condition-guide"
+  },
+  {
+    "title": "Pipe Elbows vs Bends: What Actually Differs, and When You Need Each",
+    "slug": "pipe-elbow-vs-bend-radius-guide"
   }
 ];
 

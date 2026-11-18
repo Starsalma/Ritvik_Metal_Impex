@@ -2680,6 +2680,106 @@ export const articles = [
       },
     ],
   },
+  {
+    slug: 'pipe-elbow-vs-bend-radius-guide',
+    title: 'Pipe Elbows vs Bends: What Actually Differs, and When You Need Each',
+    seoTitle: 'Pipe Elbow vs Bend: Radius & Standards Guide',
+    description:
+      'Elbow vs bend compared: fixed-radius factory fittings vs formed pipe, 1D/1.5D/3D/5D radius options, why pigging lines need bends not elbows, and wall-thickness thinning on the bend arc.',
+    keywords:
+      'elbow vs bend pipe fitting, long radius vs short radius elbow, 3D bend vs 5D bend, pigging line bend radius, ASME B16.9 elbow, MSS SP-43 bend, induction bend ASME B16.49, stainless steel pipe bend supplier',
+    category: 'Piping Design',
+    readTime: '7 min read',
+    datePublished: '2026-11-18',
+    dateModified: '2026-11-18',
+    image: '/images/products/ss-bends.jpg',
+    relatedProductIds: [18, 2, 1],
+    relatedGradeSlugs: ['stainless-steel-304', 'stainless-steel-316'],
+    intro:
+      '"Elbow" and "bend" get used interchangeably in everyday site conversation, but they are not the same component. An elbow is a factory-made fitting produced to a fixed radius from a standard\'s own table; a bend is formed from a length of straight pipe to whatever radius the job actually needs, including radii no elbow catalogue offers at all. Specifying one where the project actually needs the other is a common and avoidable mix-up, especially on pipeline work where the radius itself is a functional requirement, not a preference.',
+    takeaways: [
+      'An elbow is a discrete factory fitting made to a fixed standard radius (typically 1D short radius or 1.5D long radius); a bend is formed from straight pipe to any radius the job specifies.',
+      '3D and 5D bend radii exist specifically for pigging operations — a tight-radius elbow can obstruct or jam a pipeline inspection gauge that a gentler bend lets pass through.',
+      'Forming a bend thins the pipe wall slightly on the outer radius of the curve — a consideration an elbow, made to its final shape from the start, does not carry in the same way.',
+      'ASME B16.9 governs factory buttweld elbows; MSS SP-43 covers light-wall, corrosion-resistant short and long radius fittings; ASME B16.49 covers induction bends specifically for pipeline service.',
+      'Custom angles and radii are a bend-only option — if a layout needs something other than a standard 45°/90°/180° fixed radius, that is a bend specification, not an elbow one.',
+    ],
+    sections: [
+      {
+        id: 'difference',
+        heading: 'Elbow vs bend: the actual difference',
+        blocks: [
+          {
+            type: 'note',
+            title: 'Quick answer',
+            text: 'An elbow is a separate, factory-made fitting produced to a fixed radius and angle from a standard\'s own dimensional table — you buy it as a discrete component and weld it in. A bend is formed by taking a length of straight pipe and curving it, mechanically or by induction, to whatever radius and angle the layout actually calls for, including radii (3D, 5D, custom) that no elbow table offers. Use an elbow for standard 45°/90°/180° direction changes; use a bend where the radius itself is dictated by the service — most commonly pigging.',
+          },
+          {
+            type: 'table',
+            columns: ['', 'Elbow', 'Bend'],
+            rows: [
+              ['Origin', 'Factory-made fitting to a fixed standard shape', 'Formed from straight pipe to the required radius'],
+              ['Radius options', 'Fixed: short radius (1D) or long radius (1.5D)', 'Any radius the job specifies — 3D, 5D, custom'],
+              ['Typical standard', 'ASME B16.9 (buttweld fittings)', 'MSS SP-43 (light-wall) or ASME B16.49 (induction bends)'],
+              ['Wall thickness', 'Uniform, as manufactured to the fitting\'s design', 'Maintained per schedule through the arc, but thinned slightly on the outer radius during forming'],
+              ['Typical use', 'Standard direction changes in general piping', 'Pigging lines, large-radius layouts, custom angles'],
+            ],
+          },
+        ],
+      },
+      {
+        id: 'pigging',
+        heading: 'Why pigging lines need bends, not elbows',
+        blocks: [
+          { type: 'p', text: 'A pipeline pig — the inspection or cleaning tool run through the line — needs a gentle enough curve to pass through a direction change without jamming or getting damaged. A standard elbow\'s fixed, relatively tight radius (1D or 1.5D) is often too sharp for a pig to negotiate reliably, which is exactly why 3D and 5D bend radii exist: three or five times the pipe diameter, gentle enough for the pig to pass through at the direction change rather than at it. If the line will ever be pigged, specify the bend radius the pigging operation actually requires — do not default to a standard elbow because it is the more familiar component.' },
+        ],
+      },
+      {
+        id: 'wall-thickness',
+        heading: 'Wall thickness thinning on the bend arc',
+        blocks: [
+          { type: 'p', text: 'Forming a bend stretches the pipe wall on the outer radius of the curve and compresses it on the inner radius, which means the wall thickness is not perfectly uniform around the bend the way a straight pipe\'s is. Reputable manufacturing maintains wall thickness within the governing schedule throughout the arc, but this is a real, bend-specific manufacturing consideration that an elbow — made to its final fixed shape from the start rather than deformed into one — does not carry in the same way. For critical or high-pressure bends, confirm the minimum wall thickness at the outer radius is verified and stated on the mill certificate, not just the nominal schedule at the straight ends.' },
+        ],
+      },
+      {
+        id: 'standards',
+        heading: 'Which standard actually applies',
+        blocks: [
+          {
+            type: 'ul',
+            items: [
+              'ASME B16.9 — factory buttweld fittings including elbows, made to the standard\'s fixed dimensional tables.',
+              'MSS SP-43 — light-wall, corrosion-resistant short and long radius fittings, commonly referenced for stainless bends.',
+              'ASME B16.49 — induction bends specifically for pipeline service, where the pigging and layout requirements the bend exists to satisfy are the governing consideration.',
+            ],
+          },
+          { type: 'p', text: 'Check which standard a drawing or specification actually names before quoting or ordering — "bend" alone, without a radius and governing standard, leaves the manufacturing route and dimensional outcome ambiguous.' },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'What is the actual difference between a pipe elbow and a pipe bend?',
+        answer:
+          'An elbow is a separate, factory-made fitting produced to a fixed standard radius and angle (typically short radius 1D or long radius 1.5D) under ASME B16.9. A bend is formed from a length of straight pipe to whatever radius and angle the job specifies, including radii — 3D, 5D or custom — that no elbow table offers. They are often used interchangeably in conversation, but they are different components made by different processes.',
+      },
+      {
+        question: 'Can I use a standard elbow instead of a 3D bend on a pigging line?',
+        answer:
+          'Not reliably. A standard elbow\'s tighter fixed radius (1D or 1.5D) can be too sharp for a pipeline pig to pass through without jamming or sustaining damage. 3D and 5D bend radii exist specifically to give the pig a gentle enough curve to negotiate. If the line will be pigged at any point in its service life, specify the bend radius the pigging operation requires rather than defaulting to a standard elbow.',
+      },
+      {
+        question: 'Does bending a pipe thin the wall thickness?',
+        answer:
+          'Yes, to a degree — forming a bend stretches the wall on the outer radius of the curve and compresses it on the inner radius, so the wall thickness is not perfectly uniform around the bend the way a straight pipe\'s is. Properly manufactured bends maintain wall thickness within the governing schedule throughout the arc, but for critical or high-pressure service, confirm the minimum outer-radius wall thickness is verified and stated on the mill certificate rather than assuming the nominal schedule applies unchanged.',
+      },
+      {
+        question: 'What does "long radius" mean on an elbow or bend?',
+        answer:
+          'Long radius means the centreline radius of the curve is 1.5 times the pipe\'s nominal diameter (1.5D) — the standard default for most general piping, giving a smoother flow transition and lower pressure drop than a short radius (1D) equivalent. Short radius is specified mainly where layout space is genuinely constrained and the higher pressure drop and turbulence it introduces is an acceptable trade-off.',
+      },
+    ],
+  },
 ];
 
 export const getArticle = (slug) => articles.find((a) => a.slug === slug);
