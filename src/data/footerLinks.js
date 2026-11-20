@@ -88,6 +88,10 @@ export const articleLinks = [
   {
     "title": "Pipe Elbows vs Bends: What Actually Differs, and When You Need Each",
     "slug": "pipe-elbow-vs-bend-radius-guide"
+  },
+  {
+    "title": "Instrumentation Ferrule Fittings: How Double-Ferrule Compression Seals Work",
+    "slug": "instrumentation-ferrule-compression-fittings-guide"
   }
 ];
 

@@ -2780,6 +2780,101 @@ export const articles = [
       },
     ],
   },
+  {
+    slug: 'instrumentation-ferrule-compression-fittings-guide',
+    title: 'Instrumentation Ferrule Fittings: How Double-Ferrule Compression Seals Work',
+    seoTitle: 'Ferrule Compression Fitting Guide: Sizing & Assembly',
+    description:
+      'Instrumentation ferrule (compression) tube fittings explained: the double-ferrule sealing mechanism, tube OD sizing vs nominal pipe size, material options, and correct assembly.',
+    keywords:
+      'ferrule fitting supplier India, double ferrule compression fitting, instrumentation tube fitting, tube OD fitting sizing, compression fitting pull up turns, Swagelok style fitting supplier, instrumentation fitting material 316',
+    category: 'Piping Design',
+    readTime: '7 min read',
+    datePublished: '2026-11-20',
+    dateModified: '2026-11-20',
+    image: '/images/products/ferrule-fittings.jpg',
+    relatedProductIds: [5, 22],
+    relatedGradeSlugs: ['stainless-steel-316', 'inconel', 'monel'],
+    intro:
+      'Ferrule fittings get grouped with sanitary Tri-Clamp fittings on the strength of the shared word "ferrule" alone, but they are a different product for a different buyer entirely. These are double-ferrule compression tube fittings for instrumentation — pressure gauges, analytical systems, hydraulic and process control tubing — sealed by compressing a ferrule onto the tube itself, with no welding, soldering or sanitary connection standard involved at all.',
+    takeaways: [
+      'The seal comes from a front and back ferrule compressing onto the tube OD when the nut is tightened — a mechanical grip-and-seal, not a weld, braze or gasket joint.',
+      'These fittings are sized to the tube\'s actual outside diameter in fractional inches (1/16" to 1" OD) — not to nominal pipe size (NB) the way process pipe fittings are, and the two sizing systems are not interchangeable.',
+      '316/316L stainless covers most instrumentation service; Monel, Hastelloy, Inconel and titanium are available where the process medium is too aggressive for 316.',
+      'Over-tightening is the most common assembly failure — compression fittings have a defined "pull-up" procedure (finger-tight plus a specified number of additional turns), and over-swaging the back ferrule damages the seal rather than improving it.',
+      'A correctly pulled-up fitting can usually be disassembled and remade on the same tube without re-swaging — a real advantage over welded connections for instrumentation that needs periodic calibration or maintenance access.',
+    ],
+    sections: [
+      {
+        id: 'mechanism',
+        heading: 'How the double-ferrule seal actually works',
+        blocks: [
+          {
+            type: 'note',
+            title: 'Quick answer',
+            text: 'A ferrule fitting has four parts: body, front ferrule, back ferrule and nut. The tube is inserted into the body, and tightening the nut drives both ferrules forward — the front ferrule bites into the tube surface to seal it, while the back ferrule grips the tube and relieves strain so vibration and movement do not work the seal loose. No welding, soldering or adhesive is involved; the seal is purely mechanical and can be made and remade in the field with hand tools.',
+          },
+          { type: 'p', text: 'That mechanical, no-heat assembly is exactly why these fittings dominate instrumentation and analytical tubing rather than process-scale piping: a technician can build, test, recalibrate and rebuild a tubing run repeatedly without a welder, a heat-affected zone, or downtime waiting for a weld to cool and get inspected.' },
+        ],
+      },
+      {
+        id: 'sizing',
+        heading: 'Sized to tube OD, not nominal pipe size',
+        blocks: [
+          { type: 'p', text: 'This is the single most common ordering mistake moving between process piping and instrumentation tubing: process pipe fittings are sized by Nominal Bore (NB/NPS), a label that does not equal actual outside diameter. Ferrule fittings are sized directly to the tube\'s actual outside diameter, stated in fractional inches — 1/16", 1/8", 1/4", 3/8", 1/2" and up to 1" OD are the common range. A fitting ordered against an NB figure instead of the tube\'s real OD will not fit, because the two sizing conventions describe different things entirely.' },
+          { type: 'p', text: 'Wall thickness also matters here in a way it does not for most pipe fittings: the ferrule needs to grip and seal against a tube of the correct OD and wall thickness together, since a thinner-wall tube of the same OD can deform differently under the ferrule\'s compression than a thicker-wall one. State both OD and wall thickness on an enquiry, not OD alone.' },
+        ],
+      },
+      {
+        id: 'materials',
+        heading: 'Material selection for aggressive instrumentation service',
+        blocks: [
+          {
+            type: 'table',
+            columns: ['Material', 'Typical use'],
+            rows: [
+              ['316 / 316L stainless steel', 'The default for the large majority of instrumentation, analytical and general process-control tubing'],
+              ['Monel', 'Where the process medium includes hydrofluoric acid or similar duty beyond 316\'s corrosion resistance'],
+              ['Hastelloy', 'Reducing acids and aggressive mixed-chemical instrumentation lines'],
+              ['Inconel', 'High-temperature instrumentation points, or broad corrosion resistance combined with strength'],
+              ['Titanium', 'Oxidising chlorides and specific chemical-process instrumentation where titanium\'s resistance profile fits'],
+            ],
+          },
+          { type: 'p', text: 'The material decision here follows the same logic covered in this site\'s nickel alloy and grade comparison guides — name the actual process medium and condition rather than reaching for a premium material by habit, since 316/316L handles the great majority of instrumentation duty at a fraction of the cost of the alternatives.' },
+        ],
+      },
+      {
+        id: 'assembly',
+        heading: 'Assembly: why over-tightening is the most common failure',
+        blocks: [
+          { type: 'p', text: 'Double-ferrule compression fittings are assembled to a defined procedure, not tightened "until it feels tight" — typically finger-tight engagement followed by a specified number of additional turns with a wrench, which varies by fitting size and manufacturer\'s instructions. Over-tightening past that point over-swages the back ferrule, which can deform it enough to damage the seal rather than improve it; under-tightening leaves the ferrules insufficiently compressed and the joint leaks under pressure or vibration. Follow the fitting manufacturer\'s stated pull-up procedure for the specific size rather than assuming more turns is always safer.' },
+          { type: 'p', text: 'One genuine practical advantage: once a fitting has been correctly pulled up on a given tube, it can usually be disassembled and reassembled on that same tube without needing to re-swage the ferrules — useful for instrumentation that needs periodic removal for calibration, cleaning or inspection, in a way a welded joint simply cannot offer.' },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'What is the difference between a ferrule (compression) fitting and a buttweld fitting?',
+        answer:
+          'A buttweld fitting is welded into the piping system and forms a permanent, fused metallurgical joint, sized by Nominal Bore to match standard pipe schedules. A ferrule compression fitting seals mechanically — a front and back ferrule compress onto the tube OD when the nut is tightened, with no welding at all — and is sized directly to the tube\'s actual outside diameter in fractional inches. They serve different scales of work: buttweld for process piping, ferrule fittings for instrumentation and small-bore tubing that needs field-serviceable, no-weld connections.',
+      },
+      {
+        question: 'Can a ferrule fitting be reused after it has been disassembled?',
+        answer:
+          'Usually yes, on the same tube it was originally pulled up on — a correctly assembled double-ferrule fitting can typically be removed and remade without re-swaging the ferrules, which is one of its real advantages for instrumentation needing periodic access. Moving the fitting to a different, unused section of tube generally requires a fresh pull-up, since the ferrules were shaped to grip that specific original location.',
+      },
+      {
+        question: 'What happens if I over-tighten a ferrule fitting?',
+        answer:
+          'Over-tightening past the manufacturer\'s specified pull-up procedure over-swages the back ferrule, which can deform it enough to damage rather than improve the seal — the opposite of what over-tightening is usually assumed to achieve. Follow the stated finger-tight-plus-turns procedure for the specific fitting size rather than tightening further "to be safe".',
+      },
+      {
+        question: 'Are ferrule fittings sized the same way as process pipe fittings?',
+        answer:
+          'No. Process pipe fittings are sized by Nominal Bore (NB/NPS), a label that does not equal actual outside diameter. Ferrule fittings are sized directly to the tube\'s real outside diameter in fractional inches (1/16" to 1" OD is the common range), together with the tube\'s wall thickness. Ordering a ferrule fitting against an NB figure instead of the tube\'s actual OD and wall thickness is a common and avoidable mismatch between the two systems.',
+      },
+    ],
+  },
 ];
 
 export const getArticle = (slug) => articles.find((a) => a.slug === slug);
