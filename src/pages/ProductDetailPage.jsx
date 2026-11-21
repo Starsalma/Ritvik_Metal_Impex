@@ -82,10 +82,26 @@ export default function ProductDetailPage() {
    * Both of these used to run 87–106 and 262–281 characters, so Google cut the
    * brand off every title and half of every description. clamp() in <Seo />
    * is the backstop; keeping the source strings short is the actual fix.
+   *
+   * The title is the single highest-value piece of text on this page for
+   * matching what a real buyer actually types — and most product.name values
+   * don't include the material ("Pipes & Tubes", not "Stainless Steel Pipes &
+   * Tubes"), so the title was missing the one keyword buyers search by most.
+   * This prefixes the material unless it's already present in the name (most
+   * copper/brass products already carry it). product.seoTitle overrides this
+   * entirely for the handful of products where the catalogue name itself
+   * doesn't match real search behaviour (see products.js for why).
    */
-  const seoTitle = clamp(`${product.name} Supplier in Mumbai`, TITLE_MAX);
+  const materialFirstWord = product.material.split(' ')[0].toLowerCase();
+  const titleBase =
+    product.seoTitle ??
+    (product.name.toLowerCase().includes(materialFirstWord)
+      ? product.name
+      : `${product.material} ${product.name}`);
+  const seoTitle = clamp(`${titleBase} Supplier in Mumbai`, TITLE_MAX);
   const seoDescription = clamp(
-    `${product.material} ${product.name.toLowerCase()} from Ritvik Metal Impex, Mumbai. ${product.description}`,
+    product.seoDescription ??
+      `${product.material} ${product.name.toLowerCase()} from Ritvik Metal Impex, Mumbai. ${product.description}`,
     DESCRIPTION_MAX,
   );
 

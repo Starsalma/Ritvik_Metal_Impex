@@ -41,6 +41,14 @@ export const products = [
   {
     id: 3,
     name: "Forged Socketweld & Screwed Fittings",
+    /*
+     * "Alloy Steel Forged Socketweld & Screwed Fittings Supplier in Mumbai" is
+     * 67 characters — past TITLE_MAX (60), so clamp() would cut it mid-word.
+     * Real buyers search "forged fitting supplier" or "socket weld fitting
+     * supplier", not the full catalogue name, so the shorter override is also
+     * the better match for actual search behaviour, not just a length fix.
+     */
+    seoTitle: "Alloy Steel Forged Fittings",
     category: "Ferrous",
     form: "Fittings",
     material: "Alloy Steel",
@@ -405,6 +413,18 @@ export const products = [
   {
     id: 22,
     name: "High Performance Alloys",
+    /*
+     * Nobody searches "high performance alloys supplier" — that is internal
+     * catalogue language. Buyers search by the specific alloy: Search Console
+     * confirmed real demand for exactly these names ("hastelloy vs inconel"
+     * alone ran 104 impressions, the single largest query cluster found in
+     * that export). The alloy names were already in this product's own
+     * description below; this override just surfaces them into the title and
+     * description, where they can actually be found and matched.
+     */
+    seoTitle: "Monel, Inconel & Hastelloy",
+    seoDescription:
+      "Monel, Inconel 625, Hastelloy C276, titanium and Incoloy nickel alloys from Ritvik Metal Impex, Mumbai, in pipes, fittings, flanges, bars and sheet.",
     category: "Ferrous",
     form: "Bars",
     material: "Nickel Alloys",
