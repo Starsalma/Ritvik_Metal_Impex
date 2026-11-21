@@ -141,16 +141,10 @@ export default function AboutPage() {
             <div className="w-[82%] h-[88%] overflow-hidden shadow-2xl relative z-10"
               style={{clipPath:'polygon(0 0,100% 0,100% 88%,88% 100%,0 100%)'}}>
               <img src="/images/about.jpg"
-<<<<<<< HEAD
-                alt="Ritvik Metal Impex stainless steel and non-ferrous stock, Mumbai"
-                className="w-full h-full object-cover"
-                loading="lazy" decoding="async" />
-=======
                 alt="Ritvik Metal Impex — stainless steel and industrial metal stockyard, Mumbai"
                 loading="lazy"
                 className="w-full h-full object-cover"
                 onError={(e) => { e.target.style.display = 'none'; }} />
->>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
             </div>
             {/* accent box */}
             <div className="absolute right-0 bottom-4 w-[46%] bg-[#0A1828] p-6 z-20 shadow-xl"
@@ -171,10 +165,7 @@ export default function AboutPage() {
             <div ref={whoHR} className="ab-h mt-3">
               <h1 className="text-[30px] sm:text-[40px] lg:text-[50px] font-black text-[#0A1828] uppercase tracking-tight leading-[1.08]">
                 ABOUT<br />RITVIK METAL IMPEX
-<<<<<<< HEAD
-=======
                 <span className="sr-only"> — industrial metal supplier and stockist in Mumbai, India</span>
->>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
               </h1>
             </div>
             <div ref={whoTxtR} className="ab-up mt-1">

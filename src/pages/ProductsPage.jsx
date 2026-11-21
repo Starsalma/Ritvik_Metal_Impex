@@ -1,20 +1,9 @@
 import { useState } from "react";
-<<<<<<< HEAD
-import { Link } from "react-router-dom";
-=======
 import { Link, useSearchParams } from "react-router-dom";
->>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
 import { products } from "../data/products";
 import { getPriceRange, formatPriceRange } from '../data/pricing';
 import AnimatedSection from "../components/AnimatedSection";
 import Seo from "../components/Seo";
-<<<<<<< HEAD
-import { site, absoluteUrl, breadcrumbSchema } from "../data/siteConfig";
-
-export default function ProductsPage() {
-  const [materialFilter, setMaterialFilter] = useState("All");
-  const [formFilter, setFormFilter] = useState("All");
-=======
 import CTABand from "../components/CTABand";
 import RelatedLinks from "../components/RelatedLinks";
 import { browseClusters } from "../data/internalLinks";
@@ -30,7 +19,6 @@ export default function ProductsPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const materialFilter = searchParams.get("material") || "All";
   const formFilter = searchParams.get("form") || "All";
->>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
   const [search, setSearch] = useState("");
 
   const setFilter = (key, value) => {
@@ -56,34 +44,6 @@ export default function ProductsPage() {
     return matchesMaterial && matchesForm && matchesSearch;
   });
 
-<<<<<<< HEAD
-  const schema = [
-    {
-      "@type": "CollectionPage",
-      "@id": `${site.url}/products#collection`,
-      name: "Industrial Metal Products — Ferrous & Non-Ferrous Catalogue",
-      description:
-        "Complete catalogue of stainless steel, carbon steel, alloy steel, duplex, nickel alloy, copper and brass products supplied by Ritvik Metal Impex, Mumbai.",
-      url: `${site.url}/products`,
-      isPartOf: { "@id": `${site.url}/#website` },
-    },
-    {
-      "@type": "ItemList",
-      "@id": `${site.url}/products#catalogue`,
-      numberOfItems: products.length,
-      itemListElement: products.map((p, i) => ({
-        "@type": "ListItem",
-        position: i + 1,
-        url: absoluteUrl(`/products/${p.slug}`),
-        name: `${p.material} ${p.name}`,
-      })),
-    },
-    breadcrumbSchema([
-      { name: "Home", path: "/" },
-      { name: "Products", path: "/products" },
-    ]),
-  ];
-=======
   const catalogueSchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -134,19 +94,10 @@ export default function ProductsPage() {
         .slice(0, 6)
         .join(", ")}. Mill test certificates and pan-India delivery.`
     : "Browse the full Ritvik Metal Impex catalogue: stainless steel, carbon steel, alloy, duplex and nickel alloy pipes, buttweld and forged fittings, flanges, sheets, plates, coils, bars, flats, fasteners and valves, plus copper tubes, strips, wires and brass rods.";
->>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
 
   return (
     <>
       <Seo
-<<<<<<< HEAD
-        title="Industrial Metal Products | Stainless Steel, Copper & Brass Catalogue — Ritvik Metal Impex"
-        description="Browse 22 product categories: stainless steel pipes & tubes, buttweld and forged fittings, flanges, bars, sheets, valves, fasteners, plus copper tubes, brass rods and enameled winding wire. Mumbai stockist and exporter with Mill Test Certificates."
-        keywords="industrial metal products, stainless steel supplier Mumbai, ss pipe fittings stockist, flanges supplier India, copper tube supplier, brass rod supplier, nickel alloy stockist, metal exporter India"
-        path="/products"
-        image="/images/products/pipes-tubes.jpg"
-        schema={schema}
-=======
         title={facetTitle}
         description={facetDescription}
         keywords="stainless steel products supplier, pipe fittings flanges supplier Mumbai, stainless steel sheet plate coil supplier, copper tube brass rod supplier India, duplex nickel alloy stockist, industrial metal catalogue India"
@@ -154,7 +105,6 @@ export default function ProductsPage() {
         noindex={multiFacet}
         image="/images/products/pipes-tubes.jpg"
         schema={[catalogueSchema, crumbs]}
->>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
       />
 
     <section className="bg-white min-h-screen py-20 px-6 lg:px-16">
@@ -162,16 +112,6 @@ export default function ProductsPage() {
 
         <AnimatedSection animation="fadeUp" className="text-center mb-16">
           <span className="text-[#E5A93C] font-bold tracking-[0.25em] uppercase text-sm">Industrial Catalogue</span>
-<<<<<<< HEAD
-          <h1 className="text-5xl lg:text-6xl font-black text-[#0A1828] mt-4 uppercase">
-            Stainless Steel &amp; Non-Ferrous Metal Products
-          </h1>
-          <div className="w-20 h-[2px] bg-[#E5A93C] mx-auto mt-6" />
-          <p className="max-w-3xl mx-auto text-gray-500 mt-8 leading-relaxed">
-            Our complete ferrous and non-ferrous range — pipes and tubes, buttweld and forged fittings,
-            flanges, bars, sheets, valves, fasteners, and copper, brass and nickel alloy products —
-            supplied ex-Mumbai with Mill Test Certificates and third-party inspection support.
-=======
           <h1 className="text-4xl lg:text-6xl font-black text-[#0A1828] mt-4 uppercase leading-[1.1]">
             Industrial Metal Products
           </h1>
@@ -180,7 +120,6 @@ export default function ProductsPage() {
             Explore our complete range of ferrous and non-ferrous industrial metal products —
             stainless steel, carbon steel, alloy steel, duplex, nickel alloys, copper and brass —
             supplied from Mumbai across India and worldwide with mill test certificates.
->>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
           </p>
         </AnimatedSection>
 
@@ -218,26 +157,17 @@ export default function ProductsPage() {
           {filteredProducts.map((product, index) => (
             <AnimatedSection key={product.id} animation="scaleUp" delay={index * 60}>
               <Link
-<<<<<<< HEAD
-                to={`/products/${product.slug}`}
-                className="group block bg-white rounded-tl-[50px] rounded-br-[50px] overflow-hidden shadow-md hover:shadow-2xl border border-gray-100 transition-shadow duration-500 h-full">
-                <div className="h-[260px] overflow-hidden bg-gray-100">
-                  <img src={product.image}
-                    alt={`${product.material} ${product.name} — ${site.name}, Mumbai`}
-=======
                 to={`/products/${product.id}`}
                 className="group block bg-white rounded-tl-[50px] rounded-br-[50px] overflow-hidden shadow-md hover:shadow-2xl border border-gray-100 transition-shadow duration-500 h-full">
                 <div className="h-[260px] overflow-hidden bg-gray-100">
                   <img src={product.image} alt={`${product.material} ${product.name} supplier and stockist in Mumbai, India`}
                     loading={index < 4 ? "eager" : "lazy"}
->>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading={index < 4 ? "eager" : "lazy"} decoding="async"
                     onError={(e) => { e.target.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center"><span class="text-gray-300 uppercase tracking-widest text-sm">Product Image</span></div>'; }} />
                 </div>
                 <div className="p-6">
                   <span className="text-[#E5A93C] text-xs font-black tracking-[0.2em] uppercase">{product.material}</span>
-                  <h2 className="text-xl font-black text-[#0A1828] uppercase mt-3">{product.name}</h2>
+                  <h3 className="text-xl font-black text-[#0A1828] uppercase mt-3">{product.name}</h3>
                   <p className="text-gray-500 mt-3 text-sm line-clamp-2">{product.description}</p>
                   {/* Only ever rendered for a verified range — see src/data/pricing.js */}
                   {getPriceRange(product) && (
@@ -259,15 +189,6 @@ export default function ProductsPage() {
         </div>
 
         {filteredProducts.length === 0 && (
-<<<<<<< HEAD
-          <p className="text-center text-gray-400 py-16">
-            No products match that filter. <Link to="/products" className="text-[#E5A93C] font-bold">View the full catalogue</Link>.
-          </p>
-        )}
-
-      </div>
-    </section>
-=======
           <p className="text-center text-gray-500 py-16">
             No products match those filters. Try a different material or product form.
           </p>
@@ -312,7 +233,6 @@ export default function ProductsPage() {
       body="Send your enquiry, drawing or line list. We confirm stock position, grade options and a firm price, with mill test certificates as standard and third-party inspection where your project requires it."
       whatsappMessage="Hi, I would like a quote for products from your catalogue."
     />
->>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
     </>
   );
 }

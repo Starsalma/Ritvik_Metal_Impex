@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-=======
 import { useEffect, useRef } from 'react';
->>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
 
 // Destructured to primitives: an `options` object literal would be a new
 // reference each render and re-run the effect on every render if added to deps.
@@ -154,9 +149,8 @@ export default function Products() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A1828]/80 via-[#0A1828]/20 to-transparent z-10" />
                 <img
                   src="/images/ferrous.jpeg?auto=format&fit=crop&q=80&w=800"
-                  alt="Ferrous metals range — stainless steel sheets, pipes and forged flanges stocked by Ritvik Metal Impex, Mumbai"
+                  alt="Stainless Steel Sheets and Flanges"
                   className="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy" decoding="async"
                 />
                 <div className="absolute bottom-0 inset-x-0 p-8 z-20 flex flex-col">
                   <span className="text-[#E5A93C] text-[11px] font-black tracking-[0.25em] uppercase">
@@ -171,14 +165,14 @@ export default function Products() {
                 </div>
               </div>
 
-              <Link to="/products" className="mt-4 flex items-center gap-4 px-2 w-fit">
+              <div className="mt-4 flex items-center gap-4 px-2 cursor-pointer w-fit">
                 <span className="text-[12px] font-black tracking-widest text-[#0A1828] uppercase group-hover:text-[#E5A93C] transition-colors duration-200">
                   EXPLORE FERROUS RANGE
                 </span>
                 <span className="text-[#E5A93C] text-sm transform transition-transform group-hover:translate-x-1.5 duration-300">
                   →
                 </span>
-              </Link>
+              </div>
             </div>
 
             {/* CARD 2 — NON-FERROUS */}
@@ -190,9 +184,8 @@ export default function Products() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A1828]/80 via-[#0A1828]/20 to-transparent z-10" />
                 <img
                   src="/images/nonferrous.jpeg?auto=format&fit=crop&q=80&w=800"
-                  alt="Non-ferrous range — copper tubes, brass rods and nickel alloy products supplied by Ritvik Metal Impex, Mumbai"
+                  alt="Copper and Brass industrial raw items"
                   className="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy" decoding="async"
                 />
                 <div className="absolute bottom-0 inset-x-0 p-8 z-20 flex flex-col">
                   <span className="text-[#E5A93C] text-[11px] font-black tracking-[0.25em] uppercase">
@@ -207,14 +200,14 @@ export default function Products() {
                 </div>
               </div>
 
-              <Link to="/products" className="mt-4 flex items-center gap-4 px-2 w-fit">
+              <div className="mt-4 flex items-center gap-4 px-2 cursor-pointer w-fit">
                 <span className="text-[12px] font-black tracking-widest text-[#0A1828] uppercase group-hover:text-[#E5A93C] transition-colors duration-200">
                   EXPLORE NON-FERROUS RANGE
                 </span>
                 <span className="text-[#E5A93C] text-sm transform transition-transform group-hover:translate-x-1.5 duration-300">
                   →
                 </span>
-              </Link>
+              </div>
             </div>
 
           </div>

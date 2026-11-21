@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-# robots.txt for https://www.ritvikmetalimpex.com
-User-agent: *
-Allow: /
-Disallow: /404
-
-# Common SEO crawlers are welcome; adjust if crawl budget becomes an issue.
-=======
 # robots.txt — https://www.ritvikmetalimpex.com
 
 # ---------------------------------------------------------------
@@ -100,17 +92,13 @@ Allow: /
 # ---------------------------------------------------------------
 # SEO tooling — throttled, not blocked
 # ---------------------------------------------------------------
->>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
 User-agent: AhrefsBot
 Crawl-delay: 10
 
 User-agent: SemrushBot
 Crawl-delay: 10
 
-<<<<<<< HEAD
-=======
 User-agent: MJ12bot
 Crawl-delay: 10
 
->>>>>>> 44a93c1066d3219f4c6feeec5dced53432d90914
 Sitemap: https://www.ritvikmetalimpex.com/sitemap.xml
