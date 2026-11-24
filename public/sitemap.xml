@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.ritvikmetalimpex.com/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -15,7 +15,7 @@
   </url>
   <url>
     <loc>https://www.ritvikmetalimpex.com/blog</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -789,6 +789,17 @@
       <image:loc>https://www.ritvikmetalimpex.com/images/products/ferrule-fittings.jpg</image:loc>
       <image:title>Instrumentation Ferrule Fittings: How Double-Ferrule Compression Seals Work</image:title>
       <image:caption>Instrumentation ferrule (compression) tube fittings explained: the double-ferrule sealing mechanism, tube OD sizing vs nominal pipe size, material options, and correct assembly.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ritvikmetalimpex.com/blog/positive-material-identification-pmi-xrf-guide</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.ritvikmetalimpex.com/images/products/high-performance-alloys.jpg</image:loc>
+      <image:title>Positive Material Identification (PMI): What Handheld XRF Can and Can&apos;t Verify</image:title>
+      <image:caption>How handheld XRF positive material identification actually works, what it can and cannot detect, 100% PMI vs spot-check sampling, and how it differs from a mill test certificate.</image:caption>
     </image:image>
   </url>
 </urlset>

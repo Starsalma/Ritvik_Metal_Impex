@@ -92,6 +92,10 @@ export const articleLinks = [
   {
     "title": "Instrumentation Ferrule Fittings: How Double-Ferrule Compression Seals Work",
     "slug": "instrumentation-ferrule-compression-fittings-guide"
+  },
+  {
+    "title": "Positive Material Identification (PMI): What Handheld XRF Can and Can't Verify",
+    "slug": "positive-material-identification-pmi-xrf-guide"
   }
 ];
 

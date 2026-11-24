@@ -439,6 +439,11 @@ export const articles = [
         heading: 'Buttweld fittings: the process-piping default',
         blocks: [
           {
+            type: 'note',
+            title: 'Quick answer',
+            text: 'Buttweld is the default above 2" NB — full-bore, radiographable and the strongest of the three. Socketweld suits small-bore, high-pressure lines up to about 2" NB, but leaves an internal crevice and cannot be radiographed. Threaded joints are for low-pressure, non-critical or utility service, or where the joint needs to be dismantled. Avoid socketweld under severe vibration, cyclic loading or hydrogen service unless the governing code specifically permits it.',
+          },
+          {
             type: 'p',
             text: 'A buttweld fitting is bevelled to match the pipe end and welded around the full circumference, producing a continuous, full-penetration joint with essentially the same bore as the pipe. Dimensions follow ASME B16.9, and the fitting inherits its pressure rating from the pipe wall thickness rather than carrying a separate class.',
           },
@@ -619,6 +624,11 @@ export const articles = [
         id: 'grades',
         heading: 'The copper grades you will actually be quoted',
         blocks: [
+          {
+            type: 'note',
+            title: 'Quick answer',
+            text: 'C11000 ETP copper maximises electrical conductivity; C12200 DHP copper is deoxidised for brazing and water service and resists hydrogen embrittlement that can affect ETP in a reducing atmosphere. ASTM B88 covers plumbing water tube by nominal size in Types K, L and M (by wall thickness); B280 covers ACR tube for HVAC and refrigeration, sized instead by actual outside diameter — the two sizing conventions do not match. Enamelled winding wire is specified separately, by conductor size plus thermal class (155–220°C).',
+          },
           {
             type: 'table',
             columns: ['Grade', 'UNS', 'Key characteristic', 'Typical use'],
@@ -829,6 +839,11 @@ export const articles = [
         heading: 'EN 10204: what each certificate type actually means',
         blocks: [
           {
+            type: 'note',
+            title: 'Quick answer',
+            text: 'EN 10204 defines four certificate types: 2.1 and 2.2 are non-specific, not tied to your actual consignment; 3.1 and 3.2 are specific, with 3.1 issued by the manufacturer\'s own QA function (the industry default) and 3.2 countersigned by an independent third-party inspector at extra cost and lead time. The certificate only means something if its heat number matches the marking physically stamped on the material. In India, steam service under the Indian Boiler Regulations additionally needs IBR Form III-A (pipes) or III-C (fittings).',
+          },
+          {
             type: 'table',
             columns: ['Type', 'Name', 'Issued & validated by', 'Specific to your material?'],
             rows: [
@@ -1000,6 +1015,11 @@ export const articles = [
         id: 'types',
         heading: 'The seven flange types and where each belongs',
         blocks: [
+          {
+            type: 'note',
+            title: 'Quick answer',
+            text: 'ASME B16.5 covers flanges from NPS 1/2 to 24 in Classes 150 to 2500; weld neck is the default for critical, high-pressure or cyclic service, slip-on the economical choice for moderate duty. Class is a rating, not a pressure — Class 300 carbon steel holds roughly 740 psi at ambient against 285 psi for Class 150, and both derate as temperature rises. Face type matters too: raised face (RF) for general service, flat face (FF) for cast-iron/GRP equipment, RTJ for high-pressure gas and sour service. Both halves of a joint must match on class, face and bolt pattern to mate.',
+          },
           {
             type: 'table',
             columns: ['Type', 'How it attaches', 'Best for', 'Watch out for'],
@@ -1422,6 +1442,11 @@ export const articles = [
         id: 'difference',
         heading: 'The actual difference is alloying, not quality',
         blocks: [
+          {
+            type: 'note',
+            title: 'Quick answer',
+            text: 'Grade 2 is unalloyed commercially pure titanium (~345 MPa tensile), easy to form and weld, chosen for corrosion resistance. Grade 5 is Ti-6Al-4V (~900 MPa tensile), chosen for strength-to-weight, harder to form and weld. Their corrosion resistance in most media is similar — Grade 5 is not the "better" corrosion grade, just the stronger one. Both are attacked by hydrofluoric acid at any concentration and by dry chlorine gas.',
+          },
           { type: 'p', text: 'Grade 2 is commercially pure titanium. "Pure" here means unalloyed — it still carries controlled amounts of oxygen, iron, carbon, nitrogen and hydrogen, and those interstitials are what set its strength. Grade 5 is Ti-6Al-4V: roughly 6% aluminium and 4% vanadium, which raise strength by a factor of two and a half at the cost of ductility and weldability.' },
           { type: 'p', text: 'The grade numbers are not a quality ladder. Grade 5 is not a better Grade 2. They are different materials chosen for different reasons, and in a corrosive process line Grade 2 is usually the correct and cheaper answer.' },
           {
@@ -1641,6 +1666,11 @@ export const articles = [
         id: 'composition',
         heading: 'What is in it, and why',
         blocks: [
+          {
+            type: 'note',
+            title: 'Quick answer',
+            text: '904L\'s deliberate copper addition is what gives it resistance to sulphuric and phosphoric acid that ordinary austenitic grades cannot match; its high nickel content (23–28%) also gives it strong resistance to chloride stress corrosion cracking. It stays fully austenitic and non-magnetic even after cold work. For chloride resistance alone, without the specific acid duty, Duplex 2205 is usually the more economical choice — 904L is not a universal acid grade, since hydrochloric and hydrofluoric acid still defeat it.',
+          },
           { type: 'p', text: '904L is a super austenitic stainless steel: low carbon, high nickel, high molybdenum, with copper. Each element is doing a specific job, and the combination is what separates it from the 300 series.' },
           {
             type: 'table',
@@ -1753,6 +1783,11 @@ export const articles = [
         id: 'conductor',
         heading: 'The conductor: why purity is not an afterthought',
         blocks: [
+          {
+            type: 'note',
+            title: 'Quick answer',
+            text: 'Insulation class (105 to 220+) is a temperature rating, not a quality ladder — a higher class is not "better," it is rated for a hotter winding. Conductor purity (ETP copper, high %IACS conductivity) affects resistive heating in the winding as much as the enamel coating does. SWG, AWG and direct millimetre sizing are three different systems that do not correspond at the same gauge number — confirm which one a drawing uses. Inverter-duty and servo motors need enamel specifically rated for repetitive PWM voltage spikes, not just a high thermal class.',
+          },
           { type: 'p', text: 'The copper itself is Electrolytic Tough Pitch (ETP) grade, drawn to a controlled diameter before enamelling. Conductivity is usually stated as a percentage of the International Annealed Copper Standard (%IACS) — commercial ETP wire runs close to 100% IACS. Lower conductivity means higher resistance for the same cross-section, which means more resistive heating in the winding at the same current. In a motor or transformer, that heat is what ages the enamel and shortens service life, so conductor quality and enamel class are solving the same problem from two directions.' },
           { type: 'p', text: 'This is worth stating plainly to a supplier at enquiry stage rather than assumed: ask for the conductivity grade, not just "copper wire." A wire that is dimensionally correct but drawn from lower-purity stock will still fit the bobbin and still fail early.' },
         ],
@@ -1860,6 +1895,11 @@ export const articles = [
         id: 'connection-standards',
         heading: 'Four connection standards, and they do not mix',
         blocks: [
+          {
+            type: 'note',
+            title: 'Quick answer',
+            text: 'SMS, IDF, DIN 11851 and Tri-Clamp (ISO 2852) are different, mechanically incompatible connection standards — a fitting built to one will not seal against another, so match what is already on site rather than assuming. Standard sanitary mechanical polish runs Ra ≤ 0.8µm; electropolish brings that to Ra ≤ 0.5µm or finer and is mandatory for ASME BPE/pharmaceutical/biotech duty, not general dairy and food processing. "Food grade" (a material claim) and "sanitary" (a design claim) are not the same thing. 316L, not 304, is the default once CIP/SIP cleaning chemicals or any chloride content are involved.',
+          },
           { type: 'p', text: 'A "sanitary fitting" is not one product — it is a family of mechanical connection standards, developed in different countries for the same purpose, and a fitting built to one will not seal against a fitting built to another even though both look similar at a glance. Ordering by material and size alone, without stating the connection standard, is the single most common reason a shipment does not fit on arrival.' },
           {
             type: 'table',
@@ -1966,6 +2006,11 @@ export const articles = [
         id: 'why-stainless-structural',
         heading: 'Why specify stainless structural sections at all',
         blocks: [
+          {
+            type: 'note',
+            title: 'Quick answer',
+            text: 'Most stainless angles and channels on the market are press-formed or laser-fused, not hot rolled, and the three are not interchangeable in weight or strength at the same nominal size — ask which one is being quoted. Sizing standards are EN 10056-1 (angles) and EN 10279 (channels) in European practice, or IS 808 in Indian practice. 304/304L covers general indoor work; 316/316L is for coastal, marine or chemical-wash environments; Duplex 2205 gives roughly double the yield strength for a lighter section carrying the same load. Specify forming method, standard, grade and finish together — any one left unstated is normally assumed, not confirmed, by the supplier.',
+          },
           { type: 'p', text: 'A carbon steel angle or channel corrodes wherever its paint or galvanizing is breached — at a weld, a bolt hole, a scratch from site handling. That is an acceptable maintenance cost indoors in a dry plant. It is not acceptable on a coastal platform, a marine walkway, a food or pharmaceutical processing frame that gets washed down daily, or any structure where repainting after installation is impractical or forbidden. Stainless structural sections exist for exactly that gap: load-bearing shapes that do not depend on an applied coating to survive the environment.' },
           { type: 'p', text: 'They cost more than the carbon steel equivalent, so the decision is usually about where corrosion protection genuinely cannot be maintained over the structure\'s life, not a blanket upgrade.' },
         ],
@@ -2078,6 +2123,11 @@ export const articles = [
         id: 'types',
         heading: 'Valve types: match the duty, not the catalogue page',
         blocks: [
+          {
+            type: 'note',
+            title: 'Quick answer',
+            text: 'Ball and gate valves are for on/off shutoff; globe valves are for throttling/flow regulation; check valves are automatic, with no operator control at all — picking by "what\'s available" instead of by duty is the most common valve selection error. CF8 and CF8M are cast equivalents of wrought 304 and 316 respectively, not the identical alloy, though treated as corrosion-equivalent in practice. End connection (flanged, screwed, socket weld, butt weld, wafer, lug) is chosen to match the adjoining pipework, not the valve type itself. Fire-safe certification (API 607/6FA) is a specific, separately-tested feature, not a default property of a given valve type or material.',
+          },
           { type: 'p', text: 'Every valve type does one of three jobs: stop or start flow, regulate flow, or prevent flow reversing. Specifying a type that does the wrong job is the single most common valve selection mistake — a globe valve left permanently open to act as a shutoff wastes its own high pressure-drop design; a gate valve throttled partway open erodes its seat and will not seal properly afterward.' },
           {
             type: 'table',
@@ -2171,6 +2221,11 @@ export const articles = [
         id: 'property-classes',
         heading: 'Decoding the property class marking',
         blocks: [
+          {
+            type: 'note',
+            title: 'Quick answer',
+            text: 'A2 and A4 are property-class designations for austenitic stainless fasteners (A2 ≈ 304 family, A4 ≈ 316 family), with the number after the dash a minimum tensile strength code, not a hardness or quality grade. Galling is cold welding between mating stainless threads under friction and pressure — a property of the material pairing, not a sign of a defective part — and the standard prevention is thread lubrication plus slow, steady tightening. High-temperature bolted joints use the separate ASTM A193/A194 system (B7/2H for alloy steel, B8/8 or B8M/8M for stainless), not the general-purpose A2/A4 classes.',
+          },
           { type: 'p', text: 'Carbon and alloy steel fasteners use a two-part number — 8.8, 10.9, 12.9 — where the first figure is roughly one-tenth of the minimum tensile strength in kgf/mm² and the second, divided by 10, gives the yield-to-tensile ratio. Stainless fasteners use a different system entirely: a letter-number class such as A2-70 or A4-80, where A2 and A4 identify the base alloy group (A2 ≈ 304/304L family, A4 ≈ 316/316L family, the "4" grades containing molybdenum) and the number after the dash is a minimum tensile strength code — 70 for roughly 700 N/mm², 80 for roughly 800 N/mm². A4-80 is not simply "a better A2-70" in the way 10.9 is stronger than 8.8 — it identifies both a different alloy group and a different strength level, usually achieved by cold working.' },
         ],
       },
@@ -2872,6 +2927,102 @@ export const articles = [
         question: 'Are ferrule fittings sized the same way as process pipe fittings?',
         answer:
           'No. Process pipe fittings are sized by Nominal Bore (NB/NPS), a label that does not equal actual outside diameter. Ferrule fittings are sized directly to the tube\'s real outside diameter in fractional inches (1/16" to 1" OD is the common range), together with the tube\'s wall thickness. Ordering a ferrule fitting against an NB figure instead of the tube\'s actual OD and wall thickness is a common and avoidable mismatch between the two systems.',
+      },
+    ],
+  },
+  {
+    slug: 'positive-material-identification-pmi-xrf-guide',
+    title: 'Positive Material Identification (PMI): What Handheld XRF Can and Can\'t Verify',
+    seoTitle: 'PMI Testing Guide: What XRF Can\'t Verify',
+    description:
+      'How handheld XRF positive material identification actually works, what it can and cannot detect, 100% PMI vs spot-check sampling, and how it differs from a mill test certificate.',
+    keywords:
+      'positive material identification PMI, handheld XRF alloy testing, PMI vs mill test certificate, API RP 578 material verification, ASTM E1476 PMI, XRF cannot detect carbon, 100 percent PMI sour service',
+    category: 'Quality & Compliance',
+    readTime: '7 min read',
+    datePublished: '2026-11-24',
+    dateModified: '2026-11-24',
+    image: '/images/products/high-performance-alloys.jpg',
+    relatedProductIds: [1, 4, 8, 22],
+    relatedGradeSlugs: ['stainless-steel-304', 'stainless-steel-316', 'inconel', 'monel'],
+    intro:
+      'PMI gets mentioned as the answer to almost every grade-mix-up worry on site — "just XRF it" — but the handheld analyser that does this is verifying one specific thing, not confirming the whole certificate. Knowing what it actually measures, and what it structurally cannot, is what separates a receiving inspection that catches a real substitution from one that produces a false sense of certainty.',
+    takeaways: [
+      'Handheld PMI analysers work by X-ray fluorescence (XRF), which reads elemental composition — it is excellent at detecting chromium, nickel, molybdenum and similar heavier elements, which is how it tells 316 apart from 304.',
+      'XRF cannot reliably detect carbon, a light element — so a handheld PMI check alone cannot distinguish standard 316 from low-carbon 316L; that distinction still needs the mill test certificate.',
+      'PMI identifies the alloy of the physical piece in your hand; it does not verify heat treatment condition, mechanical properties, or that the certificate\'s heat number genuinely traces to this exact piece.',
+      '100% PMI is specified for critical, sour or high-value alloy service (API RP 578 is the standard industry reference); general stock is more commonly spot-checked rather than tested piece by piece.',
+      'PMI and a mill test certificate check different things and neither replaces the other — the certificate is a paper trail to a heat; PMI is a check that the physical piece matches what the paper claims.',
+    ],
+    sections: [
+      {
+        id: 'how-it-works',
+        heading: 'What a handheld XRF analyser actually detects',
+        blocks: [
+          {
+            type: 'note',
+            title: 'Quick answer',
+            text: 'Handheld PMI analysers use X-ray fluorescence (XRF): they excite the material\'s surface with X-rays and read the characteristic energy the elements fluoresce back at, which identifies which elements are present and roughly how much of each. This works very well for chromium, nickel, molybdenum, titanium and similar elements — enough to reliably separate 316 from 304, or confirm an alloy family like Inconel or Monel. It works poorly or not at all for light elements, carbon chief among them, which is the single most important limitation to understand before relying on a PMI result.',
+          },
+          { type: 'p', text: 'This is why PMI is described as identifying the alloy, not certifying the full specification. A result that reads "16-18% Cr, 2-3% Mo, 10-14% Ni" confirms the piece is in the 316 family — it says nothing about whether it is standard 316 or the low-carbon 316L variant, because carbon content is simply outside what XRF can see.' },
+        ],
+      },
+      {
+        id: 'what-it-misses',
+        heading: 'What PMI cannot verify',
+        blocks: [
+          { type: 'p', text: 'Three things a PMI check does not tell you, each worth stating explicitly to whoever is relying on the result:' },
+          {
+            type: 'ul',
+            items: [
+              'Carbon content — and therefore the L-grade distinction (304 vs 304L, 316 vs 316L) — because XRF does not reliably detect light elements. Confirming this still requires the mill test certificate\'s chemical analysis.',
+              'Mechanical properties — tensile strength, yield strength, hardness, impact toughness. PMI confirms chemistry, not how the material was processed or what properties resulted from it.',
+              'Heat treatment condition — whether the material was correctly solution annealed, for instance. Two pieces with identical chemistry can have very different properties depending on how they were heat treated, and XRF cannot see that history.',
+            ],
+          },
+          { type: 'p', text: 'What PMI genuinely is good for is catching a substitution or mix-up: a piece pulled from the wrong bin at the stockyard, or a lower grade supplied against a higher-grade order. That is a real, common failure mode, and PMI is one of the cheapest, fastest ways to catch it before the material goes into service.' },
+        ],
+      },
+      {
+        id: 'coverage',
+        heading: '100% PMI vs spot-check sampling',
+        blocks: [
+          { type: 'p', text: 'How much of an order gets tested is a specification decision, not a fixed rule. API RP 578 is the commonly referenced industry standard for material verification programs, particularly in refinery and petrochemical work, and it is where "100% PMI" requirements typically originate — every piece tested, individually, usually for critical or sour service where a single wrong-alloy component is a safety risk. General industrial stock more commonly uses spot-check sampling, a percentage of a batch tested rather than every piece, relying on the mill test certificate and supplier traceability for the rest.' },
+          {
+            type: 'note',
+            title: 'State the coverage level on the enquiry',
+            text: 'If your project specification calls for 100% PMI, say so explicitly and confirm who performs it and when — some buyers expect it on receipt, others expect the supplier to have already PMI-verified the batch. "PMI required" without stating the coverage level leaves this ambiguous.',
+          },
+        ],
+      },
+      {
+        id: 'pmi-vs-mtc',
+        heading: 'PMI and the mill test certificate check different things',
+        blocks: [
+          { type: 'p', text: 'A mill test certificate is a paper trail: it reports the chemical and mechanical results for a specific heat number, traceable back to the mill\'s own testing. It proves what the mill tested, not that the physical piece in front of you is actually from that heat — that link only holds if the heat number on the certificate matches the marking physically stamped on the material. PMI is the other half: a direct physical check of the piece itself, independent of whatever paperwork came with it. Neither replaces the other. A certificate with no PMI trusts that nothing got mixed up between the mill and your site; PMI with no certificate confirms the alloy family but tells you nothing about the heat-specific mechanical results. Critical orders should have both.' },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Can a handheld XRF analyser tell 316 from 316L?',
+        answer:
+          'No, not reliably. XRF identifies elemental composition and is excellent at detecting chromium, nickel and molybdenum, which confirms the piece is in the 316 family. The 316 vs 316L distinction is carbon content, a light element that XRF does not reliably measure. Confirming the L-grade requires the mill test certificate\'s chemical analysis, not a PMI check alone.',
+      },
+      {
+        question: 'What is the difference between PMI and a mill test certificate?',
+        answer:
+          'A mill test certificate is a paper record of chemical and mechanical test results for a specific heat number, produced by the mill. PMI (positive material identification) is a direct physical test of the actual piece in hand, typically by handheld XRF, done independently of any paperwork. The certificate proves what the mill tested; PMI confirms what the physical piece actually is. Critical orders benefit from both, since each only covers half of the question.',
+      },
+      {
+        question: 'Do I need 100% PMI testing, or is spot-check sampling enough?',
+        answer:
+          'It depends on the service and what your project specification requires. API RP 578, the common industry reference for material verification programs, typically drives 100% PMI requirements for critical or sour service where a single wrong-alloy component is a safety risk. General industrial stock is more commonly spot-checked rather than tested piece by piece. State the coverage level explicitly on your enquiry rather than leaving "PMI required" ambiguous.',
+      },
+      {
+        question: 'Can PMI verify mechanical properties like tensile strength?',
+        answer:
+          'No. PMI by XRF confirms elemental composition — which alloy a piece is — not its mechanical properties or heat treatment condition. Two pieces with identical chemistry can have different mechanical properties depending on how they were processed. Mechanical properties are verified by the mill test certificate\'s mechanical test results, or by independent mechanical testing, not by a PMI chemistry check.',
       },
     ],
   },
